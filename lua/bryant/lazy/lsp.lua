@@ -52,6 +52,9 @@ return {
 			require('cmp_nvim_lsp').default_capabilities()
 		)
 
+		-- json snippetSupport
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 		local servers = {
 			cssls = {},
 			clangd = {},
@@ -60,6 +63,11 @@ return {
 			bashls = {},
 			tsserver = {},
 			gopls = {},
+			dockerls = {},
+			docker_compose_language_service = {},
+			jsonls = {},
+			terraformls = {},
+			yamlls = {},
 			lua_ls = {
 				settings = {
 					Lua = {
@@ -84,8 +92,15 @@ return {
 			'stylua',
 			'prettierd',
 			'prettier',
+			'eslint_d',
+			'emmet_language_server',
+
+			-- markdown
+			'alex',
+			'markdownlint',
 
 			-- bash
+			'shellcheck',
 			'shfmt',
 
 			-- c
@@ -94,6 +109,13 @@ return {
 			-- golang
 			'gofumpt',
 			'goimports',
+			'golangci-lint',
+
+			-- json
+			'jsonlint',
+
+			-- yaml
+			'yamllint',
 		})
 		require('mason-tool-installer').setup({
 			ensure_installed = ensure_installed,
