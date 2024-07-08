@@ -1,5 +1,6 @@
 return {
 	'mfussenegger/nvim-lint',
+	enabled = false,
 	event = 'InsertEnter',
 	config = function()
 		local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
