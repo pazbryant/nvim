@@ -22,17 +22,6 @@ autocmd('BufReadPost', {
 	end,
 })
 
-autocmd({ 'BufNewFile', 'BufRead' }, {
-	pattern = {
-		'**/node_modules/**',
-		'node_modules',
-		'/node_modules/*',
-	},
-	callback = function()
-		vim.diagnostic.disable(0)
-	end,
-})
-
 -- :echo &ft to know floating window
 -- clear cursor when exin nvim
 
