@@ -43,5 +43,8 @@ opt.conceallevel = 2
 opt.spell = true
 opt.spelllang = { 'en_us', 'es_mx' }
 
+-- Set spell file path
+opt.spellfile = '/home/bryant/.config/nvim/spell/en.utf-8.add'
+
 -- disable nvim startup screen
 opt.shortmess:append('sI')
