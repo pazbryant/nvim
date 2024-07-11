@@ -95,6 +95,7 @@ return {
 			'<cmd> Telescope find_files previewer=false follow=true no_ignore=true hidden=true <CR>'
 		)
 		map('n', '<C-g>', '<cmd> Telescope live_grep <CR>')
+		map('n', '<C-f>', '<cmd> Telescope live_grep <CR>')
 		map('n', '<leader>h', '<cmd> Telescope help_tags <CR>')
 	end,
 }
