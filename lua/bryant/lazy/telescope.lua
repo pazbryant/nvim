@@ -24,6 +24,7 @@ return {
 					'--line-number',
 					'--column',
 					'--smart-case',
+					'--hidden',
 				},
 				initial_mode = 'insert',
 				selection_strategy = 'reset',
