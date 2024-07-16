@@ -1,10 +1,10 @@
 {
   "LuaSnip": { "branch": "master", "commit": "ce0a05ab4e2839e1c48d072c5236cce846a387bc" },
-  "catppuccin": { "branch": "main", "commit": "31fcfb02c47952d5c75aec893b93b2878abe5fbb" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "friendly-snippets": { "branch": "main", "commit": "682157939e57bd6a2c86277dfd4d6fbfce63dbac" },
+  "gitsigns.nvim": { "branch": "main", "commit": "2a7b39f4d282935f8b44cbe82879af69c7472f5c" },
   "lazy.nvim": { "branch": "main", "commit": "a6daaf68a2805ac9180b835f09de5ca5d5cf8993" },
   "nvim-cmp": { "branch": "main", "commit": "a110e12d0b58eefcf5b771f533fc2cf3050680ac" },
   "nvim-treesitter": { "branch": "master", "commit": "ffd7725102f47e7391d7a5e7621d178689602a52" },
