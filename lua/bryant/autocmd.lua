@@ -39,3 +39,12 @@ vim.cmd([[
     autocmd FileType * setlocal formatoptions-=cro
   augroup END
 ]])
+
+-- set current directory
+local vim_initialized = false
+if not vim_initialized then
+	vim.cmd(
+		[[ autocmd VimEnter * lua vim.cmd('lcd ' .. vim.fn.expand('%:p:h')) ]]
+	)
+	vim_initialized = true
+end
