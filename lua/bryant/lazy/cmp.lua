@@ -83,6 +83,6 @@ return {
 			end
 		end
 
-		usercmd('ToggleCmp', toggle_cmp, { nargs = 0 })
+		usercmd('CmpToggle', toggle_cmp, { nargs = 0 })
 	end,
 }
