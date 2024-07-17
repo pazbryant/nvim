@@ -20,9 +20,6 @@ opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.tabstop = 2
 
-opt.nu = true
-opt.relativenumber = true
-
 opt.hlsearch = true
 opt.incsearch = true
 opt.smartcase = true
@@ -36,9 +33,6 @@ opt.isfname:append('@-@')
 opt.updatetime = 50
 
 opt.termguicolors = true
-
--- for obsidian
-opt.conceallevel = 2
 
 opt.spell = true
 opt.spelllang = { 'en_us', 'es_mx' }
