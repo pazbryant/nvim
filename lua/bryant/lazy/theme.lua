@@ -36,9 +36,9 @@ local themes = {
 
 	{
 		'rose-pine/neovim',
-		enabled = false,
+		enabled = true,
 		name = 'rose-pine',
-		lazy = false,
+		lazy = true,
 		priority = 1000,
 		config = function()
 			require('rose-pine').setup({
@@ -55,8 +55,8 @@ local themes = {
 
 	{
 		'maxmx03/solarized.nvim',
-		enabled = false,
-		lazy = false,
+		enabled = true,
+		lazy = true,
 		priority = 1000,
 		opts = {
 			theme = 'neo',
@@ -70,8 +70,8 @@ local themes = {
 
 	{
 		'craftzdog/solarized-osaka.nvim',
-		enabled = false,
-		lazy = false,
+		enabled = true,
+		lazy = true,
 		priority = 1000,
 		config = function()
 			require('solarized-osaka').setup({

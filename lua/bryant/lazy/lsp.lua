@@ -59,15 +59,9 @@ return {
 		local servers = {
 			cssls = {},
 			clangd = {},
-			marksman = {},
 			html = {},
 			bashls = {},
 			tsserver = {},
-			dockerls = {},
-			docker_compose_language_service = {},
-			jsonls = {},
-			terraformls = {},
-			yamlls = {},
 			gopls = {
 				cmd = { 'gopls' },
 				-- on_attach = on_attach,
@@ -115,7 +109,6 @@ return {
 
 			-- markdown
 			'alex',
-			'markdownlint',
 
 			-- bash
 			'shellcheck',

@@ -17,11 +17,15 @@ return {
 			event = 'InsertEnter',
 			config = function()
 				require('nvim-autopairs').setup({
+					fast_wrap = {},
 					disable_filetype = { 'TelescopePrompt', 'vim' },
 				})
+				local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+				require('cmp').event:on('confirm_done', cmp_autopairs.on_confirm_done())
 			end,
 		},
 		-- sources
+		'onsails/lspkind.nvim',
 		'hrsh7th/cmp-buffer',
 		'hrsh7th/cmp-nvim-lsp',
 		'hrsh7th/cmp-nvim-lua',
@@ -32,9 +36,18 @@ return {
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
 		local cmp_types = require('cmp.types')
-		local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+		local lspkind = require('lspkind')
+		local formating_style = {
+			format = lspkind.cmp_format({
+				mode = 'text_symbol',
+				maxwidth = 50,
+				ellipsis_char = '...',
+				show_labelDetails = true,
+			}),
+		}
 
 		cmp.setup({
+			formatting = formating_style,
 			snippet = {
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
@@ -72,11 +85,7 @@ return {
 			},
 		})
 
-		-- auto pairs integration
-		cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
-
 		-- Toggle cmp custom function
-
 		local usercmd = vim.api.nvim_create_user_command
 
 		local enabled = true
