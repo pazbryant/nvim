@@ -1,5 +1,6 @@
 return {
 	'neovim/nvim-lspconfig',
+	lazy = false,
 	event = 'BufEnter',
 	dependencies = {
 		'williamboman/mason.nvim',
@@ -62,12 +63,29 @@ return {
 			html = {},
 			bashls = {},
 			tsserver = {},
-			gopls = {},
 			dockerls = {},
 			docker_compose_language_service = {},
 			jsonls = {},
 			terraformls = {},
 			yamlls = {},
+			gopls = {
+				cmd = { 'gopls' },
+				-- on_attach = on_attach,
+				capabilities = capabilities,
+				settings = {
+					gopls = {
+						experimentalPostfixCompletions = true,
+						analyses = {
+							unusedparams = true,
+							shadow = true,
+						},
+						staticcheck = true,
+					},
+				},
+				init_options = {
+					usePlaceholders = true,
+				},
+			},
 			lua_ls = {
 				settings = {
 					Lua = {
