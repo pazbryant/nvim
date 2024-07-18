@@ -12,6 +12,15 @@ return {
 				require('luasnip.loaders.from_vscode').lazy_load({})
 			end,
 		},
+		{
+			'windwp/nvim-autopairs',
+			event = 'InsertEnter',
+			config = function()
+				require('nvim-autopairs').setup({
+					disable_filetype = { 'TelescopePrompt', 'vim' },
+				})
+			end,
+		},
 		-- sources
 		'hrsh7th/cmp-buffer',
 		'hrsh7th/cmp-nvim-lsp',
@@ -23,6 +32,7 @@ return {
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
 		local cmp_types = require('cmp.types')
+		local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 		cmp.setup({
 			snippet = {
@@ -33,6 +43,8 @@ return {
 			completion = {
 				completeopt = 'menu,menuone,noinsert',
 			},
+
+			preselect = cmp.PreselectMode.None,
 			mapping = cmp.mapping.preset.insert({
 				['<C-n>'] = cmp.mapping.select_next_item(),
 				['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -58,6 +70,9 @@ return {
 				{ name = 'buffer' },
 			},
 		})
+
+		-- auto pairs integration
+		cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
 		-- Toggle cmp custom function
 
