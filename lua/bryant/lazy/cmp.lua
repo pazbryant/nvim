@@ -72,8 +72,14 @@ return {
 						luasnip.jump(-1)
 					end
 				end, { 'i', 's' }),
-				['<C-b>'] = cmp.mapping.scroll_docs(-4),
-				['<C-f>'] = cmp.mapping.scroll_docs(4),
+
+				['<C-j>'] = cmp.mapping(function()
+					cmp.mapping.scroll_docs(-4)
+				end, { 'i', 's' }),
+
+				['<C-k>'] = cmp.mapping(function()
+					cmp.mapping.scroll_docs(4)
+				end, { 'i', 's' }),
 			}),
 			sources = {
 				{ name = 'nvim_lsp' },

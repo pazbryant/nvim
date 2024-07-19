@@ -42,6 +42,8 @@ return {
 			map('n', '<leader>gr', gs.reset_hunk, opts('Reset Hunk'))
 			map('n', '<leader>gp', gs.preview_hunk, opts('Preview Hunk'))
 			map('n', '<leader>gb', gs.blame_line, opts('Blame Line'))
+			map('n', '<leader>gl', gs.toggle_linehl, opts('Toggle linehl'))
+			map('n', '<leader>gn', gs.toggle_numhl, opts('Toggle numhl'))
 		end,
 	},
 	config = function(_, opts)
