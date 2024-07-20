@@ -7,7 +7,7 @@ return {
 		dir = '/home/bryant/Documents/github/notes',
 		disable_frontmatter = true,
 		new_notes_location = 'current_dir',
-		daily_notes = { folder = 'Daily' },
+		daily_notes = { folder = 'Obsidian/Daily' },
 		ui = { enable = true },
 		templates = {
 			subdir = 'Obsidian/Templates',
