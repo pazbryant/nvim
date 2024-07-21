@@ -15,6 +15,7 @@ opt.swapfile = false
 opt.undofile = true
 opt.wrap = false
 
+o.cmdheight = 0
 o.expandtab = true
 opt.shiftwidth = 2
 opt.softtabstop = 2
