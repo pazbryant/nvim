@@ -29,7 +29,7 @@ map(
 map(
 	'n',
 	'<leader>s',
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	[[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]],
 	{ desc = 'Replace word' }
 )
 
