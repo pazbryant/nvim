@@ -47,3 +47,9 @@ map({ 'n', 'v' }, 'L', 'g_', { desc = 'Move at the end of the line ' })
 
 -- use Telescope for spell suggest
 map('n', 'z=', '<cmd>Telescope spell_suggest<CR>', { desc = 'Suggest spell' })
+
+-- move between nvim split buffers
+map({ 'n', 'v', 'x' }, '<M-h>', '<C-w>h', { desc = 'Go to left window' })
+map({ 'n', 'v', 'x' }, '<M-l>', '<C-w>l', { desc = 'Go to right window' })
+map({ 'n', 'v', 'x' }, '<M-j>', '<C-w>j', { desc = 'Go to down window' })
+map({ 'n', 'v', 'x' }, '<M-k>', '<C-w>k', { desc = 'Go to up window' })
