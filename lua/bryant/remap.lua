@@ -45,13 +45,5 @@ map({ 'n', 'v' }, 'H', '^', { desc = 'Move the start of the line' })
 map({ 'n', 'v' }, '<C-b>', '0', { desc = 'Move at the end of the line ' })
 map({ 'n', 'v' }, 'L', 'g_', { desc = 'Move at the end of the line ' })
 
--- tmux create new session by folder
-map(
-	'n',
-	'<C-f>',
-	'<cmd>silent !tmux neww tmux-new-session.sh<CR>',
-	{ desc = 'Execute tmux script' }
-)
-
 -- use Telescope for spell suggest
 map('n', 'z=', '<cmd>Telescope spell_suggest<CR>', { desc = 'Suggest spell' })
