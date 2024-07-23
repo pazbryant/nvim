@@ -4,6 +4,7 @@ return {
 	cmd = 'Telescope',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
+		'nvim-tree/nvim-web-devicons',
 		{
 			'nvim-telescope/telescope-fzf-native.nvim',
 			build = 'make',
@@ -24,8 +25,7 @@ return {
 					'--line-number',
 					'--column',
 					'--smart-case',
-          '--hidden',
-
+					'--hidden',
 				},
 				initial_mode = 'insert',
 				selection_strategy = 'reset',
