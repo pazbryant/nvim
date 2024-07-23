@@ -107,9 +107,6 @@ return {
 			'eslint_d',
 			'emmet_language_server',
 
-			-- markdown
-			'alex',
-
 			-- bash
 			'shellcheck',
 			'shfmt',
