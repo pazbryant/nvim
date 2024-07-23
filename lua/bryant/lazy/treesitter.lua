@@ -44,6 +44,7 @@ return {
 		},
 		ensure_installed = {
 			'vim',
+      'nix',
 			'lua',
 			'bash',
 			'json',
