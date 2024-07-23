@@ -71,6 +71,7 @@ return {
 			'c',
 			'terraform',
 			'sxhkdrc',
+      'nix',
 			-- golang
 			'go',
 			'gosum',
