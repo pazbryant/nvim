@@ -1,7 +1,6 @@
 return {
 	'neovim/nvim-lspconfig',
 	lazy = false,
-	event = 'BufEnter',
 	dependencies = {
 		'williamboman/mason.nvim',
 		'williamboman/mason-lspconfig.nvim',
@@ -62,6 +61,7 @@ return {
 			html = {},
 			bashls = {},
 			tsserver = {},
+			emmet_language_server = {},
 			gopls = {
 				cmd = { 'gopls' },
 				-- on_attach = on_attach,
@@ -105,7 +105,6 @@ return {
 			'prettierd',
 			'prettier',
 			'eslint_d',
-			'emmet_language_server',
 
 			-- bash
 			'shellcheck',
@@ -118,12 +117,6 @@ return {
 			'gofumpt',
 			'goimports',
 			'golangci-lint',
-
-			-- json
-			'jsonlint',
-
-			-- yaml
-			'yamllint',
 		})
 		require('mason-tool-installer').setup({
 			ensure_installed = ensure_installed,
