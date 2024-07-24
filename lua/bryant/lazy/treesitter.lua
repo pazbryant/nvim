@@ -12,9 +12,19 @@ return {
 	event = 'BufEnter',
 	build = ':TSUpdate',
 	opts = {
+		incremental_selection = {
+			enable = true,
+			keymaps = {
+				init_selection = '<M-s>', -- set to `false` to disable one of the mappings
+				node_incremental = '<M-i>',
+				scope_incremental = '<M-b>',
+				node_decremental = '<M-d>',
+			},
+		},
 		matchup = {
 			enable = true, -- mandatory, false will disable the whole extension
 		},
+
 		textobjects = {
 			select = {
 				enable = true,
@@ -71,7 +81,7 @@ return {
 			'c',
 			'terraform',
 			'sxhkdrc',
-      'nix',
+			'nix',
 			-- golang
 			'go',
 			'gosum',

@@ -1,8 +1,19 @@
 local themes = {
 	{
-		'catppuccin/nvim',
+		'projekt0n/github-nvim-theme',
 		enabled = true,
 		lazy = false,
+		priority = 1000,
+		config = function(_, opts)
+			vim.cmd([[colorscheme github_light_colorblind]])
+			require('github-theme').setup(opts)
+		end,
+	},
+
+	{
+		'catppuccin/nvim',
+		enabled = true,
+		lazy = true,
 		name = 'catppuccin',
 		priority = 1000,
 		config = function()
@@ -50,34 +61,6 @@ local themes = {
 				},
 			})
 			vim.cmd([[colorscheme rose-pine]])
-		end,
-	},
-
-	{
-		'maxmx03/solarized.nvim',
-		enabled = true,
-		lazy = true,
-		priority = 1000,
-		opts = {
-			theme = 'neo',
-		},
-		config = function(_, opts)
-			vim.o.background = 'dark' -- or 'light'
-			vim.cmd([[colorscheme solarized]])
-			require('solarized').setup(opts)
-		end,
-	},
-
-	{
-		'craftzdog/solarized-osaka.nvim',
-		enabled = true,
-		lazy = true,
-		priority = 1000,
-		config = function()
-			require('solarized-osaka').setup({
-				transparent = false,
-			})
-			vim.cmd([[colorscheme solarized-osaka]])
 		end,
 	},
 }
