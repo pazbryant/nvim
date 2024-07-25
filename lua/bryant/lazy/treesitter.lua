@@ -12,19 +12,9 @@ return {
 	event = 'BufEnter',
 	build = ':TSUpdate',
 	opts = {
-		incremental_selection = {
-			enable = true,
-			keymaps = {
-				init_selection = '<M-s>', -- set to `false` to disable one of the mappings
-				node_incremental = '<C-l>',
-				node_decremental = '<C-h>',
-				scope_incremental = '<C-t>',
-			},
-		},
 		matchup = {
 			enable = true, -- mandatory, false will disable the whole extension
 		},
-
 		textobjects = {
 			select = {
 				enable = true,
