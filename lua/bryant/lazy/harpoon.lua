@@ -41,13 +41,6 @@ return {
 			desc = 'harpoon to file 3',
 		},
 		{
-			'<C-s>',
-			function()
-				require('harpoon'):list():select(4)
-			end,
-			desc = 'harpoon to file 4',
-		},
-		{
 			'<leader><C-h>',
 			function()
 				require('harpoon'):list():replace_at(1)
@@ -67,13 +60,6 @@ return {
 				require('harpoon'):list():replace_at(3)
 			end,
 			desc = 'harpoon replace file 3',
-		},
-		{
-			'<leader><C-s>',
-			function()
-				require('harpoon'):list():replace_at(4)
-			end,
-			desc = 'harpoon replace file 4',
 		},
 	},
 }
