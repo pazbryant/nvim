@@ -47,3 +47,11 @@ map({ 'n', 'v' }, 'L', 'g_', { desc = 'Move at the end of the line ' })
 
 -- use Telescope for spell suggest
 map('n', 'z=', '<cmd>Telescope spell_suggest<CR>', { desc = 'Suggest spell' })
+
+-- user cmds
+map(
+	'n',
+	'<leader>dt',
+	'<cmd>Virtulatexttoggle<CR>',
+	{ desc = 'Virtulatex toggle' }
+)

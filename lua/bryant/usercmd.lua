@@ -17,6 +17,16 @@ usercmd('Diagnostictoggle', function()
 	end
 end, { nargs = 0 })
 
+local enabled = true
+usercmd('Virtulatexttoggle', function()
+	if enabled then
+		vim.diagnostic.config({ virtual_text = false })
+	else
+		vim.diagnostic.config({ virtual_text = true })
+	end
+	enabled = not enabled
+end, { nargs = 0 })
+
 usercmd('Catppuccinlatte', function()
 	vim.cmd([[colorscheme catppuccin-latte]])
 end, { nargs = 0 })
