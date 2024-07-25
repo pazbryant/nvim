@@ -17,24 +17,12 @@ usercmd('Diagnostictoggle', function()
 	end
 end, { nargs = 0 })
 
-usercmd('Catppuccinfrappe', function()
-	vim.cmd([[colorscheme catppuccin-frappe]])
-end, { nargs = 0 })
-
 usercmd('Catppuccinlatte', function()
 	vim.cmd([[colorscheme catppuccin-latte]])
 end, { nargs = 0 })
 
-usercmd('Rosepine', function()
-	vim.cmd([[colorscheme rose-pine]])
-end, { nargs = 0 })
-
 usercmd('Rosepinedown', function()
 	vim.cmd([[colorscheme rose-pine-dawn]])
-end, { nargs = 0 })
-
-usercmd('Githubdark', function()
-	vim.cmd([[colorscheme github_dark]])
 end, { nargs = 0 })
 
 usercmd('Githublight', function()
