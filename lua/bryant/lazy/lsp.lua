@@ -27,6 +27,7 @@ return {
 					require('telescope.builtin').lsp_definitions,
 					'[G]oto [D]efinition'
 				)
+				map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 				map(
 					'gr',
 					require('telescope.builtin').lsp_references,
@@ -37,9 +38,28 @@ return {
 					require('telescope.builtin').lsp_implementations,
 					'[G]oto [I]mplementation'
 				)
+				map(
+					'<leader>D',
+					require('telescope.builtin').lsp_type_definitions,
+					'Type [D]efinition'
+				)
 				map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 				map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-				vim.keymap.set('i', '<C-s>', function()
+				map(
+					'<leader>ds',
+					require('telescope.builtin').lsp_document_symbols,
+					'[D]ocument [S]ymbols'
+				)
+
+				-- Fuzzy find all the symbols in your current workspace.
+				--  Similar to document symbols, except searches over your entire project.
+				map(
+					'<leader>ws',
+					require('telescope.builtin').lsp_dynamic_workspace_symbols,
+					'[W]orkspace [S]ymbols'
+				)
+
+				vim.keymap.set('i', '<C-a>', function()
 					vim.lsp.buf.signature_help()
 				end, { desc = 'signature_help' })
 			end,
