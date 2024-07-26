@@ -48,7 +48,6 @@ return {
 				file_sorter = require('telescope.sorters').get_fuzzy_file,
 				file_ignore_patterns = {
 					'node_modules',
-					'.docker',
 					'.git/',
 					'yarn.lock',
 					'go.sum',
