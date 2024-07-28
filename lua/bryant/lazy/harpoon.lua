@@ -41,25 +41,11 @@ return {
 			desc = 'harpoon to file 3',
 		},
 		{
-			'<M-h>',
+			'<C-s>',
 			function()
 				require('harpoon'):list():select(4)
 			end,
 			desc = 'harpoon to file 4',
-		},
-		{
-			'<M-t>',
-			function()
-				require('harpoon'):list():select(5)
-			end,
-			desc = 'harpoon to file 5',
-		},
-		{
-			'<M-n>',
-			function()
-				require('harpoon'):list():select(6)
-			end,
-			desc = 'harpoon to file 6',
 		},
 	},
 }

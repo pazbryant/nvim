@@ -59,7 +59,7 @@ return {
 					'[W]orkspace [S]ymbols'
 				)
 
-				vim.keymap.set('i', '<C-a>', function()
+				vim.keymap.set('i', '<C-s>', function()
 					vim.lsp.buf.signature_help()
 				end, { desc = 'signature_help' })
 			end,

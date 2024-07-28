@@ -12,7 +12,7 @@ local themes = {
 
 	{
 		'catppuccin/nvim',
-		enabled = true,
+		enabled = false,
 		lazy = true,
 		name = 'catppuccin',
 		priority = 1000,
@@ -47,7 +47,7 @@ local themes = {
 
 	{
 		'rose-pine/neovim',
-		enabled = true,
+		enabled = false,
 		name = 'rose-pine',
 		lazy = true,
 		priority = 1000,

@@ -26,15 +26,3 @@ usercmd('Virtulatexttoggle', function()
 	end
 	enabled = not enabled
 end, { nargs = 0 })
-
-usercmd('Catppuccinlatte', function()
-	vim.cmd([[colorscheme catppuccin-latte]])
-end, { nargs = 0 })
-
-usercmd('Rosepinedown', function()
-	vim.cmd([[colorscheme rose-pine-dawn]])
-end, { nargs = 0 })
-
-usercmd('Githublight', function()
-	vim.cmd([[colorscheme github_light_colorblind]])
-end, { nargs = 0 })
