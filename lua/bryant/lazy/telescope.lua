@@ -1,6 +1,6 @@
 return {
 	'nvim-telescope/telescope.nvim',
-	keys = { '<C-p>', '<C-y>', '<C-g>', '<leader>h' },
+	keys = { '<C-p>', '<C-g>', '<leader>h' },
 	cmd = 'Telescope',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
@@ -48,7 +48,6 @@ return {
 				file_sorter = require('telescope.sorters').get_fuzzy_file,
 				file_ignore_patterns = {
 					'node_modules',
-					'.docker',
 					'.git/',
 					'yarn.lock',
 					'go.sum',
@@ -89,10 +88,9 @@ return {
 		})
 		pcall(require('telescope').load_extension, 'fzf')
 		local map = vim.keymap.set
-		map('n', '<C-p>', '<cmd> Telescope find_files previewer=false <CR>')
 		map(
 			'n',
-			'<C-y>',
+			'<C-p>',
 			'<cmd> Telescope find_files previewer=false follow=true no_ignore=true hidden=true <CR>'
 		)
 		map('n', '<C-g>', '<cmd> Telescope live_grep <CR>')
