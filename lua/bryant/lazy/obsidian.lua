@@ -4,7 +4,7 @@ return {
 	ft = 'markdown',
 	opts = {
 		completion = { nvim_cmp = true, min_chars = 2 },
-		dir = '/home/bryant/Documents/github/notes',
+		dir = '/home/bryant/documents/github/notes',
 		disable_frontmatter = true,
 		new_notes_location = 'current_dir',
 		daily_notes = { folder = 'Obsidian/Daily' },
