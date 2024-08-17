@@ -18,6 +18,7 @@ usercmd('Diagnostictoggle', function()
 end, { nargs = 0 })
 
 local enabled = true
+
 usercmd('Virtulatexttoggle', function()
 	if enabled then
 		vim.diagnostic.config({ virtual_text = false })

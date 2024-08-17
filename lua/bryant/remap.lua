@@ -38,11 +38,3 @@ map('v', '>', '>gv', { desc = 'Better align items' })
 
 -- use Telescope for spell suggest
 map('n', 'z=', '<cmd>Telescope spell_suggest<CR>', { desc = 'Suggest spell' })
-
--- user cmds
-map(
-	'n',
-	'<leader>vtt',
-	'<cmd>Virtulatexttoggle<CR>',
-	{ desc = 'Virtulatex toggle' }
-)

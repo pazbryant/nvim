@@ -46,7 +46,7 @@ opt.spelllang = { 'en_us', 'es_mx' }
 
 -- set spell file
 opt.spellfile =
-	'/home/bryant/Documents/github/dotfiles/.conf/spell/en.utf-8.add'
+	'/home/bryant/.config/spell/en.utf-8.add'
 
 -- disable nvim startup screen
 opt.shortmess:append('sI')
