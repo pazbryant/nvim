@@ -1,6 +1,6 @@
 return {
 	'nvim-telescope/telescope.nvim',
-	keys = { '<M-c>', '<C-t>', '<leader>h' },
+	keys = { '<M-c>', '<C-t>', '<leader>h', '<leader>th' },
 	cmd = 'Telescope',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
@@ -15,6 +15,11 @@ return {
 	},
 	config = function()
 		require('telescope').setup({
+			pickers = {
+				colorscheme = {
+					enable_preview = true,
+				},
+			},
 			defaults = {
 				vimgrep_arguments = {
 					'rg',
@@ -95,5 +100,6 @@ return {
 		)
 		map('n', '<C-t>', '<cmd> Telescope live_grep <CR>')
 		map('n', '<leader>h', '<cmd> Telescope help_tags <CR>')
+		map('n', '<leader>th', '<cmd> Telescope colorscheme <CR>')
 	end,
 }
