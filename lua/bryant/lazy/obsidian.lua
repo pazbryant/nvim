@@ -19,18 +19,6 @@ return {
 				end,
 				opts = { noremap = false, expr = true, buffer = true },
 			},
-			['<leader>oc'] = {
-				action = function()
-					return require('obsidian').util.toggle_checkbox()
-				end,
-				opts = { buffer = true },
-			},
-			['<CR>'] = {
-				action = function()
-					return require('obsidian').util.smart_action()
-				end,
-				opts = { buffer = true, expr = true },
-			},
 		},
 		attachments = {
 			img_folder = 'Obsidian/Meta',
