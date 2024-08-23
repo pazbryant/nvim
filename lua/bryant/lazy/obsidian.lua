@@ -7,10 +7,10 @@ return {
 		dir = '/home/bryant/documents/github/notes',
 		disable_frontmatter = true,
 		new_notes_location = 'current_dir',
-		daily_notes = { folder = 'Obsidian/Daily' },
+		daily_notes = { folder = 'obsidian/daily' },
 		ui = { enable = true },
 		templates = {
-			subdir = 'Obsidian/Templates',
+			subdir = 'obsidian/templates',
 		},
 		mappings = {
 			['gf'] = {
@@ -21,7 +21,7 @@ return {
 			},
 		},
 		attachments = {
-			img_folder = 'Obsidian/Meta',
+			img_folder = 'obsidian/meta',
 			img_text_func = function(client, path)
 				path = client:vault_relative_path(path) or path
 				return string.format('![%s](%s)', path.name, path)

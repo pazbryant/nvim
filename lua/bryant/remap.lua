@@ -1,5 +1,8 @@
 local map = vim.keymap.set
 
+-- best key map ever
+map('n', '<C-c>', 'ciw', { desc = 'Change inner word' })
+
 map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'Clear highlights' })
 
 map('n', '<C-c>', 'ciw', { desc = 'Change inner word' })
