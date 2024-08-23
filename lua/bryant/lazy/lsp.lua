@@ -124,10 +124,8 @@ return {
 			'stylua',
 			'prettierd',
 			'prettier',
-			'eslint_d',
 
 			-- bash
-			'shellcheck',
 			'shfmt',
 
 			-- c
@@ -136,7 +134,6 @@ return {
 			-- golang
 			'gofumpt',
 			'goimports',
-			'golangci-lint',
 		})
 		require('mason-tool-installer').setup({
 			ensure_installed = ensure_installed,
