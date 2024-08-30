@@ -6,11 +6,10 @@ return {
 		completion = { nvim_cmp = true, min_chars = 2 },
 		dir = '/home/bryant/documents/github/notes',
 		disable_frontmatter = true,
-		new_notes_location = 'current_dir',
-		daily_notes = { folder = 'obsidian/daily' },
+		new_notes_location = '000 Zettelkasen',
 		ui = { enable = true },
 		templates = {
-			subdir = 'obsidian/templates',
+			subdir = 'Templates',
 		},
 		mappings = {
 			['gf'] = {
@@ -21,7 +20,7 @@ return {
 			},
 		},
 		attachments = {
-			img_folder = 'obsidian/meta',
+			img_folder = 'Files',
 			img_text_func = function(client, path)
 				path = client:vault_relative_path(path) or path
 				return string.format('![%s](%s)', path.name, path)
