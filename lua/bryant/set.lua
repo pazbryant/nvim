@@ -15,7 +15,6 @@ opt.swapfile = false
 opt.undofile = true
 opt.wrap = false
 
-o.cmdheight = 0
 o.expandtab = true
 opt.shiftwidth = 2
 opt.softtabstop = 2
@@ -39,8 +38,7 @@ opt.spell = true
 opt.spelllang = { 'en_us', 'es_mx' }
 
 -- Set spell file path
-opt.spellfile =
-	'$HOME/.config/spell/en.utf-8.add'
+opt.spellfile = '$HOME/.config/spell/en.utf-8.add'
 
 -- disable nvim startup screen
 opt.shortmess:append('sI')
