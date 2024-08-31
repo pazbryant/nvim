@@ -16,7 +16,6 @@ opt.undofile = true
 opt.wrap = false
 
 o.expandtab = true
-o.cmdheight = 0
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.tabstop = 2
@@ -45,8 +44,7 @@ opt.spell = true
 opt.spelllang = { 'en_us', 'es_mx' }
 
 -- set spell file
-opt.spellfile =
-	'/home/bryant/.config/spell/en.utf-8.add'
+opt.spellfile = '/home/bryant/.config/spell/en.utf-8.add'
 
 -- disable nvim startup screen
 opt.shortmess:append('sI')
