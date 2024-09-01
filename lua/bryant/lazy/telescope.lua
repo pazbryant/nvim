@@ -63,6 +63,7 @@ return {
 					'^node_modules/',
 					'^build/',
 					'^dist/',
+					'^.obsidian/',
 					'^target/',
 					'^vendor/',
 					'^lazy%-lock%.json$',
