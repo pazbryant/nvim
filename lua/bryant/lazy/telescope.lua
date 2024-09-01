@@ -62,6 +62,7 @@ return {
 					'refactoring',
 					'^node_modules/',
 					'^build/',
+					'^.obsidian/',
 					'^dist/',
 					'^target/',
 					'^vendor/',
