@@ -5,7 +5,7 @@ return {
 	config = true,
 	keys = {
 		{
-			'<C-s>',
+			'<C-a>',
 			function()
 				require('harpoon'):list():add()
 			end,
@@ -20,16 +20,30 @@ return {
 			desc = 'harpoon quick menu',
 		},
 		{
-			'<C-h>',
+			'<M-h>',
 			function()
 				require('harpoon'):list():select(1)
 			end,
 			desc = 'harpoon to file 1',
 		},
 		{
-			'<C-l>',
+			'<M-t>',
 			function()
 				require('harpoon'):list():select(2)
+			end,
+			desc = 'harpoon to file 2',
+		},
+		{
+			'<M-n>',
+			function()
+				require('harpoon'):list():select(3)
+			end,
+			desc = 'harpoon to file 3',
+		},
+		{
+			'<M-s>',
+			function()
+				require('harpoon'):list():select(4)
 			end,
 			desc = 'harpoon to file 4',
 		},
