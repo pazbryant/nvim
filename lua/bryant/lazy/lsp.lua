@@ -81,7 +81,7 @@ return {
 			clangd = {},
 			html = {},
 			bashls = {},
-			tsserver = {},
+			ts_ls = {},
 			emmet_language_server = {},
 			gopls = {
 				cmd = { 'gopls' },
@@ -104,14 +104,19 @@ return {
 			lua_ls = {
 				settings = {
 					Lua = {
-						runtime = {
-							version = 'LuaJIT',
-						},
-						diagnostics = {
-							globals = { 'vim' },
-						},
+						version = 'LuaJIT',
 						telemetry = {
 							enable = false,
+						},
+						diagnostics = {
+							globals = {
+								'vim',
+								'describe',
+								'it',
+								'before_each',
+								'after_each',
+								'pending',
+							},
 						},
 					},
 				},
@@ -123,14 +128,10 @@ return {
 		vim.list_extend(ensure_installed, {
 			-- lua
 			'stylua',
-			'luacheck',
 
 			-- web dev
 			'prettierd',
 			'prettier',
-			'eslint_d',
-			'jsonlint',
-			'yamllint',
 
 			-- bash
 			'shfmt',
@@ -153,7 +154,7 @@ return {
 			ensure_installed = ensure_installed,
 		})
 
-		local ignored_servers = { 'tsserver' }
+		local ignored_servers = { 'ts_ls' }
 		require('mason-lspconfig').setup({
 			handlers = {
 				function(server_name)
