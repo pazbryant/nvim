@@ -77,6 +77,7 @@ return {
 
 		local servers = {
 			cssls = {},
+			pyright = {},
 			clangd = {},
 			html = {},
 			bashls = {},
@@ -120,13 +121,20 @@ return {
 		require('mason').setup()
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
-			-- web dev
+			-- lua
 			'stylua',
+			'luacheck',
+
+			-- web dev
 			'prettierd',
 			'prettier',
+			'eslint_d',
+			'jsonlint',
+			'yamllint',
 
 			-- bash
 			'shfmt',
+			'shellcheck',
 
 			-- c
 			'clang-format',
@@ -134,6 +142,12 @@ return {
 			-- golang
 			'gofumpt',
 			'goimports',
+			'golangci-lint',
+
+			-- python
+			'black',
+			'ruff',
+			'isort',
 		})
 		require('mason-tool-installer').setup({
 			ensure_installed = ensure_installed,

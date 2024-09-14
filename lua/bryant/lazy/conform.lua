@@ -22,6 +22,7 @@ return {
 			rust = { 'rustfmt' }, -- rustfmt is installed thought rustup
 			c = { 'clang-format' },
 			go = { 'gofumpt', 'goimports' },
+			python = { 'black', 'isort' },
 			['markdown.mdx'] = { 'prettier' },
 		},
 	},
