@@ -18,6 +18,7 @@ return {
 			c = { 'clangtidy' }, -- installed by default
 			go = { 'golangcilint' },
 			python = { 'ruff' },
+			markdown = { 'alex', 'markdownlint' },
 		}
 	end,
 }

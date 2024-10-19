@@ -79,6 +79,7 @@ return {
 			cssls = {},
 			pyright = {},
 			clangd = {},
+			marksman = {},
 			html = {},
 			bashls = {},
 			ts_ls = {},
@@ -149,6 +150,10 @@ return {
 			'black',
 			'ruff',
 			'isort',
+
+			-- markdown
+			'alex',
+			'markdownlint',
 		})
 		require('mason-tool-installer').setup({
 			ensure_installed = ensure_installed,
