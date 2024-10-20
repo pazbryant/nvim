@@ -17,13 +17,13 @@ return {
 			scss = { 'prettier' },
 			less = { 'prettier' },
 			yaml = { 'prettier' },
-			markdown = { 'prettier' },
+			markdown = { 'markdownlint' },
 			sh = { 'shfmt' },
 			rust = { 'rustfmt' }, -- rustfmt is installed thought rustup
 			c = { 'clang-format' },
 			go = { 'gofumpt', 'goimports' },
 			python = { 'black', 'isort' },
-			['markdown.mdx'] = { 'prettier' },
+			['markdown.mdx'] = { 'markdownlint' },
 		},
 	},
 	keys = {
