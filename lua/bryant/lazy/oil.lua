@@ -11,19 +11,28 @@ return {
 		keymaps = {
 			['g?'] = 'actions.show_help',
 			['<CR>'] = 'actions.select',
-			['<C-CR>'] = 'actions.preview',
-			['<leader>e'] = 'actions.close',
+			['<M-CR>'] = 'actions.preview',
+			['q'] = 'actions.close',
 			['<M-r>'] = 'actions.refresh',
 			['.'] = 'actions.parent',
 			['gx'] = 'actions.open_external',
 			[','] = 'actions.toggle_hidden',
 		},
 		use_default_keymaps = false,
+		float = {
+			padding = 4,
+			max_width = 400,
+			max_height = 0,
+			border = 'rounded',
+			win_options = {
+				winblend = 0,
+			},
+		},
 	},
 	keys = {
 		{
 			'<leader>e',
-			'<cmd>Oil<CR>',
+			'<cmd>Oil --float<CR>',
 			desc = 'Open oil',
 		},
 	},
