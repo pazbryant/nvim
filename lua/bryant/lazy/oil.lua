@@ -30,8 +30,13 @@ return {
 		},
 	},
 	keys = {
+    {
+      '<leader>e',
+      '<cmd>Oil<CR>',
+      desc = 'Open oil',
+    },
 		{
-			'<leader>e',
+			'<leader>E',
 			'<cmd>Oil --float<CR>',
 			desc = 'Open oil',
 		},

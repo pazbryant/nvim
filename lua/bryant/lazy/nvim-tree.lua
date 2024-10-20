@@ -1,13 +1,7 @@
 return {
 	'nvim-tree/nvim-tree.lua',
+	cmd = 'NvimTreeToggle',
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
-	keys = {
-		{
-			'<leader>E',
-			'<cmd> NvimTreeToggle <CR>',
-			desc = 'Toggile nvim-tree',
-		},
-	},
 	opts = {
 		filters = {
 			dotfiles = false,
