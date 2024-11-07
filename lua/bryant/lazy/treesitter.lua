@@ -15,6 +15,7 @@ return {
 		matchup = {
 			enable = true, -- mandatory, false will disable the whole extension
 		},
+		-- NOTE: Treesitter incremental selection key binds
 		incremental_selection = {
 			enable = true,
 			keymaps = {
