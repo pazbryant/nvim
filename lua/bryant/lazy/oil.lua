@@ -12,7 +12,7 @@ return {
 			['g?'] = 'actions.show_help',
 			['<CR>'] = 'actions.select',
 			['<M-CR>'] = 'actions.preview',
-			['<C-e>'] = 'actions.close',
+			['q'] = 'actions.close',
 			['<M-r>'] = 'actions.refresh',
 			['.'] = 'actions.parent',
 			['gx'] = 'actions.open_external',
