@@ -4,7 +4,7 @@ return {
 	lazy = false,
 }
 
--- Surround.vim Cheat sheet
+-- NOTE: Surround.vim Cheat sheet
 
 -- Change Surroundings:
 -- cs"'   -- 'Hello world!'    (Change " to ')

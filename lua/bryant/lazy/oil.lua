@@ -12,7 +12,7 @@ return {
 			['g?'] = 'actions.show_help',
 			['<CR>'] = 'actions.select',
 			['<M-CR>'] = 'actions.preview',
-			['q'] = 'actions.close',
+			['<C-e>'] = 'actions.close',
 			['<M-r>'] = 'actions.refresh',
 			['.'] = 'actions.parent',
 			['gx'] = 'actions.open_external',
@@ -30,11 +30,11 @@ return {
 		},
 	},
 	keys = {
-    {
-      '<leader>e',
-      '<cmd>Oil<CR>',
-      desc = 'Open oil',
-    },
+		{
+			'<C-e>',
+			'<cmd>Oil<CR>',
+			desc = 'Open oil',
+		},
 		{
 			'<leader>E',
 			'<cmd>Oil --float<CR>',
