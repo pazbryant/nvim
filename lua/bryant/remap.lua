@@ -41,3 +41,18 @@ map('v', '>', '>gv', { desc = 'Better align items' })
 
 -- use Telescope for spell suggest
 map('n', 'z=', '<cmd>Telescope spell_suggest<CR>', { desc = 'Suggest spell' })
+
+-- custom tmux script
+map(
+	'n',
+	'<C-f>',
+	'<cmd>silent !tmux neww ~/bin/tmux/new-session<CR>',
+	{ desc = 'Open new session' }
+)
+
+map(
+	'n',
+	'<C-s>',
+	'<cmd>silent !tmux neww ~/bin/tmux/select-session<CR>',
+	{ desc = 'Select session' }
+)
