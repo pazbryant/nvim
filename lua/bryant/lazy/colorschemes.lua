@@ -11,7 +11,7 @@ local themes = {
 		},
 		config = function(_, opts)
 			require('github-theme').setup(opts)
-			vim.cmd([[colorscheme github_dark]])
+			vim.cmd([[colorscheme github_dark_colorblind]])
 		end,
 	},
 }

@@ -34,11 +34,11 @@ opt.updatetime = 50
 
 opt.termguicolors = true
 
-opt.spell = true
+opt.spell = false
 opt.spelllang = { 'en_us', 'es_mx' }
 
 -- Set spell file path
-opt.spellfile = '$HOME/.config/spell/en.utf-8.add'
+opt.spellfile = '$HOME/spell/en.utf-8.add'
 
 -- disable nvim startup screen
 opt.shortmess:append('sI')
