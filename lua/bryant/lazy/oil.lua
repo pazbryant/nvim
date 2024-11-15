@@ -31,7 +31,7 @@ return {
 	},
 	keys = {
 		{
-			'<C-e>',
+			'<leader>e',
 			'<cmd>Oil<CR>',
 			desc = 'Open oil',
 		},

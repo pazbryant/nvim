@@ -40,11 +40,11 @@ opt.termguicolors = true
 -- for obsidian
 opt.conceallevel = 2
 
-opt.spell = true
+opt.spell = false
 opt.spelllang = { 'en_us', 'es_mx' }
 
 -- set spell file
-opt.spellfile = '/home/bryant/.config/spell/en.utf-8.add'
+opt.spellfile = '/home/bryant/spell/en.utf-8.add'
 
 -- disable nvim startup screen
 opt.shortmess:append('sI')
