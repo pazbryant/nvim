@@ -19,6 +19,7 @@ o.expandtab = true
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.tabstop = 2
+opt.cmdheight = 0
 
 opt.hlsearch = true
 opt.incsearch = true
@@ -38,7 +39,7 @@ opt.spell = false
 opt.spelllang = { 'en_us', 'es_mx' }
 
 -- Set spell file path
-opt.spellfile = '$HOME/spell/en.utf-8.add'
+opt.spellfile = '$HOME/.config/spell/en.utf-8.add'
 
 -- disable nvim startup screen
 opt.shortmess:append('sI')
