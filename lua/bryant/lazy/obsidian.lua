@@ -6,11 +6,11 @@ return {
 		workspaces = {
 			{
 				name = 'personal',
-				path = '~/documents/github/notes/personal',
+				path = '~/Documents/github/notes',
 			},
 			{
 				name = 'youtube',
-				path = '~/documents/github/notes/youtube',
+				path = '~/Documents/github/youtube',
 			},
 		},
 		completion = { nvim_cmp = true, min_chars = 2 },
