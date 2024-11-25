@@ -11,7 +11,7 @@ return {
 			},
 			globalSettings = {
 				ignoreKeys = {
-					all = { '<C-t>', '<C-w>', '<C-e>' },
+					all = { '<C-t>', '<C-w>' },
 					normal = {},
 				},
 			},
