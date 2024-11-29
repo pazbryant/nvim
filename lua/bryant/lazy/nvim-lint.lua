@@ -15,6 +15,7 @@ return {
 
 		lint.linters_by_ft = {
 			sh = { 'shellcheck' },
+			bash = { 'shellcheck' },
 			c = { 'clangtidy' }, -- installed by default
 			go = { 'golangcilint' },
 			python = { 'ruff' },
