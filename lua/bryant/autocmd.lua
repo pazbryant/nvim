@@ -36,13 +36,6 @@ autocmd({ 'BufNewFile', 'BufRead' }, {
 -- :echo &ft to know floating window
 -- clear cursor when exin nvim
 
-vim.cmd([[
-augroup RestoreCursorShapeOnExit
-    autocmd!
-    autocmd VimLeave * set guicursor=a:hor20
-augroup END
-]])
-
 -- avoid auto-comment
 vim.cmd([[
   augroup bryant_autocmds
