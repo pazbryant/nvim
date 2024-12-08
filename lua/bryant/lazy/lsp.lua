@@ -129,6 +129,7 @@ return {
 		vim.list_extend(ensure_installed, {
 			-- lua
 			'stylua',
+			'luacheck',
 
 			-- web dev
 			'prettierd',
@@ -154,6 +155,9 @@ return {
 			-- markdown
 			'alex',
 			'markdownlint',
+
+			-- javascript
+			'eslint_d',
 		})
 		require('mason-tool-installer').setup({
 			ensure_installed = ensure_installed,

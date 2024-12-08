@@ -19,7 +19,6 @@ return {
 			yaml = { 'prettier' },
 			markdown = { 'markdownlint' },
 			sh = { 'shfmt' },
-			rust = { 'rustfmt' }, -- rustfmt is installed thought rustup
 			c = { 'clang-format' },
 			go = { 'gofumpt', 'goimports' },
 			python = { 'black', 'isort' },

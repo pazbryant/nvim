@@ -1,6 +1,6 @@
 return {
 	'nvim-telescope/telescope.nvim',
-	keys = { '<M-c>', '<C-t>' },
+	keys = { '<M-c>', '<C-t>', '<C-c>' },
 	cmd = 'Telescope',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
@@ -100,5 +100,6 @@ return {
 			'<cmd> Telescope find_files previewer=false follow=true no_ignore=true hidden=true <CR>'
 		)
 		map('n', '<C-t>', '<cmd> Telescope live_grep <CR>')
+		map('n', '<C-c>', '<cmd> Telescope commands <CR>')
 	end,
 }

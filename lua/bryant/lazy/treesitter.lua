@@ -77,7 +77,6 @@ return {
 			'tsx',
 			'html',
 			'css',
-			'rust',
 			'c',
 			'terraform',
 			'sxhkdrc',
