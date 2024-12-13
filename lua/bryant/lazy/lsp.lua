@@ -22,46 +22,38 @@ return {
 					)
 				end
 
-				map(
-					'gd',
-					require('telescope.builtin').lsp_definitions,
-					'[G]oto [D]efinition'
-				)
-				map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-				map(
-					'gr',
-					require('telescope.builtin').lsp_references,
-					'[G]oto [R]eferences'
-				)
-				map(
-					'gI',
-					require('telescope.builtin').lsp_implementations,
-					'[G]oto [I]mplementation'
-				)
-				map(
-					'<leader>D',
-					require('telescope.builtin').lsp_type_definitions,
-					'Type [D]efinition'
-				)
-				map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-				map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-				map(
-					'<leader>ds',
-					require('telescope.builtin').lsp_document_symbols,
-					'[D]ocument [S]ymbols'
-				)
+				local rename = function()
+					if pcall(require, 'inc_rename') then
+						return ':IncRename ' .. vim.fn.expand('<cword>')
+					else
+						vim.lsp.buf.rename()
+					end
+				end
 
-				-- Fuzzy find all the symbols in your current workspace.
-				--  Similar to document symbols, except searches over your entire project.
-				map(
-					'<leader>ws',
-					require('telescope.builtin').lsp_dynamic_workspace_symbols,
-					'[W]orkspace [S]ymbols'
-				)
+				local diagnostic_goto = function(next, severity)
+					local go = next and vim.diagnostic.goto_next
+						or vim.diagnostic.goto_prev
+					severity = severity and vim.diagnostic.severity[severity] or nil
+					return function()
+						go({ severity = severity })
+					end
+				end
 
-				vim.keymap.set('i', '<C-s>', function()
-					vim.lsp.buf.signature_help()
-				end, { desc = 'signature_help' })
+				map('go', vim.diagnostic.open_float, 'Line Diagnostics')
+				map('gd', vim.lsp.buf.definition, 'Goto Definition')
+				map('gr', vim.lsp.buf.references, 'References')
+				map('gD', vim.lsp.buf.declaration, 'Goto Declaration')
+				map('gI', vim.lsp.buf.implementation, 'Goto Implementation')
+				map('gt', vim.lsp.buf.type_definition, 'Goto Type Definition')
+				map('gK', vim.lsp.buf.signature_help, 'Signature Help')
+				map(']d', diagnostic_goto(true), 'Next Diagnostic')
+				map('[d', diagnostic_goto(false), 'Prev Diagnostic')
+				map(']e', diagnostic_goto(true, 'ERROR'), 'Next Error')
+				map('[e', diagnostic_goto(false, 'ERROR'), 'Prev Error')
+				map(']w', diagnostic_goto(true, 'WARN'), 'Next Warning')
+				map('[w', diagnostic_goto(false, 'WARN'), 'Prev Warning')
+				map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
+				map('<leader>rn', rename, 'Rename')
 			end,
 		})
 

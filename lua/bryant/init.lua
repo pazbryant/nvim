@@ -1,5 +1,4 @@
-require('bryant.set')
-require('bryant.remap')
-require('bryant.autocmd')
-require('bryant.usercmd')
+require('bryant.options')
+require('bryant.keymaps')
+require('bryant.cmd')
 require('bryant.lazy_init')
