@@ -11,7 +11,7 @@ return {
 				{ mode = { 'n', 'o', 'x' }, 'F' },
 			},
 		},
-		'vim-repeat',
+		'tpope/vim-repeat',
 	},
 	lazy = false,
 	init = function()
