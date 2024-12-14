@@ -13,7 +13,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({ { import = 'bryant.lazy' } }, {
+require('lazy').setup({ { import = 'bryant.plugins' } }, {
 	defaults = { lazy = true },
 	change_detection = { notify = false },
 	checker = { enabled = false, notify = false },

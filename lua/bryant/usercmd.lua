@@ -1,15 +1,19 @@
 local usercmd = vim.api.nvim_create_user_command
 
-usercmd('ToggleSpell', function()
-	vim.cmd([[set spell!]])
+-- fix leap cursor issues hidding the (real) cursor when leaping,
+-- and restore it afterwards.
+usercmd('LeapEnter', function()
+	vim.cmd.hi('Cursor', 'blend=100')
+	vim.opt.guicursor:append({ 'a:Cursor/lCursor' })
 end, {
 	nargs = 0,
-	desc = 'Toggles spell checking in the current buffer.',
+	desc = 'Append custom cursor style',
 })
 
-usercmd('ToggleRelativeNumber', function()
-	vim.cmd([[set rnu!]])
+usercmd('LeapLeave', function()
+	vim.cmd.hi('Cursor', 'blend=0')
+	vim.opt.guicursor:remove({ 'a:Cursor/lCursor' })
 end, {
 	nargs = 0,
-	desc = 'Toggles relative line numbers in the current buffer.',
+	desc = 'Toggles virtual text display for diagnostics.',
 })

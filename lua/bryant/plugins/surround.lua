@@ -1,7 +1,10 @@
 return {
-	'https://github.com/tpope/vim-surround/',
-	dependencies = 'https://github.com/tpope/vim-repeat',
-	lazy = false,
+	'kylechui/nvim-surround',
+	version = '*',
+	event = 'VeryLazy',
+	config = function()
+		require('nvim-surround').setup({})
+	end,
 }
 
 -- NOTE: Surround.vim Cheat sheet
