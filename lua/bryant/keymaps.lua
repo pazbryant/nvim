@@ -24,10 +24,20 @@ map('n', '<M-p>', '<C-w>W', { noremap = true, silent = true })
 map('n', '<C-w>x', '<C-w>c', { noremap = true, silent = true })
 map('n', '<C-w>X', '<C-w>o', { noremap = true, silent = true })
 
-map('n', '<C-A-h>', '<cmd> vertical resize -5<CR>')
-map('n', '<C-A-l>', '<cmd> vertical resize +5<CR>')
-map('n', '<C-A-k>', '<cmd> resize -5<CR>')
-map('n', '<C-A-j>', '<cmd> resize +5<CR>')
+map(
+	'n',
+	'<C-A-h>',
+	'<cmd> vertical resize -5<CR>',
+	{ desc = 'Decrease split right' }
+)
+map(
+	'n',
+	'<C-A-l>',
+	'<cmd> vertical resize +5<CR>',
+	{ desc = 'Increase split right' }
+)
+map('n', '<C-A-k>', '<cmd> resize -5<CR>', { desc = 'Decrease split down' })
+map('n', '<C-A-j>', '<cmd> resize +5<CR>', { desc = 'Increase split up' })
 
 -- toggle spell
 map(
@@ -41,13 +51,13 @@ map(
 map(
 	'n',
 	'<C-f>',
-	'<cmd>silent !tmux neww ~/bin/tmux/new-session<CR>',
+	'<cmd>silent !tmux neww ~/bin/tmux/new_session<CR>',
 	{ desc = 'Open new session' }
 )
 
 map(
 	'n',
 	'<C-s>',
-	'<cmd>silent !tmux neww ~/bin/tmux/select-session<CR>',
+	'<cmd>silent !tmux neww ~/bin/tmux/select_session<CR>',
 	{ desc = 'Select session' }
 )
