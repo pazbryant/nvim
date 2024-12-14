@@ -76,6 +76,13 @@ return {
 			},
 		},
 	},
+	keys = {
+		{
+			'<leader>e',
+			'<CMD>NvimTreeToggle<CR>',
+			{ desc = 'Toggle Nvim Tree' },
+		},
+	},
 	config = function(_, opts)
 		require('nvim-tree').setup(opts)
 	end,

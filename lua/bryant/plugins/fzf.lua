@@ -11,10 +11,11 @@ return {
 			desc = 'Live grep',
 		},
 		{
-			mode = 'x',
-			'<C-t>',
-			"<cmd>lua require('fzf-lua').grep_visual()<cr>",
-			desc = 'Live grep',
+			'<C-c>',
+			function()
+				require('fzf-lua').commands()
+			end,
+			desc = 'Commands',
 		},
 		{
 			'<M-c>',

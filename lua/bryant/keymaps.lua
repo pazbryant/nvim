@@ -16,9 +16,18 @@ map(
 map('v', '<', '<gv', { desc = 'Better align items' })
 map('v', '>', '>gv', { desc = 'Better align items' })
 
--- split window
+-- split window like tmux
 map('n', '<c-w>"', '<C-W>s', { desc = 'Split window below' })
 map('n', '<c-w>%', '<C-W>v', { desc = 'Split window right' })
+map('n', '<M-n>', '<C-w>w', { noremap = true, silent = true })
+map('n', '<M-p>', '<C-w>W', { noremap = true, silent = true })
+map('n', '<C-w>x', '<C-w>c', { noremap = true, silent = true })
+map('n', '<C-w>X', '<C-w>o', { noremap = true, silent = true })
+
+map('n', '<C-A-h>', '<cmd> vertical resize -5<CR>')
+map('n', '<C-A-l>', '<cmd> vertical resize +5<CR>')
+map('n', '<C-A-k>', '<cmd> resize -5<CR>')
+map('n', '<C-A-j>', '<cmd> resize +5<CR>')
 
 -- toggle spell
 map(

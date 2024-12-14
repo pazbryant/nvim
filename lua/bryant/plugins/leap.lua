@@ -1,6 +1,18 @@
 return {
 	'ggandor/leap.nvim',
-	dependencies = 'tpope/vim-repeat',
+	dependencies = {
+		{
+			'ggandor/flit.nvim',
+			config = true,
+			keys = {
+				{ mode = { 'n', 'o', 'x' }, 't' },
+				{ mode = { 'n', 'o', 'x' }, 'T' },
+				{ mode = { 'n', 'o', 'x' }, 'f' },
+				{ mode = { 'n', 'o', 'x' }, 'F' },
+			},
+		},
+		'vim-repeat',
+	},
 	lazy = false,
 	init = function()
 		require('leap').create_default_mappings()
