@@ -15,15 +15,15 @@ return {
 	},
 	lazy = false,
 	init = function()
-		require('leap').create_default_mappings()
+		local map = vim.keymap.set
+		map('n', 's', '<Plug>(leap)')
+		map('n', 'S', '<Plug>(leap-from-window)')
+		map({ 'x', 'o' }, 's', '<Plug>(leap-forward)')
+		map({ 'x', 'o' }, 'S', '<Plug>(leap-backward)')
 
 		-- Define equivalence classes for brackets and quotes, in addition to
 		-- the default whitespace group.
 		require('leap').opts.equivalence_classes =
 			{ ' \t\r\n', '([{', ')]}', '\'"`' }
-
-		-- Use the traversal keys to repeat the previous motion without explicitly
-		-- invoking Leap.
-		require('leap.user').set_repeat_keys('<enter>', '<backspace>')
 	end,
 }
