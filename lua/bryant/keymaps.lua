@@ -61,3 +61,5 @@ map(
 	'<cmd>silent !tmux neww ~/bin/tmux/select_session<CR>',
 	{ desc = 'Select session' }
 )
+
+map({ 'x', 'n', 'v', 'i' }, '<C-=', '<Nop>', { desc = 'Disable keybind' })
