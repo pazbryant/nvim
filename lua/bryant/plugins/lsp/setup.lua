@@ -1,3 +1,9 @@
+local lspconfig = require('lspconfig')
+local mason_lspconfig = require('mason-lspconfig')
+if not mason_lspconfig or not lspconfig then
+	return
+end
+
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics,
 	{ underline = true, update_in_insert = false }
@@ -75,6 +81,7 @@ local servers = {
 						'before_each',
 						'after_each',
 						'peding',
+						'LazyVim',
 					},
 				},
 			},
@@ -82,20 +89,31 @@ local servers = {
 	},
 }
 
-local ignored_servers = { 'ts_ls' }
-require('mason-lspconfig').setup({
-	handlers = {
-		function(server)
-			local server_opts = vim.tbl_deep_extend('force', {
-				capabilities = vim.deepcopy(capabilities),
-			}, servers[server] or {})
+local setup = {}
 
-			if vim.tbl_contains(ignored_servers, server) then
+local ignored_servers = { 'ts_ls' }
+mason_lspconfig.setup_handlers({
+	function(server)
+		local server_opts = vim.tbl_deep_extend('force', {
+			capabilities = vim.deepcopy(capabilities),
+		}, servers[server] or {})
+
+		if vim.tbl_contains(ignored_servers, server) then
+			return
+		end
+
+		server_opts.on_attach = on_attach
+
+		if setup[server] then
+			if setup[server](server, server_opts) then
 				return
 			end
+		elseif setup['*'] then
+			if setup['*'](server, server_opts) then
+				return
+			end
+		end
 
-			server_opts.on_attach = on_attach
-			require('lspconfig')[server].setup(server_opts)
-		end,
-	},
+		require('lspconfig')[server].setup(server_opts)
+	end,
 })
