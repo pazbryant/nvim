@@ -179,20 +179,6 @@ return {
 				typescriptreact = { 'eslint_d' },
 				javascriptreact = { 'eslint_d' },
 			},
-			linters = {
-				luacheck = {
-					condition = function(ctx)
-						local root = LazyVim.root.get({ normalize = true })
-						if root ~= vim.uv.cwd() then
-							return false
-						end
-						return vim.fs.find(
-							{ '.luacheckrc' },
-							{ path = root, upward = true }
-						)[1]
-					end,
-				},
-			},
 		},
 		config = function()
 			local lint = require('lint')
