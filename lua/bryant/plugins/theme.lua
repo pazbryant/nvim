@@ -11,6 +11,7 @@ local themes = {
 				styles = {
 					bold = true,
 					italic = false,
+					transparency = true,
 				},
 			})
 			vim.cmd('colorscheme rose-pine-main')
@@ -21,7 +22,7 @@ local themes = {
 		enabled = true,
 		opts = {
 			options = {
-				transparent = false,
+				transparent = true,
 			},
 		},
 		config = function(_, opts)
