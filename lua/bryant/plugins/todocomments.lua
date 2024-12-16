@@ -4,4 +4,11 @@ return {
 	event = 'VimEnter',
 	cmd = { 'TodoLocList', 'TodoQuickFix' },
 	opts = {},
+	keys = {
+		{
+			'<M-t>',
+			'<cmd> TodoTrouble <CR>',
+			desc = 'Custom FZFLua Todo command',
+		},
+	},
 }
