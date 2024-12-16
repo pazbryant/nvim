@@ -22,7 +22,7 @@ map('n', '<c-w>%', '<C-W>v', { desc = 'Split window right' })
 map('n', '<M-n>', '<C-w>w', { noremap = true, silent = true })
 map('n', '<M-p>', '<C-w>W', { noremap = true, silent = true })
 map('n', '<C-w>x', '<C-w>c', { noremap = true, silent = true })
-map('n', '<C-w>X', '<C-w>o', { noremap = true, silent = true })
+map('n', '<C-w>P', '<C-w>o', { noremap = true, silent = true })
 
 map(
 	'n',

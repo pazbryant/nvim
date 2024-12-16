@@ -4,10 +4,8 @@ return {
 	dependencies = {
 		{
 			'L3MON4D3/LuaSnip',
-			build = (function()
-				return 'make install_jsregexp'
-			end)(),
-			dependencies = { 'rafamadriz/friendly-snippets' },
+			build = 'make install_jsregexp', -- Corrected to just a string (no function wrapper)
+			dependencies = 'rafamadriz/friendly-snippets',
 			config = function()
 				require('luasnip.loaders.from_vscode').lazy_load()
 			end,
@@ -24,19 +22,20 @@ return {
 				require('cmp').event:on('confirm_done', cmp_autopairs.on_confirm_done())
 			end,
 		},
-		-- sources
+		-- Completion sources
 		'onsails/lspkind.nvim',
 		'hrsh7th/cmp-buffer',
 		'hrsh7th/cmp-nvim-lsp',
 		'hrsh7th/cmp-nvim-lua',
 		'hrsh7th/cmp-path',
-		'saadparwaiz1/cmp_luasnip',
+		'saadparwaiz1/cmp_luasnip', -- This is important for integrating LuaSnip with nvim-cmp
 	},
 	config = function()
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
 		local cmp_types = require('cmp.types')
 		local lspkind = require('lspkind')
+
 		local formating_style = {
 			format = lspkind.cmp_format({
 				mode = 'text_symbol',
@@ -50,7 +49,7 @@ return {
 			formatting = formating_style,
 			snippet = {
 				expand = function(args)
-					luasnip.lsp_expand(args.body)
+					luasnip.lsp_expand(args.body) -- Expands LuaSnip snippets
 				end,
 			},
 			completion = {
@@ -79,22 +78,19 @@ return {
 				{ name = 'buffer' },
 				{ name = 'nvim_lua' },
 				{ name = 'path' },
-				{ name = 'buffer' },
 			},
 		})
 
 		-- Toggle cmp custom function
 		local usercmd = vim.api.nvim_create_user_command
-
 		local enabled = true
+
 		local function toggle_cmp()
 			enabled = not enabled
 			if enabled then
 				cmp.setup({
 					completion = {
-						autocomplete = {
-							cmp_types.cmp.TriggerEvent.TextChanged,
-						},
+						autocomplete = { cmp_types.cmp.TriggerEvent.TextChanged },
 					},
 				})
 			else
@@ -106,6 +102,6 @@ return {
 			end
 		end
 
-		usercmd('CmpToggle', toggle_cmp, { nargs = 0 })
+		usercmd('ToggleCMP', toggle_cmp, { nargs = 0 })
 	end,
 }

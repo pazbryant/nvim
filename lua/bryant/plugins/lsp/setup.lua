@@ -7,7 +7,10 @@ vim.diagnostic.config({
 	update_in_insert = false,
 	underline = true,
 	severity_sort = true,
-	virtual_text = true,
+	virtual_text = false,
+	signs = {
+		text = { ERROR = '󰅚', WARN = '󰀪', HINT = '󰌶', INFO = '󰋽' },
+	},
 	float = {
 		focusable = true,
 		style = 'minimal',
@@ -45,7 +48,6 @@ local capabilities = vim.tbl_deep_extend(
 local servers = {
 	gopls = {
 		cmd = { 'gopls' },
-		capabilities = capabilities,
 		settings = {
 			gopls = {
 				experimentalPostfixCompletions = true,
@@ -61,6 +63,7 @@ local servers = {
 		},
 	},
 	lua_ls = {
+		capabilities = capabilities,
 		settings = {
 			Lua = {
 				runtime = { version = 'LuaJIT' },

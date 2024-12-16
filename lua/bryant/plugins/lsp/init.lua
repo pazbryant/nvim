@@ -13,7 +13,6 @@ return {
 						'clangd',
 						'marksman',
 						'html',
-						'bashls',
 						'ts_ls',
 						'emmet_language_server',
 						'gopls',
@@ -81,7 +80,7 @@ return {
 	{
 		'stevearc/conform.nvim',
 		event = { 'BufWritePre' },
-		cmd = { 'ConformInfo' },
+		cmd = { 'ConformInfo', 'FormatDisable' },
 		keys = {
 			{
 				'<leader>um',
@@ -110,6 +109,8 @@ return {
 				yaml = { 'prettier' },
 				markdown = { 'markdownlint' },
 				sh = { 'shfmt' },
+				bash = { 'shfmt' },
+				zsh = { 'shfmt' },
 				c = { 'clang-format' },
 				go = { 'gofumpt', 'goimports' },
 				python = { 'black', 'isort' },
@@ -197,6 +198,7 @@ return {
 			lint.linters_by_ft = {
 				sh = { 'shellcheck' },
 				bash = { 'shellcheck' },
+				zsh = { 'shellcheck' },
 				lua = { 'luacheck' },
 				c = { 'clangtidy' },
 				go = { 'golangcilint' },

@@ -37,5 +37,11 @@ return {
 				require('fzf-lua').spell_suggest()
 			end,
 		},
+		{
+			'<leader>th',
+			function()
+				require('fzf-lua').colorschemes()
+			end,
+		},
 	},
 }
