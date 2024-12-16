@@ -88,6 +88,7 @@ return {
 			'gomod',
 			'gotmpl',
 			'gowork',
+			'gitcommit',
 		},
 		auto_install = true,
 		indent = { enable = true },
