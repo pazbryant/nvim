@@ -1,9 +1,34 @@
 return {
 	{
+		'folke/lazydev.nvim',
+		ft = 'lua',
+		opts = {
+			library = {
+				{ path = 'luvit-meta/library', words = { 'vim%.uv' } },
+			},
+		},
+	},
+	{ 'Bilal2453/luvit-meta', lazy = true },
+	{
 		'neovim/nvim-lspconfig',
 		event = { 'BufReadPre', 'BufNewFile' },
 		dependencies = {
 			'williamboman/mason.nvim',
+			{
+				'j-hui/fidget.nvim',
+				opts = {
+					notification = {
+						window = {
+							winblend = 0, -- Background color opacity in the notification window
+						},
+					},
+					integration = {
+						['nvim-tree'] = {
+							enable = true, -- Integrate with nvim-tree/nvim-tree.lua (if installed)
+						},
+					},
+				},
+			},
 			{
 				'williamboman/mason-lspconfig.nvim',
 				opts = {
@@ -80,20 +105,32 @@ return {
 	{
 		'stevearc/conform.nvim',
 		event = { 'BufWritePre' },
-		cmd = { 'ConformInfo', 'FormatDisable' },
+		cmd = { 'ConformInfo' },
 		keys = {
 			{
 				'<leader>um',
 				function()
-					require('conform').format({ lsp_fallback = true })
+					require('conform').format({ async = true, lsp_format = 'fallback' })
 				end,
-				desc = 'Format document with conform',
+				mode = '',
+				desc = '[F]ormat buffer',
 			},
 		},
-		init = function()
-			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-		end,
 		opts = {
+			notify_on_error = false,
+			format_on_save = function(bufnr)
+				local disable_filetypes = { c = true }
+				local lsp_format_opt
+				if disable_filetypes[vim.bo[bufnr].filetype] then
+					lsp_format_opt = 'never'
+				else
+					lsp_format_opt = 'fallback'
+				end
+				return {
+					timeout_ms = 500,
+					lsp_format = lsp_format_opt,
+				}
+			end,
 			formatters_by_ft = {
 				lua = { 'stylua' },
 				javascript = { 'prettierd' },
@@ -121,9 +158,12 @@ return {
 			require('conform').setup(opts)
 		end,
 	},
-
 	{
 		'mfussenegger/nvim-lint',
+		event = {
+			'BufReadPre',
+			'BufNewFile',
+		},
 		opts = {
 			linters_by_ft = {
 				sh = { 'shellcheck' },
@@ -154,5 +194,18 @@ return {
 				},
 			},
 		},
+		config = function()
+			local lint = require('lint')
+			local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
+			vim.api.nvim_create_autocmd(
+				{ 'BufEnter', 'BufWritePost', 'InsertLeave' },
+				{
+					group = lint_augroup,
+					callback = function()
+						lint.try_lint()
+					end,
+				}
+			)
+		end,
 	},
 }
