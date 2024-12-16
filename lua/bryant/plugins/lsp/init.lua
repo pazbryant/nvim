@@ -116,86 +116,16 @@ return {
 				python = { 'black', 'isort' },
 				['markdown.mdx'] = { 'markdownlint' },
 			},
-			format_on_save = function(bufnr)
-				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-					return
-				end
-				return { timeout_ms = 500, lsp_fallback = true }
-			end,
 		},
 		config = function(_, opts)
-			vim.api.nvim_create_user_command('FormatDisable', function(args)
-				-- `FormatDisable!` will disable formatting just for this buffer
-				if args.bang then
-					vim.b.disable_autoformat = true
-				else
-					vim.g.disable_autoformat = true
-				end
-			end, {
-				desc = 'Disable autoformat-on-save',
-				bang = true,
-			})
-			vim.api.nvim_create_user_command('FormatEnable', function()
-				vim.b.disable_autoformat = false
-				vim.g.disable_autoformat = false
-			end, {
-				desc = 'Re-enable autoformat-on-save',
-			})
 			require('conform').setup(opts)
 		end,
 	},
 
 	{
 		'mfussenegger/nvim-lint',
-		lazy = false,
-		enabled = true,
-		config = function()
-			local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
-			local lint = require('lint')
-			local enabled = false
-			local autocmd_id = nil
-
-			local function enable_linter()
-				if enabled then
-					return
-				end
-				autocmd_id = vim.api.nvim_create_autocmd(
-					{ 'BufEnter', 'BufWritePost', 'InsertLeave' },
-					{
-						group = lint_augroup,
-						callback = function()
-							require('lint').try_lint()
-						end,
-					}
-				)
-				enabled = true
-			end
-
-			local function disable_linter()
-				if not enabled then
-					return
-				end
-				if autocmd_id then
-					vim.api.nvim_del_autocmd(autocmd_id)
-					autocmd_id = nil
-				end
-				vim.diagnostic.reset()
-				enabled = false
-			end
-
-			local function toggle_linter()
-				if enabled then
-					disable_linter()
-				else
-					enable_linter()
-				end
-			end
-
-			vim.api.nvim_create_user_command('ToggleLinter', function()
-				toggle_linter()
-			end, { nargs = 0 })
-
-			lint.linters_by_ft = {
+		opts = {
+			linters_by_ft = {
 				sh = { 'shellcheck' },
 				bash = { 'shellcheck' },
 				zsh = { 'shellcheck' },
@@ -208,7 +138,21 @@ return {
 				typescript = { 'eslint_d' },
 				typescriptreact = { 'eslint_d' },
 				javascriptreact = { 'eslint_d' },
-			}
-		end,
+			},
+			linters = {
+				luacheck = {
+					condition = function(ctx)
+						local root = LazyVim.root.get({ normalize = true })
+						if root ~= vim.uv.cwd() then
+							return false
+						end
+						return vim.fs.find(
+							{ '.luacheckrc' },
+							{ path = root, upward = true }
+						)[1]
+					end,
+				},
+			},
+		},
 	},
 }

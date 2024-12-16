@@ -63,7 +63,6 @@ local servers = {
 		},
 	},
 	lua_ls = {
-		capabilities = capabilities,
 		settings = {
 			Lua = {
 				runtime = { version = 'LuaJIT' },
