@@ -20,6 +20,7 @@ function M.get_keymaps()
 		{ '[e', M.diagnostic_goto(false, 'ERROR'), desc = 'Prev Error' },
 		{ ']w', M.diagnostic_goto(true, 'WARN'), desc = 'Next Warning' },
 		{ '[w', M.diagnostic_goto(false, 'WARN'), desc = 'Prev Warning' },
+		{ '<leader>rn', M.rename, expr = true, desc = 'Rename', has = 'rename' },
 		{
 			'<leader>ca',
 			vim.lsp.buf.code_action,
@@ -27,14 +28,15 @@ function M.get_keymaps()
 			mode = { 'n', 'v' },
 			has = 'codeAction',
 		},
-		{
-			'<leader>rn',
-			vim.lsp.buf.rename,
-			expr = true,
-			desc = 'Rename',
-			has = 'rename',
-		},
 	}
+end
+
+function M.rename()
+	if pcall(require, 'inc_rename') then
+		return ':IncRename ' .. vim.fn.expand('<cword>')
+	else
+		vim.lsp.buf.rename()
+	end
 end
 
 function M.diagnostic_goto(next, severity)
