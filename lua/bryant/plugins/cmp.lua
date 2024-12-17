@@ -54,6 +54,7 @@ return {
 			},
 			completion = {
 				completeopt = 'menu,menuone,noinsert',
+				max_item_count = 10,
 			},
 			preselect = cmp.PreselectMode.None,
 			mapping = cmp.mapping.preset.insert({
@@ -71,8 +72,8 @@ return {
 						luasnip.jump(-1)
 					end
 				end, { 'i', 's' }),
-				['<M-b>'] = cmp.mapping.scroll_docs(-4),
-				['<M-f>'] = cmp.mapping.scroll_docs(4),
+				['<C-b>'] = cmp.mapping.scroll_docs(-4),
+				['<C-f>'] = cmp.mapping.scroll_docs(4),
 			}),
 			sources = {
 				{
@@ -80,11 +81,11 @@ return {
 					-- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
 					group_index = 0,
 				},
-				{ name = 'nvim_lsp' },
-				{ name = 'luasnip' },
-				{ name = 'buffer' },
-				{ name = 'nvim_lua' },
-				{ name = 'path' },
+				{ name = 'nvim_lsp', max_item_count = 5 },
+				{ name = 'luasnip', max_item_count = 3 },
+				{ name = 'buffer', max_item_count = 3 },
+				{ name = 'nvim_lua', max_item_count = 3 },
+				{ name = 'path', max_item_count = 3 },
 			},
 		})
 
