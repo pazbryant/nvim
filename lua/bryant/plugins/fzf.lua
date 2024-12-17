@@ -25,7 +25,7 @@ return {
 			desc = 'Files',
 		},
 		{
-			'<M-h>',
+			'<leader>h',
 			function()
 				require('fzf-lua').help_tags()
 			end,
@@ -46,6 +46,7 @@ return {
 	},
 	config = function()
 		require('fzf-lua').setup({
+			'max-perf',
 			winopts = { height = 0.60, width = 0.70 },
 		})
 	end,
