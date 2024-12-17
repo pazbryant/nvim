@@ -42,6 +42,7 @@ return {
 						'emmet_language_server',
 						'gopls',
 						'lua_ls',
+						'bashls',
 					},
 				},
 				config = function(_, opts)
@@ -106,31 +107,20 @@ return {
 		'stevearc/conform.nvim',
 		event = { 'BufWritePre' },
 		cmd = { 'ConformInfo' },
+		init = function()
+			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+		end,
 		keys = {
 			{
 				'<leader>um',
 				function()
-					require('conform').format({ async = true, lsp_format = 'fallback' })
+					require('conform').format({ lsp_format = 'fallback' })
 				end,
-				mode = '',
 				desc = '[F]ormat buffer',
 			},
 		},
 		opts = {
 			notify_on_error = false,
-			format_on_save = function(bufnr)
-				local disable_filetypes = { c = true }
-				local lsp_format_opt
-				if disable_filetypes[vim.bo[bufnr].filetype] then
-					lsp_format_opt = 'never'
-				else
-					lsp_format_opt = 'fallback'
-				end
-				return {
-					timeout_ms = 500,
-					lsp_format = lsp_format_opt,
-				}
-			end,
 			formatters_by_ft = {
 				lua = { 'stylua' },
 				javascript = { 'prettierd' },
@@ -168,7 +158,6 @@ return {
 				bash = { 'shellcheck' },
 				zsh = { 'shellcheck' },
 				lua = { 'luacheck' },
-				c = { 'clangtidy' },
 				go = { 'golangcilint' },
 				python = { 'ruff' },
 				markdown = { 'alex', 'markdownlint' },
@@ -186,6 +175,10 @@ return {
 					return vim.fn.getcwd() .. '/eslint.config.js'
 				end,
 			}, eslint_d.args)
+
+			local enabled = false
+			local toggleLinter = function() end
+			-- vim.api.nvim_create_user_command()
 
 			vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
 				callback = function()

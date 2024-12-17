@@ -4,10 +4,8 @@ if not mason_lspconfig or not lspconfig then
 	return
 end
 
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-	vim.lsp.diagnostic.on_publish_diagnostics,
-	{ underline = true, update_in_insert = false }
-)
+vim.lsp.handlers['textDocument/publishDiagnostics'] =
+	vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { underline = true, update_in_insert = false })
 
 vim.diagnostic.config({
 	update_in_insert = false,
@@ -35,10 +33,9 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
 	border = 'single',
 })
 
-vim.lsp.handlers['textDocument/signatureHelp'] =
-	vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = 'single',
-	})
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	border = 'single',
+})
 
 local function on_attach(client, bufnr)
 	require('bryant.plugins.lsp.attach').on_attach(client, bufnr)
@@ -52,6 +49,7 @@ local capabilities = vim.tbl_deep_extend(
 )
 
 local servers = {
+	bashls = {},
 	gopls = {
 		cmd = { 'gopls' },
 		settings = {
