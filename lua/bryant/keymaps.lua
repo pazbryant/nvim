@@ -29,6 +29,6 @@ map('n', '<C-p>', '<C-w>o', { noremap = true, silent = true })
 map('n', '<leader>sp', '<cmd>set spell!<CR>', { desc = 'Toggle spelling check' })
 
 -- signature help
-map({ 'i', 'n' }, '<C-s>', function()
+map({ 'i', 'n' }, '<C-k>', function()
 	vim.lsp.buf.signature_help()
 end, { desc = 'Toggle signature help' })
