@@ -44,4 +44,9 @@ return {
 			end,
 		},
 	},
+	config = function()
+		require('fzf-lua').setup({
+			winopts = { height = 0.60, width = 0.70 },
+		})
+	end,
 }
