@@ -71,6 +71,7 @@ return {
 				-- bash
 				'shfmt',
 				'shellcheck',
+				'shellharden',
 
 				-- c
 				'clang-format',
