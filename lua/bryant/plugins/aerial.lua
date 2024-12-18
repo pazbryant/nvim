@@ -16,7 +16,7 @@ return {
 		require('aerial').setup({
 			layout = {
 				max_width = { 40, 0.2 },
-				width = 30,
+				width = 40,
 				min_width = 20,
 				default_direction = 'prefer_right',
 			},
