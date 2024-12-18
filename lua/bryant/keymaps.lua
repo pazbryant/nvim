@@ -22,11 +22,14 @@ map('n', '<M-j>', '<cmd>horizontal resize -20<CR>', { desc = 'Decrease split dow
 map('n', '<M-j>', '<cmd>horizontal resize +20<CR>', { desc = 'Decrease split up' })
 
 -- close splits
-map('n', '<C-x>', '<C-w>c', { noremap = true, silent = true })
-map('n', '<C-p>', '<C-w>o', { noremap = true, silent = true })
+map('n', '<C-w>x', '<C-w>c', { noremap = true, silent = true })
+map('n', '<C-w>p', '<C-w>o', { noremap = true, silent = true })
 
 -- toggle spell
 map('n', '<leader>sp', '<cmd>set spell!<CR>', { desc = 'Toggle spelling check' })
+
+-- custom rename
+map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- signature help
 map({ 'i', 'n' }, '<C-k>', function()
