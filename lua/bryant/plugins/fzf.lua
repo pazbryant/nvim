@@ -47,7 +47,7 @@ return {
 	config = function()
 		require('fzf-lua').setup({
 			'max-perf',
-			winopts = { height = 0.60, width = 0.70 },
+			winopts = { height = 0.70, width = 0.70 },
 		})
 	end,
 }
