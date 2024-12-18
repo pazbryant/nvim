@@ -50,13 +50,6 @@ opt.spellfile = '/home/bryant/.config/spell/en.utf-8.add'
 -- disable nvim startup screen
 opt.shortmess:append('sI')
 
--- firevim
-if vim.g.started_by_firenvim == true then
-	vim.o.laststatus = 0
-else
-	vim.o.laststatus = 2
-end
-
 -- neovide
 if vim.g.neovide then
 	vim.o.guifont = 'Maple Mono NF:h9.5:w1.2:#h-none'
