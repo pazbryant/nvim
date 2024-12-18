@@ -1,15 +1,15 @@
 local themes = {
 	{
 		'projekt0n/github-nvim-theme',
-		lazy = false,
-		priority = 1000,
+		-- lazy = false,
+		-- priority = 1000,
 		enabled = true,
 		opts = {
 			options = {},
 		},
 		config = function(_, opts)
 			require('github-theme').setup(opts)
-			vim.cmd.colorscheme('github_dark_colorblind')
+			-- vim.cmd.colorscheme('github_dark_colorblind')
 		end,
 	},
 	{
@@ -27,6 +27,8 @@ local themes = {
 	{
 		'rose-pine/neovim',
 		enabled = true,
+		lazy = false,
+		priority = 1000,
 		name = 'rose-pine',
 		config = function()
 			require('rose-pine').setup({
