@@ -1,13 +1,43 @@
-local autocmd = vim.api.nvim_create_autocmd
+local api = vim.api
+local autocmd = api.nvim_create_autocmd
+
+local bryant_group = api.nvim_create_augroup('bryant_group', { clear = true })
+
+--- smart number from https://github.com/jeffkreeftmeijer/vim-numbertoggle
+autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave', 'WinEnter' }, {
+	desc = 'Toggle number mode',
+	command = [[if &nu && mode() != 'i' | set rnu   | endif]],
+	group = bryant_group,
+})
+
+autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'WinLeave' }, {
+	desc = 'Toggle number mode',
+	command = [[if &nu | set nornu | endif]],
+	group = bryant_group,
+})
 
 autocmd('TextYankPost', {
 	desc = 'Highlight when yanking (copying) text',
-	group = vim.api.nvim_create_augroup(
-		'bryant-highlight-yank',
-		{ clear = true }
-	),
+	group = bryant_group,
 	callback = function()
-		vim.highlight.on_yank()
+		vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 300 })
+	end,
+})
+
+autocmd({ 'WinEnter', 'BufEnter', 'InsertLeave' }, {
+	group = bryant_group,
+	pattern = '*',
+	callback = function()
+		vim.opt_local.cursorline = true
+	end,
+})
+
+-- Disable cursorline when leaving a window, buffer, or entering insert mode
+autocmd({ 'WinLeave', 'BufLeave', 'InsertEnter' }, {
+	group = bryant_group,
+	pattern = '*',
+	callback = function()
+		vim.opt_local.cursorline = false
 	end,
 })
 
@@ -22,20 +52,33 @@ autocmd('BufReadPost', {
 	end,
 })
 
--- :echo &ft to know floating window
--- avoid auto-comment
-vim.cmd([[
-  augroup bryant_autocmds
-    autocmd!
-    autocmd FileType * setlocal formatoptions-=cro
-  augroup END
-]])
+autocmd({ 'BufNewFile', 'BufRead' }, {
+	desc = 'Ignore diagnostics in some directories',
+	pattern = {
+		'**/node_modules/**',
+		'node_modules',
+		'/node_modules/*',
+	},
+	callback = function()
+		vim.diagnostic.enable(false)
+	end,
+})
 
--- set current directory
-local vim_initialized = false
-if not vim_initialized then
-	vim.cmd(
-		[[ autocmd VimEnter * lua vim.cmd('lcd ' .. vim.fn.expand('%:p:h')) ]]
-	)
-	vim_initialized = true
-end
+-- :echo &ft to know floating window
+-- clear cursor when exin nvim
+
+autocmd('FileType', {
+	desc = 'Disable auto-comment',
+	command = 'set formatoptions-=o',
+	group = bryant_group,
+})
+
+autocmd("FileType", {
+  group = bryant_group,
+  pattern = "NvimTree",
+  callback = function()
+    vim.b.ministatusline_disable = true
+    vim.cmd("hi NvimTreeStatusLine guibg=NONE")
+    vim.cmd("hi NvimTreeStatusLineNC guibg=NONE")
+  end,
+})

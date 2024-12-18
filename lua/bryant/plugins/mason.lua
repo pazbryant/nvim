@@ -1,15 +1,14 @@
 return {
 	'williamboman/mason.nvim',
-	lazy = false,
-	dependencies = {
-		'WhoIsSethDaniel/mason-tool-installer.nvim',
-	},
+	dependencies = 'WhoIsSethDaniel/mason-tool-installer.nvim',
+	branch = 'main',
+	cmd = 'Mason',
 	config = function()
-		require('mason').setup()
-		local ensure_installed = {}
-		vim.list_extend(ensure_installed, {
-			-- web dev
+		local ensure_installed = {
+			-- lua
 			'stylua',
+
+			-- web dev
 			'prettierd',
 			'prettier',
 
@@ -22,6 +21,15 @@ return {
 			-- golang
 			'gofumpt',
 			'goimports',
+
+			-- python
+			'black',
+			'isort',
+		}
+		require('mason').setup({
+			ui = {
+				border = 'single',
+			},
 		})
 		require('mason-tool-installer').setup({
 			ensure_installed = ensure_installed,

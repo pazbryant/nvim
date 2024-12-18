@@ -4,12 +4,9 @@ return {
 	dependencies = {
 		{
 			'L3MON4D3/LuaSnip',
-			build = (function()
-				return 'make install_jsregexp'
-			end)(),
-			dependencies = { 'rafamadriz/friendly-snippets' },
+			build = 'make install_jsregexp',
 			config = function()
-				require('luasnip.loaders.from_vscode').lazy_load()
+				require('luasnip.loaders.from_lua').lazy_load() -- Optionally load custom snippets if you have them
 			end,
 		},
 		{
@@ -21,24 +18,23 @@ return {
 					disable_filetype = { 'TelescopePrompt', 'vim' },
 				})
 				local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-				require('lua.bryant.plugins.cmp').event:on(
-					'confirm_done',
-					cmp_autopairs.on_confirm_done()
-				)
+				require('cmp').event:on('confirm_done', cmp_autopairs.on_confirm_done())
 			end,
 		},
-		-- sources
-		'hrsh7th/cmp-buffer',
-		'hrsh7th/cmp-path',
-		'saadparwaiz1/cmp_luasnip',
+		'hrsh7th/cmp-emoji', -- Emoji completion
+		'hrsh7th/cmp-buffer', -- Buffer completion
+		'hrsh7th/cmp-path', -- Path completion
 	},
 	config = function()
-		local cmp = require('lua.bryant.plugins.cmp')
+		local cmp = require('cmp')
 		local luasnip = require('luasnip')
+		local cmp_types = require('cmp.types')
+
 		cmp.setup({
 			snippet = {
 				expand = function(args)
-					luasnip.lsp_expand(args.body)
+					-- Use LuaSnip's expansion function (only if you're using LuaSnip snippets)
+					luasnip.lsp_expand(args.body) -- You can replace this if you use custom LuaSnip expansions
 				end,
 			},
 			completion = {
@@ -60,13 +56,13 @@ return {
 						luasnip.jump(-1)
 					end
 				end, { 'i', 's' }),
+				['<C-b>'] = cmp.mapping.scroll_docs(-4),
+				['<C-f>'] = cmp.mapping.scroll_docs(4),
 			}),
 			sources = {
-				{ name = 'nvim_lsp' },
-				{ name = 'luasnip' },
-				{ name = 'buffer' },
-				{ name = 'path' },
-				{ name = 'buffer' },
+				{ name = 'emoji', max_item_count = 3 },
+				{ name = 'buffer', max_item_count = 3 },
+				{ name = 'path', max_item_count = 3 },
 			},
 		})
 	end,

@@ -25,7 +25,7 @@ return {
 			desc = 'Files',
 		},
 		{
-			'<M-h>',
+			'<leader>ht',
 			function()
 				require('fzf-lua').help_tags()
 			end,
@@ -37,5 +37,17 @@ return {
 				require('fzf-lua').spell_suggest()
 			end,
 		},
+		{
+			'<leader>th',
+			function()
+				require('fzf-lua').colorschemes()
+			end,
+		},
 	},
+	config = function()
+		require('fzf-lua').setup({
+			'max-perf',
+			winopts = { height = 0.70, width = 0.70 },
+		})
+	end,
 }
