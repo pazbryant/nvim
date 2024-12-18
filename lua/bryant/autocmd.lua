@@ -72,3 +72,13 @@ autocmd('FileType', {
 	command = 'set formatoptions-=o',
 	group = bryant_group,
 })
+
+autocmd('FileType', {
+	group = bryant_group,
+	pattern = 'NvimTree',
+	callback = function()
+		vim.b.ministatusline_disable = true
+		vim.cmd('hi NvimTreeStatusLine guibg=NONE')
+		vim.cmd('hi NvimTreeStatusLineNC guibg=NONE')
+	end,
+})
