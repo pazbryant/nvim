@@ -25,7 +25,7 @@ return {
 			desc = 'Files',
 		},
 		{
-			'<leader>h',
+			'<leader>ht',
 			function()
 				require('fzf-lua').help_tags()
 			end,
