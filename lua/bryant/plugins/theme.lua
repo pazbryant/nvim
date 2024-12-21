@@ -5,7 +5,9 @@ local themes = {
 		-- priority = 1000,
 		enabled = true,
 		opts = {
-			options = {},
+			options = {
+				transparent = true,
+			},
 		},
 		config = function(_, opts)
 			require('github-theme').setup(opts)
@@ -16,6 +18,7 @@ local themes = {
 		'Mofiqul/vscode.nvim',
 		config = function()
 			require('vscode').setup({
+				transparent = true,
 				italic_comments = true,
 				disable_nvimtree_bg = true,
 				color_overrides = {},
@@ -36,6 +39,7 @@ local themes = {
 				styles = {
 					bold = true,
 					italic = false,
+					transparency = true,
 				},
 			})
 			vim.cmd('colorscheme rose-pine-main')
