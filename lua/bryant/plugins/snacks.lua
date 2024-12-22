@@ -22,6 +22,7 @@ return {
 		bigfile = { enabled = false },
 		scroll = { enabled = false },
 		statuscolumn = { enabled = false },
+		dim = { enabled = false },
 		-- enabled
 		rename = { enabled = true },
 		lazygit = { enable = true },
@@ -30,7 +31,10 @@ return {
 		scope = { enabled = true },
 		notifier = { enabled = true, timeout = 3000 },
 		notify = { enabled = true },
-		zen = { enabled = true },
+		zen = {
+			enabled = true,
+			toggles = { dim = false },
+		},
 		styles = {
 			zen = {
 				backdrop = { transparent = true, blend = 20 },
