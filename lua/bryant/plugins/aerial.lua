@@ -22,8 +22,8 @@ return {
 			},
 			on_attach = function(bufnr)
 				local map = vim.keymap.set
-				map('n', '[a', '<cmd>AerialNext<CR>', { buffer = bufnr })
-				map('n', ']a', '<cmd>AerialPrev<CR>', { buffer = bufnr })
+				map('n', '[a', '<cmd>AerialPrev<CR>', { buffer = bufnr })
+				map('n', ']a', '<cmd>AerialNext<CR>', { buffer = bufnr })
 			end,
 		})
 	end,
