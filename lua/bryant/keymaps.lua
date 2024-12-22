@@ -35,3 +35,18 @@ map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map({ 'i', 'n' }, '<C-k>', function()
 	vim.lsp.buf.signature_help()
 end, { desc = 'Toggle signature help' })
+
+-- Tmux custom scripts
+map(
+	'n', -- Normal mode mapping
+	'<C-f>', -- Key combination for the mapping
+	'<cmd>silent !tmux neww tmux_new_session<CR>',
+	{ noremap = true, silent = true, desc = 'Custom tmux script to create a new session' }
+)
+
+map(
+	'n', -- Normal mode mapping
+	'<C-s>', -- Key combination for the mapping
+	'<cmd>silent !tmux neww tmux_select_session<CR>',
+	{ noremap = true, silent = true, desc = 'Custom tmux script to select a existing session' }
+)
