@@ -27,7 +27,7 @@ local themes = {
 					transparency = true,
 				},
 			})
-			vim.cmd('colorscheme rose-pine-main')
+			vim.cmd.colorscheme('rose-pine-main')
 		end,
 	},
 
@@ -46,6 +46,7 @@ local themes = {
 					light = 'lotus',
 				},
 			})
+			vim.cmd.colorscheme('kanagawa')
 		end,
 	},
 
@@ -54,17 +55,7 @@ local themes = {
 		name = 'nightfly',
 		config = function()
 			vim.g.nightflyTransparent = true
-		end,
-	},
-
-	{
-
-		'folke/tokyonight.nvim',
-		config = function()
-			require('tokyonight').setup({
-				style = 'night',
-				transparent = true,
-			})
+			vim.cmd.colorscheme('nightfly')
 		end,
 	},
 
@@ -84,6 +75,7 @@ local themes = {
 					variables = { italic = true },
 				},
 			})
+			vim.cmd.colorscheme('solarized')
 		end,
 	},
 }
