@@ -13,14 +13,8 @@ return {
 		map({ 'n', 'v' }, '<C-n>', function()
 			mc.matchAddCursor(1)
 		end)
-		map({ 'n', 'v' }, '<C-s>', function()
+		map({ 'n', 'v' }, '<C-S>n', function()
 			mc.matchSkipCursor(1)
-		end)
-		map({ 'n', 'v' }, '<leader>n', function()
-			mc.matchAddCursor(-1)
-		end)
-		map({ 'n', 'v' }, '<leader>s', function()
-			mc.matchSkipCursor(-1)
 		end)
 
 		-- Add or skip cursor above/below the main cursor.
@@ -53,9 +47,6 @@ return {
 		-- Easy way to add and remove cursors using the main cursor.
 		map({ 'n', 'v' }, '<c-q>', mc.toggleCursor)
 
-		-- Clone every cursor and disable the originals.
-		map({ 'n', 'v' }, '<leader><c-q>', mc.duplicateCursors)
-
 		map('n', '<esc>', function()
 			if not mc.cursorsEnabled() then
 				mc.enableCursors()
@@ -66,18 +57,9 @@ return {
 			end
 		end)
 
-		-- bring back cursors if you accidentally clear them
-		map('n', '<leader>gv', mc.restoreCursors)
-
-		-- Align cursor columns.
-		map('n', '<leader>a', mc.alignCursors)
-
 		-- Append/insert for each line of visual selections.
 		map('v', 'I', mc.insertVisual)
 		map('v', 'A', mc.appendVisual)
-
-		-- match new cursors within visual selections by regex.
-		map('v', 'M', mc.matchCursors)
 
 		-- Rotate visual selection contents.
 		map('v', '<leader>t', function()
