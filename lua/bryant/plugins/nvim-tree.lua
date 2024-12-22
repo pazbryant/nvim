@@ -78,7 +78,7 @@ return {
 	},
 	keys = {
 		{
-			'<leader>e',
+			'<leader>E',
 			'<CMD>NvimTreeToggle<CR>',
 			{ desc = 'Toggle Nvim Tree' },
 		},
