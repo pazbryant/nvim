@@ -21,6 +21,7 @@ return {
 		win = { enabled = false },
 		scroll = { enabled = false },
 		statuscolumn = { enabled = false },
+		dim = { enabled = false },
 		-- Enabled
 		rename = { enabled = true },
 		bigfile = { enabled = true },
@@ -28,10 +29,12 @@ return {
 		indent = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
-		dim = { enabled = true },
 		notifier = { enabled = true, timeout = 3000 },
 		notify = { enabled = true },
-		zen = { enabled = true },
+		zen = {
+			enabled = true,
+			toggles = { dim = false },
+		},
 		styles = {
 			zen = {
 				backdrop = { transparent = true, blend = 20 },
