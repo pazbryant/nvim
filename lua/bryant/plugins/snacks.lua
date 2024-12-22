@@ -28,6 +28,7 @@ return {
 		indent = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
+		dim = { enabled = true },
 		notifier = { enabled = true, timeout = 3000 },
 		notify = { enabled = true },
 		zen = { enabled = true },
