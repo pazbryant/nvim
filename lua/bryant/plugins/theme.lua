@@ -1,22 +1,66 @@
 local themes = {
 	{
-		'projekt0n/github-nvim-theme',
-		-- lazy = false,
-		-- priority = 1000,
-		enabled = true,
-		opts = {
-			options = {},
-		},
-		config = function(_, opts)
-			require('github-theme').setup(opts)
-			-- vim.cmd.colorscheme('github_dark_colorblind')
+		'Mofiqul/vscode.nvim',
+		config = function()
+			require('vscode').setup({
+				transparent = true,
+				italic_comments = true,
+				disable_nvimtree_bg = true,
+				color_overrides = {},
+				group_overrides = {},
+			})
+			vim.cmd.colorscheme('vscode')
 		end,
 	},
 	{
-		'maxmx03/solarized.nvim',
-		enabled = true,
+		'rose-pine/neovim',
+		name = 'rose-pine',
+		config = function()
+			require('rose-pine').setup({
+				variant = 'auto',
+				bold_vert_split = true,
+				styles = {
+					bold = true,
+					italic = true,
+					transparency = true,
+				},
+			})
+			vim.cmd.colorscheme('rose-pine-main')
+		end,
+	},
+
+	{
+		'rebelot/kanagawa.nvim',
 		lazy = false,
 		priority = 1000,
+		config = function()
+			require('kanagawa').setup({
+				compile = true,
+				commentStyle = { italic = true },
+				keywordStyle = { italic = true },
+				statementStyle = { bold = true },
+				transparent = true,
+				theme = 'wave', -- Load "wave" theme when 'background' option is not set
+				background = { -- map the value of 'background' option to a theme
+					dark = 'wave', -- try "dragon" !
+					light = 'lotus',
+				},
+			})
+			vim.cmd('colorscheme kanagawa')
+		end,
+	},
+
+	{
+		'bluz71/vim-nightfly-colors',
+		name = 'nightfly',
+		config = function()
+			vim.g.nightflyTransparent = true
+			vim.cmd.colorscheme('nightfly')
+		end,
+	},
+
+	{
+		'maxmx03/solarized.nvim',
 		config = function()
 			vim.o.termguicolors = true
 			vim.o.background = 'dark'
@@ -26,9 +70,9 @@ local themes = {
 				},
 				variant = 'winter', -- "spring" | "summer" | "autumn" | "winter" (default)
 				styles = {
-					comments = { italic = false, bold = false },
-					functions = { italic = false },
-					variables = { italic = false },
+					comments = { italic = true, bold = false },
+					functions = { italic = true },
+					variables = { italic = true },
 				},
 			})
 			vim.cmd.colorscheme('solarized')
