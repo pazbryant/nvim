@@ -1,6 +1,7 @@
 return {
 	'lewis6991/gitsigns.nvim',
-	event = 'BufEnter',
+	event = 'VeryLazy',
+	cmd = 'Gitsigns',
 	opts = {
 		signs = {
 			add = { text = '+' },
@@ -9,7 +10,7 @@ return {
 			topdelete = { text = '‾' },
 			changedelete = { text = '~' },
 		},
-
+		signcolumn = true,
 		on_attach = function(bufnr)
 			local gs = package.loaded.gitsigns
 
@@ -43,7 +44,7 @@ return {
 			map('n', '<leader>gp', gs.preview_hunk, opts('Preview Hunk'))
 			map('n', '<leader>gb', gs.blame_line, opts('Blame Line'))
 			map('n', '<leader>gl', gs.toggle_linehl, opts('Toggle linehl'))
-			map('n', '<leader>gn', gs.toggle_numhl, opts('Toggle numhl'))
+			map('n', '<leader>gt', '<cmd> Gitsigns toggle_signs <CR>', opts('Toggle gitsigns'))
 		end,
 	},
 	config = function(_, opts)
