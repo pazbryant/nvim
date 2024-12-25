@@ -4,19 +4,6 @@ local autocmd = api.nvim_create_autocmd
 
 local bryant_group = api.nvim_create_augroup('bryant_group', { clear = true })
 
---- smart number from https://github.com/jeffkreeftmeijer/vim-numbertoggle
-autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave', 'WinEnter' }, {
-	desc = 'Toggle number mode',
-	command = [[if &nu && mode() != 'i' | set rnu   | endif]],
-	group = bryant_group,
-})
-
-autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'WinLeave' }, {
-	desc = 'Toggle number mode',
-	command = [[if &nu | set nornu | endif]],
-	group = bryant_group,
-})
-
 autocmd('TextYankPost', {
 	desc = 'Highlight when yanking (copying) text',
 	group = bryant_group,
