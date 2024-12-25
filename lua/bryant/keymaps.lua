@@ -41,6 +41,12 @@ map('n', '<leader>sp', function()
 	v.notify('INFO: SPELL TOGGLE', v.log.levels.INFO)
 end, { desc = 'Toggle spelling check' })
 
+-- toggle number
+map('n', '<leader>tn', function()
+	v.cmd([[set nu!]])
+	v.notify('INFO: NUMBER TOGGLE', v.log.levels.INFO)
+end, { desc = 'Toggle number column' })
+
 -- custom rename
 map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
@@ -59,12 +65,5 @@ map(
 	'n', -- Normal mode mapping
 	'<C-f>', -- Key combination for the mapping
 	'<cmd>silent !tmux neww tmux_new_session<CR>',
-	{ noremap = true, silent = true, desc = 'Custom tmux script to create a new session' }
-)
-
-map(
-	'n', -- Normal mode mapping
-	'<C-s>', -- Key combination for the mapping
-	'<cmd>silent !tmux neww tmux_select_session<CR>',
-	{ noremap = true, silent = true, desc = 'Custom tmux script to select a existing session' }
+	{ desc = 'Custom tmux script to create a new session' }
 )
