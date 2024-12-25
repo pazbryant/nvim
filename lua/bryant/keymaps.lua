@@ -1,6 +1,13 @@
-local map = vim.keymap.set
+local v = vim
+--- home rome
+local map = v.keymap.set
 
+--- clear highlights
 map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'Clear highlights' })
+
+--- custom keymaps
+map({ 'n', 'v' }, 'H', '^', { desc = 'Start of the line' })
+map({ 'n', 'v' }, 'L', 'g_', { desc = 'End of the line' })
 
 -- improve register key binds
 map('x', '<leader>p', [["_dP]], { desc = 'Paste without override register' })
@@ -26,15 +33,23 @@ map('n', '<C-w>x', '<C-w>c', { noremap = true, silent = true })
 map('n', '<C-w>p', '<C-w>o', { noremap = true, silent = true })
 
 -- toggle spell
-map('n', '<leader>sp', '<cmd>set spell!<CR>', { desc = 'Toggle spelling check' })
+map('n', '<leader>sp', function()
+	v.cmd([[set spell!]])
+	v.notify('INFO: SPELL TOGGLE', v.log.levels.INFO)
+end, { desc = 'Toggle spelling check' })
 
 -- custom rename
 map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- signature help
 map({ 'i', 'n' }, '<C-k>', function()
-	vim.lsp.buf.signature_help()
+	v.lsp.buf.signature_help()
 end, { desc = 'Toggle signature help' })
+
+-- Quick fix list
+map('n', '<leader>q', ':cope<CR>', { desc = 'Toggle quickfix list' })
+map('n', '<leader>cn', ':cnext<CR>', { desc = 'Next quickfix item' })
+map('n', '<leader>cp', ':cprev<CR>', { desc = 'Previous quickfix item' })
 
 -- Tmux custom scripts
 map(
