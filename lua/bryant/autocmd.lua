@@ -1,4 +1,5 @@
 local api = vim.api
+local map = vim.keymap.set
 local autocmd = api.nvim_create_autocmd
 
 local bryant_group = api.nvim_create_augroup('bryant_group', { clear = true })
@@ -73,12 +74,20 @@ autocmd('FileType', {
 	group = bryant_group,
 })
 
-autocmd("FileType", {
-  group = bryant_group,
-  pattern = "NvimTree",
-  callback = function()
-    vim.b.ministatusline_disable = true
-    vim.cmd("hi NvimTreeStatusLine guibg=NONE")
-    vim.cmd("hi NvimTreeStatusLineNC guibg=NONE")
-  end,
+autocmd('FileType', {
+	group = bryant_group,
+	pattern = 'NvimTree',
+	callback = function()
+		vim.b.ministatusline_disable = true
+		vim.cmd('hi NvimTreeStatusLine guibg=NONE')
+		vim.cmd('hi NvimTreeStatusLineNC guibg=NONE')
+	end,
+})
+
+-- Auto-close quickfix with 'q' when in quickfix window
+autocmd('FileType', {
+	pattern = 'qf',
+	callback = function()
+		map('n', 'q', ':close<CR>')
+	end,
 })
