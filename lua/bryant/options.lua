@@ -1,6 +1,7 @@
-local opt = vim.opt
-local o = vim.o
-local g = vim.g
+local v = vim
+local opt = v.opt
+local o = v.o
+local g = v.g
 
 g.mapleader = ' '
 g.loaded_netrw = 1
@@ -50,8 +51,8 @@ opt.spellfile = '/home/bryant/.config/spell/en.utf-8.add'
 opt.shortmess:append('sI')
 
 -- neovide
-if vim.g.neovide then
-	vim.o.guifont = 'Maple Mono NF:h9.5:w1.2:#h-none'
-	vim.g.neovide_refresh_rate = 60
-	vim.g.neovide_cursor_vfx_mode = 'railgun'
+if v.g.neovide then
+	v.o.guifont = 'Maple Mono NF:h9.5:w1.2:#h-none'
+	v.g.neovide_refresh_rate = 60
+	v.g.neovide_cursor_vfx_mode = 'railgun'
 end
