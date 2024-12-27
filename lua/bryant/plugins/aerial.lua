@@ -18,7 +18,7 @@ return {
 				max_width = { 40, 0.2 },
 				width = 40,
 				min_width = 20,
-				default_direction = 'prefer_right',
+				default_direction = 'prefer_left',
 			},
 			on_attach = function(bufnr)
 				local map = vim.keymap.set
