@@ -43,7 +43,7 @@ return {
 	},
 	keys = {
 		{
-			'zm',
+			'<leader>zm',
 			function()
 				Snacks.zen()
 			end,
