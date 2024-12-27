@@ -6,7 +6,6 @@ return {
 			filetypes = {
 				'*',
 				'!vim',
-				'!lua',
 				html = { mode = 'background' },
 				css = { mode = 'background' },
 			},
