@@ -26,10 +26,6 @@ return {
 			end,
 		}, eslint_d.args)
 
-		local enabled = false
-		local toggleLinter = function() end
-		-- vim.api.nvim_create_user_command()
-
 		vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
 			callback = function()
 				require('lint').try_lint()
