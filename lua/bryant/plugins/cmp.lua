@@ -60,9 +60,9 @@ return {
 				['<C-f>'] = cmp.mapping.scroll_docs(4),
 			}),
 			sources = {
-				{ name = 'emoji', max_item_count = 3 },
-				{ name = 'buffer', max_item_count = 3 },
-				{ name = 'path', max_item_count = 3 },
+				{ name = 'emoji', max_item_count = 5 },
+				{ name = 'buffer', max_item_count = 5 },
+				{ name = 'path', max_item_count = 5 },
 			},
 		})
 	end,
