@@ -22,14 +22,14 @@ return {
 		scroll = { enabled = false },
 		statuscolumn = { enabled = false },
 		dim = { enabled = false },
+		scope = { enabled = false },
+		notifier = { enabled = false },
 		-- Enabled
 		rename = { enabled = true },
 		bigfile = { enabled = true },
 		lazygit = { enable = true },
 		indent = { enabled = true },
 		quickfile = { enabled = true },
-		scope = { enabled = true },
-		notifier = { enabled = true, timeout = 3000 },
 		notify = { enabled = true },
 		zen = {
 			enabled = true,
@@ -54,20 +54,6 @@ return {
 				Snacks.zen()
 			end,
 			desc = 'Toggle Zen Mode',
-		},
-		{
-			'<leader>dn',
-			function()
-				Snacks.notifier.hide()
-			end,
-			desc = 'Dismiss All Notifications',
-		},
-		{
-			'<leader>n',
-			function()
-				Snacks.notifier.show_history()
-			end,
-			desc = 'Notification History',
 		},
 		{
 			'<leader>rf',
