@@ -41,6 +41,8 @@ return {
 						-- Set a wider default size
 						vim.o.lines = 40
 						vim.o.columns = 60
+						vim.o.laststatus = 0
+						vim.o.cmdheight = 1
 
 						-- Set a clean UI
 						vim.opt.number = false
