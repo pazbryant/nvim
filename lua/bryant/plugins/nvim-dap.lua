@@ -11,7 +11,7 @@ return {
 		},
 		keys = {
 			{
-				'<leader>dd',
+				'<leader>ds',
 				function()
 					require('dap').continue()
 				end,

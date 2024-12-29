@@ -140,21 +140,21 @@ return {
 			return {
 				keys = {
 					{
-						'<leader>tt',
+						'<leader>tr',
 						function()
 							neotest.run.run(vim.fn.expand('%'))
 						end,
 						desc = 'Run File',
 					},
 					{
-						'<leader>tT',
+						'<leader>tR',
 						function()
 							neotest.run.run(vim.loop.cwd())
 						end,
 						desc = 'Run All Test Files',
 					},
 					{
-						'<leader>tr',
+						'<leader>tn',
 						function()
 							neotest.run.run()
 						end,
