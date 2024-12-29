@@ -1,31 +1,4 @@
 local themes = {
-	{
-		'Mofiqul/vscode.nvim',
-		config = function()
-			require('vscode').setup({
-				italic_comments = true,
-				disable_nvimtree_bg = true,
-				color_overrides = {},
-				group_overrides = {},
-			})
-			vim.cmd.colorscheme('vscode')
-		end,
-	},
-	{
-		'rose-pine/neovim',
-		name = 'rose-pine',
-		config = function()
-			require('rose-pine').setup({
-				variant = 'auto',
-				bold_vert_split = true,
-				styles = {
-					bold = true,
-					italic = true,
-				},
-			})
-			vim.cmd.colorscheme('rose-pine-main')
-		end,
-	},
 
 	{
 		'rebelot/kanagawa.nvim',
@@ -34,6 +7,7 @@ local themes = {
 			commentStyle = { italic = true },
 			keywordStyle = { italic = true },
 			statementStyle = { bold = true },
+			transparent = true,
 			theme = 'wave', -- Load "wave" theme when 'background' option is not set
 			background = { -- map the value of 'background' option to a theme
 				dark = 'wave', -- try "dragon" !
@@ -47,28 +21,40 @@ local themes = {
 	},
 
 	{
-		'bluz71/vim-nightfly-colors',
-		name = 'nightfly',
-		config = function()
-			vim.cmd.colorscheme('nightfly')
+		'rose-pine/neovim',
+		lazy = false,
+		priority = 1000,
+		name = 'rose-pine',
+		opts = {
+			variant = 'auto',
+			bold_vert_split = true,
+			styles = {
+				bold = true,
+				italic = true,
+				transparency = true,
+			},
+		},
+		config = function(_, opts)
+			require('rose-pine').setup(opts)
+			vim.cmd.colorscheme('rose-pine-main')
 		end,
 	},
 
 	{
 		'maxmx03/solarized.nvim',
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.o.termguicolors = true
-			vim.o.background = 'dark'
-			require('solarized').setup({
-				variant = 'winter', -- "spring" | "summer" | "autumn" | "winter" (default)
-				styles = {
-					comments = { italic = true, bold = false },
-					functions = { italic = true },
-					variables = { italic = true },
-				},
-			})
+		opts = {
+			transparent = {
+				enabled = true, -- Master switch to enable transparency
+			},
+			variant = 'winter', -- "spring" | "summer" | "autumn" | "winter" (default)
+			styles = {
+				comments = { italic = true, bold = false },
+				functions = { italic = true },
+				variables = { italic = true },
+			},
+		},
+		config = function(_, otps)
+			require('solarized').setup(otps)
 			vim.cmd.colorscheme('solarized')
 		end,
 	},
