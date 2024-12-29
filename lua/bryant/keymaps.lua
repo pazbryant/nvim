@@ -41,6 +41,9 @@ map('n', '<leader>sp', function()
 	v.notify('INFO: SPELL TOGGLE', v.log.levels.INFO)
 end, { desc = 'Toggle spelling check' })
 
+-- delete current buffer
+map({ 'n', 'i' }, '<M-w>', '<cmd>bdelete<CR>', { desc = 'Delete current buffer' })
+
 -- toggle number
 map('n', '<leader>tn', function()
 	v.cmd([[set nu!]])
