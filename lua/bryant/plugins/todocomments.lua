@@ -6,7 +6,7 @@ return {
 	opts = {},
 	keys = {
 		{
-			'<M-t>',
+			'<leader>tt',
 			'<cmd> TodoTrouble <CR>',
 			desc = 'Custom FZFLua Todo command',
 		},
