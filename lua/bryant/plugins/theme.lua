@@ -3,7 +3,6 @@ local themes = {
 		'Mofiqul/vscode.nvim',
 		config = function()
 			require('vscode').setup({
-				transparent = true,
 				italic_comments = true,
 				disable_nvimtree_bg = true,
 				color_overrides = {},
@@ -22,7 +21,6 @@ local themes = {
 				styles = {
 					bold = true,
 					italic = true,
-					transparency = true,
 				},
 			})
 			vim.cmd.colorscheme('rose-pine-main')
@@ -36,7 +34,6 @@ local themes = {
 			commentStyle = { italic = true },
 			keywordStyle = { italic = true },
 			statementStyle = { bold = true },
-			transparent = true,
 			theme = 'wave', -- Load "wave" theme when 'background' option is not set
 			background = { -- map the value of 'background' option to a theme
 				dark = 'wave', -- try "dragon" !
@@ -53,7 +50,6 @@ local themes = {
 		'bluz71/vim-nightfly-colors',
 		name = 'nightfly',
 		config = function()
-			vim.g.nightflyTransparent = true
 			vim.cmd.colorscheme('nightfly')
 		end,
 	},
@@ -66,9 +62,6 @@ local themes = {
 			vim.o.termguicolors = true
 			vim.o.background = 'dark'
 			require('solarized').setup({
-				transparent = {
-					enabled = true, -- Master switch to enable transparency
-				},
 				variant = 'winter', -- "spring" | "summer" | "autumn" | "winter" (default)
 				styles = {
 					comments = { italic = true, bold = false },
