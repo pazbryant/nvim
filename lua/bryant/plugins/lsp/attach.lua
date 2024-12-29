@@ -1,3 +1,5 @@
+local M = {}
+
 function M.get_keymaps()
 	return {
 		{ 'go', vim.diagnostic.open_float, desc = 'Line Diagnostics' },
