@@ -35,20 +35,16 @@ return {
 				callback = function()
 					-- Only execute in FireVim instances
 					if vim.g.started_by_firenvim then
-						-- Hide the command line
-						vim.opt.showmode = false
-
 						-- Increase the width of the FireVim instance
 						vim.g.firenvim_config.localSettings['.*'].maximized = true
 
 						-- Set a wider default size
 						vim.o.lines = 40
-						vim.o.columns = 80
+						vim.o.columns = 60
 
 						-- Set a clean UI
 						vim.opt.number = false
 						vim.opt.relativenumber = false
-						vim.opt.signcolumn = 'no'
 
 						-- Set a lighter colorscheme for better web integration
 						vim.cmd([[colorscheme default]])
@@ -60,7 +56,7 @@ return {
 
 						-- Set smaller font size for better fit
 						vim.g.gui_font_size = 11
-						vim.opt.guifont = string.format('Maple Mono Normal:h%d', vim.g.gui_font_size)
+						vim.opt.guifont = string.format('Maple Mono Normal:Medium', vim.g.gui_font_size)
 					end
 				end,
 			})

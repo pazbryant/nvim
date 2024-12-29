@@ -4,9 +4,10 @@ return {
 	dependencies = {
 		{
 			'L3MON4D3/LuaSnip',
-			build = 'make install_jsregexp',
+			build = 'make install_jsregexp', -- Corrected to just a string (no function wrapper)
+			dependencies = 'rafamadriz/friendly-snippets',
 			config = function()
-				require('luasnip.loaders.from_lua').lazy_load() -- Optionally load custom snippets if you have them
+				require('luasnip.loaders.from_vscode').lazy_load()
 			end,
 		},
 		{
@@ -21,24 +22,40 @@ return {
 				require('cmp').event:on('confirm_done', cmp_autopairs.on_confirm_done())
 			end,
 		},
-		'hrsh7th/cmp-emoji', -- Emoji completion
-		'hrsh7th/cmp-buffer', -- Buffer completion
-		'hrsh7th/cmp-path', -- Path completion
+		-- Completion sources
+		'onsails/lspkind.nvim',
+		'hrsh7th/cmp-emoji',
+		'hrsh7th/cmp-buffer',
+		'hrsh7th/cmp-nvim-lsp',
+		'hrsh7th/cmp-nvim-lua',
+		'hrsh7th/cmp-path',
+		'saadparwaiz1/cmp_luasnip', -- This is important for integrating LuaSnip with nvim-cmp
 	},
 	config = function()
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
 		local cmp_types = require('cmp.types')
+		local lspkind = require('lspkind')
+
+		local formating_style = {
+			format = lspkind.cmp_format({
+				mode = 'text_symbol',
+				maxwidth = 50,
+				ellipsis_char = '...',
+				show_labelDetails = true,
+			}),
+		}
 
 		cmp.setup({
+			formatting = formating_style,
 			snippet = {
 				expand = function(args)
-					-- Use LuaSnip's expansion function (only if you're using LuaSnip snippets)
-					luasnip.lsp_expand(args.body) -- You can replace this if you use custom LuaSnip expansions
+					luasnip.lsp_expand(args.body) -- Expands LuaSnip snippets
 				end,
 			},
 			completion = {
 				completeopt = 'menu,menuone,noinsert',
+				max_item_count = 15,
 			},
 			preselect = cmp.PreselectMode.None,
 			mapping = cmp.mapping.preset.insert({
@@ -60,10 +77,41 @@ return {
 				['<C-f>'] = cmp.mapping.scroll_docs(4),
 			}),
 			sources = {
+				{
+					name = 'lazydev',
+					-- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
+					group_index = 0,
+				},
+				{ name = 'nvim_lsp', max_item_count = 5 },
 				{ name = 'emoji', max_item_count = 5 },
+				{ name = 'luasnip', max_item_count = 5 },
 				{ name = 'buffer', max_item_count = 5 },
+				{ name = 'nvim_lua', max_item_count = 5 },
 				{ name = 'path', max_item_count = 5 },
 			},
 		})
+
+		-- Toggle cmp custom function
+		local usercmd = vim.api.nvim_create_user_command
+		local enabled = true
+
+		local function toggle_cmp()
+			enabled = not enabled
+			if enabled then
+				cmp.setup({
+					completion = {
+						autocomplete = { cmp_types.cmp.TriggerEvent.TextChanged },
+					},
+				})
+			else
+				cmp.setup({
+					completion = {
+						autocomplete = false,
+					},
+				})
+			end
+		end
+
+		usercmd('ToggleCMP', toggle_cmp, { nargs = 0 })
 	end,
 }
