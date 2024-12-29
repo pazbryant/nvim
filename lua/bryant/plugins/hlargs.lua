@@ -1,5 +1,5 @@
 return {
-	'https://github.com/m-demare/hlargs.nvim',
+	'm-demare/hlargs.nvim',
 	lazy = false,
 	config = true,
 }
