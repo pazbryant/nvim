@@ -43,7 +43,11 @@ return {
 		},
 		styles = {
 			zen = {
-				backdrop = { transparent = true, blend = 20 },
+				width = 100,
+				backdrop = {
+					transparent = true,
+					blend = 20,
+				},
 			},
 		},
 	},

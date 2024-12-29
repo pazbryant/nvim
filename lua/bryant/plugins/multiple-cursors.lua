@@ -71,11 +71,11 @@ return {
 
 		-- Customize how cursors look.
 		local hl = vim.api.nvim_set_hl
-		hl(0, 'MultiCursorCursor', { fg = '#ffffff', bg = '#76ccbc', bold = true })
-		hl(0, 'MultiCursorVisual', { fg = '#000000', bg = '#76ccbc', bold = true })
-		hl(0, 'MultiCursorSign', { fg = '#ffffff', bg = '#76ccbc' })
-		hl(0, 'MultiCursorDisabledCursor', { fg = '#808080', bg = '#76ccbc' })
-		hl(0, 'MultiCursorDisabledVisual', { fg = '#808080', bg = '#76ccbc' })
-		hl(0, 'MultiCursorDisabledSign', { fg = '#808080', bg = '#76ccbc' })
+		hl(0, 'MultiCursorCursor', { link = 'Cursor' })
+		hl(0, 'MultiCursorVisual', { link = 'Visual' })
+		hl(0, 'MultiCursorSign', { link = 'SignColumn' })
+		hl(0, 'MultiCursorDisabledCursor', { link = 'Visual' })
+		hl(0, 'MultiCursorDisabledVisual', { link = 'Visual' })
+		hl(0, 'MultiCursorDisabledSign', { link = 'SignColumn' })
 	end,
 }
