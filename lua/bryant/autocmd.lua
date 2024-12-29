@@ -29,17 +29,6 @@ autocmd({ 'WinLeave', 'BufLeave', 'InsertEnter' }, {
 	end,
 })
 
-autocmd('BufReadPost', {
-	desc = 'Go to last loc when opening a buffer',
-	callback = function()
-		local mark = vim.api.nvim_buf_get_mark(0, '"')
-		local lcount = vim.api.nvim_buf_line_count(0)
-		if mark[1] > 0 and mark[1] <= lcount then
-			pcall(vim.api.nvim_win_set_cursor, 0, mark)
-		end
-	end,
-})
-
 autocmd({ 'BufNewFile', 'BufRead' }, {
 	desc = 'Ignore diagnostics in some directories',
 	pattern = {
@@ -59,16 +48,6 @@ autocmd('FileType', {
 	desc = 'Disable auto-comment',
 	command = 'set formatoptions-=o',
 	group = bryant_group,
-})
-
-autocmd('FileType', {
-	group = bryant_group,
-	pattern = 'NvimTree',
-	callback = function()
-		vim.b.ministatusline_disable = true
-		vim.cmd('hi NvimTreeStatusLine guibg=NONE')
-		vim.cmd('hi NvimTreeStatusLineNC guibg=NONE')
-	end,
 })
 
 -- Auto-close quickfix with 'q' when in quickfix window
