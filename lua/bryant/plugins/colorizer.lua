@@ -6,6 +6,8 @@ return {
 			filetypes = {
 				'*',
 				'!vim',
+				'!TelescopePrompt',
+				'!fzf',
 				html = { mode = 'background' },
 				css = { mode = 'background' },
 			},
