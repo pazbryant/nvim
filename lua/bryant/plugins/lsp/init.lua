@@ -16,7 +16,7 @@ return {
 		dependencies = {
 			'williamboman/mason.nvim',
 			{
-				'https://github.com/m-demare/hlargs.nvim',
+				'm-demare/hlargs.nvim',
 				config = true,
 			},
 			{
