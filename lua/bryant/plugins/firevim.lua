@@ -15,7 +15,6 @@ return {
 				},
 				localSettings = {
 					['.*'] = {
-						cmdline = 'none', -- Hide the command line
 						content = 'text', -- Default content type
 						priority = 0,
 						selector = 'textarea, div[role="textbox"]',
@@ -58,7 +57,7 @@ return {
 
 						-- Set smaller font size for better fit
 						vim.g.gui_font_size = 10
-						vim.opt.guifont = string.format('Maple Mono Normal:Medium', vim.g.gui_font_size)
+						vim.opt.guifont = string.format('Maple Mono Normal:h%s', vim.g.gui_font_size)
 					end
 				end,
 			})
