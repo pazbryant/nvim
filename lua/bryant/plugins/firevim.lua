@@ -57,7 +57,7 @@ return {
 						vim.opt.breakindent = true
 
 						-- Set smaller font size for better fit
-						vim.g.gui_font_size = 11
+						vim.g.gui_font_size = 10
 						vim.opt.guifont = string.format('Maple Mono Normal:Medium', vim.g.gui_font_size)
 					end
 				end,
