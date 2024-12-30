@@ -30,7 +30,7 @@ opt.smartcase = true
 opt.ignorecase = true
 
 opt.scrolloff = 9
-opt.signcolumn = 'auto'
+opt.signcolumn = 'yes'
 opt.colorcolumn = '120'
 opt.isfname:append('@-@')
 
