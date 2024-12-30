@@ -4,8 +4,8 @@ local themes = {
 		'rebelot/kanagawa.nvim',
 		opts = {
 			compile = true,
-			commentStyle = { italic = true },
-			keywordStyle = { italic = true },
+			commentStyle = { italic = false },
+			keywordStyle = { italic = false },
 			statementStyle = { bold = true },
 			transparent = true,
 			theme = 'wave', -- Load "wave" theme when 'background' option is not set
@@ -30,7 +30,7 @@ local themes = {
 			bold_vert_split = true,
 			styles = {
 				bold = true,
-				italic = true,
+				italic = false,
 				transparency = true,
 			},
 		},
@@ -48,9 +48,9 @@ local themes = {
 			},
 			variant = 'winter', -- "spring" | "summer" | "autumn" | "winter" (default)
 			styles = {
-				comments = { italic = true, bold = false },
-				functions = { italic = true },
-				variables = { italic = true },
+				comments = { italic = false, bold = false },
+				functions = { italic = false },
+				variables = { italic = false },
 			},
 		},
 		config = function(_, otps)
