@@ -3,9 +3,17 @@ local v = vim
 local map = v.keymap.set
 
 --- clear highlights
-map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'Clear highlights' })
+map('n', '<c-s>', '', {
+	callback = function()
+		v.o.hlsearch = not v.o.hlsearch
+	end,
+	noremap = true,
+	silent = true,
+	desc = 'Toggle hlsearch mode.',
+})
 
 --- custom keymaps
+map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
 map({ 'n', 'v' }, 'H', '^', { desc = 'Start of the line' })
 map({ 'n', 'v' }, 'L', 'g_', { desc = 'End of the line' })
 
@@ -38,13 +46,10 @@ map('n', '<leader>sp', function()
 	v.notify('INFO: SPELL TOGGLE', v.log.levels.INFO)
 end, { desc = 'Toggle spelling check' })
 
--- delete current buffer
-map({ 'n', 'i' }, '<M-w>', '<cmd>bdelete<CR>', { desc = 'Delete current buffer' })
-
 -- toggle number
-map('n', '<leader>tn', function()
+map('n', '<leader>n', function()
 	v.cmd([[set nu!]])
-	v.notify('INFO: NUMBER TOGGLE', v.log.levels.INFO)
+	v.notify('Info: toggle number line', v.log.levels.INFO)
 end, { desc = 'Toggle number column' })
 
 -- custom rename
@@ -63,7 +68,7 @@ map('n', '<leader>cp', ':cprev<CR>', { desc = 'Previous quickfix item' })
 -- Tmux custom scripts
 map(
 	'n', -- Normal mode mapping
-	'<C-f>', -- Key combination for the mapping
+	'<M-f>', -- Key combination for the mapping
 	'<cmd>silent !tmux neww tmux_new_session<CR>',
 	{ desc = 'Custom tmux script to create a new session' }
 )
