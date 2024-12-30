@@ -46,12 +46,6 @@ map('n', '<leader>sp', function()
 	v.notify('INFO: SPELL TOGGLE', v.log.levels.INFO)
 end, { desc = 'Toggle spelling check' })
 
--- toggle number
-map('n', '<leader>n', function()
-	v.cmd([[set nu!]])
-	v.notify('Info: toggle number line', v.log.levels.INFO)
-end, { desc = 'Toggle number column' })
-
 -- custom rename
 map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
