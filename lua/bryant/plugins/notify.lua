@@ -6,7 +6,7 @@ return {
 	end,
 	opts = {
 		max_width = 40,
-		top_down = false,
+		top_down = true,
 		render = 'compact', -- default,minimal,compact,simple,wrapped-compact
 	},
 	config = function(_, opts)

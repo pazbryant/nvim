@@ -22,8 +22,6 @@ local themes = {
 
 	{
 		'rose-pine/neovim',
-		lazy = false,
-		priority = 1000,
 		name = 'rose-pine',
 		opts = {
 			variant = 'auto',
@@ -42,6 +40,8 @@ local themes = {
 
 	{
 		'maxmx03/solarized.nvim',
+		lazy = false,
+		priority = 1000,
 		opts = {
 			transparent = {
 				enabled = true, -- Master switch to enable transparency
