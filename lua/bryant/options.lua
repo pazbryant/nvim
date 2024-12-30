@@ -1,6 +1,7 @@
-local opt = vim.opt
-local o = vim.o
-local g = vim.g
+local v = vim
+local opt = v.opt
+local o = v.o
+local g = v.g
 
 g.mapleader = ' '
 g.loaded_netrw = 1
@@ -19,14 +20,17 @@ o.expandtab = true
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.tabstop = 2
+opt.cmdheight = 0
+
+opt.nu = false
 
 opt.hlsearch = true
 opt.incsearch = true
 opt.smartcase = true
 opt.ignorecase = true
 
-opt.scrolloff = 8
-opt.signcolumn = 'auto'
+opt.scrolloff = 9
+opt.signcolumn = 'yes'
 opt.colorcolumn = '120'
 opt.isfname:append('@-@')
 
@@ -34,11 +38,14 @@ opt.updatetime = 50
 
 opt.termguicolors = true
 
+-- for obsidian
+opt.conceallevel = 2
+
 opt.spell = false
 opt.spelllang = { 'en_us', 'es_mx' }
 
--- Set spell file path
-opt.spellfile = '$HOME/.config/spell/en.utf-8.add'
+-- set spell file
+opt.spellfile = '/home/bryant/.config/spell/en.utf-8.add'
 
 -- disable nvim startup screen
 opt.shortmess:append('sI')

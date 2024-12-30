@@ -2,8 +2,8 @@ return {
 	'rebelot/kanagawa.nvim',
 	opts = {
 		compile = true,
-		commentStyle = { italic = true },
-		keywordStyle = { italic = true },
+		commentStyle = { italic = false },
+		keywordStyle = { italic = false },
 		statementStyle = { bold = true },
 		transparent = true,
 		theme = 'wave', -- Load "wave" theme when 'background' option is not set
