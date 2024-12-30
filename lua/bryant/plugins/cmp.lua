@@ -55,7 +55,6 @@ return {
 			},
 			completion = {
 				completeopt = 'menu,menuone,noinsert',
-				max_item_count = 15,
 			},
 			preselect = cmp.PreselectMode.None,
 			mapping = cmp.mapping.preset.insert({
@@ -82,12 +81,12 @@ return {
 					-- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
 					group_index = 0,
 				},
-				{ name = 'nvim_lsp', max_item_count = 5 },
-				{ name = 'emoji', max_item_count = 5 },
-				{ name = 'luasnip', max_item_count = 5 },
-				{ name = 'buffer', max_item_count = 5 },
-				{ name = 'nvim_lua', max_item_count = 5 },
-				{ name = 'path', max_item_count = 5 },
+				{ name = 'nvim_lsp' },
+				{ name = 'emoji' },
+				{ name = 'luasnip' },
+				{ name = 'buffer' },
+				{ name = 'nvim_lua' },
+				{ name = 'path' },
 			},
 		})
 
