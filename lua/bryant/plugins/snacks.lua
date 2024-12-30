@@ -25,12 +25,12 @@ return {
 		dim = { enabled = false },
 		notifier = { enabled = false },
 		scope = { enabled = false },
+		notify = { enabled = false },
 		-- enabled
 		rename = { enabled = true },
 		lazygit = { enable = true },
 		indent = { enabled = true },
 		quickfile = { enabled = true },
-		notify = { enabled = true },
 		zen = {
 			enabled = true,
 			toggles = { dim = false },

@@ -7,15 +7,16 @@ return {
 	end,
 	keys = {
 		{
-			'<leader>um',
+			'<C-f>',
 			function()
 				require('conform').format({ lsp_format = 'fallback' })
+				vim.notify('Code has been formated', 'info')
 			end,
 			desc = '[F]ormat buffer',
 		},
 	},
 	opts = {
-		notify_on_error = false,
+		notify_on_error = true,
 		formatters_by_ft = {
 			lua = { 'stylua' },
 			javascript = { 'prettierd' },

@@ -2,11 +2,21 @@ local v = vim
 --- home rome
 local map = v.keymap.set
 
+--- change inner word
+map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
+
 --- Better `J` command
 map('n', 'J', 'mzJ`z', { desc = 'Better `J` command' })
 
 --- clear highlights
-map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'Clear highlights' })
+map('n', '<c-s>', '', {
+	callback = function()
+		v.o.hlsearch = not v.o.hlsearch
+	end,
+	noremap = true,
+	silent = true,
+	desc = 'Toggle hlsearch mode.',
+})
 
 --- custom keymaps
 map({ 'n', 'v' }, 'H', '^', { desc = 'Start of the line' })
@@ -35,20 +45,10 @@ map('n', '<M-j>', '<cmd>horizontal resize +20<CR>', { desc = 'Decrease split up'
 map('n', '<C-w>x', '<C-w>c', { noremap = true, silent = true })
 map('n', '<C-w>p', '<C-w>o', { noremap = true, silent = true })
 
--- toggle spell
 map('n', '<leader>sp', function()
 	v.cmd([[set spell!]])
-	v.notify('INFO: SPELL TOGGLE', v.log.levels.INFO)
+	v.notify('Spell has ben toggled', 'info')
 end, { desc = 'Toggle spelling check' })
-
--- delete current buffer
-map({ 'n', 'i' }, '<M-w>', '<cmd>bdelete<CR>', { desc = 'Delete current buffer' })
-
--- toggle number
-map('n', '<leader>tn', function()
-	v.cmd([[set nu!]])
-	v.notify('INFO: NUMBER TOGGLE', v.log.levels.INFO)
-end, { desc = 'Toggle number column' })
 
 -- custom rename
 map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -63,10 +63,10 @@ map('n', '<leader>q', ':cope<CR>', { desc = 'Toggle quickfix list' })
 map('n', '<leader>cn', ':cnext<CR>', { desc = 'Next quickfix item' })
 map('n', '<leader>cp', ':cprev<CR>', { desc = 'Previous quickfix item' })
 
--- Tmux custom scripts
+-- Tmux key map custom script
 map(
-	'n', -- Normal mode mapping
-	'<C-f>', -- Key combination for the mapping
+	'n',
+	'<M-f>', -- Key combination for the mapping
 	'<cmd>silent !tmux neww tmux_new_session<CR>',
 	{ desc = 'Custom tmux script to create a new session' }
 )
