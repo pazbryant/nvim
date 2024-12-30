@@ -24,13 +24,13 @@ return {
 		dim = { enabled = false },
 		scope = { enabled = false },
 		notifier = { enabled = false },
+		notify = { enabled = false },
 		-- Enabled
 		rename = { enabled = true },
 		bigfile = { enabled = true },
 		lazygit = { enable = true },
 		indent = { enabled = true },
 		quickfile = { enabled = true },
-		notify = { enabled = true },
 		zen = {
 			enabled = true,
 			toggles = { dim = false },
