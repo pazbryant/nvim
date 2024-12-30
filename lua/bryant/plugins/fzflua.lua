@@ -11,13 +11,6 @@ return {
 			desc = 'Live grep',
 		},
 		{
-			'<C-c>',
-			function()
-				require('fzf-lua').commands()
-			end,
-			desc = 'Commands',
-		},
-		{
 			'<M-b>',
 			function()
 				require('fzf-lua').buffers()
