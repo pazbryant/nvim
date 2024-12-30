@@ -43,7 +43,7 @@ map('n', '<C-w>p', '<C-w>o', { noremap = true, silent = true })
 -- toggle spell
 map('n', '<leader>sp', function()
 	v.cmd([[set spell!]])
-	v.notify('INFO: SPELL TOGGLE', v.log.levels.INFO)
+	v.notify('Spell has ben toggled', 'info')
 end, { desc = 'Toggle spelling check' })
 
 -- custom rename
