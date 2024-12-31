@@ -2,6 +2,12 @@ local v = vim
 --- home rome
 local map = v.keymap.set
 
+--- change inner word
+map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
+
+--- Better `J` command
+map('n', 'J', 'mzJ`z', { desc = 'Better `J` command' })
+
 --- clear highlights
 map('n', '<c-s>', '', {
 	callback = function()
@@ -13,7 +19,6 @@ map('n', '<c-s>', '', {
 })
 
 --- custom keymaps
-map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
 map({ 'n', 'v' }, 'H', '^', { desc = 'Start of the line' })
 map({ 'n', 'v' }, 'L', 'g_', { desc = 'End of the line' })
 
@@ -40,10 +45,9 @@ map('n', '<M-j>', '<cmd>horizontal resize +20<CR>', { desc = 'Decrease split up'
 map('n', '<C-w>x', '<C-w>c', { noremap = true, silent = true })
 map('n', '<C-w>p', '<C-w>o', { noremap = true, silent = true })
 
--- toggle spell
 map('n', '<leader>sp', function()
 	v.cmd([[set spell!]])
-	v.notify('Spell has ben toggled')
+	v.notify('Spell has ben toggled', 'info')
 end, { desc = 'Toggle spelling check' })
 
 -- custom rename

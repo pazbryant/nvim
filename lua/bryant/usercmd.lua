@@ -1,6 +1,6 @@
+-- Function to sort lines by length
 local usercmd = vim.api.nvim_create_user_command
 
--- Function to sort lines by length
 usercmd('Sort', function()
 	local start_line = vim.fn.line("'<")
 	local end_line = vim.fn.line("'>")

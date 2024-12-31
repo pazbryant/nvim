@@ -32,12 +32,6 @@ return {
 			desc = 'Files',
 		},
 		{
-			'<M-d>',
-			function()
-				require('fzf-lua').lsp_document_symbols()
-			end,
-		},
-		{
 			'<leader>ht',
 			function()
 				require('fzf-lua').help_tags()
@@ -50,12 +44,6 @@ return {
 				require('fzf-lua').colorschemes()
 			end,
 			desc = 'Switch colorschemes',
-		},
-		{
-			'<leader>ws',
-			function()
-				require('fzf-lua').lsp_workspace_symbols()
-			end,
 		},
 		{
 			'z=',
