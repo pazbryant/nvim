@@ -37,6 +37,7 @@ return {
 			c = { 'clang-format' },
 			go = { 'gofumpt', 'goimports' },
 			python = { 'black', 'isort' },
+			toml = { 'taplo' },
 			['markdown.mdx'] = { 'markdownlint' },
 		},
 	},

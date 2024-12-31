@@ -104,6 +104,9 @@ return {
 
 				-- javascript
 				'eslint_d',
+
+				-- toml
+				'taplo',
 			}
 			require('mason').setup({
 				ui = {
