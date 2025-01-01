@@ -15,12 +15,12 @@ return {
 	keys = {
 		{
 			'<leader>n',
-			'<cmd>Notifications',
+			'<cmd>Notifications<CR>',
 			desc = 'Show notifications',
 		},
 		{
 			'<leader>N',
-			'<cmd>NotificationsClear',
+			'<cmd>NotificationsClear<CR>',
 			desc = 'Clear notifications',
 		},
 	},
