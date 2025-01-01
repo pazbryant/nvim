@@ -89,28 +89,5 @@ return {
 				{ name = 'path' },
 			},
 		})
-
-		-- Toggle cmp custom function
-		local usercmd = vim.api.nvim_create_user_command
-		local enabled = true
-
-		local function toggle_cmp()
-			enabled = not enabled
-			if enabled then
-				cmp.setup({
-					completion = {
-						autocomplete = { cmp_types.cmp.TriggerEvent.TextChanged },
-					},
-				})
-			else
-				cmp.setup({
-					completion = {
-						autocomplete = false,
-					},
-				})
-			end
-		end
-
-		usercmd('ToggleCMP', toggle_cmp, { nargs = 0 })
 	end,
 }
