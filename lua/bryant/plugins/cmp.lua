@@ -28,7 +28,6 @@ return {
 	config = function()
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
-		local cmp_types = require('cmp.types')
 
 		cmp.setup({
 			snippet = {
@@ -60,9 +59,9 @@ return {
 				['<C-f>'] = cmp.mapping.scroll_docs(4),
 			}),
 			sources = {
-				{ name = 'emoji', max_item_count = 5 },
-				{ name = 'buffer', max_item_count = 5 },
-				{ name = 'path', max_item_count = 5 },
+				{ name = 'emoji' },
+				{ name = 'buffer' },
+				{ name = 'path' },
 			},
 		})
 	end,
