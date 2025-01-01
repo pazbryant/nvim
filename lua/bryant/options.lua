@@ -31,7 +31,7 @@ opt.ignorecase = true
 
 opt.scrolloff = 9
 opt.signcolumn = 'yes'
-opt.colorcolumn = '120'
+opt.colorcolumn = '80'
 opt.isfname:append('@-@')
 
 opt.updatetime = 50
