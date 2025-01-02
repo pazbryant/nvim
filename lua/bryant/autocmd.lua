@@ -4,6 +4,15 @@ local autocmd = api.nvim_create_autocmd
 
 local bryant_group = api.nvim_create_augroup('bryant_group', { clear = true })
 
+autocmd('BufEnter', {
+	desc = 'Remove Status Line Background',
+	group = bryant_group,
+	callback = function()
+		vim.cmd([[highlight StatusLine guibg=NONE ctermbg=NONE]])
+		vim.cmd([[highlight StatusLineNC guibg=NONE ctermbg=NONE]])
+	end,
+})
+
 autocmd('TextYankPost', {
 	desc = 'Highlight when yanking (copying) text',
 	group = bryant_group,
