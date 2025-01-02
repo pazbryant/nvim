@@ -3,7 +3,7 @@ local v = vim
 local map = v.keymap.set
 
 --- clear highlights
-map('n', '<c-s>', '', {
+map('n', '<leader>nh', '', {
 	callback = function()
 		v.o.hlsearch = not v.o.hlsearch
 	end,
