@@ -9,7 +9,7 @@ map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
 map('n', 'J', 'mzJ`z', { desc = 'Better `J` command' })
 
 --- clear highlights
-map('n', '<c-s>', '', {
+map('n', '<leader>nh', '', {
 	callback = function()
 		v.o.hlsearch = not v.o.hlsearch
 	end,

@@ -38,8 +38,7 @@ opt.updatetime = 50
 
 opt.termguicolors = true
 
--- for obsidian
-opt.conceallevel = 2
+opt.statusline = " %f%m%r%h%w"
 
 opt.spell = false
 opt.spelllang = { 'en_us', 'es_mx' }
