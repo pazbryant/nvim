@@ -20,14 +20,6 @@ return {
 				config = true,
 			},
 			{
-				'kosayoda/nvim-lightbulb',
-				config = function()
-					require('nvim-lightbulb').setup({
-						autocmd = { enabled = true },
-					})
-				end,
-			},
-			{
 				'j-hui/fidget.nvim',
 				opts = {
 					notification = {
