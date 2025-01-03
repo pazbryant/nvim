@@ -1,6 +1,6 @@
 return {
 	'mfussenegger/nvim-lint',
-	event = { 'BufReadPre', 'BufNewFile' },
+	cmd = 'Lint',
 	config = function()
 		local lint = require('lint')
 		lint.linters_by_ft = {
@@ -17,19 +17,27 @@ return {
 			javascriptreact = { 'eslint_d' },
 		}
 
-		-- needs to be removed to be used with older eslint configuartions < 9
+		local v = vim
+
 		local eslint_d = require('lint.linters.eslint_d')
-		eslint_d.args = vim.tbl_extend('force', {
+		eslint_d.args = v.tbl_extend('force', {
 			'--config',
 			function()
-				return vim.fn.getcwd() .. '/eslint.config.js'
+				return v.fn.getcwd() .. '/eslint.config.js'
 			end,
 		}, eslint_d.args)
 
-		vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
-			callback = function()
-				require('lint').try_lint()
-			end,
-		})
+		local usercmd = v.api.nvim_create_user_command
+		usercmd('Lint', function()
+			require('lint').try_lint()
+			vim.notify('Code has been linting', 'info')
+		end, { desc = 'Lint file with nvim-lint' })
 	end,
+	keys = {
+		{
+			'<leader>nl',
+			'<cmd>Lint<CR>',
+			desc = 'Lint with nvim-lint',
+		},
+	},
 }
