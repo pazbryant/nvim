@@ -36,9 +36,15 @@ return {
 			toggles = { dim = false },
 			on_open = function()
 				vim.opt.foldcolumn = '0'
+				vim.diagnostic.config({
+					virtual_text = false,
+				})
 			end,
 			on_close = function()
 				vim.opt.foldcolumn = '1'
+				vim.diagnostic.config({
+					virtual_text = true,
+				})
 			end,
 		},
 		styles = {
