@@ -6,11 +6,8 @@ return {
 		'ObsidianToday',
 		'ObsidianTemplate',
 		'ObsidianNewFromTemplate',
-		'ObsidianWorkspace',
-		'ObsidianRename',
 		'ObsidianNew',
 		'ObsidianTags',
-		'ObsidianTOC',
 	},
 	opts = {
 		workspaces = {
@@ -60,29 +57,19 @@ return {
 	},
 	keys = {
 		{
-			'<leader>ot',
+			'<leader>od',
 			'<cmd>ObsidianToday<CR>',
 			desc = 'Open opsidian daily today',
 		},
 		{
-			'<leader>it',
+			'<leader>ot',
 			'<cmd>ObsidianTemplate<CR>',
 			desc = 'Paste template current buffer',
 		},
 		{
-			'<leader>iT',
+			'<leader>oT',
 			'<cmd>ObsidianNewFromTemplate<CR>',
 			desc = 'New note from template',
-		},
-		{
-			'<leader>ow',
-			'<cmd>ObsidianWorkspace<CR>',
-			desc = 'Change obsidian workspaces',
-		},
-		{
-			'<leader>or',
-			'<cmd>ObsidianRename<CR>',
-			desc = 'Rename obsidian file',
 		},
 		{
 			'<leader>on',
@@ -90,14 +77,9 @@ return {
 			desc = 'New obsidian note',
 		},
 		{
-			'<leader>otg',
+			'<leader>os',
 			'<cmd>ObsidianTags<CR>',
 			desc = 'Obsidian pick tags',
-		},
-		{
-			'<leader>tc',
-			'<cmd>ObsidianTOC<CR>',
-			desc = 'Obisidan table of contents',
 		},
 	},
 	config = function(_, opts)
