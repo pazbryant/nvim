@@ -66,3 +66,6 @@ map(
 	'<cmd>silent !tmux neww tmux_new_session<CR>',
 	{ desc = 'Custom tmux script to create a new session' }
 )
+
+-- Remove suspend keybind
+map('n', '<C-z>', '<Nop>', { noremap = true, silent = true })
