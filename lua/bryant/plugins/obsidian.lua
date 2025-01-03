@@ -2,6 +2,16 @@ return {
 	'epwalsh/obsidian.nvim',
 	version = '*',
 	ft = 'markdown',
+	cmd = {
+		'ObsidianToday',
+		'ObsidianTemplate',
+		'ObsidianNewFromTemplate',
+		'ObsidianWorkspace',
+		'ObsidianRename',
+		'ObsidianNew',
+		'ObsidianTags',
+		'ObsidianTOC',
+	},
 	opts = {
 		workspaces = {
 			{
@@ -47,6 +57,48 @@ return {
 		image_name_func = function()
 			return string.format('%s-', os.time())
 		end,
+	},
+	keys = {
+		{
+			'<leader>ot',
+			'<cmd>ObsidianToday<CR>',
+			desc = 'Open opsidian daily today',
+		},
+		{
+			'<leader>it',
+			'<cmd>ObsidianTemplate<CR>',
+			desc = 'Paste template current buffer',
+		},
+		{
+			'<leader>iT',
+			'<cmd>ObsidianNewFromTemplate<CR>',
+			desc = 'New note from template',
+		},
+		{
+			'<leader>ow',
+			'<cmd>ObsidianWorkspace<CR>',
+			desc = 'Change obsidian workspaces',
+		},
+		{
+			'<leader>or',
+			'<cmd>ObsidianRename<CR>',
+			desc = 'Rename obsidian file',
+		},
+		{
+			'<leader>on',
+			'<cmd>ObsidianNew<CR>',
+			desc = 'New obsidian note',
+		},
+		{
+			'<leader>otg',
+			'<cmd>ObsidianTags<CR>',
+			desc = 'Obsidian pick tags',
+		},
+		{
+			'<leader>tc',
+			'<cmd>ObsidianTOC<CR>',
+			desc = 'Obisidan table of contents',
+		},
 	},
 	config = function(_, opts)
 		require('obsidian').setup(opts)
