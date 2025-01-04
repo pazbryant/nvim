@@ -13,7 +13,7 @@ return {
 		map({ 'n', 'v' }, '<C-n>', function()
 			mc.matchAddCursor(1)
 		end)
-		map({ 'n', 'v' }, '<C-S>n', function()
+		map({ 'n', 'v' }, '<C-s>', function()
 			mc.matchSkipCursor(1)
 		end)
 
@@ -47,7 +47,7 @@ return {
 		-- Easy way to add and remove cursors using the main cursor.
 		map({ 'n', 'v' }, '<c-q>', mc.toggleCursor)
 
-		map('v', '<esc>', function()
+		map({ 'v', 'n' }, '<esc>', function()
 			if not mc.cursorsEnabled() then
 				mc.enableCursors()
 			elseif mc.hasCursors() then

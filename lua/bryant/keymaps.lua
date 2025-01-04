@@ -8,9 +8,6 @@ map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
 --- Better `J` command
 map('n', 'J', 'mzJ`z', { desc = 'Better `J` command' })
 
---- clear highlights
-map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'general clear highlights' })
-
 --- custom keymaps
 map({ 'n', 'v' }, 'H', '^', { desc = 'Start of the line' })
 map({ 'n', 'v' }, 'L', 'g_', { desc = 'End of the line' })
