@@ -9,14 +9,7 @@ map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
 map('n', 'J', 'mzJ`z', { desc = 'Better `J` command' })
 
 --- clear highlights
-map('n', '<c-s>', '', {
-	callback = function()
-		v.o.hlsearch = not v.o.hlsearch
-	end,
-	noremap = true,
-	silent = true,
-	desc = 'Toggle hlsearch mode.',
-})
+map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'general clear highlights' })
 
 --- custom keymaps
 map({ 'n', 'v' }, 'H', '^', { desc = 'Start of the line' })
