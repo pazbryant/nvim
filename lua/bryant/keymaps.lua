@@ -2,9 +2,6 @@ local v = vim
 --- home rome
 local map = v.keymap.set
 
---- clear highlights
-map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'general clear highlights' })
-
 --- custom keymaps
 map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
 map({ 'n', 'v' }, 'H', '^', { desc = 'Start of the line' })
