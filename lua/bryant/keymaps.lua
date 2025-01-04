@@ -3,14 +3,7 @@ local v = vim
 local map = v.keymap.set
 
 --- clear highlights
-map('n', '<leader>nh', '', {
-	callback = function()
-		v.o.hlsearch = not v.o.hlsearch
-	end,
-	noremap = true,
-	silent = true,
-	desc = 'Toggle hlsearch mode.',
-})
+map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'general clear highlights' })
 
 --- custom keymaps
 map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })

@@ -47,7 +47,7 @@ return {
 		-- Easy way to add and remove cursors using the main cursor.
 		map({ 'n', 'v' }, '<c-q>', mc.toggleCursor)
 
-		map('n', '<esc>', function()
+		map('v', '<esc>', function()
 			if not mc.cursorsEnabled() then
 				mc.enableCursors()
 			elseif mc.hasCursors() then
