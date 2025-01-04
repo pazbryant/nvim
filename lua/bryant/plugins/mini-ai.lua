@@ -14,8 +14,8 @@ return {
 			-- Next/last variants
 			around_next = 'an',
 			inside_next = 'in',
-			around_last = 'al',
-			inside_last = 'il',
+			around_last = 'ae',
+			inside_last = 'ie',
 
 			-- Move cursor to corresponding edge of `a` textobject
 			goto_left = 'g[',
@@ -36,3 +36,16 @@ return {
 		silent = false,
 	},
 }
+
+-- NOTE: Defaults keybinds
+
+-- q = '' "" ``
+-- b = [] {} ()
+-- af = outer function
+-- if = inner function
+-- a = argument
+-- n = next
+-- e = earlier
+-- *number = count from actual position
+-- g] = next text object
+-- g[ = previous text object
