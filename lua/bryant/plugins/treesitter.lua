@@ -31,8 +31,6 @@ return {
 				lookahead = true,
 				keymaps = {
 					-- You can use the capture groups defined in textobjects.scm
-					['af'] = '@function.outer',
-					['if'] = '@function.inner',
 					['ac'] = '@class.outer',
 					['ic'] = {
 						query = '@class.inner',
@@ -43,6 +41,11 @@ return {
 						query_group = 'locals',
 						desc = 'Select language scope',
 					},
+					['al'] = '@loop.outer',
+					['il'] = '@loop.inner',
+
+					['ai'] = '@conditional.outer',
+					['ii'] = '@conditional.inner',
 				},
 				selection_modes = {
 					['@parameter.outer'] = 'v', -- charwise
