@@ -49,7 +49,7 @@ return {
 		},
 		styles = {
 			zen = {
-				width = 140,
+				width = 100,
 				backdrop = {
 					transparent = true,
 					blend = 20,
