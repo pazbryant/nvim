@@ -22,14 +22,15 @@ opt.softtabstop = 2
 opt.tabstop = 2
 opt.cmdheight = 0
 
-opt.nu = false
+opt.nu = true
+opt.rnu = true
 
 opt.hlsearch = true
 opt.incsearch = true
 opt.smartcase = true
 opt.ignorecase = true
 
-opt.scrolloff = 9
+opt.scrolloff = 8
 opt.signcolumn = 'yes'
 opt.colorcolumn = '80'
 opt.isfname:append('@-@')
@@ -38,8 +39,7 @@ opt.updatetime = 50
 
 opt.termguicolors = true
 
--- for obsidian
-opt.conceallevel = 2
+opt.statusline = " %f%m%r%h%w"
 
 opt.spell = false
 opt.spelllang = { 'en_us', 'es_mx' }
