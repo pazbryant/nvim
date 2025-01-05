@@ -13,9 +13,6 @@ return {
 		map({ 'n', 'v' }, '<C-n>', function()
 			mc.matchAddCursor(1)
 		end)
-		map({ 'n', 'v' }, '<C-s>', function()
-			mc.matchSkipCursor(1)
-		end)
 
 		-- Add or skip cursor above/below the main cursor.
 		map({ 'n', 'v' }, '<up>', function()
@@ -23,12 +20,6 @@ return {
 		end)
 		map({ 'n', 'v' }, '<down>', function()
 			mc.lineAddCursor(1)
-		end)
-		map({ 'n', 'v' }, '<leader><up>', function()
-			mc.lineSkipCursor(-1)
-		end)
-		map({ 'n', 'v' }, '<leader><down>', function()
-			mc.lineSkipCursor(1)
 		end)
 
 		-- Add all matches in the document
@@ -41,13 +32,7 @@ return {
 		-- Delete the main cursor.
 		map({ 'n', 'v' }, '<C-x>', mc.deleteCursor)
 
-		-- Add and remove cursors with control + left click.
-		map('n', '<c-leftmouse>', mc.handleMouse)
-
-		-- Easy way to add and remove cursors using the main cursor.
-		map({ 'n', 'v' }, '<c-q>', mc.toggleCursor)
-
-		map({ 'v', 'n' }, '<esc>', function()
+		map('n', '<esc>', function()
 			if not mc.cursorsEnabled() then
 				mc.enableCursors()
 			elseif mc.hasCursors() then
@@ -61,13 +46,6 @@ return {
 		map('v', 'I', mc.insertVisual)
 		map('v', 'A', mc.appendVisual)
 
-		-- Rotate visual selection contents.
-		map('v', '<leader>t', function()
-			mc.transposeCursors(1)
-		end)
-		map('v', '<leader>T', function()
-			mc.transposeCursors(-1)
-		end)
 
 		-- Customize how cursors look.
 		local hl = vim.api.nvim_set_hl
