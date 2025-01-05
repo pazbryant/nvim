@@ -11,7 +11,6 @@ return {
 		scratch = { enabled = false },
 		profiler = { enabled = false },
 		debug = { enabled = false },
-		dim = { enabled = false },
 		git = { enabled = false },
 		gitbrowse = { enabled = false },
 		bufdelete = { enabled = false },
