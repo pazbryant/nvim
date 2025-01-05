@@ -52,7 +52,7 @@ map('n', '<leader>cp', ':cprev<CR>', { desc = 'Previous quickfix item' })
 -- Tmux custom scripts
 map(
 	'n', -- Normal mode mapping
-	'<M-f>', -- Key combination for the mapping
+	'<C-s>', -- Key combination for the mapping
 	'<cmd>silent !tmux neww tmux_new_session<CR>',
 	{ desc = 'Custom tmux script to create a new session' }
 )
