@@ -59,7 +59,7 @@ return {
 		{
 			'<leader>od',
 			'<cmd>ObsidianToday<CR>',
-			desc = 'Open opsidian daily today',
+			desc = 'Open obsidian daily today',
 		},
 		{
 			'<leader>ot',
