@@ -2,100 +2,83 @@
 
 return {
 	-- feat: A new feature
+	-- Conventional Commit Snippets
+	-- Feature
 	s('feat', {
-		t('feat: '),
-		i(1, 'short description of the feature'),
-		t({ '', '', 'BODY:', '' }),
-		i(2, 'detailed explanation of the feature'),
-		t({ '', '', 'FOOTER:', '' }),
-		i(3, 'e.g., BREAKING CHANGE: description'),
+		t('feat('),
+		i(1, 'scope'),
+		t('): '),
+		i(2, 'description'),
 	}),
 
-	-- fix: A bug fix
+	-- Fix
 	s('fix', {
-		t('fix: '),
-		i(1, 'short description of the fix'),
-		t({ '', '', 'BODY:', '' }),
-		i(2, 'detailed explanation of the fix'),
-		t({ '', '', 'FOOTER:', '' }),
-		i(3, 'e.g., Closes #123, BREAKING CHANGE: description'),
+		t('fix('),
+		i(1, 'scope'),
+		t('): '),
+		i(2, 'description'),
 	}),
 
-	-- chore: Maintenance tasks
+	-- Chore
 	s('chore', {
-		t('chore: '),
-		i(1, 'short description of the task'),
-		t({ '', '', 'BODY:', '' }),
-		i(2, 'optional additional context'),
+		t('chore('),
+		i(1, 'scope'),
+		t('): '),
+		i(2, 'description'),
 	}),
 
-	-- docs: Documentation changes
+	-- Documentation
 	s('docs', {
-		t('docs: '),
-		i(1, 'short description of the documentation update'),
-		t({ '', '', 'BODY:', '' }),
-		i(2, 'optional additional context'),
+		t('docs('),
+		i(1, 'scope'),
+		t('): '),
+		i(2, 'description'),
 	}),
 
-	-- style: Formatting changes (no code changes)
+	-- Style
 	s('style', {
-		t('style: '),
-		i(1, 'short description of the styling update'),
-		t({ '', '', 'BODY:', '' }),
-		i(2, 'optional additional context'),
+		t('style('),
+		i(1, 'scope'),
+		t('): '),
+		i(2, 'description'),
 	}),
 
-	-- refactor: Code refactoring
+	-- Refactor
 	s('refactor', {
-		t('refactor: '),
-		i(1, 'short description of the refactoring'),
-		t({ '', '', 'BODY:', '' }),
-		i(2, 'optional additional context'),
-		t({ '', '', 'FOOTER:', '' }),
-		i(3, 'e.g., BREAKING CHANGE: description'),
+		t('refactor('),
+		i(1, 'scope'),
+		t('): '),
+		i(2, 'description'),
 	}),
 
-	-- perf: Performance improvements
-	s('perf', {
-		t('perf: '),
-		i(1, 'short description of the performance improvement'),
-		t({ '', '', 'BODY:', '' }),
-		i(2, 'detailed explanation of the improvement'),
-		t({ '', '', 'FOOTER:', '' }),
-		i(3, 'e.g., Closes #456, BREAKING CHANGE: description'),
-	}),
-
-	-- test: Adding or updating tests
+	-- Test
 	s('test', {
-		t('test: '),
-		i(1, 'short description of the tests'),
-		t({ '', '', 'BODY:', '' }),
-		i(2, 'optional additional context'),
+		t('test('),
+		i(1, 'scope'),
+		t('): '),
+		i(2, 'description'),
 	}),
 
-	-- ci: Continuous integration changes
+	-- Performance
+	s('perf', {
+		t('perf('),
+		i(1, 'scope'),
+		t('): '),
+		i(2, 'description'),
+	}),
+
+	-- Continuous Integration
 	s('ci', {
-		t('ci: '),
-		i(1, 'short description of the CI update'),
-		t({ '', '', 'BODY:', '' }),
-		i(2, 'optional additional context'),
+		t('ci('),
+		i(1, 'scope'),
+		t('): '),
+		i(2, 'description'),
 	}),
 
-	-- build: Build system or dependency changes
-	s('build', {
-		t('build: '),
-		i(1, 'short description of the build system change'),
-		t({ '', '', 'BODY:', '' }),
-		i(2, 'optional additional context'),
-	}),
-
-	-- BREAKING CHANGE: Explicitly state a breaking change
 	s('breaking', {
-		t('BREAKING CHANGE: '),
-		i(1, 'short description of the breaking change'),
-		t({ '', '', 'BODY:', '' }),
-		i(2, 'detailed explanation of the breaking change'),
-		t({ '', '', 'FOOTER:', '' }),
-		i(3, 'migration or follow-up notes'),
+		-- Add line breaks before the BREAKING CHANGE tag
+		t({ '', '', 'BREAKING CHANGE: ' }),
+		-- Placeholder for the breaking change description
+		i(1, 'description of the breaking change'),
 	}),
 }
