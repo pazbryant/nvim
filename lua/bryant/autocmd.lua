@@ -4,6 +4,15 @@ local autocmd = api.nvim_create_autocmd
 
 local bryant_group = api.nvim_create_augroup('bryant_group', { clear = true })
 
+autocmd('BufEnter', {
+	desc = 'Remove Status Line Background',
+	group = bryant_group,
+	callback = function()
+		vim.cmd([[highlight StatusLine guibg=NONE ctermbg=NONE]])
+		vim.cmd([[highlight StatusLineNC guibg=NONE ctermbg=NONE]])
+	end,
+})
+
 autocmd('TextYankPost', {
 	desc = 'Highlight when yanking (copying) text',
 	group = bryant_group,
@@ -29,15 +38,14 @@ autocmd({ 'WinLeave', 'BufLeave', 'InsertEnter' }, {
 	end,
 })
 
-autocmd({ 'BufNewFile', 'BufRead' }, {
-	desc = 'Ignore diagnostics in some directories',
-	pattern = {
-		'**/node_modules/**',
-		'node_modules',
-		'/node_modules/*',
-	},
+autocmd('BufReadPost', {
+	desc = 'Go to last loc when opening a buffer',
 	callback = function()
-		vim.diagnostic.enable(false)
+		local mark = vim.api.nvim_buf_get_mark(0, '"')
+		local lcount = vim.api.nvim_buf_line_count(0)
+		if mark[1] > 0 and mark[1] <= lcount then
+			pcall(vim.api.nvim_win_set_cursor, 0, mark)
+		end
 	end,
 })
 

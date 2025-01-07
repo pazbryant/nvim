@@ -39,7 +39,7 @@ opt.updatetime = 50
 
 opt.termguicolors = true
 
-opt.statusline = " %f%m%r%h%w"
+opt.statusline = ' %f%m%r%h%w'
 
 opt.spell = false
 opt.spelllang = { 'en_us', 'es_mx' }

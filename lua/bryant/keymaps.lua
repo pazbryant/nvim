@@ -4,10 +4,8 @@ local map = v.keymap.set
 
 --- change inner word
 map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
-
 --- Better `J` command
 map('n', 'J', 'mzJ`z', { desc = 'Better `J` command' })
-
 --- custom keymaps
 map({ 'n', 'v' }, 'H', '^', { desc = 'Start of the line' })
 map({ 'n', 'v' }, 'L', 'g_', { desc = 'End of the line' })
@@ -35,6 +33,7 @@ map('n', '<M-j>', '<cmd>horizontal resize +20<CR>', { desc = 'Decrease split up'
 map('n', '<C-w>x', '<C-w>c', { noremap = true, silent = true })
 map('n', '<C-w>p', '<C-w>o', { noremap = true, silent = true })
 
+-- toggle spell
 map('n', '<leader>sp', function()
 	v.cmd([[set spell!]])
 	v.notify('Spell has ben toggled', 'info')
@@ -44,7 +43,7 @@ end, { desc = 'Toggle spelling check' })
 map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- signature help
-map({ 'i', 'n' }, '<C-k>', function()
+map({ 'i', 'n' }, '<C-s>', function()
 	v.lsp.buf.signature_help()
 end, { desc = 'Toggle signature help' })
 
@@ -52,3 +51,6 @@ end, { desc = 'Toggle signature help' })
 map('n', '<leader>q', ':cope<CR>', { desc = 'Toggle quickfix list' })
 map('n', '<leader>cn', ':cnext<CR>', { desc = 'Next quickfix item' })
 map('n', '<leader>cp', ':cprev<CR>', { desc = 'Previous quickfix item' })
+
+-- Remove suspend keybind
+map('n', '<C-z>', '<Nop>', { noremap = true, silent = true })
