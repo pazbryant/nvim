@@ -49,7 +49,6 @@ local capabilities = vim.tbl_deep_extend(
 )
 
 local servers = {
-	bashls = {},
 	gopls = {
 		cmd = { 'gopls' },
 		settings = {
@@ -66,6 +65,7 @@ local servers = {
 			usePlaceholders = true,
 		},
 	},
+
 	lua_ls = {
 		settings = {
 			Lua = {
@@ -111,7 +111,6 @@ mason_lspconfig.setup_handlers({
 				return
 			end
 		end
-
 		require('lspconfig')[server].setup(server_opts)
 	end,
 })
