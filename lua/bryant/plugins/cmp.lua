@@ -2,39 +2,18 @@ return {
 	'hrsh7th/nvim-cmp',
 	event = 'InsertEnter',
 	dependencies = {
-		{
-			'L3MON4D3/LuaSnip',
-			build = 'make install_jsregexp', -- Corrected to just a string (no function wrapper)
-			dependencies = 'rafamadriz/friendly-snippets',
-			config = function()
-				require('luasnip.loaders.from_vscode').lazy_load()
-			end,
-		},
-		{
-			'windwp/nvim-autopairs',
-			event = 'InsertEnter',
-			config = function()
-				require('nvim-autopairs').setup({
-					fast_wrap = {},
-					disable_filetype = { 'TelescopePrompt', 'vim' },
-				})
-				local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-				require('cmp').event:on('confirm_done', cmp_autopairs.on_confirm_done())
-			end,
-		},
 		-- Completion sources
 		'onsails/lspkind.nvim',
-		'hrsh7th/cmp-emoji',
 		'hrsh7th/cmp-buffer',
 		'hrsh7th/cmp-nvim-lsp',
-		'hrsh7th/cmp-nvim-lua',
 		'hrsh7th/cmp-path',
-		'saadparwaiz1/cmp_luasnip', -- This is important for integrating LuaSnip with nvim-cmp
+		-- This is important for integrating LuaSnip with nvim-cmp
+		'saadparwaiz1/cmp_luasnip',
+		'L3MON4D3/LuaSnip',
 	},
 	config = function()
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
-		local cmp_types = require('cmp.types')
 		local lspkind = require('lspkind')
 
 		local formating_style = {
@@ -44,6 +23,10 @@ return {
 				ellipsis_char = '...',
 				show_labelDetails = true,
 			}),
+		}
+
+		local disabled_snippet_lsps = {
+			bashls = true, -- Add language servers you want to disable snippets for
 		}
 
 		cmp.setup({
@@ -60,20 +43,19 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				['<C-n>'] = cmp.mapping.select_next_item(),
 				['<C-p>'] = cmp.mapping.select_prev_item(),
+
+				['<C-d>'] = cmp.mapping.scroll_docs(-4),
+				['<C-u>'] = cmp.mapping.scroll_docs(4),
+
+				['<C-e>'] = cmp.mapping(function()
+					if cmp.visible() then
+						cmp.abort()
+					else
+						cmp.complete()
+					end
+				end, { 'i', 'c' }),
+
 				['<C-y>'] = cmp.mapping.confirm({ select = true }),
-				['<C-Space>'] = cmp.mapping.complete({}),
-				['<C-l>'] = cmp.mapping(function()
-					if luasnip.expand_or_locally_jumpable() then
-						luasnip.expand_or_jump()
-					end
-				end, { 'i', 's' }),
-				['<C-h>'] = cmp.mapping(function()
-					if luasnip.locally_jumpable(-1) then
-						luasnip.jump(-1)
-					end
-				end, { 'i', 's' }),
-				['<C-b>'] = cmp.mapping.scroll_docs(-4),
-				['<C-f>'] = cmp.mapping.scroll_docs(4),
 			}),
 			sources = {
 				{
@@ -81,11 +63,22 @@ return {
 					-- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
 					group_index = 0,
 				},
-				{ name = 'nvim_lsp' },
-				{ name = 'emoji' },
+				{
+					name = 'nvim_lsp',
+					entry_filter = function(entry)
+						local source = entry.source
+						if source and source.source.client then
+							local client_name = source.source.client.name
+							if disabled_snippet_lsps[client_name] then
+								local kind = require('cmp.types').lsp.CompletionItemKind[entry:get_kind()]
+								return kind ~= 'Snippet'
+							end
+						end
+						return true -- Allow other entries
+					end,
+				},
 				{ name = 'luasnip' },
 				{ name = 'buffer' },
-				{ name = 'nvim_lua' },
 				{ name = 'path' },
 			},
 		})
