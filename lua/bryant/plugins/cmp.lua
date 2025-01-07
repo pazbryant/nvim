@@ -16,7 +16,7 @@ return {
 		local luasnip = require('luasnip')
 		local lspkind = require('lspkind')
 
-		local formating_style = {
+		local formatting_style = {
 			format = lspkind.cmp_format({
 				mode = 'text_symbol',
 				maxwidth = 50,
@@ -30,7 +30,7 @@ return {
 		}
 
 		cmp.setup({
-			formatting = formating_style,
+			formatting = formatting_style,
 			snippet = {
 				expand = function(args)
 					luasnip.lsp_expand(args.body) -- Expands LuaSnip snippets
@@ -63,7 +63,6 @@ return {
 					-- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
 					group_index = 0,
 				},
-				{ name = 'luasnip' },
 				{
 					name = 'nvim_lsp',
 					entry_filter = function(entry)
@@ -78,6 +77,7 @@ return {
 						return true -- Allow other entries
 					end,
 				},
+				{ name = 'luasnip' },
 				{ name = 'buffer' },
 				{ name = 'path' },
 			},
