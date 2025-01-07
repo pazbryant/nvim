@@ -8,9 +8,9 @@ map({ 'n', 'v' }, 'H', '^', { desc = 'Start of the line' })
 map({ 'n', 'v' }, 'L', 'g_', { desc = 'End of the line' })
 
 -- improve register key binds
-map('x', '<leader>pr', [["_dP]], { desc = 'Paste without override register' })
+map('x', '<leader>p', [["_dP]], { desc = 'Paste without override register' })
 
-map({ 'n', 'v' }, '<leader>dr', [["_d]], { desc = 'Delete without override register' })
+map({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without override register' })
 
 -- align manually
 map('v', '<', '<gv', { desc = 'Better align items' })
@@ -49,7 +49,7 @@ map('n', '<leader>q', ':cope<CR>', { desc = 'Toggle quickfix list' })
 map('n', '<leader>cn', ':cnext<CR>', { desc = 'Next quickfix item' })
 map('n', '<leader>cp', ':cprev<CR>', { desc = 'Previous quickfix item' })
 
-map('n', '<leader>D', function()
+map('n', '<leader>dd', function()
 	local is_enabled = vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 	local msg = is_enabled and 'enabled' or 'disabled'
 	v.notify(string.format('Diagnostic has been %s', msg), 'info')
