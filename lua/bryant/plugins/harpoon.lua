@@ -20,28 +20,28 @@ return {
 			desc = 'harpoon quick menu',
 		},
 		{
-			'<leader>1',
+			'<leader>[',
 			function()
 				require('harpoon'):list():select(1)
 			end,
 			desc = 'harpoon to file 1',
 		},
 		{
-			'<leader>2',
+			'<leader>{',
 			function()
 				require('harpoon'):list():select(2)
 			end,
 			desc = 'harpoon to file 2',
 		},
 		{
-			'<leader>3',
+			'<leader>(',
 			function()
 				require('harpoon'):list():select(3)
 			end,
 			desc = 'harpoon to file 3',
 		},
 		{
-			'<leader>4',
+			'<leader>%',
 			function()
 				require('harpoon'):list():select(4)
 			end,
