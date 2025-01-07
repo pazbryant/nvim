@@ -5,6 +5,7 @@ return {
 		{ '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' } },
 	},
 	opts = {
+		use_default_keymaps = true,
 		delete_to_trash = true,
 		columns = {},
 		keymaps = {
