@@ -40,7 +40,7 @@ end, { desc = 'Toggle spelling check' })
 map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- signature help
-map({ 'i', 'n' }, '<C-k>', function()
+map({ 'i', 'n' }, '<C-s>', function()
 	v.lsp.buf.signature_help()
 end, { desc = 'Toggle signature help' })
 
@@ -54,14 +54,6 @@ map('n', '<leader>D', function()
 	local msg = is_enabled and 'enabled' or 'disabled'
 	v.notify(string.format('Diagnostic has been %s', msg), 'info')
 end)
-
--- Tmux custom scripts
-map(
-	'n', -- Normal mode mapping
-	'<C-s>', -- Key combination for the mapping
-	'<cmd>silent !tmux neww tmux_new_session<CR>',
-	{ desc = 'Custom tmux script to create a new session' }
-)
 
 -- Remove suspend keybind
 map('n', '<C-z>', '<Nop>', { noremap = true, silent = true })

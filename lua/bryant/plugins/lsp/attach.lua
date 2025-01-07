@@ -9,7 +9,7 @@ function M.get_keymaps()
 		{ 'gI', vim.lsp.buf.implementation, desc = 'Goto Implementation' },
 		{ 'gt', vim.lsp.buf.type_definition, desc = 'Goto Type Definition' },
 		{
-			'<C-k>',
+			'<C-s>',
 			vim.lsp.buf.signature_help,
 			desc = 'Signature Help',
 			has = 'signatureHelp',
