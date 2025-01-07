@@ -1,7 +1,6 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
 	dependencies = {
-		'nvim-treesitter/nvim-treesitter-textobjects',
 		{
 			'andymass/vim-matchup',
 			config = function()
@@ -23,36 +22,6 @@ return {
 				node_incremental = 'gni',
 				scope_incremental = 'gns',
 				node_decremental = 'gnd',
-			},
-		},
-		textobjects = {
-			select = {
-				enable = true,
-				lookahead = true,
-				keymaps = {
-					-- You can use the capture groups defined in textobjects.scm
-					['ac'] = '@class.outer',
-					['ic'] = {
-						query = '@class.inner',
-						desc = 'Select inner part of a class region',
-					},
-					['as'] = {
-						query = '@scope',
-						query_group = 'locals',
-						desc = 'Select language scope',
-					},
-					['al'] = '@loop.outer',
-					['il'] = '@loop.inner',
-
-					['ai'] = '@conditional.outer',
-					['ii'] = '@conditional.inner',
-				},
-				selection_modes = {
-					['@parameter.outer'] = 'v', -- charwise
-					['@function.outer'] = 'V', -- linewise
-					['@class.outer'] = '<c-v>', -- blockwise
-				},
-				include_surrounding_whitespace = true,
 			},
 		},
 		ensure_installed = {
