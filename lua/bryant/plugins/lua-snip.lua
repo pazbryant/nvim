@@ -1,5 +1,19 @@
-local M = {
+return {
 	'L3MON4D3/LuaSnip',
+	dependencies = 'rafamadriz/friendly-snippets',
+	config = function()
+		require('luasnip.loaders.from_vscode').lazy_load({
+			exclude = {
+				'sh',
+				'bash',
+			},
+		})
+		require('luasnip.loaders.from_lua').lazy_load({
+			paths = {
+				'./snippets',
+			},
+		})
+	end,
 	keys = {
 		{
 			'<C-l>',
@@ -17,16 +31,3 @@ local M = {
 		},
 	},
 }
-
-M.config = function()
-	local ls = require('luasnip')
-
-	ls.setup({
-		update_events = { 'TextChanged', 'TextChangedI' },
-		delete_check_events = 'TextChanged',
-	})
-
-	require('luasnip.loaders.from_lua').lazy_load({ paths = { './snippets' } })
-end
-
-return M
