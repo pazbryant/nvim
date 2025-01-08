@@ -23,8 +23,7 @@ opt.softtabstop = 2
 opt.tabstop = 2
 opt.cmdheight = 0
 
-opt.nu = true
-opt.relativenumber = true
+opt.nu = false
 
 opt.hlsearch = true
 opt.incsearch = true
