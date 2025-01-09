@@ -55,24 +55,27 @@ local M = {
 		version = '*',
 		keys = {
 			-- Here's a different mapping to avoid conflict with flash.nvim
-			{ 'gza', desc = 'Add surrounding', mode = { 'n', 'v' } },
-			{ 'gzd', desc = 'Delete surrounding' },
-			{ 'gzr', desc = 'Replace surrounding' },
-			{ 'gzf', desc = 'Find surrounding' },
-			{ 'gzF', desc = 'Find surrounding backward' },
-			{ 'gzh', desc = 'Highlight surrounding' },
-			{ 'gzn', desc = 'Update n_lines' },
+			{ 'sa', desc = 'Add surrounding', mode = { 'n', 'v' } },
+			{ 'sd', desc = 'Delete surrounding' },
+			{ 'sf', desc = 'Find surrounding' },
+			{ 'sF', desc = 'Find surrounding backward' },
+			{ 'sh', desc = 'Highlight surrounding' },
+			{ 'sr', desc = 'Replace surrounding' },
+			{ 'sn', desc = 'Update n_lines' },
 		},
 		opts = {
 			-- Custom mappings to avoid 's' conflict
 			mappings = {
-				add = 'gza', -- Add surrounding in Normal and Visual modes
-				delete = 'gzd', -- Delete surrounding
-				find = 'gzf', -- Find surrounding (to the right)
-				find_left = 'gzF', -- Find surrounding (to the left)
-				highlight = 'gzh', -- Highlight surrounding
-				replace = 'gzr', -- Replace surrounding
-				update_n_lines = 'gzn', -- Update `n_lines`
+				add = 'sa', -- Add surrounding in Normal and Visual modes
+				delete = 'sd', -- Delete surrounding
+				find = 'sf', -- Find surrounding (to the right)
+				find_left = 'sF', -- Find surrounding (to the left)
+				highlight = 'sh', -- Highlight surrounding
+				replace = 'sr', -- Replace surrounding
+				update_n_lines = 'sn', -- Update `n_lines`
+
+				suffix_last = 'l', -- Suffix to search with "prev" method
+				suffix_next = 'n', -- Suffix to search with "next" method
 			},
 		},
 	},
