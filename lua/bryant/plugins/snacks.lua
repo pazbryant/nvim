@@ -33,16 +33,12 @@ return {
 			toggles = { dim = false },
 			on_open = function()
 				vim.opt.foldcolumn = '0'
-				vim.opt.nu = false
-				vim.opt.relativenumber = false
 				vim.diagnostic.config({
 					virtual_text = false,
 				})
 			end,
 			on_close = function()
 				vim.opt.foldcolumn = '1'
-				vim.opt.nu = true
-				vim.opt.relativenumber = true
 				vim.diagnostic.config({
 					virtual_text = true,
 				})
