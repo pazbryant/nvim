@@ -1,14 +1,12 @@
 return {
 	{
 		'rebelot/kanagawa.nvim',
-		lazy = false,
-		priority = 1000,
 		opts = {
 			compile = true,
 			commentStyle = { italic = false },
 			keywordStyle = { italic = false },
 			statementStyle = { bold = true },
-			transparent = true,
+			transparent = false,
 			theme = 'wave', -- Load "wave" theme when 'background' option is not set
 			background = { -- map the value of 'background' option to a theme
 				dark = 'wave', -- try "dragon" !
@@ -41,9 +39,11 @@ return {
 
 	{
 		'maxmx03/solarized.nvim',
+		lazy = false,
+		priority = 1000,
 		opts = {
 			transparent = {
-				enabled = false, -- Master switch to enable transparency
+				enabled = true, -- Master switch to enable transparency
 			},
 			variant = 'winter', -- "spring" | "summer" | "autumn" | "winter" (default)
 			styles = {
