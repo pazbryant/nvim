@@ -23,10 +23,10 @@ return {
 		notify = { enabled = false },
 		rename = { enabled = false },
 		animate = { enabled = false },
+		indent = { enabled = false },
 		-- Enabled
 		bigfile = { enabled = true },
 		lazygit = { enable = true },
-		indent = { enabled = true },
 		quickfile = { enabled = true },
 		zen = {
 			enabled = true,
