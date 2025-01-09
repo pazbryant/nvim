@@ -4,7 +4,7 @@ function M.get_keymaps()
 	return {
 		{ 'go', vim.diagnostic.open_float, desc = 'Line Diagnostics' },
 		{ 'gd', vim.lsp.buf.definition, desc = 'Goto Definition' },
-		{ 'gr', vim.lsp.buf.references, desc = 'References' },
+		{ 'gR', vim.lsp.buf.references, desc = 'References' },
 		{ 'gD', vim.lsp.buf.declaration, desc = 'Goto Declaration' },
 		{ 'gI', vim.lsp.buf.implementation, desc = 'Goto Implementation' },
 		{ 'gt', vim.lsp.buf.type_definition, desc = 'Goto Type Definition' },
