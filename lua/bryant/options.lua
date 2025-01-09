@@ -3,8 +3,8 @@ local opt = v.opt
 local o = v.o
 local g = v.g
 
-g.maplocalleader = ";"
 g.mapleader = ' '
+g.maplocalleader = ' '
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
