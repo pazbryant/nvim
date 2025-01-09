@@ -8,6 +8,7 @@ return {
 		'ObsidianNewFromTemplate',
 		'ObsidianNew',
 		'ObsidianTags',
+		'ObsidianFollowLink',
 	},
 	opts = {
 		workspaces = {
@@ -44,6 +45,17 @@ return {
 				opts = { buffer = true, expr = true },
 			},
 		},
+		follow_url_func = function(url)
+			-- vim.fn.jobstart({"xdg-open", url})  -- linux
+			vim.ui.open(url) -- need Neovim 0.10.0+
+		end,
+
+		-- Optional, by default when you use `:ObsidianFollowLink` on a link to an image
+		-- file it will be ignored but you can customize this behavior here.
+		---@param img string
+		follow_img_func = function(img)
+			vim.fn.jobstart({ 'xdg-open', img }) -- linux
+		end,
 		attachments = {
 			img_folder = 'Obsidian/Files',
 			img_text_func = function(client, path)
