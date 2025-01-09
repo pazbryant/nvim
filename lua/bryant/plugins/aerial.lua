@@ -21,7 +21,7 @@ return {
 	end,
 	keys = {
 		{
-			'<C-a>',
+			'<leader>a',
 			'<cmd>AerialToggle!<CR>',
 			desc = 'Toggle Aerial',
 		},

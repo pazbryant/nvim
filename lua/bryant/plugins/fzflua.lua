@@ -18,13 +18,6 @@ return {
 			desc = 'Live grep',
 		},
 		{
-			'<M-m>',
-			function()
-				require('fzf-lua').marks()
-			end,
-			desc = 'Live grep',
-		},
-		{
 			'<M-c>',
 			function()
 				require('fzf-lua').files()
