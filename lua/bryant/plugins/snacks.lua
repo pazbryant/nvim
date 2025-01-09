@@ -1,13 +1,10 @@
 return {
 	'folke/snacks.nvim',
 	priority = 1000,
-	lazy = false,
-	---@type snacks.Config
 	opts = {
 		-- your configuration comes here
 		-- or leave it empty to use the default settings
 		-- refer to the configuration section below
-		animate = { enabled = false },
 		scratch = { enabled = false },
 		profiler = { enabled = false },
 		debug = { enabled = false },
@@ -24,8 +21,9 @@ return {
 		scope = { enabled = false },
 		notifier = { enabled = false },
 		notify = { enabled = false },
+		rename = { enabled = false },
+		animate = { enabled = false },
 		-- Enabled
-		rename = { enabled = true },
 		bigfile = { enabled = true },
 		lazygit = { enable = true },
 		indent = { enabled = true },
@@ -67,13 +65,6 @@ return {
 				Snacks.zen()
 			end,
 			desc = 'Toggle Zen Mode',
-		},
-		{
-			'<leader>rf',
-			function()
-				Snacks.rename.rename_file()
-			end,
-			desc = 'Rename File',
 		},
 		{
 			'<leader>gg',
