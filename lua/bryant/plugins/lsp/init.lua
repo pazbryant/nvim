@@ -63,11 +63,7 @@ return {
 	{
 		'm-demare/hlargs.nvim',
 		event = { 'BufReadPost', 'BufNewFile' },
-		config = function()
-			require('hlargs').setup({
-				-- your custom settings here
-			})
-		end,
+		config = true,
 	},
 
 	{
