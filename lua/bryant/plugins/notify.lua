@@ -1,6 +1,6 @@
 return {
 	'rcarriga/nvim-notify',
-	priority = 1000,
+	event = 'UiEnter',
 	init = function()
 		vim.notify = require('notify')
 	end,

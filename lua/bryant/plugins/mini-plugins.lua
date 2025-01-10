@@ -1,4 +1,4 @@
-local M = {
+return {
 	{
 
 		'echasnovski/mini.ai',
@@ -93,5 +93,3 @@ local M = {
 		opts = {},
 	},
 }
-
-return M
