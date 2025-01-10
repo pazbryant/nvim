@@ -4,8 +4,8 @@ local map = v.keymap.set
 
 --- custom keymaps
 map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
-map({ 'n', 'v' }, 'H', '^', { desc = 'Start of the line' })
-map({ 'n', 'v' }, 'L', 'g_', { desc = 'End of the line' })
+map({ 'n', 'v', 'o' }, 'H', '^', { desc = 'Start of the line' })
+map({ 'n', 'v', 'o' }, 'L', 'g_', { desc = 'End of the line' })
 
 -- improve register key binds
 map('x', '<leader>p', [["_dP]], { desc = 'Paste without override register' })
@@ -32,8 +32,9 @@ map('n', '<C-w>p', '<C-w>o', { noremap = true, silent = true })
 
 -- toggle spell
 map('n', '<leader>sp', function()
-	v.cmd([[set spell!]])
-	v.notify('Spell has ben toggled', 'info')
+	vim.cmd([[set spell!]])
+	local is_spell_on = vim.opt.spell:get()
+	vim.notify('Spell ' .. (is_spell_on and 'ON' or 'OFF'), 'info')
 end, { desc = 'Toggle spelling check' })
 
 -- custom rename
