@@ -9,54 +9,67 @@ return {
 			},
 		},
 	},
+
 	{ 'Bilal2453/luvit-meta', lazy = true },
+
+	{
+		'j-hui/fidget.nvim',
+		opts = {
+			notification = {
+				window = {
+					winblend = 0, -- Background color opacity in the notification window
+				},
+			},
+			integration = {
+				['nvim-tree'] = {
+					enable = true, -- Integrate with nvim-tree/nvim-tree.lua (if installed)
+				},
+			},
+		},
+	},
+
+	{
+		'williamboman/mason-lspconfig.nvim',
+		opts = {
+			ensure_installed = {
+				'cssls',
+				'pyright',
+				'clangd',
+				'marksman',
+				'html',
+				'ts_ls',
+				'emmet_language_server',
+				'gopls',
+				'lua_ls',
+				'bashls',
+			},
+		},
+		config = function(_, opts)
+			require('mason-lspconfig').setup(opts)
+			require('bryant.plugins.lsp.setup')
+		end,
+	},
+
 	{
 		'neovim/nvim-lspconfig',
 		event = { 'BufReadPre', 'BufNewFile' },
 		dependencies = {
 			'williamboman/mason.nvim',
-			{
-				'm-demare/hlargs.nvim',
-				config = true,
-			},
-			{
-				'j-hui/fidget.nvim',
-				opts = {
-					notification = {
-						window = {
-							winblend = 0, -- Background color opacity in the notification window
-						},
-					},
-					integration = {
-						['nvim-tree'] = {
-							enable = true, -- Integrate with nvim-tree/nvim-tree.lua (if installed)
-						},
-					},
-				},
-			},
-			{
-				'williamboman/mason-lspconfig.nvim',
-				opts = {
-					ensure_installed = {
-						'cssls',
-						'pyright',
-						'clangd',
-						'marksman',
-						'html',
-						'ts_ls',
-						'emmet_language_server',
-						'gopls',
-						'lua_ls',
-						'bashls',
-					},
-				},
-				config = function(_, opts)
-					require('mason-lspconfig').setup(opts)
-					require('bryant.plugins.lsp.setup')
-				end,
-			},
+			'j-hui/fidget.nvim',
+			'williamboman/mason-lspconfig.nvim',
 		},
 	},
+
+	{
+		'm-demare/hlargs.nvim',
+		event = { 'BufReadPost', 'BufNewFile' },
+		config = function()
+			require('hlargs').setup({
+				-- your custom settings here
+			})
+		end,
+	},
+
 	{
 		'williamboman/mason.nvim',
 		dependencies = 'WhoIsSethDaniel/mason-tool-installer.nvim',
