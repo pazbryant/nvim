@@ -6,6 +6,7 @@ return {
 		t('"$'),
 		i(1),
 		t('"'),
+		i(2),
 	}),
 
 	-- if statement
