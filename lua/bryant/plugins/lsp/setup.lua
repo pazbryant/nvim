@@ -38,8 +38,8 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 })
 
 local function on_attach(client, bufnr)
-	require('bryant.plugins.lsp.attach').on_attach(client, bufnr)
 	client.server_capabilities.semanticTokensProvider = nil
+	require('bryant.plugins.lsp.attach').on_attach(client, bufnr)
 end
 
 local capabilities = vim.tbl_deep_extend(
