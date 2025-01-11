@@ -1,6 +1,12 @@
 return {
 	'kevinhwang91/nvim-bqf',
 	ft = 'qf',
+	dependencies = {
+		'junegunn/fzf',
+		build = function()
+			vim.fn['fzf#install']()
+		end,
+	},
 	opts = {
 		preview = {
 			auto_preview = false,
@@ -9,34 +15,8 @@ return {
 			win_vheight = 30,
 		},
 		func_map = {
-			drop = 'O',
-			filter = 'zn',
-			filterr = 'zN',
-			fzffilter = 'zf',
-			lastleave = '\'"',
-			nextfile = '<C-n>',
-			nexthist = '>',
-			open = '<CR>',
-			openc = 'o',
-			prevfile = '<C-p>',
-			prevhist = '<',
-			pscrolldown = '<C-f>',
-			pscrollorig = 'zo',
-			pscrollup = '<C-b>',
 			ptoggleauto = 'P',
 			ptoggleitem = 'p',
-			ptogglemode = 'zp',
-			sclear = 'z<Tab>',
-			split = '<C-x>',
-			stogglebuf = "'<Tab>",
-			stoggledown = '<Tab>',
-			stoggleup = '<S-Tab>',
-			stogglevm = '<Tab>',
-			tab = 't',
-			tabb = 'T',
-			tabc = '<C-t>',
-			tabdrop = '',
-			vsplit = '<C-v>',
 		},
 	},
 	config = function(_, opts)
