@@ -1,7 +1,23 @@
 return {
 	'ibhagwan/fzf-lua',
-	enabled = true,
-	cmd = { 'FzfLua' },
+	dependencies = 'folke/trouble.nvim',
+	config = function()
+		require('fzf-lua').setup({
+			profile = {
+				enabled = true,
+				default = 'max-perf', -- Fixed typo from 'max-pref'
+			},
+			keymap = {
+				fzf = {
+					['ctrl-q'] = 'select-all+accept',
+				},
+			},
+			winopts = {
+				height = 0.70,
+				width = 0.70,
+			},
+		})
+	end,
 	keys = {
 		{
 			'<C-t>',
@@ -57,18 +73,4 @@ return {
 			end,
 		},
 	},
-	config = function()
-		require('fzf-lua').setup({
-			profile = {
-				enabled = true,
-				default = 'max-pref',
-			},
-			winopts = { height = 0.70, width = 0.70 },
-			keymap = {
-				fzf = {
-					['ctrl-q'] = 'select-all+accept',
-				},
-			},
-		})
-	end,
 }
