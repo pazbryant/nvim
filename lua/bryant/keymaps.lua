@@ -7,11 +7,6 @@ map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
 map({ 'n', 'v', 'o' }, 'H', '^', { desc = 'Start of the line' })
 map({ 'n', 'v', 'o' }, 'L', 'g_', { desc = 'End of the line' })
 
--- improve register key binds
-map('x', '<leader>p', [["_dP]], { desc = 'Paste without override register' })
-
-map({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without override register' })
-
 -- align manually
 map('v', '<', '<gv', { desc = 'Better align items' })
 map('v', '>', '>gv', { desc = 'Better align items' })
