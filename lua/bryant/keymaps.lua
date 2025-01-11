@@ -45,7 +45,7 @@ map({ 'i', 'n' }, '<C-s>', function()
 	v.lsp.buf.signature_help()
 end, { desc = 'Toggle signature help' })
 
--- Quick fix list
+-- quick fix list
 map('n', '<leader>q', ':cope<CR>', { desc = 'Toggle quickfix list' })
 map('n', '<leader>cn', ':cnext<CR>', { desc = 'Next quickfix item' })
 map('n', '<leader>cp', ':cprev<CR>', { desc = 'Previous quickfix item' })
@@ -56,5 +56,13 @@ map('n', '<leader>dd', function()
 	v.notify(string.format('Diagnostic has been %s', msg), 'info')
 end)
 
--- Remove suspend keybind
+-- make executable current buffer
+map('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
+
+-- source current buffer
+map('n', '<leader><leader>', function()
+	vim.cmd('so')
+end)
+
+-- remove suspend keybind
 map('n', '<C-z>', '<Nop>', { noremap = true, silent = true })
