@@ -1,4 +1,5 @@
 ---@diagnostic disable: undefined-global
+local currDate = os.date('%Y-%m-%d %H:%M:%S')
 
 return {
 	-- feat: A new feature
@@ -80,5 +81,9 @@ return {
 		t({ '', '', 'BREAKING CHANGE: ' }),
 		-- Placeholder for the breaking change description
 		i(1, 'description of the breaking change'),
+	}),
+
+	s('backup', {
+		t('vault backup: ' .. currDate),
 	}),
 }
