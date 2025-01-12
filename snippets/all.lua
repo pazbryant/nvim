@@ -42,4 +42,10 @@ return {
 		t('TEST: '),
 		i(1, 'describe the test case or issue here'),
 	}),
+
+	-- File type
+	s('ft', {
+		t('vim: ft='),
+		i(1, 'type'),
+	}),
 }
