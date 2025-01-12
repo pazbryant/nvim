@@ -6,7 +6,7 @@ return {
 		'onsails/lspkind.nvim',
 		'hrsh7th/cmp-buffer',
 		'hrsh7th/cmp-nvim-lsp',
-		'hrsh7th/cmp-path',
+		'FelipeLema/cmp-async-path',
 		'hrsh7th/cmp-nvim-lsp-signature-help',
 		-- This is important for integrating LuaSnip with nvim-cmp
 		'saadparwaiz1/cmp_luasnip',
@@ -81,7 +81,7 @@ return {
 				},
 				{ name = 'luasnip' },
 				{ name = 'buffer' },
-				{ name = 'path' },
+				{ name = 'async_path' },
 				{ name = 'nvim_lsp_signature_help' },
 			},
 		})
