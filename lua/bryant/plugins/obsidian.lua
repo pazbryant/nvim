@@ -67,34 +67,12 @@ return {
 			return string.format('%s-', os.time())
 		end,
 	},
+	-- stylua: ignore start
 	keys = {
-		{
-			'<leader>od',
-			'<cmd>ObsidianToday<CR>',
-			desc = 'Open obsidian daily today',
-		},
-		{
-			'<leader>ot',
-			'<cmd>ObsidianTemplate<CR>',
-			desc = 'Paste template current buffer',
-		},
-		{
-			'<leader>oT',
-			'<cmd>ObsidianNewFromTemplate<CR>',
-			desc = 'New note from template',
-		},
-		{
-			'<leader>on',
-			'<cmd>ObsidianNew<CR>',
-			desc = 'New obsidian note',
-		},
-		{
-			'<leader>os',
-			'<cmd>ObsidianTags<CR>',
-			desc = 'Obsidian pick tags',
-		},
+		{ '<leader>od', '<cmd>ObsidianToday<CR>', desc = 'Open obsidian daily today' },
+		{ '<leader>ot', '<cmd>ObsidianTemplate<CR>', desc = 'Paste template current buffer' },
+		{ '<leader>oT', '<cmd>ObsidianNewFromTemplate<CR>', desc = 'New note from template' },
+		{ '<leader>on', '<cmd>ObsidianNew<CR>', desc = 'New obsidian note' },
+		{ '<leader>os', '<cmd>ObsidianTags<CR>', desc = 'Obsidian pick tags' },
 	},
-	config = function(_, opts)
-		require('obsidian').setup(opts)
-	end,
 }

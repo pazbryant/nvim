@@ -9,7 +9,4 @@ return {
 		top_down = true,
 		render = 'compact', -- default,minimal,compact,simple,wrapped-compact
 	},
-	config = function(_, opts)
-		require('notify').setup(opts)
-	end,
 }
