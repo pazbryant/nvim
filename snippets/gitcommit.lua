@@ -86,4 +86,8 @@ return {
 	s('backup', {
 		t('vault backup: ' .. currDate),
 	}),
+
+	s('spell', {
+		t('update spell dictionary: ' .. currDate),
+	}),
 }
