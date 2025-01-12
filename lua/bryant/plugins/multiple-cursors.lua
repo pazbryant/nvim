@@ -1,10 +1,6 @@
 return {
 	'jake-stewart/multicursor.nvim',
 	branch = '1.0',
-	keys = {
-		{ '<C-n>', mode = { 'n', 'v' } },
-		{ '<M-n>', mode = { 'n', 'v' } },
-	},
 	config = function()
 		local mc = require('multicursor-nvim')
 		mc.setup()
@@ -54,4 +50,8 @@ return {
 		hl(0, 'MultiCursorDisabledVisual', { link = 'Visual' })
 		hl(0, 'MultiCursorDisabledSign', { link = 'SignColumn' })
 	end,
+	keys = {
+		{ '<C-n>', mode = { 'n', 'v' } },
+		{ '<M-n>', mode = { 'n', 'v' } },
+	},
 }

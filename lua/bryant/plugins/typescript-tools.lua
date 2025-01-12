@@ -1,6 +1,13 @@
 return {
 	'pmizio/typescript-tools.nvim',
 	dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+	cmd = {
+		'TSToolsRenameFile',
+		'TSToolsFileReferences',
+		'TSToolsFixAll',
+		'TSToolsOrganizeImports',
+		'TSToolsAddMissingImports',
+	},
 	opts = {
 		complete_function_calls = true,
 		expose_as_code_action = 'all',
@@ -9,10 +16,9 @@ return {
 	ft = {
 		'javascript',
 		'typescript',
-		'javascriptreact',
+		'javascript.jsx',
+		'typescript.tsx',
 		'typescriptreact',
+		'javascriptreact',
 	},
-	config = function(_, opts)
-		require('typescript-tools').setup(opts)
-	end,
 }

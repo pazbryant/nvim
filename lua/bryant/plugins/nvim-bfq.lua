@@ -19,7 +19,4 @@ return {
 			ptoggleitem = 'p',
 		},
 	},
-	config = function(_, opts)
-		require('bqf').setup(opts)
-	end,
 }

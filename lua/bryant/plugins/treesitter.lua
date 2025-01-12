@@ -67,7 +67,4 @@ return {
 		highlight = { enable = true, additional_vim_regex_highlighting = false },
 		playground = { enable = false },
 	},
-	config = function(_, opts)
-		require('nvim-treesitter.configs').setup(opts)
-	end,
 }

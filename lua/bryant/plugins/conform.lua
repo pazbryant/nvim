@@ -4,16 +4,6 @@ return {
 	init = function()
 		vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 	end,
-	keys = {
-		{
-			'<C-f>',
-			function()
-				require('conform').format({ lsp_format = 'fallback' })
-				vim.notify('code has been formated', vim.log.levels.INFO)
-			end,
-			desc = '[F]ormat buffer',
-		},
-	},
 	opts = {
 		notify_on_error = true,
 		formatters_by_ft = {
@@ -40,7 +30,14 @@ return {
 			['markdown.mdx'] = { 'markdownlint' },
 		},
 	},
-	config = function(_, opts)
-		require('conform').setup(opts)
-	end,
+	keys = {
+		{
+			'<C-f>',
+			function()
+				require('conform').format({ lsp_format = 'fallback' })
+				vim.notify('code has been formated', vim.log.levels.INFO)
+			end,
+			desc = '[F]ormat buffer',
+		},
+	},
 }
