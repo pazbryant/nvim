@@ -1,16 +1,9 @@
 return {
 	'mfussenegger/nvim-dap',
 	dependencies = {
-		{
-			'rcarriga/nvim-dap-ui',
-			opts = {}, -- Configuration for dap-ui
-		},
-		{
-			'theHamsta/nvim-dap-virtual-text',
-			opts = {}, -- Configuration for virtual text
-		},
-		'nvim-neotest/nvim-nio', -- needed for dapui
-		-- Lua adapter for debugging
+		{ 'rcarriga/nvim-dap-ui', opts = {} },
+		{ 'theHamsta/nvim-dap-virtual-text', opts = {} },
+		'nvim-neotest/nvim-nio',
 	},
 	config = function()
 		local dap = require('dap')
@@ -26,18 +19,6 @@ return {
 		dap.listeners.before.event_exited['dapui_config'] = function()
 			dapui.close()
 		end
-
-		-- Configure debugging for Lua
-		dap.adapters.nlua = function(callback, config)
-			callback({ type = 'server', host = config.host or '127.0.0.1', port = config.port or 8086 })
-		end
-		dap.configurations.lua = {
-			{
-				type = 'nlua',
-				request = 'attach',
-				name = 'Attach to running Neovim instance',
-			},
-		}
 	end,
 	keys = {
 		-- stylua: ignore start
