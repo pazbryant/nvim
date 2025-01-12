@@ -1,12 +1,12 @@
 ---@diagnostic disable: undefined-global
 
 return {
-	s('ignore:start', {
+	s('stylua:start', {
 		t({ '-- stylua: ignore start', '' }),
 		i(1),
 	}),
 
-	s('ignore:end', {
+	s('stylua:end', {
 		t({ '-- stylua: ignore end', '' }),
 		i(1),
 	}),
