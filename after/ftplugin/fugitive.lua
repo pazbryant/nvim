@@ -15,7 +15,7 @@ autocmd('BufWinEnter', {
 		local opts = { buffer = bufnr, remap = false }
 
 		-- stylua: ignore start
-		map('n', '<leader>p', function()
+		map('n', '<c-p>', function()
 			vim.cmd.Git('push')
 		end, opts)
 
@@ -33,6 +33,6 @@ autocmd('BufWinEnter', {
 
 		-- NOTE: It allows me to easily set the branch i am pushing and any tracking
 		-- needed if i did not set the branch up correctly
-		map('n', '<leader>t', ':Git push -u origin ', opts)
+		map('n', '<leader>p', ':Git push -u origin ', opts)
 	end,
 })
