@@ -63,6 +63,11 @@ return {
 	{
 		'm-demare/hlargs.nvim',
 		event = { 'BufReadPost', 'BufNewFile' },
+		opts = {
+			hl_priority = 200,
+			extras = { named_parameters = true },
+		},
+
 		config = true,
 	},
 
