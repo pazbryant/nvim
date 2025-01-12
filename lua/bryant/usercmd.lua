@@ -20,7 +20,13 @@ usercmd('Sort', function()
 		return #a < #b
 	end)
 
-	vim.api.nvim_buf_set_lines(0, start_line - 1, end_line, false, non_empty_lines)
+	vim.api.nvim_buf_set_lines(
+		0,
+		start_line - 1,
+		end_line,
+		false,
+		non_empty_lines
+	)
 end, {
 	range = true,
 	desc = 'Sort lines by length (shortest to longest)',
