@@ -11,5 +11,8 @@ return {
 			desc = 'Start autopairs plugin',
 		})
 	end,
-	config = {},
+	opts = {
+		disable_filetype = { 'TelescopePrompt' },
+		enable_check_bracket_line = true,
+	},
 }
