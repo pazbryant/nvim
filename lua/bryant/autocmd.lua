@@ -78,6 +78,13 @@ autocmd('FileType', {
 	end,
 })
 
+autocmd('FileType', {
+	pattern = 'fugitive',
+	callback = function()
+		map('n', 'q', ':close<CR>')
+	end,
+})
+
 autocmd('TermOpen', {
 	command = 'setlocal signcolumn=no',
 })
