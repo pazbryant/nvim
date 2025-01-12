@@ -25,3 +25,9 @@ end, {
 	range = true,
 	desc = 'Sort lines by length (shortest to longest)',
 })
+
+usercmd('Spell', function()
+	vim.cmd([[set spell!]])
+	local is_spell_on = vim.opt.spell:get() and 'on' or 'off'
+	vim.notify(string.format('spell is %s', is_spell_on), vim.log.levels.INFO)
+end, { desc = 'Manage spell' })
