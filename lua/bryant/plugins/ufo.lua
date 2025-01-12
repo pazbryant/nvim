@@ -3,8 +3,6 @@ return {
 	event = 'BufEnter',
 	dependencies = 'kevinhwang91/promise-async',
 	config = function()
-		-- Handler for LSP fold capabilities
-
 		local v = vim
 		local handler = function(virtText, lnum, endLnum, width, truncate)
 			local newVirtText = {}
@@ -34,7 +32,6 @@ return {
 			return newVirtText
 		end
 
-		-- UFO setup
 		require('ufo').setup({
 			provider_selector = function()
 				return { 'treesitter', 'indent' }

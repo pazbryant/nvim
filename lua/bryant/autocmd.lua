@@ -22,6 +22,7 @@ autocmd('TextYankPost', {
 })
 
 autocmd({ 'WinEnter', 'BufEnter', 'InsertLeave' }, {
+	desc = 'Enable cursorline when leaving a window, buffer, or entering insert mode',
 	group = bryant_group,
 	pattern = '*',
 	callback = function()
@@ -29,8 +30,8 @@ autocmd({ 'WinEnter', 'BufEnter', 'InsertLeave' }, {
 	end,
 })
 
--- Disable cursorline when leaving a window, buffer, or entering insert mode
 autocmd({ 'WinLeave', 'BufLeave', 'InsertEnter' }, {
+	desc = 'Disable cursorline when leaving a window, buffer, or entering insert mode',
 	group = bryant_group,
 	pattern = '*',
 	callback = function()
