@@ -71,7 +71,8 @@ return {
 						if source and source.source.client then
 							local client_name = source.source.client.name
 							if disabled_snippet_lsps[client_name] then
-								local kind = require('cmp.types').lsp.CompletionItemKind[entry:get_kind()]
+								local kind =
+									require('cmp.types').lsp.CompletionItemKind[entry:get_kind()]
 								return kind ~= 'Snippet'
 							end
 						end

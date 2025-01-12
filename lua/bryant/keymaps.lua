@@ -16,10 +16,30 @@ map('n', '<C-w>"', '<C-W>s', { desc = 'Split window below' })
 map('n', '<C-w>%', '<C-W>v', { desc = 'Split window right' })
 
 -- resise splits
-map('n', '<M-l>', '<cmd>vertical resize +20<CR>', { desc = 'Increase split right' })
-map('n', '<M-h>', '<cmd>vertical resize -20<CR>', { desc = 'Decrease split left' })
-map('n', '<M-j>', '<cmd>horizontal resize -20<CR>', { desc = 'Decrease split down' })
-map('n', '<M-j>', '<cmd>horizontal resize +20<CR>', { desc = 'Decrease split up' })
+map(
+	'n',
+	'<M-l>',
+	'<cmd>vertical resize +20<CR>',
+	{ desc = 'Increase split right' }
+)
+map(
+	'n',
+	'<M-h>',
+	'<cmd>vertical resize -20<CR>',
+	{ desc = 'Decrease split left' }
+)
+map(
+	'n',
+	'<M-j>',
+	'<cmd>horizontal resize -20<CR>',
+	{ desc = 'Decrease split down' }
+)
+map(
+	'n',
+	'<M-j>',
+	'<cmd>horizontal resize +20<CR>',
+	{ desc = 'Decrease split up' }
+)
 
 -- close splits
 map('n', '<C-w>x', '<C-w>c', { noremap = true, silent = true })
