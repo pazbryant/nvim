@@ -61,17 +61,14 @@ autocmd({ 'BufNewFile', 'BufRead' }, {
 	end,
 })
 
--- :echo &ft to know floating window
--- clear cursor when exin nvim
-
 autocmd('FileType', {
 	desc = 'Disable auto-comment',
 	command = 'set formatoptions-=o',
 	group = bryant_group,
 })
 
--- Auto-close quickfix with 'q' when in quickfix window
 autocmd('FileType', {
+	desc = 'close quickfix',
 	pattern = 'qf',
 	callback = function()
 		map('n', 'q', ':close<CR>')
@@ -79,6 +76,7 @@ autocmd('FileType', {
 })
 
 autocmd('FileType', {
+	desc = 'close fugitive',
 	pattern = 'fugitive',
 	callback = function()
 		map('n', 'q', ':close<CR>')
@@ -86,5 +84,27 @@ autocmd('FileType', {
 })
 
 autocmd('TermOpen', {
+	desc = 'remove colucmns in terminal',
 	command = 'setlocal signcolumn=no',
+})
+
+autocmd('RecordingEnter', {
+	desc = 'notify when start macro',
+	callback = function()
+		vim.opt.cmdheight = 1
+		local msg = string.format('key: %s', vim.fn.reg_recording())
+		vim.notify(msg, vim.log.levels.INFO, {
+			title = 'Macro Recording',
+		})
+	end,
+})
+
+autocmd('RecordingLeave', {
+	desc = 'notify when finish macro',
+	callback = function()
+		vim.opt.cmdheight = 0
+		vim.notify('has finished', vim.log.levels.INFO, {
+			title = 'Macro Recording',
+		})
+	end,
 })
