@@ -1,5 +1,4 @@
 local map = vim.keymap.set
-map('n', '<leader>gs', vim.cmd.Git)
 
 local bryant_fugitive = vim.api.nvim_create_augroup('bryant_fugitive', {})
 
@@ -15,9 +14,17 @@ autocmd('BufWinEnter', {
 		local bufnr = vim.api.nvim_get_current_buf()
 		local opts = { buffer = bufnr, remap = false }
 
+		-- stylua: ignore start
 		map('n', '<leader>p', function()
 			vim.cmd.Git('push')
 		end, opts)
+
+		map(
+			'n',
+			'<leader>gd',
+			'<cmd>Gvdiffsplit!<CR>',
+			{ desc = 'Git diff split with fugitive' }
+		)
 
 		-- rebase always
 		map('n', '<leader>P', function()
