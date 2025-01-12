@@ -90,4 +90,8 @@ return {
 	s('spell', {
 		t('update spell dictionary: ' .. currDate),
 	}),
+
+	s('tmux:commands', {
+		t('update tmux commands list: ' .. currDate),
+	}),
 }
