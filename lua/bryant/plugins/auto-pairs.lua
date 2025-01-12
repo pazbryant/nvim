@@ -12,7 +12,9 @@ return {
 		})
 	end,
 	opts = {
-		disable_filetype = { 'TelescopePrompt' },
+		check_ts = true,
+		disable_filetype = { 'TelescopePrompt', 'grug-far', 'vim', 'query' },
 		enable_check_bracket_line = true,
+		ignored_next_char = '[%w%.<"(]',
 	},
 }
