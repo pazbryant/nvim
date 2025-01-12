@@ -30,7 +30,7 @@ return {
 		local usercmd = v.api.nvim_create_user_command
 		usercmd('Lint', function()
 			require('lint').try_lint()
-			vim.notify('Code has been linting', 'info')
+			vim.notify('Code has been linting', vim.log.levels.INFO)
 		end, { desc = 'Lint file with nvim-lint' })
 	end,
 	keys = {

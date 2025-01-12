@@ -9,7 +9,7 @@ return {
 			'<C-f>',
 			function()
 				require('conform').format({ lsp_format = 'fallback' })
-				vim.notify('Code has been formated', 'info')
+				vim.notify('code has been formated', vim.log.levels.INFO)
 			end,
 			desc = '[F]ormat buffer',
 		},
