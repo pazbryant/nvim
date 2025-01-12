@@ -25,13 +25,6 @@ map('n', '<M-j>', '<cmd>horizontal resize +20<CR>', { desc = 'Decrease split up'
 map('n', '<C-w>x', '<C-w>c', { noremap = true, silent = true })
 map('n', '<C-w>p', '<C-w>o', { noremap = true, silent = true })
 
--- toggle spell
-map('n', '<leader>sp', function()
-	vim.cmd([[set spell!]])
-	local is_spell_on = vim.opt.spell:get()
-	vim.notify('Spell ' .. (is_spell_on and 'ON' or 'OFF'), 'info')
-end, { desc = 'Toggle spelling check' })
-
 -- custom rename
 map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
