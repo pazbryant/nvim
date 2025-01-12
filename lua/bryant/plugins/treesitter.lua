@@ -1,5 +1,7 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
+	event = 'BufEnter',
+	build = ':TSUpdate',
 	dependencies = {
 		{
 			'andymass/vim-matchup',
@@ -8,8 +10,6 @@ return {
 			end,
 		},
 	},
-	event = 'BufEnter',
-	build = ':TSUpdate',
 	opts = {
 		matchup = {
 			enable = true, -- mandatory, false will disable the whole extension
@@ -25,46 +25,43 @@ return {
 			},
 		},
 		ensure_installed = {
-			'vim',
-			'lua',
-			'bash',
-			'json',
-			'json5',
-			'jq',
-			'yaml',
-			'regex',
-			'toml',
 			'vimdoc',
-			'dockerfile',
-			'graphql',
-			'hurl',
-			'git_config',
-			'gitignore',
-			'http',
-			'fish',
-			'markdown',
-			'markdown_inline',
 			'javascript',
 			'typescript',
-			'tsx',
-			'html',
-			'css',
 			'c',
-			'terraform',
-			'sxhkdrc',
-			'nix',
-			'python',
-			-- golang
-			'go',
-			'gosum',
-			'gomod',
-			'gotmpl',
-			'gowork',
-			'gitcommit',
+			'lua',
+			'rust',
+			'jsdoc',
+			'bash',
+			'markdown',
+			'markdown_inline',
 		},
 		auto_install = true,
 		indent = { enable = true },
-		highlight = { enable = true, additional_vim_regex_highlighting = false },
+		highlight = {
+			enable = true,
+			additional_vim_regex_highlighting = { 'markdown' },
+			disable = function(lang, buf)
+				if lang == 'html' then
+					vim.notify('treesitter disabled in html', vim.log.levels.INFO, {
+						title = 'Treesitter',
+					})
+					return true
+				end
+
+				local max_filesize = 100 * 1024 -- 100 KB
+				local ok, stats =
+					pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+				if ok and stats and stats.size > max_filesize then
+					vim.notify(
+						'File larger than 100KB treesitter disabled for performance',
+						vim.log.levels.WARN,
+						{ title = 'Treesitter' }
+					)
+					return true
+				end
+			end,
+		},
 		playground = { enable = false },
 	},
 }
