@@ -12,16 +12,4 @@ return {
 	config = function(_, opts)
 		require('notify').setup(opts)
 	end,
-	keys = {
-		{
-			'<leader>n',
-			'<cmd>Notifications<CR>',
-			desc = 'Show notifications',
-		},
-		{
-			'<leader>N',
-			'<cmd>NotificationsClear<CR>',
-			desc = 'Clear notifications',
-		},
-	},
 }
