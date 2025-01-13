@@ -29,7 +29,7 @@ return {
 		},
 		daily_notes = {
 			folder = 'Daily',
-			template = nil,
+			template = 'Obsidian/Templates/daily-template.md',
 		},
 		mappings = {
 			['gf'] = {
