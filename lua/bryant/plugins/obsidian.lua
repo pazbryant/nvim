@@ -25,11 +25,11 @@ return {
 		disable_frontmatter = true,
 		ui = { enable = true },
 		templates = {
-			subdir = 'Obsidian/Templates',
+			subdir = 'obsidian/templates',
 		},
 		daily_notes = {
-			folder = 'Daily',
-			template = 'Obsidian/Templates/daily-template.md',
+			folder = 'daily',
+			template = 'obsidian/templates/daily-template.md',
 		},
 		mappings = {
 			['gf'] = {
@@ -57,7 +57,7 @@ return {
 			vim.fn.jobstart({ 'xdg-open', img }) -- linux
 		end,
 		attachments = {
-			img_folder = 'Obsidian/Files',
+			img_folder = 'obsidian/files',
 			img_text_func = function(client, path)
 				path = client:vault_relative_path(path) or path
 				return string.format('![%s](%s)', path.name, path)
