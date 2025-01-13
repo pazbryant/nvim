@@ -68,22 +68,6 @@ autocmd('FileType', {
 	group = bryant_group,
 })
 
-autocmd('FileType', {
-	desc = 'close quickfix',
-	pattern = 'qf',
-	callback = function()
-		map('n', 'q', ':close<CR>')
-	end,
-})
-
-autocmd('FileType', {
-	desc = 'close fugitive',
-	pattern = 'fugitive',
-	callback = function()
-		map('n', 'q', ':close<CR>')
-	end,
-})
-
 autocmd('TermOpen', {
 	desc = 'remove colucmns in terminal',
 	command = 'setlocal signcolumn=no',
@@ -121,6 +105,72 @@ autocmd('LspAttach', {
 		local caps = client.server_capabilities
 		if caps.semanticTokensProvider and caps.semanticTokensProvider.full then
 			require('hlargs').disable_buf(args.buf)
+		end
+	end,
+})
+
+autocmd('FileType', {
+	group = bryant_group,
+	desc = "Define windows to close with 'q'",
+	pattern = {
+		'gitcommit',
+		'fugitive',
+		'gitrebase',
+		'dap-float',
+		'gitconfig',
+		'help',
+		'startuptime',
+		'qf',
+		'lspinfo',
+		'man',
+		'checkhealth',
+		'tsplayground',
+		'dap-float',
+		'empty',
+		'noice',
+		'neotest-output',
+		'neotest-summary',
+		'neotest-output-panel',
+		'nvcheatsheet',
+		'grug-far',
+		'grug-far-history',
+		'grug-far-help',
+	},
+	callback = function()
+		map('n', 'q', ':close<CR>')
+	end,
+})
+
+autocmd('FileType', {
+	group = bryant_group,
+	desc = 'Disable ufo in certain file types',
+	pattern = {
+		'dapui_watches',
+		'dap-repl',
+		'dapui_console',
+		'dapui_stacks',
+		'dapui_breakpoints',
+		'dapui_scopes',
+		'lazy',
+	},
+	callback = function()
+		require('ufo').detach()
+		vim.opt_local.foldenable = false
+	end,
+})
+
+autocmd('BufHidden', {
+	group = bryant_group,
+	desc = 'Remove unamed buffers',
+	callback = function(event)
+		if
+			event.file == ''
+			and vim.bo[event.buf].buftype == ''
+			and not vim.bo[event.buf].modified
+		then
+			vim.schedule(function()
+				pcall(vim.api.nvim_buf_delete, event.buf, {})
+			end)
 		end
 	end,
 })
