@@ -35,7 +35,7 @@ return {
 			elseif mc.hasCursors() then
 				mc.clearCursors()
 			else
-				vim.cmd('noh')
+				-- default esc behaviour
 			end
 		end)
 

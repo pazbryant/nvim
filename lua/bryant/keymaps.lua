@@ -1,6 +1,9 @@
 local v = vim
---- home rome
+
 local map = v.keymap.set
+
+--- remove search highlights
+map('n', '<esc>', vim.cmd('noh'), { desc = 'Remove search highlights' })
 
 --- custom keymaps
 map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
@@ -61,7 +64,7 @@ map('n', '<leader>cp', ':cprev<CR>', { desc = 'Previous quickfix item' })
 map('n', '<leader>dd', function()
 	local is_enabled = vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 	local msg = is_enabled and 'enabled' or 'disabled'
-	v.notify(string.format('Diagnostic has been %s', msg), 'info')
+	v.notify(string.format('Diagnostic has been %s', msg), vim.log.levels.INFO)
 end)
 
 -- make executable current buffer
