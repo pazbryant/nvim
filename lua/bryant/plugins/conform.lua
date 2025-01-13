@@ -19,7 +19,7 @@ return {
 			scss = { 'prettier' },
 			less = { 'prettier' },
 			yaml = { 'prettier' },
-			markdown = { 'markdownlint' },
+			markdown = { 'prettier', 'markdownlint' },
 			sh = { 'shfmt' },
 			bash = { 'shfmt' },
 			zsh = { 'shfmt' },
@@ -27,7 +27,7 @@ return {
 			go = { 'gofumpt', 'goimports' },
 			python = { 'black', 'isort' },
 			toml = { 'taplo' },
-			['markdown.mdx'] = { 'markdownlint' },
+			['markdown.mdx'] = { 'markdownlint', 'prettier' },
 		},
 	},
 	keys = {
