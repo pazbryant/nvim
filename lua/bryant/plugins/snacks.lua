@@ -1,5 +1,6 @@
 return {
 	'folke/snacks.nvim',
+	lazy = false,
 	priority = 1000,
 	opts = {
 		-- your configuration comes here
@@ -23,8 +24,8 @@ return {
 		notify = { enabled = false },
 		rename = { enabled = false },
 		animate = { enabled = false },
-		indent = { enabled = false },
 		-- Enabled
+		indent = { enabled = true },
 		bigfile = { enabled = true },
 		lazygit = { enable = true },
 		quickfile = { enabled = true },
