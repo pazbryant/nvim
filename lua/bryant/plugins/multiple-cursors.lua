@@ -35,7 +35,7 @@ return {
 			elseif mc.hasCursors() then
 				mc.clearCursors()
 			else
-				-- default esc behaviour
+				vim.cmd('noh')
 			end
 		end)
 
@@ -52,6 +52,6 @@ return {
 	end,
 	keys = {
 		{ '<C-n>', mode = { 'n', 'v' } },
-		{ '<M-n>', mode = { 'n', 'v' } },
+		{ '<esc>', mode = 'n' },
 	},
 }

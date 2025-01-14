@@ -2,9 +2,6 @@ local v = vim
 
 local map = v.keymap.set
 
---- remove search highlights
-map('n', '<esc>', vim.cmd('noh'), { desc = 'Remove search highlights' })
-
 --- custom keymaps
 map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
 map({ 'n', 'v', 'o' }, 'H', '^', { desc = 'Start of the line' })
