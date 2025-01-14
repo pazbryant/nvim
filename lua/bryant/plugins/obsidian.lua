@@ -7,7 +7,6 @@ return {
 		'ObsidianTemplate',
 		'ObsidianNewFromTemplate',
 		'ObsidianNew',
-		'ObsidianTags',
 		'ObsidianFollowLink',
 	},
 	opts = {
@@ -70,9 +69,8 @@ return {
 	-- stylua: ignore start
 	keys = {
 		{ '<leader>od', '<cmd>ObsidianToday<CR>', desc = 'Open obsidian daily today' },
-		{ '<leader>ot', '<cmd>ObsidianTemplate<CR>', desc = 'Paste template current buffer' },
-		{ '<leader>oT', '<cmd>ObsidianNewFromTemplate<CR>', desc = 'New note from template' },
+		{ '<leader>ot', '<cmd>ObsidianTemplate<CR>', desc = 'Paste obsidian template current buffer' },
+		{ '<leader>oT', '<cmd>ObsidianNewFromTemplate<CR>', desc = 'New obsidian note from template' },
 		{ '<leader>on', '<cmd>ObsidianNew<CR>', desc = 'New obsidian note' },
-		{ '<leader>os', '<cmd>ObsidianTags<CR>', desc = 'Obsidian pick tags' },
 	},
 }

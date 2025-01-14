@@ -41,16 +41,12 @@ return {
 				return '<Ignore>'
 			end, { expr = true })
 
-			map('n', '<leader>gr', gs.reset_hunk, opts('Reset Hunk'))
-			map('n', '<leader>gp', gs.preview_hunk, opts('Preview Hunk'))
-			map('n', '<leader>gb', gs.blame_line, opts('Blame Line'))
-			map('n', '<leader>gl', gs.toggle_linehl, opts('Toggle linehl'))
-			map(
-				'n',
-				'<leader>gt',
-				'<cmd> Gitsigns toggle_signs <CR>',
-				opts('Toggle gitsigns')
-			)
+			-- stylua: ignore start
+			map('n', '<leader>gr', gs.reset_hunk, opts('Gitsigns Reset Hunk'))
+			map('n', '<leader>gp', gs.preview_hunk, opts('Gitsigns Preview Hunk'))
+			map('n', '<leader>gb', gs.blame_line, opts('Gitsigns Blame Line'))
+			map('n', '<leader>gl', gs.toggle_linehl, opts('Gitsigns Toggle linehl'))
+			map('n', '<leader>gt', '<cmd> Gitsigns toggle_signs <CR>', opts('Gitsigns Toggle gitsigns'))
 		end,
 	},
 }

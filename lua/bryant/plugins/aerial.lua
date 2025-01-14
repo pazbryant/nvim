@@ -17,21 +17,10 @@ return {
 			default_direction = 'prefer_left',
 		},
 	},
+	-- stylua: ignore end
 	keys = {
-		{
-			'<leader>a',
-			'<cmd>AerialToggle!<CR>',
-			desc = 'Toggle Aerial',
-		},
-		{
-			'[a',
-			'<cmd>AerialPrev<CR>',
-			desc = 'Aerial prev',
-		},
-		{
-			']a',
-			'<cmd>AerialNext<CR>',
-			desc = 'Aerial next',
-		},
+		{ ']a', '<cmd>AerialNext<CR>', desc = 'Aerial next' },
+		{ '[a', '<cmd>AerialPrev<CR>', desc = 'Aerial prev' },
+		{ '<leader>a', '<cmd>AerialToggle!<CR>', desc = 'Toggle Aerial' },
 	},
 }

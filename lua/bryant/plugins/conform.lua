@@ -37,7 +37,7 @@ return {
 				require('conform').format({ lsp_format = 'fallback' })
 				vim.notify('code has been formated', vim.log.levels.INFO)
 			end,
-			desc = '[F]ormat buffer',
+			desc = 'Conform [F]ormat buffer with',
 		},
 	},
 }
