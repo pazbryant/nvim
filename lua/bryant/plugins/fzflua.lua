@@ -1,6 +1,7 @@
 return {
 	'ibhagwan/fzf-lua',
 	dependencies = 'folke/trouble.nvim',
+	cmd = 'FzfLua',
 	opts = {
 		profile = {
 			enabled = true,
