@@ -8,6 +8,7 @@ return {
 		'hrsh7th/cmp-nvim-lsp',
 		'hrsh7th/cmp-path',
 		'hrsh7th/cmp-nvim-lsp-signature-help',
+		'hrsh7th/cmp-emoji',
 		-- This is important for integrating LuaSnip with nvim-cmp
 		'saadparwaiz1/cmp_luasnip',
 		'L3MON4D3/LuaSnip',
@@ -80,9 +81,10 @@ return {
 					end,
 				},
 				{ name = 'luasnip' },
-				{ name = 'buffer' },
 				{ name = 'path' },
 				{ name = 'nvim_lsp_signature_help' },
+				{ name = 'buffer' },
+				{ name = 'emoji' },
 			},
 		})
 	end,
