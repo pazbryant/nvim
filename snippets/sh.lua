@@ -9,6 +9,11 @@ return {
 		i(2),
 	}),
 
+	s('home', {
+		t('$HOME/'),
+		i(1),
+	}),
+
 	-- if statement
 	s('if', {
 		t('if [ '),
@@ -117,7 +122,7 @@ return {
 	}),
 
 	-- Check if a variable is not null
-	s('notnull', {
+	s('ifnotnull', {
 		t('if [ -n "$'),
 		i(1, 'variable'),
 		t('" ]; then'),
@@ -127,7 +132,7 @@ return {
 	}),
 
 	-- Check if a file exists
-	s('fileexists', {
+	s('iffileexists', {
 		t('if [ -f '),
 		i(1, '"file_path"'),
 		t(' ]; then'),
@@ -137,7 +142,7 @@ return {
 	}),
 
 	-- Check if a directory exists
-	s('direxists', {
+	s('ifdirexists', {
 		t('if [ -d '),
 		i(1, '"directory_path"'),
 		t(' ]; then'),
@@ -147,7 +152,7 @@ return {
 	}),
 
 	-- Check if a file is readable
-	s('filereadable', {
+	s('iffilereadable', {
 		t('if [ -r '),
 		i(1, '"file_path"'),
 		t(' ]; then'),
@@ -157,7 +162,7 @@ return {
 	}),
 
 	-- Check if a file is writable
-	s('filewritable', {
+	s('iffilewritable', {
 		t('if [ -w '),
 		i(1, '"file_path"'),
 		t(' ]; then'),
@@ -167,7 +172,7 @@ return {
 	}),
 
 	-- Check if two strings are equal
-	s('streq', {
+	s('ifstrequal', {
 		t('if [ "$'),
 		i(1, 'string1'),
 		t('" = "$'),
@@ -179,7 +184,7 @@ return {
 	}),
 
 	-- Check if two strings are not equal
-	s('strneq', {
+	s('strnequal', {
 		t('if [ "$'),
 		i(1, 'string1'),
 		t('" != "$'),
@@ -191,7 +196,7 @@ return {
 	}),
 
 	-- Check if a variable is a number
-	s('isnumber', {
+	s('ifisnumber', {
 		t('if [ "$'),
 		i(1, 'variable'),
 		t('" -eq "$'),
