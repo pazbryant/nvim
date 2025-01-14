@@ -36,3 +36,6 @@ autocmd('BufWinEnter', {
 		map('n', '<leader>p', ':Git push -u origin ', opts)
 	end,
 })
+
+map('n', 'gu', '<cmd>diffget //2<CR>', { desc = 'Get ours changes' })
+map('n', 'gh', '<cmd>diffget //3<CR>', { desc = 'Get theirs changes' })
