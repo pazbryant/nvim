@@ -3,31 +3,15 @@ return {
 	dependencies = 'rafamadriz/friendly-snippets',
 	config = function()
 		require('luasnip.loaders.from_vscode').lazy_load({
-			exclude = {
-				'sh',
-				'bash',
-			},
+			exclude = { 'sh', 'bash' },
 		})
 		require('luasnip.loaders.from_lua').lazy_load({
-			paths = {
-				'./snippets',
-			},
+			paths = { './snippets' },
 		})
 	end,
 	keys = {
-		{
-			'<C-l>',
-			function()
-				return require('luasnip').jump(1)
-			end,
-			mode = { 'i', 's' },
-		},
-		{
-			'<C-h>',
-			function()
-				require('luasnip').jump(-1)
-			end,
-			mode = { 'i', 's' },
-		},
+		-- stylua: ignore start
+		{ '<C-l>', function() return require('luasnip').jump(1) end, mode = { 'i', 's' } },
+		{ '<C-h>', function() require('luasnip').jump(-1) end, mode = { 'i', 's' } },
 	},
 }

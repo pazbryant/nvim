@@ -50,8 +50,8 @@ return {
 		'echasnovski/mini.align',
 		version = '*',
 		keys = {
-			{ 'ga', desc = 'Align text' },
-			{ 'gA', desc = 'Align text with preview' },
+			{ 'ga', desc = 'Mini.align Align text' },
+			{ 'gA', desc = 'Mini.align Align text with preview' },
 		},
 		opts = {},
 	},
@@ -61,13 +61,13 @@ return {
 		version = '*',
 		keys = {
 			-- Here's a different mapping to avoid conflict with flash.nvim
-			{ 'sa', desc = 'Add surrounding', mode = { 'n', 'v' } },
-			{ 'sd', desc = 'Delete surrounding' },
-			{ 'sf', desc = 'Find surrounding' },
-			{ 'sF', desc = 'Find surrounding backward' },
-			{ 'sh', desc = 'Highlight surrounding' },
-			{ 'sr', desc = 'Replace surrounding' },
-			{ 'sn', desc = 'Update n_lines' },
+			{ 'sa', desc = 'Mini.surround Add surrounding', mode = { 'n', 'v' } },
+			{ 'sd', desc = 'Mini.surround Delete surrounding' },
+			{ 'sf', desc = 'Mini.surround Find surrounding' },
+			{ 'sF', desc = 'Mini.surround Find surrounding backward' },
+			{ 'sh', desc = 'Mini.surround Highlight surrounding' },
+			{ 'sr', desc = 'Mini.surround Replace surrounding' },
+			{ 'sn', desc = 'Mini.surround Update n_lines' },
 		},
 		opts = {
 			-- Custom mappings to avoid 's' conflict
@@ -91,11 +91,11 @@ return {
 		'echasnovski/mini.operators',
 		version = '*',
 		keys = {
-			{ 'g=', desc = 'Evaluate text' },
-			{ 'gx', desc = 'Exchange text' },
-			{ 'gm', desc = 'Multiply text' },
-			{ 'gr', desc = 'Replace text' },
-			{ 'gs', desc = 'Sort text' },
+			{ 'g=', desc = 'Mini.operator Evaluate text' },
+			{ 'gx', desc = 'Mini.operator Exchange text' },
+			{ 'gm', desc = 'Mini.operator Multiply text' },
+			{ 'gr', desc = 'Mini.operator Replace text' },
+			{ 'gs', desc = 'Mini.operator Sort text' },
 		},
 		opts = {},
 	},

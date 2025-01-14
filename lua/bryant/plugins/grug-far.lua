@@ -4,9 +4,14 @@ return {
 	opts = {},
 	keys = {
 		{
-			'<leader>rp',
-			'<cmd>GrugFar<CR>',
-			desc = 'Replace with GrugFar',
+			'<leader>R',
+			function()
+				require('grug-far').toggle_instance({
+					instanceName = 'far',
+					staticTitle = 'Find and Replace',
+				})
+			end,
+			desc = 'GrugFar replace',
 		},
 	},
 }

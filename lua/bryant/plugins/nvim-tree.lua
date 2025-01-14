@@ -18,7 +18,7 @@ return {
 		{
 			'<leader>E',
 			'<CMD>NvimTreeToggle<CR>',
-			{ desc = 'Toggle Nvim Tree' },
+			{ desc = 'NvimTree toggle' },
 		},
 	},
 }

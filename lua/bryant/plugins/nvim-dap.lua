@@ -28,6 +28,5 @@ return {
 		{ '<leader>di', function() require('dap').step_into() end, desc = 'Step Into' },
 		{ '<leader>dO', function() require('dap').step_out() end, desc = 'Step Out' },
 		{ '<leader>dt', function() require('dapui').toggle() end, desc = 'Toggle Debug UI' },
-		-- stylua: ignore end
 	},
 }

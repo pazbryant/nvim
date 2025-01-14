@@ -5,10 +5,7 @@ return {
 	cmd = { 'TodoLocList', 'TodoQuickFix' },
 	opts = {},
 	keys = {
-		{
-			'<leader>tt',
-			'<cmd> TodoTrouble <CR>',
-			desc = 'Custom FZFLua Todo command',
-		},
+		-- stylua: ignore start
+		{ '<leader>tt', '<cmd> TodoTrouble <CR>', desc = 'Custom FZFLua Todo command' },
 	},
 }

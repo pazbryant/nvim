@@ -6,12 +6,7 @@ return {
 		wk.add({})
 	end,
 	keys = {
-		{
-			'<leader>?',
-			function()
-				require('which-key').show({ global = false })
-			end,
-			desc = 'Buffer Local Keymaps (which-key)',
-		},
+		-- stylua: ignore start
+		{ '<leader>?', function() require('which-key').show({ global = false }) end, desc = 'Buffer Local Keymaps (which-key)' },
 	},
 }
