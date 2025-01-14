@@ -18,7 +18,7 @@ return {
 		map({ 'n', 'v' }, '<leader>A', mc.matchAllAddCursors, { desc = 'Multicursor add all occurrence' })
 		map({ 'n', 'v' }, '<leader>s', function() mc.matchSkipCursor(1) end, { desc = 'Multicursor skip' })
 		map({ 'n', 'v' }, '<leader>N', function() mc.matchAddCursor(-1) end, { desc = 'Multicursor minus one' })
-		map({ 'n', 'v' }, '<leader>S', function() mc.matchSkipCursor(-1) end, { desc = 'Multicursor match skip backwards' })
+		map({ 'n', 'v' }, '<leader>B', function() mc.matchSkipCursor(-1) end, { desc = 'Multicursor match skip backwards' })
 		map('n', '<esc>', function() if not mc.cursorsEnabled() then mc.enableCursors() elseif mc.hasCursors() then mc.clearCursors() else vim.cmd('noh') end end, { desc = 'Multicursor clear cursors' })
 
 		local hl = vim.api.nvim_set_hl
