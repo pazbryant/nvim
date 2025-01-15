@@ -43,7 +43,7 @@ return {
 		priority = 1000,
 		opts = {
 			transparent = {
-				enabled = true, -- Master switch to enable transparency
+				enabled = false, -- Master switch to enable transparency
 			},
 			variant = 'winter', -- "spring" | "summer" | "autumn" | "winter" (default)
 			styles = {
