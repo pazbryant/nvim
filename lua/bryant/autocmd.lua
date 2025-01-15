@@ -197,3 +197,21 @@ autocmd({ 'BufRead', 'BufNewFile' }, {
 			+ 'q' -- Allow formatting of comments with "gq"
 	end,
 })
+
+autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave', 'WinEnter' }, {
+	group = bryant_group,
+	callback = function()
+		if vim.opt.number:get() and vim.fn.mode() ~= 'i' then
+			vim.opt.relativenumber = true
+		end
+	end,
+})
+
+autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'WinLeave' }, {
+	group = bryant_group,
+	callback = function()
+		if vim.opt.number:get() then
+			vim.opt.relativenumber = false
+		end
+	end,
+})
