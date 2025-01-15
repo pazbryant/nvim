@@ -175,15 +175,25 @@ autocmd('BufHidden', {
 	end,
 })
 
-autocmd('BufRead', {
+autocmd({ 'BufRead', 'BufNewFile' }, {
 	group = bryant_group,
-	desc = 'Wrap in markdown files',
-	pattern = 'markdown',
+	pattern = { '*.md', '*.markdown' },
+	desc = 'Setup markdown environment with zen mode and proper wrapping',
 	callback = function()
-		local opt = vim.opt_local
-		opt.wrap = true
-		opt.linebreak = true
-		opt.breakindent = true
-		opt.display:append('lastline')
+		-- make sure FileType is set
+		vim.cmd('setfiletype markdown')
+
+		-- Set wrapping options
+		vim.opt_local.wrap = true
+		vim.opt_local.linebreak = true -- Break lines at word boundaries
+		vim.opt_local.breakindent = true -- Preserve indentation when wrapping
+		vim.opt_local.display = 'lastline'
+		vim.opt_local.textwidth = 80 -- Set text width for automatic formatting
+
+		-- Optional: Enable soft word wrap
+		vim.opt_local.formatoptions = vim.opt_local.formatoptions
+			+ 't' -- Auto-wrap text using textwidth
+			+ 'c' -- Auto-wrap comments using textwidth
+			+ 'q' -- Allow formatting of comments with "gq"
 	end,
 })
