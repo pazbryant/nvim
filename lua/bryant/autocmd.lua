@@ -174,3 +174,16 @@ autocmd('BufHidden', {
 		end
 	end,
 })
+
+autocmd('BufRead', {
+	group = bryant_group,
+	desc = 'Wrap in markdown files',
+	pattern = 'markdown',
+	callback = function()
+		local opt = vim.opt_local
+		opt.wrap = true
+		opt.linebreak = true
+		opt.breakindent = true
+		opt.display:append('lastline')
+	end,
+})
