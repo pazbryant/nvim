@@ -16,7 +16,7 @@ return {
 		map({ 'n', 'v' }, '<left>', mc.prevCursor, { desc = 'Multicursor previous' })
 
 		map({"n", "v"}, "<up>", function()     mc.lineAddCursor(-1) end)
-		map({ "n", "v" }, "down>", function() mc.lineAddCursor(1) end)
+		map({ "n", "v" }, "<down>", function() mc.lineAddCursor(1) end)
 
 		map({ "n", "v" }, "<leader><up>", function() mc.lineSkipCursor(-1) end)
 		map({ "n", "v" }, "<leader><down>", function() mc.lineSkipCursor(1) end)
