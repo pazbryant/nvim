@@ -68,9 +68,8 @@ return {
 	},
 	-- stylua: ignore start
 	keys = {
-		{ '<leader>od', '<cmd>ObsidianToday<CR>', desc = 'Open obsidian daily today' },
-		{ '<leader>ot', '<cmd>ObsidianTemplate<CR>', desc = 'Paste obsidian template current buffer' },
-		{ '<leader>oT', '<cmd>ObsidianNewFromTemplate<CR>', desc = 'New obsidian note from template' },
+		{ '<leader>ot', '<cmd>ObsidianToday<CR>', desc = 'Open obsidian daily today' },
+		{ '<leader>oT', '<cmd>ObsidianTemplate<CR>', desc = 'Paste obsidian template current buffer' },
 		{ '<leader>on', '<cmd>ObsidianNew<CR>', desc = 'New obsidian note' },
 	},
 }
