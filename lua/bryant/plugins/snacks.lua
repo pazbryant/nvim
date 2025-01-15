@@ -51,7 +51,7 @@ return {
 	},
 	keys = {
 		-- stylua: ignore start
-		{ '<leader>zm', function() Snacks.zen() end, desc = 'Toggle Zen Mode' },
+		{ 'zm', function() Snacks.zen() end, desc = 'Toggle Zen Mode' },
 		{ '<leader>gg', function() Snacks.lazygit() end, desc = 'Lazygit' },
 	},
 }
