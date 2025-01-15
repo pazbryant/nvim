@@ -23,15 +23,17 @@ opt.softtabstop = 2
 opt.tabstop = 2
 opt.cmdheight = 0
 
-opt.nu = false
+opt.nu = true
+opt.rnu = true
+opt.numberwidth = 1
 
 opt.hlsearch = true
 opt.incsearch = true
 opt.smartcase = true
 opt.ignorecase = true
 
-opt.scrolloff = 8
-opt.signcolumn = 'yes'
+opt.scrolloff = 20
+opt.signcolumn = 'yes:1'
 opt.colorcolumn = '80'
 opt.isfname:append('@-@')
 
