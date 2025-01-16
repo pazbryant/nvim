@@ -103,7 +103,12 @@ autocmd('LspAttach', {
 
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
 		local caps = client.server_capabilities
-		if caps.semanticTokensProvider and caps.semanticTokensProvider.full then
+		local status = pcall(module, 'hlargs')
+		if
+			caps.semanticTokensProvider
+			and caps.semanticTokensProvider.full
+			and status
+		then
 			require('hlargs').disable_buf(args.buf)
 		end
 	end,
@@ -154,8 +159,11 @@ autocmd('FileType', {
 		'lazy',
 	},
 	callback = function()
-		require('ufo').detach()
-		vim.opt_local.foldenable = false
+		local status = pcall(module, 'ufo')
+		if status then
+			require('ufo').detach()
+			vim.opt_local.foldenable = false
+		end
 	end,
 })
 
