@@ -82,14 +82,6 @@ return {
 		t({ '', '}' }),
 	}),
 
-	-- "while true" loop (common idiom)
-	s('whiletrue', {
-		t('while true; do'),
-		t({ '', '\t' }),
-		i(1, 'commands'),
-		t({ '', 'done' }),
-	}),
-
 	-- "test" command (alternative to [ ])
 	s('test', {
 		t('test '),
@@ -112,7 +104,7 @@ return {
 	}),
 
 	-- Check if a variable is null
-	s('isnull', {
+	s('null', {
 		t('if [ -z "$'),
 		i(1, 'variable'),
 		t('" ]; then'),
@@ -122,7 +114,7 @@ return {
 	}),
 
 	-- Check if a variable is not null
-	s('ifnotnull', {
+	s('notnull', {
 		t('if [ -n "$'),
 		i(1, 'variable'),
 		t('" ]; then'),
@@ -132,7 +124,7 @@ return {
 	}),
 
 	-- Check if a file exists
-	s('iffileexists', {
+	s('fileexist', {
 		t('if [ -f '),
 		i(1, '"file_path"'),
 		t(' ]; then'),
@@ -142,7 +134,7 @@ return {
 	}),
 
 	-- Check if a directory exists
-	s('ifdirexists', {
+	s('direxist', {
 		t('if [ -d '),
 		i(1, '"directory_path"'),
 		t(' ]; then'),
@@ -152,7 +144,7 @@ return {
 	}),
 
 	-- Check if a file is readable
-	s('iffilereadable', {
+	s('readable', {
 		t('if [ -r '),
 		i(1, '"file_path"'),
 		t(' ]; then'),
@@ -162,7 +154,7 @@ return {
 	}),
 
 	-- Check if a file is writable
-	s('iffilewritable', {
+	s('writable', {
 		t('if [ -w '),
 		i(1, '"file_path"'),
 		t(' ]; then'),
@@ -172,7 +164,7 @@ return {
 	}),
 
 	-- Check if two strings are equal
-	s('ifstrequal', {
+	s('equal', {
 		t('if [ "$'),
 		i(1, 'string1'),
 		t('" = "$'),
@@ -184,7 +176,7 @@ return {
 	}),
 
 	-- Check if two strings are not equal
-	s('strnequal', {
+	s('notequal', {
 		t('if [ "$'),
 		i(1, 'string1'),
 		t('" != "$'),
@@ -196,7 +188,7 @@ return {
 	}),
 
 	-- Check if a variable is a number
-	s('ifisnumber', {
+	s('number', {
 		t('if [ "$'),
 		i(1, 'variable'),
 		t('" -eq "$'),
