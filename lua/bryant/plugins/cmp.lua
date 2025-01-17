@@ -68,16 +68,8 @@ return {
 				{
 					name = 'nvim_lsp',
 					entry_filter = function(entry)
-						local source = entry.source
-						if source and source.source.client then
-							local client_name = source.source.client.name
-							if disabled_snippet_lsps[client_name] then
-								local kind =
-									require('cmp.types').lsp.CompletionItemKind[entry:get_kind()]
-								return kind ~= 'Snippet'
-							end
-						end
-						return true -- Allow other entries
+						return entry:get_kind()
+							~= require('cmp.types').lsp.CompletionItemKind.Snippet
 					end,
 				},
 				{ name = 'luasnip' },
