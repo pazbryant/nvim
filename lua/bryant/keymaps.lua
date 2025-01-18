@@ -22,10 +22,6 @@ map('n', '<M-h>', '<cmd>vertical resize -20<CR>', { desc = 'Decrease split left'
 map('n', '<M-j>', '<cmd>horizontal resize -20<CR>', { desc = 'Decrease split down' })
 map('n', '<M-j>', '<cmd>horizontal resize +20<CR>', { desc = 'Decrease split up' })
 
--- close splits
-map('n', '<C-w>x', '<C-w>c', { noremap = true, silent = true })
-map('n', '<C-w>p', '<C-w>o', { noremap = true, silent = true })
-
 -- custom rename
 map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
@@ -34,8 +30,8 @@ map({ 'i', 'n' }, '<c-s>', function() v.lsp.buf.signature_help() end, { desc = '
 
 -- quick fix list
 map('n', '<leader>q', ':cope<CR>', { desc = 'Toggle quickfix list' })
-map('n', '<leader>cn', ':cnext<CR>', { desc = 'Next quickfix item' })
-map('n', '<leader>cp', ':cprev<CR>', { desc = 'Previous quickfix item' })
+map('n', ']q', ':cnext<CR>', { desc = 'Next quickfix item' })
+map('n', '[q', ':cprev<CR>', { desc = 'Previous quickfix item' })
 
 map('n', '<leader>D', function()
 	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
