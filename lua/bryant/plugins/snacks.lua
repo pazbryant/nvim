@@ -32,12 +32,8 @@ return {
 		zen = {
 			enabled = true,
 			toggles = { dim = false },
-			on_open = function()
-				vim.opt.foldcolumn = '0'
-			end,
-			on_close = function()
-				vim.opt.foldcolumn = '1'
-			end,
+			on_open = function() end,
+			on_close = function() end,
 		},
 		styles = {
 			zen = {
