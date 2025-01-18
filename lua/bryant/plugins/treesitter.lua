@@ -21,13 +21,7 @@ return {
 			},
 			auto_install = true,
 			incremental_selection = {
-				enable = true,
-				keymaps = {
-					init_selection = 'gnn', -- set to `false` to disable one of the mappings
-					node_incremental = 'gni',
-					scope_incremental = 'gns',
-					node_decremental = 'gnd',
-				},
+				enable = false,
 			},
 			indent = { enable = true },
 			highlight = {
