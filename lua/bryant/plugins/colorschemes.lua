@@ -5,7 +5,7 @@ return {
 			compile = true,
 			commentStyle = { italic = false },
 			keywordStyle = { italic = false },
-			statementStyle = { bold = true },
+			statementStyle = { bold = false },
 			transparent = false,
 			theme = 'wave', -- Load "wave" theme when 'background' option is not set
 			background = { -- map the value of 'background' option to a theme
@@ -26,7 +26,7 @@ return {
 			variant = 'auto',
 			bold_vert_split = true,
 			styles = {
-				bold = true,
+				bold = false,
 				italic = false,
 				transparency = false,
 			},
