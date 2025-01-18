@@ -1,6 +1,5 @@
 return {
 	'kevinhwang91/nvim-ufo',
-	enabled = false,
 	event = 'BufEnter',
 	dependencies = 'kevinhwang91/promise-async',
 	config = function()
@@ -71,8 +70,6 @@ return {
 		-- Keymaps
 		v.keymap.set('n', 'zR', require('ufo').openAllFolds)
 		v.keymap.set('n', 'zM', require('ufo').closeAllFolds)
-		v.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds)
-		v.keymap.set('n', 'zm', require('ufo').closeFoldsWith)
 		v.keymap.set('n', 'K', function()
 			local winid = require('ufo').peekFoldedLinesUnderCursor()
 			if not winid then
@@ -81,7 +78,6 @@ return {
 		end)
 
 		-- Set foldcolumn
-		v.o.foldcolumn = '1'
 		v.o.foldlevel = 99
 		v.o.foldlevelstart = 99
 		v.o.foldenable = true
