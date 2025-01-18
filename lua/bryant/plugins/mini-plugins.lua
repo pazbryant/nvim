@@ -99,4 +99,13 @@ return {
 		},
 		opts = {},
 	},
+
+	{
+		'echasnovski/mini.pairs',
+		lazy = 'VeryLazy',
+		version = '*',
+		config = function()
+			require('mini.pairs').setup()
+		end,
+	},
 }
