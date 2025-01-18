@@ -30,7 +30,7 @@ map('n', '<C-w>p', '<C-w>o', { noremap = true, silent = true })
 map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- signature help
-map({ 'i', 'n' }, '<m-i>', function() v.lsp.buf.signature_help() end, { desc = 'Toggle signature help' })
+map({ 'i', 'n' }, '<c-s>', function() v.lsp.buf.signature_help() end, { desc = 'Toggle signature help' })
 
 -- quick fix list
 map('n', '<leader>q', ':cope<CR>', { desc = 'Toggle quickfix list' })
