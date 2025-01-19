@@ -12,10 +12,6 @@ map({ 'n', 'v', 'o' }, 'L', 'g_', { desc = 'End of the line' })
 map('v', '<', '<gv', { desc = 'Better align items' })
 map('v', '>', '>gv', { desc = 'Better align items' })
 
--- split window like tmux
-map('n', '<C-w>"', '<C-W>s', { desc = 'Split window below' })
-map('n', '<C-w>%', '<C-W>v', { desc = 'Split window right' })
-
 -- resise splits
 map('n', '<M-l>', '<cmd>vertical resize +20<CR>', { desc = 'Increase split right' })
 map('n', '<M-h>', '<cmd>vertical resize -20<CR>', { desc = 'Decrease split left' })
