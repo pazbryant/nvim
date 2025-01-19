@@ -17,7 +17,8 @@ return {
 	init = function()
 		local map = vim.keymap.set
 		map('n', '<cr>', '<Plug>(leap)')
-		map('n', 'S', '<Plug>(leap-from-window)')
+		map({ 'x', 'o' }, '<cr>', '<Plug>(leap-forward)')
+		map({ 'x', 'o' }, 'S', '<Plug>(leap-backward)')
 
 		-- Define equivalence classes for brackets and quotes, in addition to
 		-- the default whitespace group.
