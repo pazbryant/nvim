@@ -39,8 +39,7 @@ return {
 			zen = {
 				width = 100,
 				backdrop = {
-					transparent = true,
-					blend = 20,
+					transparent = false,
 				},
 			},
 		},
