@@ -8,6 +8,7 @@ return {
 		'hrsh7th/cmp-nvim-lsp',
 		'hrsh7th/cmp-path',
 		'hrsh7th/cmp-nvim-lsp-signature-help',
+		'hrsh7th/cmp-cmdline',
 		'hrsh7th/cmp-emoji',
 		-- This is important for integrating LuaSnip with nvim-cmp
 		'saadparwaiz1/cmp_luasnip',
@@ -25,10 +26,6 @@ return {
 				ellipsis_char = '...',
 				show_labelDetails = true,
 			}),
-		}
-
-		local disabled_snippet_lsps = {
-			bashls = true, -- Add language servers you want to disable snippets for
 		}
 
 		cmp.setup({
@@ -78,6 +75,16 @@ return {
 				{ name = 'buffer' },
 				{ name = 'emoji' },
 			},
+		})
+
+		cmp.setup.cmdline(':', {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = 'path' },
+			}, {
+				{ name = 'cmdline' },
+			}),
+			matching = { disallow_symbol_nonprefix_matching = false },
 		})
 	end,
 }
