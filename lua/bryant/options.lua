@@ -8,8 +8,6 @@ g.maplocalleader = ' '
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
-opt.clipboard = 'unnamedplus'
-
 opt.showmode = true
 opt.showtabline = 0
 

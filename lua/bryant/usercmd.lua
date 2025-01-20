@@ -32,7 +32,7 @@ end, {
 	desc = 'Sort lines by length (shortest to longest)',
 })
 
-usercmd('ToggleCmp', function()
+usercmd('CmpToggle', function()
 	local cmp = require('cmp')
 	local current_setting = cmp.get_config().completion.autocomplete
 	if current_setting and #current_setting > 0 then
@@ -49,7 +49,7 @@ end, {
 })
 
 local transparent_enabled = false
-usercmd('ToggleTransparent', function()
+usercmd('TransparentToggle', function()
 	if transparent_enabled then
 		vim.cmd([[TransparentDisable]])
 	else
@@ -59,3 +59,16 @@ usercmd('ToggleTransparent', function()
 end, {
 	desc = 'Toggle Transparent',
 })
+
+usercmd('SpellToggle', function()
+	vim.cmd([[set spell!]])
+	local is_spell_on = vim.opt.spell:get() and 'on' or 'off'
+	vim.notify(string.format('spell is %s', is_spell_on), vim.log.levels.INFO)
+end, { desc = 'Spell toggle' })
+
+usercmd('DiagnosticsToggle', function()
+	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+	local is_enabled = vim.diagnostic.is_enabled()
+	local msg = is_enabled and 'enabled' or 'disabled'
+	vim.notify(string.format('Diagnostic has been %s', msg), vim.log.levels.INFO)
+end, { desc = 'Diagnostics toggle' })
