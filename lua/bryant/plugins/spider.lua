@@ -1,7 +1,7 @@
 return {
 	'chrisgrieser/nvim-spider',
 	opts = {
-		skipInsignificantPunctuation = false,
+		skipInsignificantPunctuation = true,
 	},
 	keys = {
 		-- stylua: ignore start
