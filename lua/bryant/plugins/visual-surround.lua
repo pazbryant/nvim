@@ -4,7 +4,7 @@ return {
 	config = function()
 		require('visual-surround').setup({
 			use_default_keymaps = true,
-			exit_visual_mode = false,
+			exit_visual_mode = true,
 		})
 	end,
 }
