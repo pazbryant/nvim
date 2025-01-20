@@ -22,11 +22,11 @@ return {
 	end,
 	keys = {
 		-- stylua: ignore start
-		{ '<leader>dc', function() require('dap').continue() end, desc = 'Start/Continue Debug' },
-		{ '<leader>db', function() require('dap').toggle_breakpoint() end, desc = 'Toggle Breakpoint' },
-		{ '<leader>do', function() require('dap').step_over() end, desc = 'Step Over' },
-		{ '<leader>di', function() require('dap').step_into() end, desc = 'Step Into' },
-		{ '<leader>dO', function() require('dap').step_out() end, desc = 'Step Out' },
-		{ '<leader>dt', function() require('dapui').toggle() end, desc = 'Toggle Debug UI' },
+		{ '<leader>gdc', function() require('dap').continue() end, desc = 'Start/Continue Debug' },
+		{ '<leader>gdb', function() require('dap').toggle_breakpoint() end, desc = 'Toggle Breakpoint' },
+		{ '<leader>gdo', function() require('dap').step_over() end, desc = 'Step Over' },
+		{ '<leader>gdi', function() require('dap').step_into() end, desc = 'Step Into' },
+		{ '<leader>gdO', function() require('dap').step_out() end, desc = 'Step Out' },
+		{ '<leader>gdt', function() require('dapui').toggle() end, desc = 'Toggle Debug UI' },
 	},
 }
