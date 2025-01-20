@@ -8,6 +8,18 @@ map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
 map({ 'n', 'v', 'o' }, 'H', '^', { desc = 'Start of the line' })
 map({ 'n', 'v', 'o' }, 'L', 'g_', { desc = 'End of the line' })
 
+-- copy into system clipboard
+map({'n', 'v'}, '<leader>y', '"+y') -- yank motion
+map({'n', 'v'}, '<leader>Y', '"+Y') -- yank line
+
+-- Delete into system clipboard
+map({'n', 'v'}, '<leader>d', '"+d') -- delete motion
+map({'n', 'v'}, '<leader>D', '"+D') -- delete line
+
+-- Paste from system clipboard
+map('n', '<leader>p', '"+p')  -- paste after cursor
+map('n', '<leader>P', '"+P')  -- paste before cursor
+
 -- align manually
 map('v', '<', '<gv', { desc = 'Better align items' })
 map('v', '>', '>gv', { desc = 'Better align items' })
@@ -28,19 +40,6 @@ map({ 'i', 'n' }, '<c-s>', function() v.lsp.buf.signature_help() end, { desc = '
 map('n', '<leader>q', ':cope<CR>', { desc = 'Toggle quickfix list' })
 map('n', ']q', ':cnext<CR>', { desc = 'Next quickfix item' })
 map('n', '[q', ':cprev<CR>', { desc = 'Previous quickfix item' })
-
-map('n', '<leader>D', function()
-	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-	local is_enabled = vim.diagnostic.is_enabled()
-	local msg = is_enabled and 'enabled' or 'disabled'
-	v.notify(string.format('Diagnostic has been %s', msg), vim.log.levels.INFO)
-end)
-
-map('n', '<leader>S', function()
-	vim.cmd([[set spell!]])
-	local is_spell_on = vim.opt.spell:get() and 'on' or 'off'
-	vim.notify(string.format('spell is %s', is_spell_on), vim.log.levels.INFO)
-end, { desc = 'Manage spell' })
 
 -- make executable current buffer
 map('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
