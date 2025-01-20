@@ -47,3 +47,15 @@ usercmd('ToggleCmp', function()
 end, {
 	desc = 'Toggle cpm',
 })
+
+local transparent_enabled = false
+usercmd('ToggleTransparent', function()
+	if transparent_enabled then
+		vim.cmd([[TransparentDisable]])
+	else
+		vim.cmd([[TransparentEnable]])
+	end
+	transparent_enabled = not transparent_enabled
+end, {
+	desc = 'Toggle Transparent',
+})
