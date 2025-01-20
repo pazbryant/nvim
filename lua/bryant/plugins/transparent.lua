@@ -43,7 +43,7 @@ return {
 	keys = {
 		{
 			'<leader>tt',
-			'<cmd>TransparentToggle<cr>',
+			'<cmd>CTransparentToggle<cr>',
 			desc = 'Transparent toggle',
 		},
 	},

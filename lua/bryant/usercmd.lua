@@ -49,7 +49,7 @@ end, {
 })
 
 local transparent_enabled = false
-usercmd('TransparentToggle', function()
+usercmd('CTransparentToggle', function()
 	if transparent_enabled then
 		vim.cmd([[TransparentDisable]])
 	else
