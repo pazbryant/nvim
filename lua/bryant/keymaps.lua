@@ -17,8 +17,8 @@ map({'n', 'v'}, '<leader>d', '"+d') -- delete motion
 map({'n', 'v'}, '<leader>D', '"+D') -- delete line
 
 -- Paste from system clipboard
-map('n', '<leader>p', '"+p')  -- paste after cursor
-map('n', '<leader>P', '"+P')  -- paste before cursor
+map({'n','v'}, '<leader>p', '"+p')  -- paste after cursor
+map({'n','v'}, '<leader>P', '"+P')  -- paste before cursor
 
 -- align manually
 map('v', '<', '<gv', { desc = 'Better align items' })
