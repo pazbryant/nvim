@@ -20,6 +20,14 @@ return {
 	},
 
 	{
+		'sainnhe/everforest',
+		config = function()
+			vim.g.everforest_enable_italic = false
+			vim.cmd.colorscheme('everforest')
+		end,
+	},
+
+	{
 		'rose-pine/neovim',
 		name = 'rose-pine',
 		opts = {
