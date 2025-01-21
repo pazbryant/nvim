@@ -8,6 +8,7 @@ return {
 		'ObsidianNewFromTemplate',
 		'ObsidianNew',
 		'ObsidianFollowLink',
+		'ObsidianSearch',
 	},
 	opts = {
 		workspaces = {
@@ -71,5 +72,6 @@ return {
 		{ '<leader>ot', '<cmd>ObsidianToday<CR>', desc = 'Open obsidian daily today' },
 		{ '<leader>oT', '<cmd>ObsidianTemplate<CR>', desc = 'Paste obsidian template current buffer' },
 		{ '<leader>on', '<cmd>ObsidianNew<CR>', desc = 'New obsidian note' },
+		{ '<leader>os', '<cmd>ObsidianSearch<CR>', desc = 'Search with obsidian' },
 	},
 }
