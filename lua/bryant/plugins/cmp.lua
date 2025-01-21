@@ -2,9 +2,12 @@ return {
 	'hrsh7th/nvim-cmp',
 	event = 'InsertEnter',
 	dependencies = {
+		-- Completion sources
 		'onsails/lspkind.nvim',
-		'hrsh7th/cmp-buffer', -- Buffer completion
-		'hrsh7th/cmp-path', -- Path completion
+		'hrsh7th/cmp-buffer',
+		'hrsh7th/cmp-path',
+		'hrsh7th/cmp-cmdline',
+		'hrsh7th/cmp-emoji',
 		-- This is important for integrating LuaSnip with nvim-cmp
 		'saadparwaiz1/cmp_luasnip',
 		'L3MON4D3/LuaSnip',
@@ -14,7 +17,7 @@ return {
 		local luasnip = require('luasnip')
 		local lspkind = require('lspkind')
 
-		local formating_style = {
+		local formatting_style = {
 			format = lspkind.cmp_format({
 				mode = 'text_symbol',
 				maxwidth = 50,
@@ -24,11 +27,10 @@ return {
 		}
 
 		cmp.setup({
-			formatting = formating_style,
+			formatting = formatting_style,
 			snippet = {
 				expand = function(args)
-					-- Use LuaSnip's expansion function (only if you're using LuaSnip snippets)
-					luasnip.lsp_expand(args.body) -- You can replace this if you use custom LuaSnip expansions
+					luasnip.lsp_expand(args.body) -- Expands LuaSnip snippets
 				end,
 			},
 			completion = {
@@ -54,9 +56,20 @@ return {
 			}),
 			sources = {
 				{ name = 'luasnip' },
-				{ name = 'buffer' },
 				{ name = 'path' },
+				{ name = 'buffer' },
+				{ name = 'emoji' },
 			},
+		})
+
+		cmp.setup.cmdline(':', {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = 'path' },
+			}, {
+				{ name = 'cmdline' },
+			}),
+			matching = { disallow_symbol_nonprefix_matching = false },
 		})
 	end,
 }

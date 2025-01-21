@@ -1,6 +1,6 @@
--- Function to sort lines by length
 local usercmd = vim.api.nvim_create_user_command
 
+-- Function to sort lines by length
 usercmd('Sort', function()
 	local start_line = vim.fn.line("'<")
 	local end_line = vim.fn.line("'>")
@@ -25,3 +25,25 @@ end, {
 	range = true,
 	desc = 'Sort lines by length (shortest to longest)',
 })
+
+usercmd('CmpToggle', function()
+	local cmp = require('cmp')
+	local current_setting = cmp.get_config().completion.autocomplete
+	if current_setting and #current_setting > 0 then
+		cmp.setup({ completion = { autocomplete = false } })
+		vim.notify('Cmp has ben disabled', vim.log.levels.INFO)
+	else
+		cmp.setup({
+			completion = { autocomplete = { cmp.TriggerEvent.TextChanged } },
+		})
+		vim.notify('Cmp has ben enabled', vim.log.levels.INFO)
+	end
+end, {
+	desc = 'Toggle cpm',
+})
+
+usercmd('SpellToggle', function()
+	vim.cmd([[set spell!]])
+	local is_spell_on = vim.opt.spell:get() and 'on' or 'off'
+	vim.notify(string.format('spell is %s', is_spell_on), vim.log.levels.INFO)
+end, { desc = 'Spell toggle' })

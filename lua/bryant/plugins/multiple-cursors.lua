@@ -1,53 +1,34 @@
 return {
 	'jake-stewart/multicursor.nvim',
+	event = 'VeryLazy',
 	branch = '1.0',
-	lazy = false,
 	config = function()
 		local mc = require('multicursor-nvim')
-
 		mc.setup()
-
 		local map = vim.keymap.set
 
-		-- Add or skip adding a new cursor by matching word/selection
-		map({ 'n', 'v' }, '<C-n>', function()
-			mc.matchAddCursor(1)
-		end)
+		-- stylua: ignore start
+		map({ 'n', 'v' }, '<c-n>', function() mc.matchAddCursor(1) end, { desc = 'Multicursor start' })
+		map({ 'n', 'v' }, '<leader>A', mc.matchAllAddCursors, { desc = 'Multicursor add all occurrence' })
+		map('n', '<esc>', function() if not mc.cursorsEnabled() then mc.enableCursors() elseif mc.hasCursors() then mc.clearCursors() else vim.cmd('noh') end end, { desc = 'Multicursor clear cursors' })
 
-		-- Add or skip cursor above/below the main cursor.
-		map({ 'n', 'v' }, '<up>', function()
-			mc.lineAddCursor(-1)
-		end)
-		map({ 'n', 'v' }, '<down>', function()
-			mc.lineAddCursor(1)
-		end)
+		map({ 'n', 'v' }, '<right>', mc.nextCursor, { desc = 'Multicursor next' })
+		map({ 'n', 'v' }, '<left>', mc.prevCursor, { desc = 'Multicursor previous' })
 
-		-- Add all matches in the document
-		map({ 'n', 'v' }, '<leader>A', mc.matchAllAddCursors)
+		map({"n", "v"}, "<up>", function()     mc.lineAddCursor(-1) end)
+		map({ "n", "v" }, "<down>", function() mc.lineAddCursor(1) end)
 
-		-- Rotate the main cursor.
-		map({ 'n', 'v' }, '<left>', mc.nextCursor)
-		map({ 'n', 'v' }, '<right>', mc.prevCursor)
+		map({ "n", "v" }, "<leader><up>", function() mc.lineSkipCursor(-1) end)
+		map({ "n", "v" }, "<leader><down>", function() mc.lineSkipCursor(1) end)
 
-		-- Delete the main cursor.
-		map({ 'n', 'v' }, '<C-x>', mc.deleteCursor)
+		map('v', 'q', mc.deleteCursor, { desc = 'Multicursor remove cursor' })
+		map('v', 'Q', function() mc.matchSkipCursor(1) end, { desc = 'Multicursor skip' })
 
-		map('n', '<esc>', function()
-			if not mc.cursorsEnabled() then
-				mc.enableCursors()
-			elseif mc.hasCursors() then
-				mc.clearCursors()
-			else
-				-- Default <esc> handler.
-			end
-		end)
+		map('v', 'A', mc.appendVisual, { desc = 'Multicursor visual insert mode last' })
+		map('v', 'I', mc.insertVisual, { desc = 'Multicursor visual insert mode' })
 
-		-- Append/insert for each line of visual selections.
-		map('v', 'I', mc.insertVisual)
-		map('v', 'A', mc.appendVisual)
+		map('n', '<c-leftmouse>', mc.handleMouse, { desc = 'Multicursor insert with mouse' })
 
-
-		-- Customize how cursors look.
 		local hl = vim.api.nvim_set_hl
 		hl(0, 'MultiCursorCursor', { link = 'Cursor' })
 		hl(0, 'MultiCursorVisual', { link = 'Visual' })
