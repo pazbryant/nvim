@@ -34,8 +34,8 @@ return {
 		local map = vim.keymap.set
 
 		map({ 'i', 's' }, '<C-l>', function()
-			if ls.expand_or_jumpable() then
-				ls.expand_or_jump()
+			if ls.jumpable() then
+				ls.jump(1)
 			end
 		end, { silent = true })
 
