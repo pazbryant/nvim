@@ -51,4 +51,6 @@ map('n', '<leader><leader>', function() vim.cmd('so') end)
 map('n', '<C-z>', '<Nop>', { noremap = true, silent = true })
 
 -- toggle cmp
-map('n', '<leader>C', '<cmd>ToggleCmp<CR>', { noremap = true, silent = true })
+map('n', '<leader>C', '<cmd>CmpToggle<CR>', { noremap = true, silent = true })
+
+map('n', '<leader>S', '<cmd>SpellToggle<CR>', { noremap = true, silent = true })
