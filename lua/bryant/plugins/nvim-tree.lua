@@ -4,7 +4,7 @@ return {
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	opts = {
 		view = {
-			width = 55,
+			width = 50,
 			side = 'left',
 			adaptive_size = true,
 			preserve_window_proportions = true,
