@@ -1,6 +1,7 @@
 local api = vim.api
 local map = vim.keymap.set
 local autocmd = api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
 
 local bryant_group = api.nvim_create_augroup('bryant_group', { clear = true })
 
@@ -130,6 +131,7 @@ autocmd('FileType', {
 		'man',
 		'checkhealth',
 		'tsplayground',
+		'markdown',
 		'dap-float',
 		'empty',
 		'noice',
@@ -142,7 +144,7 @@ autocmd('FileType', {
 		'grug-far-help',
 	},
 	callback = function()
-		map('n', 'q', ':close<CR>')
+		map('n', 'q', ':quit<CR>')
 	end,
 })
 
@@ -208,6 +210,7 @@ autocmd({ 'BufRead', 'BufNewFile' }, {
 
 autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave', 'WinEnter' }, {
 	group = bryant_group,
+	desc = 'Inteligent relative number',
 	callback = function()
 		if vim.opt.number:get() and vim.fn.mode() ~= 'i' then
 			vim.opt.relativenumber = true
@@ -217,9 +220,38 @@ autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave', 'WinEnter' }, {
 
 autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'WinLeave' }, {
 	group = bryant_group,
+	desc = 'Inteligent relative number',
 	callback = function()
 		if vim.opt.number:get() then
 			vim.opt.relativenumber = false
 		end
 	end,
+})
+
+autocmd('BufWritePre', {
+	group = augroup('TrimWhiteSpaceGrp', { clear = true }),
+	desc = 'Remove all trailing whitespace on save',
+	command = [[:%s/\s\+$//e]],
+})
+
+autocmd({ 'FileType' }, {
+	desc = 'enable_editorconfig_syntax',
+	pattern = { 'editorconfig' },
+	callback = function()
+		vim.opt_local.syntax = 'editorconfig'
+	end,
+})
+
+-- Automatically update changed file in Vim
+-- Triger `autoread` when files changes on disk
+-- https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+-- https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
+	command = [[silent! if mode() != 'c' && !bufexists("[Command Line]") | checktime | endif]],
+})
+
+-- Notification after file change
+-- https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+autocmd('FileChangedShellPost', {
+	command = [[echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None]],
 })
