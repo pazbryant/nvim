@@ -28,7 +28,7 @@ return {
 		},
 		daily_notes = {
 			folder = 'daily',
-			template = 'obsidian/templates/daily-template.md',
+			template = 'obsidian/templates/daily/today-template.md',
 		},
 		mappings = {
 			['gf'] = {
