@@ -41,19 +41,20 @@ map('n', '<leader>q', ':cope<CR>', { desc = 'Toggle quickfix list' })
 map('n', ']q', ':cnext<CR>', { desc = 'Next quickfix item' })
 map('n', '[q', ':cprev<CR>', { desc = 'Previous quickfix item' })
 
--- make executable current buffer
-map('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
-
 -- source current buffer
 map('n', '<leader><leader>', function() vim.cmd('so') end)
 
 -- remove suspend keybind
-map('n', '<C-z>', '<Nop>', { noremap = true, silent = true })
+map('n', '<C-z>', '<Nop>', { desc = "Disable neovim suspend" })
 
 -- toggle cmp
-map('n', '<leader>C', '<cmd>CmpToggle<CR>', { noremap = true, silent = true })
+map('n', '<leader>C', '<cmd>CmpToggle<CR>', { desc = "Toggle cmp" })
 
-map('n', '<leader>S', '<cmd>SpellToggle<CR>', { noremap = true, silent = true })
+-- toggle spell
+map('n', '<leader>S', '<cmd>SpellToggle<CR>', { desc =  "Toggle spell" })
+
+-- toggle diagnostics
+map('n','<leader>td','<cmd>DiagnosticsToggle<cr>', { desc = "Toggle diagnostics" })
 
 -- tmux select/new session
 map('n','<m-u>', '<cmd>silent !tmux neww tmux-new-session<CR>', { desc = "Select or create a new session with tmux" })
