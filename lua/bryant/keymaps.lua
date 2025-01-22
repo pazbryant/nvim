@@ -54,3 +54,6 @@ map('n', '<C-z>', '<Nop>', { noremap = true, silent = true })
 map('n', '<leader>C', '<cmd>CmpToggle<CR>', { noremap = true, silent = true })
 
 map('n', '<leader>S', '<cmd>SpellToggle<CR>', { noremap = true, silent = true })
+
+-- tmux select/new session
+map('n','<m-s>', '<cmd>silent !tmux neww tmux-new-session<CR>', { desc = "Select or create a new session with tmux" })
