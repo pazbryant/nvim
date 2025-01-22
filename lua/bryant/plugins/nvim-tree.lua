@@ -13,6 +13,10 @@ return {
 			enable = false,
 			ignore = true,
 		},
+		hijack_directories = {
+			enable = false,
+			auto_open = false,
+		},
 	},
 	keys = {
 		{

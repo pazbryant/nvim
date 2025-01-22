@@ -8,6 +8,9 @@ g.maplocalleader = ' '
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
 opt.showmode = true
 opt.showtabline = 0
 
