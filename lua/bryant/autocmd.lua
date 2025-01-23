@@ -188,23 +188,22 @@ autocmd('BufHidden', {
 autocmd({ 'BufRead', 'BufNewFile' }, {
 	group = bryant_group,
 	pattern = { '*.md', '*.markdown' },
-	desc = 'Setup markdown environment with zen mode and proper wrapping',
+	desc = 'Wrap text in markdown files',
 	callback = function()
-		-- make sure FileType is set
 		vim.cmd('setfiletype markdown')
-
-		-- Set wrapping options
 		vim.opt_local.wrap = true
-		vim.opt_local.linebreak = true -- Break lines at word boundaries
-		vim.opt_local.breakindent = true -- Preserve indentation when wrapping
-		vim.opt_local.display = 'lastline'
-		vim.opt_local.textwidth = 80 -- Set text width for automatic formatting
+		vim.opt_local.textwidth = 80
+	end,
+})
 
-		-- Optional: Enable soft word wrap
-		vim.opt_local.formatoptions = vim.opt_local.formatoptions
-			+ 't' -- Auto-wrap text using textwidth
-			+ 'c' -- Auto-wrap comments using textwidth
-			+ 'q' -- Allow formatting of comments with "gq"
+autocmd('BufEnter', {
+	desc = 'Wrap lines in no file type',
+	group = bryant_group,
+	callback = function()
+		if vim.bo.buftype == 'nofile' then
+			vim.opt_local.wrap = true
+			vim.opt_local.textwidth = 80
+		end
 	end,
 })
 
@@ -236,6 +235,7 @@ autocmd('BufWritePre', {
 
 autocmd({ 'FileType' }, {
 	desc = 'enable_editorconfig_syntax',
+	group = bryant_group,
 	pattern = { 'editorconfig' },
 	callback = function()
 		vim.opt_local.syntax = 'editorconfig'
@@ -247,11 +247,13 @@ autocmd({ 'FileType' }, {
 -- https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
 -- https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
 autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
+	group = bryant_group,
 	command = [[silent! if mode() != 'c' && !bufexists("[Command Line]") | checktime | endif]],
 })
 
 -- Notification after file change
 -- https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
 autocmd('FileChangedShellPost', {
+	group = bryant_group,
 	command = [[echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None]],
 })
