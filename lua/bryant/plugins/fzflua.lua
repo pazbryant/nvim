@@ -1,6 +1,5 @@
 return {
 	'ibhagwan/fzf-lua',
-	dependencies = 'folke/trouble.nvim',
 	cmd = 'FzfLua',
 	opts = {
 		profile = {
@@ -21,7 +20,7 @@ return {
 	keys = {
 		{ '<C-t>', function() require('fzf-lua').live_grep_native() end, desc = 'FzfLua Live grep' },
 		{ '<M-b>', function() require('fzf-lua').buffers() end, desc = 'FzfLua Live grep' },
-		{ '<M-c>', function() require('fzf-lua').files() end, desc = 'FzfLua Files' },
+		{ '<M-c>', function() require('fzf-lua').files({ fd_opts = "--exclude .obsidian" }) end, desc = 'FzfLua Files' },
 		{ '<M-d>', function() require('fzf-lua').lsp_document_symbols() end, desc = 'FzfLua document symbols' },
 		{ '<leader>ht', function() require('fzf-lua').help_tags() end, desc = 'FzfLua Help tags' },
 		{ '<leader>th', function() require('fzf-lua').colorschemes() end, desc = 'FzfLua Switch colorschemes' },
