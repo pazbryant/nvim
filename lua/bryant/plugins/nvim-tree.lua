@@ -14,8 +14,8 @@ return {
 			ignore = true,
 		},
 		hijack_directories = {
-			enable = false,
-			auto_open = false,
+			enable = true,
+			auto_open = true,
 		},
 	},
 	keys = {
