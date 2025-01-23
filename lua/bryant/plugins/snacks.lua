@@ -37,7 +37,7 @@ return {
 		},
 		styles = {
 			zen = {
-				width = 100,
+				width = 80,
 				backdrop = {
 					transparent = false,
 				},
