@@ -48,10 +48,10 @@ map('n', '<leader><leader>', function() vim.cmd('so') end)
 map('n', '<C-z>', '<Nop>', { desc = "Disable neovim suspend" })
 
 -- toggle cmp
-map('n', '<leader>C', '<cmd>CmpToggle<CR>', { desc = "Toggle cmp" })
+map('n', '<leader>tc', '<cmd>CmpToggle<CR>', { desc = "Toggle cmp" })
 
 -- toggle spell
-map('n', '<leader>S', '<cmd>SpellToggle<CR>', { desc =  "Toggle spell" })
+map('n', '<leader>ts', '<cmd>SpellToggle<CR>', { desc =  "Toggle spell" })
 
 -- toggle diagnostics
 map('n','<leader>td','<cmd>DiagnosticsToggle<cr>', { desc = "Toggle diagnostics" })
