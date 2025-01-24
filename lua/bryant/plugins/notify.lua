@@ -5,7 +5,7 @@ return {
 		vim.notify = require('notify')
 	end,
 	opts = {
-		max_width = 20,
+		max_width = 30,
 		top_down = true,
 		render = 'wrapped-compact', -- default,minimal,compact,simple,wrapped-compact
 	},
