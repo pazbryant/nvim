@@ -7,7 +7,7 @@ return {
 	opts = {
 		max_width = 20,
 		top_down = true,
-		render = 'compact', -- default,minimal,compact,simple,wrapped-compact
+		render = 'wrapped-compact', -- default,minimal,compact,simple,wrapped-compact
 	},
 	keys = {
 		{
