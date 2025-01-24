@@ -3,22 +3,22 @@ local v = vim
 local map = v.keymap.set
 
 -- stylua: ignore start
---- custom keymaps
+-- custom keymaps
 map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
 map({ 'n', 'v', 'o' }, 'H', '^', { desc = 'Start of the line' })
 map({ 'n', 'v', 'o' }, 'L', 'g_', { desc = 'End of the line' })
 
--- copy into system clipboard
-map({'n', 'v'}, '<leader>y', '"+y') -- yank motion
-map({'n', 'v'}, '<leader>Y', '"+Y') -- yank line
+-- paste without overwrite register
+map("x", "<leader>p", [["_dP]], { desc = "Paste without overwrite register" })
 
--- Delete into system clipboard
-map({'n', 'v'}, '<leader>d', '"+d') -- delete motion
-map({'n', 'v'}, '<leader>D', '"+D') -- delete line
+-- copy without overwrite register
+map({"n", "v"}, "<leader>y", [["+y]],{ desc="Copy without overwrite register" })
+map("n", "<leader>Y", [["+Y]], { desc="Copy full line without overwrite register"})
 
--- Paste from system clipboard
-map({'n','v'}, '<leader>p', '"+p')  -- paste after cursor
-map({'n','v'}, '<leader>P', '"+P')  -- paste before cursor
+
+-- delete without overwrite register
+map({"n", "v"}, "<leader>d", "\"_d", { desc="Delete without overwrite register" })
+map('n', "<leader>D", "\"_dd", { desc = "Delete full line without overwrite register" })
 
 -- align manually
 map('v', '<', '<gv', { desc = 'Better align items' })
