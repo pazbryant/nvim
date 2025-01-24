@@ -184,17 +184,6 @@ autocmd('BufHidden', {
 	end,
 })
 
-autocmd({ 'BufRead', 'BufNewFile' }, {
-	group = bryant_group,
-	pattern = { '*.md', '*.markdown' },
-	desc = 'Wrap text in markdown files',
-	callback = function()
-		vim.cmd('setfiletype markdown')
-		vim.opt_local.wrap = true
-		vim.opt_local.textwidth = 80
-	end,
-})
-
 autocmd('BufEnter', {
 	desc = 'Wrap lines in no file type',
 	group = bryant_group,
