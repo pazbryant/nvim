@@ -131,7 +131,6 @@ autocmd('FileType', {
 		'man',
 		'checkhealth',
 		'tsplayground',
-		'markdown',
 		'dap-float',
 		'empty',
 		'noice',
