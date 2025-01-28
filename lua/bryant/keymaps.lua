@@ -9,7 +9,7 @@ map({ 'n', 'v', 'o' }, 'H', '^', { desc = 'Start of the line' })
 map({ 'n', 'v', 'o' }, 'L', 'g_', { desc = 'End of the line' })
 
 -- exit all
-map('n', '<leader>q', '<cmd>quitall<cr>', { desc = 'Exit neovim and save all' })
+map('n', '<leader>q', '<cmd>quitall!<cr>', { desc = 'Exit neovim and save all' })
 
 -- paste without overwrite register
 map("x", "<leader>p", [["_dP]], { desc = "Paste without overwrite register" })
