@@ -11,3 +11,10 @@ vim.keymap.set(
 	'<cmd>ObsidianSearch<cr>',
 	{ desc = 'ObsidianSearch' }
 )
+
+vim.keymap.set(
+	'n',
+	'<m-c>',
+	'<cmd>ObsidianQuickSwitch<cr>',
+	{ desc = 'Obsidian Quick Switch' }
+)
