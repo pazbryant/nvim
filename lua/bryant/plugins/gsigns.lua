@@ -13,40 +13,37 @@ return {
 		},
 		signcolumn = true,
 		on_attach = function(bufnr)
-			local gs = package.loaded.gitsigns
+			local gs = require('gitsigns')
+			local v = vim
 
-			local function opts(desc)
-				return { buffer = bufnr, desc = desc }
+			local function map(mode, l, r, opts)
+				opts = opts or {}
+				opts.buffer = bufnr
+				v.keymap.set(mode, l, r, opts)
 			end
 
-			local map = vim.keymap.set
-
 			map('n', ']g', function()
-				if vim.wo.diff then
-					return '[gh'
+				if v.wo.diff then
+					v.cmd.normal({ ']g', bang = true })
+				else
+					gs.nav_hunk('next')
 				end
-				vim.schedule(function()
-					gs.next_hunk()
-				end)
-				return '<Ignore>'
-			end, { expr = true })
+			end)
 
 			map('n', '[g', function()
-				if vim.wo.diff then
-					return '[gl'
+				if v.wo.diff then
+					v.cmd.normal({ '[g', bang = true })
+				else
+					gs.nav_hunk('prev')
 				end
-				vim.schedule(function()
-					gs.prev_hunk()
-				end)
-				return '<Ignore>'
-			end, { expr = true })
+			end)
 
 			-- stylua: ignore start
-			map('n', '<leader>gr', gs.reset_hunk, opts('Gitsigns Reset Hunk'))
-			map('n', '<leader>gp', gs.preview_hunk, opts('Gitsigns Preview Hunk'))
-			map('n', '<leader>gb', gs.blame_line, opts('Gitsigns Blame Line'))
-			map('n', '<leader>gl', gs.toggle_linehl, opts('Gitsigns Toggle linehl'))
-			map('n', '<leader>gt', '<cmd> Gitsigns toggle_signs <CR>', opts('Gitsigns Toggle gitsigns'))
+			map('n', '<leader>gr', gs.reset_hunk, { desc = 'Gitsigns Reset Hunk' })
+			map('n', '<leader>gp', gs.preview_hunk, { desc = 'Gitsigns Preview Hunk' })
+			map('n', '<leader>gb', gs.blame_line, { desc = 'Gitsigns Blame Line' })
+			map('n', '<leader>gl', gs.toggle_linehl, { desc = 'Gitsigns Toggle linehl' })
+			map('n', '<leader>gt', '<cmd> Gitsigns toggle_signs <CR>', { desc = 'Gitsigns Toggle gitsigns' })
 		end,
 	},
 }
