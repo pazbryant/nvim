@@ -88,10 +88,10 @@ return {
 	}),
 
 	s('spell', {
-		t('update spell dictionary: ' .. currDate),
+		t('chore(spell): update spell dictionary: ' .. currDate),
 	}),
 
 	s('snippets', {
-		t('update snippet collection: ' .. currDate),
+		t('chore(snippets): update snippets collection: ' .. currDate),
 	}),
 }
