@@ -5,7 +5,7 @@ return {
 	-- feat: A new feature
 	-- Conventional Commit Snippets
 	-- Feature
-	s('feat', {
+	s('git:feat', {
 		t('feat('),
 		i(1, 'scope'),
 		t('): '),
@@ -13,7 +13,7 @@ return {
 	}),
 
 	-- Fix
-	s('fix', {
+	s('git:fix', {
 		t('fix('),
 		i(1, 'scope'),
 		t('): '),
@@ -21,7 +21,7 @@ return {
 	}),
 
 	-- Chore
-	s('chore', {
+	s('git:chore', {
 		t('chore('),
 		i(1, 'scope'),
 		t('): '),
@@ -29,7 +29,7 @@ return {
 	}),
 
 	-- Documentation
-	s('docs', {
+	s('git:docs', {
 		t('docs('),
 		i(1, 'scope'),
 		t('): '),
@@ -37,7 +37,7 @@ return {
 	}),
 
 	-- Style
-	s('style', {
+	s('git:style', {
 		t('style('),
 		i(1, 'scope'),
 		t('): '),
@@ -45,7 +45,7 @@ return {
 	}),
 
 	-- Refactor
-	s('refactor', {
+	s('git:refactor', {
 		t('refactor('),
 		i(1, 'scope'),
 		t('): '),
@@ -53,7 +53,7 @@ return {
 	}),
 
 	-- Test
-	s('test', {
+	s('git:test', {
 		t('test('),
 		i(1, 'scope'),
 		t('): '),
@@ -61,7 +61,7 @@ return {
 	}),
 
 	-- Performance
-	s('perf', {
+	s('git:perf', {
 		t('perf('),
 		i(1, 'scope'),
 		t('): '),
@@ -69,14 +69,14 @@ return {
 	}),
 
 	-- Continuous Integration
-	s('ci', {
+	s('git:ci', {
 		t('ci('),
 		i(1, 'scope'),
 		t('): '),
 		i(2, 'description'),
 	}),
 
-	s('breaking', {
+	s('git:breaking', {
 		-- Add line breaks before the BREAKING CHANGE tag
 		t({ '', '', 'BREAKING CHANGE: ' }),
 		-- Placeholder for the breaking change description
@@ -91,7 +91,7 @@ return {
 		t('update spell dictionary: ' .. currDate),
 	}),
 
-	s('tmux:commands', {
-		t('update tmux commands list: ' .. currDate),
+	s('snippets', {
+		t('update snippet collection: ' .. currDate),
 	}),
 }
