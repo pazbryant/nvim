@@ -76,8 +76,10 @@ return {
 			img_folder = 'obsidian/files',
 		},
 	},
-	-- stylua: ignore start
 	keys = {
+		-- stylua: ignore start
+		{ '<leader>os', '<cmd>ObsidianSearch<cr>', desc = 'ObsidianSearch' },
+		{ '<leader>ow', '<cmd>ObsidianQuickSwitch<cr>', desc = 'Obsidian Quick Switch' },
 		{ '<leader>ot', '<cmd>ObsidianToday<CR>', desc = 'Open obsidian daily today' },
 		{ '<leader>oT', '<cmd>ObsidianTemplate<CR>', desc = 'Paste obsidian template current buffer' },
 		{ '<leader>oy', '<cmd>ObsidianYesterday<CR>', desc = 'Search with obsidian' },
