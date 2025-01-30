@@ -4,7 +4,6 @@ return {
 	priority = 1000,
 	opts = {
 		scope = { enabled = true },
-		input = { enabled = true },
 		debug = { enabled = true },
 		indent = { enabled = true },
 		lazygit = { enable = true },
