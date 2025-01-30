@@ -65,3 +65,12 @@ if v.g.neovide then
 	v.g.neovide_refresh_rate = 60
 	v.g.neovide_cursor_vfx_mode = 'railgun'
 end
+
+-- snacks options
+_G.dd = function(...)
+	Snacks.debug.inspect(...)
+end
+_G.bt = function()
+	Snacks.debug.backtrace()
+end
+vim.print = _G.dd
