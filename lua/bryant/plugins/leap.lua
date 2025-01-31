@@ -19,7 +19,7 @@ return {
 		-- stylua: ignore start
 		map('n', 's', '<Plug>(leap)', { desc = 'Start leap' })
 		map({ 'n', 'o' }, 'gr', function() require('leap.remote').action() end)
-		map({ 'n', 'x', 'o' }, 'S', function() require('leap.treesitter').select() end, { desc = 'Leap treesitter selection' })
+		map({ 'n', 'x', 'o' }, 'gs', function() require('leap.treesitter').select() end, { desc = 'Leap treesitter selection' })
 		require('leap').opts.equivalence_classes =
 			{ ' \t\r\n', '([{', ')]}', '\'"`' }
 	end,
