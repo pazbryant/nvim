@@ -17,8 +17,8 @@ return {
 	init = function()
 		local map = vim.keymap.set
 		-- stylua: ignore start
-		map('n', 's', '<Plug>(leap)', { desc = 'Start leap' })
-		map({ 'n', 'o' }, 'gr', function() require('leap.remote').action() end)
+		map('n', '<cr>', '<Plug>(leap)', { desc = 'Start leap' })
+		map({ 'n', 'o' }, 'gr', function() require('leap.remote').action() end, {desc="Leap remote mode"})
 		map({ 'n', 'x', 'o' }, 'gs', function() require('leap.treesitter').select() end, { desc = 'Leap treesitter selection' })
 		require('leap').opts.equivalence_classes =
 			{ ' \t\r\n', '([{', ')]}', '\'"`' }
