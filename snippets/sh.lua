@@ -227,4 +227,12 @@ return {
 		i(3, 'commands_if_command_not_exists'),
 		t({ '', 'fi' }),
 	}),
+
+	s('eq', {
+		i(1, 'variable'),
+		t('="$('),
+		i(2),
+		t(')"'),
+		i(3),
+	}),
 }
