@@ -11,7 +11,7 @@ return {
 		bigfile = { enabled = true },
 		quickfile = { enabled = true },
 		zen = {
-			enabled = true,
+			enabled = false,
 			toggles = { dim = false },
 			win = { width = 85, backdrop = { transparent = false, blend = 99 } },
 		},
@@ -40,12 +40,12 @@ return {
 			end,
 			desc = 'Snacks lazygit',
 		},
-		{
-			'zm',
-			function()
-				Snacks.zen()
-			end,
-			desc = 'Snacks zen',
-		},
+		-- {
+		-- 	'zm',
+		-- 	function()
+		-- 		Snacks.zen()
+		-- 	end,
+		-- 	desc = 'Snacks zen',
+		-- },
 	},
 }
