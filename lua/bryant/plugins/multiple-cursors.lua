@@ -7,10 +7,17 @@ return {
 		mc.setup()
 		local map = vim.keymap.set
 
-		-- stylua: ignore start
 		map({ 'n', 'v' }, '<c-n>', function() mc.matchAddCursor(1) end, { desc = 'Multicursor start' })
-		map({ 'n', 'v' }, '<leader>A', mc.matchAllAddCursors, { desc = 'Multicursor add all occurrence' })
-		map('n', '<esc>', function() if not mc.cursorsEnabled() then mc.enableCursors() elseif mc.hasCursors() then mc.clearCursors() else vim.cmd('noh') end end, { desc = 'Multicursor clear cursors' })
+
+		map('n', '<esc>', function()
+			if not mc.cursorsEnabled() then
+				mc.enableCursors()
+			elseif mc.hasCursors() then
+				mc.clearCursors()
+			else
+				vim.cmd('noh')
+			end
+		end, { desc = 'Multicursor clear cursors' })
 
 		map({ 'n', 'v' }, '<right>', mc.nextCursor, { desc = 'Multicursor next' })
 		map({ 'n', 'v' }, '<left>', mc.prevCursor, { desc = 'Multicursor previous' })
