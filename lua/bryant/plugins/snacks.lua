@@ -40,6 +40,13 @@ return {
 			end,
 			desc = 'Snacks lazygit',
 		},
+		{
+			'<leader>lg',
+			function()
+				Snacks.lazygit.log()
+			end,
+			desc = 'Snacks lazygit log',
+		},
 		-- {
 		-- 	'zm',
 		-- 	function()
