@@ -32,8 +32,8 @@ opt.numberwidth = 1
 
 opt.hlsearch = true
 opt.incsearch = true
-opt.smartcase = true
-opt.ignorecase = true
+opt.smartcase = false
+opt.ignorecase = false
 
 opt.scrolloff = 5
 opt.signcolumn = 'yes:1'
