@@ -47,7 +47,6 @@ return {
 
 	{
 		'maxmx03/solarized.nvim',
-		lazy = false,
 		priority = 1000,
 		opts = {
 			transparent = {
@@ -63,6 +62,16 @@ return {
 		config = function(_, otps)
 			require('solarized').setup(otps)
 			vim.cmd.colorscheme('solarized')
+		end,
+	},
+	{
+		'zenbones-theme/zenbones.nvim',
+		dependencies = 'rktjmp/lush.nvim',
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.g.zenbones_darken_comments = 45
+			vim.cmd.colorscheme('zenwritten')
 		end,
 	},
 }
