@@ -41,8 +41,14 @@ vim.lsp.handlers['textDocument/signatureHelp'] =
 	})
 
 local function on_attach(client, bufnr)
-	client.server_capabilities.semanticTokensProvider = nil
 	require('bryant.plugins.lsp.attach').on_attach(client, bufnr)
+end
+
+local function on_init(client, initialization_result)
+	if client.server_capabilities then
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.semanticTokensProvider = false -- turn off semantic tokens
+	end
 end
 
 local capabilities = vim.tbl_deep_extend(
@@ -105,6 +111,7 @@ mason_lspconfig.setup_handlers({
 		end
 
 		server_opts.on_attach = on_attach
+		server_opts.on_init = on_init
 
 		if setup[server] then
 			if setup[server](server, server_opts) then
