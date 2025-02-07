@@ -231,7 +231,8 @@ autocmd({ 'FileType' }, {
 })
 
 autocmd('LspProgress', {
-	---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
+	desc = 'Lsp progress bar using snacks notify',
+	group = bryant_group,
 	callback = function(ev)
 		local spinner =
 			{ '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' }
