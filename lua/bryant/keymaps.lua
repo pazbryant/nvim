@@ -55,6 +55,3 @@ map('n', '<leader>ts', '<cmd>SpellToggle<CR>', { desc =  "Toggle spell" })
 
 -- toggle diagnostics
 map('n','<leader>td','<cmd>DiagnosticsToggle<cr>', { desc = "Toggle diagnostics" })
-
--- tmux select/new session
-map('n','<m-u>', '<cmd>silent !tmux neww tmux-new-session<CR>', { desc = "Select or create a new session with tmux" })
