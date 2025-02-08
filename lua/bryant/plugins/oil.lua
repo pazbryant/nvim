@@ -18,7 +18,7 @@ return {
 			['<C-r>'] = 'actions.refresh',
 			['-'] = { 'actions.parent', mode = 'n' },
 			['gx'] = 'actions.open_external',
-			['g.'] = { 'actions.toggle_hidden', mode = 'n' },
+			['.'] = { 'actions.toggle_hidden', mode = 'n' },
 			q = 'actions.close',
 		},
 	},
