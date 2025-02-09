@@ -26,8 +26,8 @@ return {
 		},
 		styles = {
 			float = {
-				height = 0.7,
-				width = 0.7,
+				height = 0.8,
+				width = 0.8,
 			},
 		},
 	},
