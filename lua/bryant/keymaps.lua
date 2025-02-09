@@ -28,10 +28,10 @@ map('v', '<', '<gv', { desc = 'Better align items' })
 map('v', '>', '>gv', { desc = 'Better align items' })
 
 -- resise splits
-map('n', '<M-l>', '<cmd>vertical resize +20<CR>', { desc = 'Increase split right' })
-map('n', '<M-h>', '<cmd>vertical resize -20<CR>', { desc = 'Decrease split left' })
-map('n', '<M-j>', '<cmd>horizontal resize -20<CR>', { desc = 'Decrease split down' })
-map('n', '<M-j>', '<cmd>horizontal resize +20<CR>', { desc = 'Decrease split up' })
+map('n', '<M-l>', '<cmd>vertical resize +5<CR>', { desc = 'Increase split right' })
+map('n', '<M-h>', '<cmd>vertical resize -5<CR>', { desc = 'Decrease split left' })
+map('n', '<M-j>', '<cmd>horizontal resize -5<CR>', { desc = 'Decrease split down' })
+map('n', '<M-j>', '<cmd>horizontal resize +5<CR>', { desc = 'Decrease split up' })
 
 -- custom rename
 map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
