@@ -6,6 +6,7 @@ return {
 		{ 'ds', desc = 'Mini.surround Delete surrounding' },
 		{ 'cs', desc = 'Mwnw.surround Replace surrounding' },
 		{ 'yss', desc = 'Mini.surround Surround full line' },
+		{ 'S', desc = 'Mini.surround Add surrounding', mode = 'v' },
 	},
 	config = function()
 		require('mini.surround').setup({
