@@ -35,7 +35,7 @@ return {
 	end,
 	keys = {
 		{
-			'<leader>l',
+			'<leader>ll',
 			'<cmd>Lint<CR>',
 			desc = 'Nvim-lint lint',
 		},
