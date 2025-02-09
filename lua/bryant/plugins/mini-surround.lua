@@ -2,43 +2,35 @@ return {
 	'echasnovski/mini.surround',
 	version = '*',
 	keys = {
-		-- Here's a different mapping to avoid conflict with flash.nvim
-		{ 'sa', desc = 'Mini.surround Add surrounding', mode = { 'n', 'v' } },
-		{ 'sd', desc = 'Mini.surround Delete surrounding' },
-		{ 'sf', desc = 'Mini.surround Find surrounding' },
-		{ 'sF', desc = 'Mini.surround Find surrounding backward' },
-		{ 'sh', desc = 'Mini.surround Hwghlwght surrounding' },
-		{ 'sr', desc = 'Mwnw.surround Replace surrounding' },
-		{ 'sn', desc = 'Mini.surround Update n_lines' },
-		{ 'S', desc = 'Mini.surround Surround full line' },
+		{ 'ys', desc = 'Mini.surround Add surrounding', mode = { 'n', 'v' } },
+		{ 'ds', desc = 'Mini.surround Delete surrounding' },
+		{ 'cs', desc = 'Mwnw.surround Replace surrounding' },
+		{ 'yss', desc = 'Mini.surround Surround full line' },
 	},
 	config = function()
 		require('mini.surround').setup({
-			custom_surroundings = nil,
-			highlight_duration = 500,
-
 			mappings = {
-				add = 'sa', -- Add surrounding in Normal and Visual modes
-				delete = 'sd', -- Delete surrounding
-				find = 'sf', -- Find surrounding (to the right)
-				find_left = 'sF', -- Find surrounding (to the left)
-				highlight = 'sh', -- Highlight surrounding
-				replace = 'sr', -- Replace surrounding
-				update_n_lines = 'sn', -- Update `n_lines`
-
-				suffix_last = 'l', -- Suffix to search with "prev" method
-				suffix_next = 'n', -- Suffix to search with "next" method
+				add = 'ys',
+				delete = 'ds',
+				find = '',
+				find_left = '',
+				highlight = '',
+				replace = 'cs',
+				update_n_lines = '',
+				suffix_last = 'l',
+				suffix_next = 'n',
 			},
-
-			n_lines = 20,
-
-			respect_selection_type = false,
-
 			search_method = 'cover_or_next',
-
-			silent = false,
 		})
-		-- stylua: ignore start
-		vim.keymap.set('n', 'S', 'sa_', { desc="Surronud full line", remap = true })
+
+		vim.keymap.del('x', 'ys')
+		vim.keymap.set(
+			'x',
+			'S',
+			[[:<C-u>lua MiniSurround.add('visual')<CR>]],
+			{ silent = true }
+		)
+
+		vim.keymap.set('n', 'yss', 'ys_', { remap = true })
 	end,
 }
