@@ -104,7 +104,7 @@ return {
 	}),
 
 	-- Check if a variable is null
-	s('null', {
+	s('ifnull', {
 		t('if [ -z "$'),
 		i(1, 'variable'),
 		t('" ]; then'),
@@ -114,7 +114,7 @@ return {
 	}),
 
 	-- Check if a variable is not null
-	s('notnull', {
+	s('ifnotnull', {
 		t('if [ -n "$'),
 		i(1, 'variable'),
 		t('" ]; then'),
@@ -124,7 +124,7 @@ return {
 	}),
 
 	-- Check if a file exists
-	s('fileexist', {
+	s('iffileexist', {
 		t('if [ -f '),
 		i(1, '"file_path"'),
 		t(' ]; then'),
@@ -134,7 +134,7 @@ return {
 	}),
 
 	-- Check if a directory exists
-	s('direxist', {
+	s('ifdirexist', {
 		t('if [ -d '),
 		i(1, '"directory_path"'),
 		t(' ]; then'),
@@ -144,7 +144,7 @@ return {
 	}),
 
 	-- Check if a file is readable
-	s('readable', {
+	s('ifreadable', {
 		t('if [ -r '),
 		i(1, '"file_path"'),
 		t(' ]; then'),
@@ -154,7 +154,7 @@ return {
 	}),
 
 	-- Check if a file is writable
-	s('writable', {
+	s('ifwritable', {
 		t('if [ -w '),
 		i(1, '"file_path"'),
 		t(' ]; then'),
@@ -164,7 +164,7 @@ return {
 	}),
 
 	-- Check if two strings are equal
-	s('equal', {
+	s('ifequal', {
 		t('if [ "$'),
 		i(1, 'string1'),
 		t('" = "$'),
@@ -176,7 +176,7 @@ return {
 	}),
 
 	-- Check if two strings are not equal
-	s('notequal', {
+	s('ifnotequal', {
 		t('if [ "$'),
 		i(1, 'string1'),
 		t('" != "$'),
@@ -188,7 +188,7 @@ return {
 	}),
 
 	-- Check if a variable is a number
-	s('number', {
+	s('ifnumber', {
 		t('if [ "$'),
 		i(1, 'variable'),
 		t('" -eq "$'),
@@ -208,16 +208,8 @@ return {
 		t('"'),
 	}),
 
-	-- Create a temporary file
-	s('tmpfile', {
-		t('tmpfile=$(mktemp)'),
-		t({ '', 'echo "Temporary file created: $tmpfile"', '' }),
-		i(1, 'commands'),
-		t({ '', 'rm -f "$tmpfile"' }),
-	}),
-
 	-- Check if a command exists
-	s('commandexists', {
+	s('ifcommandexists', {
 		t('if command -v '),
 		i(1, 'command'),
 		t(' > /dev/null 2>&1; then'),
