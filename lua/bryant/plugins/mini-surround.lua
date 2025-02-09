@@ -2,7 +2,7 @@ return {
 	'echasnovski/mini.surround',
 	version = '*',
 	keys = {
-		{ 'ys', desc = 'Mini.surround Add surrounding', mode = { 'n', 'v' } },
+		{ 'ys', desc = 'Mini.surround Add surrounding' },
 		{ 'ds', desc = 'Mini.surround Delete surrounding' },
 		{ 'cs', desc = 'Mwnw.surround Replace surrounding' },
 		{ 'yss', desc = 'Mini.surround Surround full line' },
