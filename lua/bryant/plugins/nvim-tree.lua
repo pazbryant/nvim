@@ -4,7 +4,7 @@ return {
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	opts = {
 		view = {
-			width = 50,
+			width = 60,
 			side = 'left',
 			adaptive_size = true,
 			preserve_window_proportions = true,
@@ -20,8 +20,10 @@ return {
 	},
 	keys = {
 		{
-			'<leader>E',
-			'<CMD>NvimTreeToggle<CR>',
+			'<leader>e',
+			function()
+				require('nvim-tree.api').tree.toggle({ focus = false })
+			end,
 			{ desc = 'NvimTree toggle' },
 		},
 	},
