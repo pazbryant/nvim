@@ -6,10 +6,10 @@ return {
 		scope = { enabled = true },
 		debug = { enabled = true },
 		indent = { enabled = true },
-		lazygit = { enable = true },
 		scroll = { enabled = true },
 		bigfile = { enabled = true },
 		quickfile = { enabled = true },
+		lazygit = { enable = true },
 		zen = {
 			enabled = false,
 			toggles = { dim = false },
@@ -23,6 +23,12 @@ return {
 			height = { min = 1, max = 0.6 },
 			margin = { top = 1, right = 1, bottom = 1 },
 			padding = true,
+		},
+		styles = {
+			float = {
+				height = 0.7,
+				width = 0.7,
+			},
 		},
 	},
 	keys = {
@@ -47,12 +53,12 @@ return {
 			end,
 			desc = 'Snacks lazygit log',
 		},
-		-- {
-		-- 	'zm',
-		-- 	function()
-		-- 		Snacks.zen()
-		-- 	end,
-		-- 	desc = 'Snacks zen',
-		-- },
+		{
+			'zm',
+			function()
+				Snacks.zen()
+			end,
+			desc = 'Snacks zen',
+		},
 	},
 }
