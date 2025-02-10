@@ -40,7 +40,7 @@ return {
 			desc = 'Snacks notifier',
 		},
 		{
-			'<leader>lg',
+			'<leader>G',
 			function()
 				Snacks.lazygit()
 			end,
