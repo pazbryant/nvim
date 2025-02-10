@@ -17,10 +17,15 @@ return {
 	init = function()
 		local map = vim.keymap.set
 		-- stylua: ignore start
-		map('n', '<cr>', '<Plug>(leap)', { desc = 'Start leap' })
-		map({ 'n', 'o' }, 'gr', function() require('leap.remote').action() end, {desc="Leap remote mode"})
-		map({ 'n', 'x', 'o' }, 'gs', function() require('leap.treesitter').select() end, { desc = 'Leap treesitter selection' })
+		map({'n', 'x', 'o'}, 's',  '<Plug>(leap)', { desc = "Leap forward" } )
+		map({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)' , { desc = "Leap to another window" } )
+		map({ 'n', 'x', 'o' }, 'ga', function() require('leap.treesitter').select() end, { desc = 'Leap treesitter selection' })
+
 		require('leap').opts.equivalence_classes =
 			{ ' \t\r\n', '([{', ')]}', '\'"`' }
+
+		require('leap.user').set_repeat_keys('<enter>', '<backspace>')
+		require('leap').opts.preview_filter = function () return false end
+		vim.api.nvim_set_hl(0, 'LeapBackdrop', { link = 'Comment' })
 	end,
 }
