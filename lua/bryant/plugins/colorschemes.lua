@@ -20,32 +20,6 @@ return {
 	},
 
 	{
-		'sainnhe/everforest',
-		config = function()
-			vim.g.everforest_enable_italic = false
-			vim.cmd.colorscheme('everforest')
-		end,
-	},
-
-	{
-		'rose-pine/neovim',
-		name = 'rose-pine',
-		opts = {
-			variant = 'auto',
-			bold_vert_split = true,
-			styles = {
-				bold = false,
-				italic = false,
-				transparency = false,
-			},
-		},
-		config = function(_, opts)
-			require('rose-pine').setup(opts)
-			vim.cmd.colorscheme('rose-pine-main')
-		end,
-	},
-
-	{
 		'maxmx03/solarized.nvim',
 		priority = 1000,
 		opts = {
@@ -62,16 +36,6 @@ return {
 		config = function(_, otps)
 			require('solarized').setup(otps)
 			vim.cmd.colorscheme('solarized')
-		end,
-	},
-	{
-		'zenbones-theme/zenbones.nvim',
-		dependencies = 'rktjmp/lush.nvim',
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.g.zenbones_darken_comments = 45
-			vim.cmd.colorscheme('zenwritten')
 		end,
 	},
 
