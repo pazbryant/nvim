@@ -25,13 +25,10 @@ return {
 		})
 
 		vim.keymap.del('x', 'ys')
-		vim.keymap.set(
-			'x',
-			'S',
-			[[:<C-u>lua MiniSurround.add('visual')<CR>]],
-			{ silent = true }
-		)
 
-		vim.keymap.set('n', 'yss', 'ys_', { remap = true })
+		-- stylua: ignore start
+		local map = vim.keymap.set
+		map('n', 'yss', 'ys_', { remap = true })
+		map('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
 	end,
 }
