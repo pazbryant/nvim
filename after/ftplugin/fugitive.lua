@@ -1,7 +1,5 @@
 local map = vim.keymap.set
 
-local bryant_fugitive = vim.api.nvim_create_augroup('bryant_fugitive', {})
-
 if vim.bo.ft ~= 'fugitive' then
 	return
 end
