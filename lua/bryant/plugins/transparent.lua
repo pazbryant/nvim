@@ -1,6 +1,10 @@
 return {
 	'xiyaowong/transparent.nvim',
-	cmd = { 'TransparentEnable', 'TransparentDisable' },
+	cmd = {
+		'TransparentEnable',
+		'TransparentDisable',
+		'TransparentToggle',
+	},
 	opts = {
 		groups = {
 			'Normal',
@@ -40,23 +44,8 @@ return {
 		-- Also the user event "TransparentClear" will be triggered
 		on_clear = function() end,
 	},
-	keys = function()
-		local transparent_enabled = false
-		local usercmd = vim.api.nvim_create_user_command
-
-		usercmd('CTransparentToggle', function()
-			vim.cmd.colorscheme('kanagawa')
-			if transparent_enabled then
-				vim.cmd([[TransparentDisable]])
-			else
-				vim.cmd([[TransparentEnable]])
-			end
-			transparent_enabled = not transparent_enabled
-		end, { desc = 'Toggle Transparent' })
-
+	keys = {
     -- stylua: ignore start
-		return {
-      { '<leader>tt', '<cmd>CTransparentToggle<cr>', desc = 'Transparent toggle' }
-    }
-	end,
+		{ '<leader>tt', '<cmd>TransparentToggle<cr>', desc = 'Transparent toggle' },
+	},
 }
