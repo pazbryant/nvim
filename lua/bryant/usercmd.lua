@@ -48,18 +48,6 @@ end, {
 	desc = 'Toggle cpm',
 })
 
-local transparent_enabled = false
-usercmd('CTransparentToggle', function()
-	if transparent_enabled then
-		vim.cmd([[TransparentDisable]])
-	else
-		vim.cmd([[TransparentEnable]])
-	end
-	transparent_enabled = not transparent_enabled
-end, {
-	desc = 'Toggle Transparent',
-})
-
 usercmd('SpellToggle', function()
 	vim.cmd([[set spell!]])
 	local is_spell_on = vim.opt.spell:get() and 'on' or 'off'
