@@ -25,11 +25,10 @@ return {
 		lazygit = { enable = true },
 		bigfile = { enabled = true },
 		quickfile = { enabled = true },
-
 		zen = {
-			enabled = false,
+			enabled = true,
 			toggles = { dim = false },
-			win = { width = 85, backdrop = { transparent = false, blend = 99 } },
+			win = { width = 100, backdrop = { transparent = false, blend = 99 } },
 		},
 		notifier = {
 			enabled = true,
@@ -49,7 +48,7 @@ return {
 	},
 	keys = {
 		{
-			'<leader>n',
+			'<leader>N',
 			function()
 				Snacks.notifier.show_history()
 			end,

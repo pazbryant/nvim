@@ -21,6 +21,6 @@ return {
 	keys = {
 		{ ']a', '<cmd>AerialNext<CR>', desc = 'Aerial next' },
 		{ '[a', '<cmd>AerialPrev<CR>', desc = 'Aerial prev' },
-		{ '<leader>a', '<cmd>AerialToggle!<CR>', desc = 'Toggle Aerial' },
+		{ '<c-a>', '<cmd>AerialToggle!<CR>', desc = 'Toggle Aerial' },
 	},
 }
