@@ -55,6 +55,7 @@ opt.spellfile = '/home/bryant/.config/spell/en.utf-8.add'
 
 -- update statusline
 opt.laststatus = 0
+-- opt.statusline = ' %f%m%r%h%w'
 
 -- disable nvim startup screen
 opt.shortmess:append('sI')
