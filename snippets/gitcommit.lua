@@ -94,4 +94,8 @@ return {
 	s('snippets', {
 		t('chore(snippets): update snippets collection: ' .. currDate),
 	}),
+
+	s('apps', {
+		t('chore(apss): update default package list: ' .. currDate),
+	}),
 }
