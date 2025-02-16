@@ -2,41 +2,23 @@ local M = {}
 
 function M.get_keymaps()
 	return {
-		{ 'go', vim.diagnostic.open_float, desc = 'Line Diagnostics' },
-		{ 'gd', vim.lsp.buf.definition, desc = 'Goto Definition' },
-		{ 'gR', vim.lsp.buf.references, desc = 'References' },
-		{ 'gD', vim.lsp.buf.declaration, desc = 'Goto Declaration' },
-		{ 'gI', vim.lsp.buf.implementation, desc = 'Goto Implementation' },
-		{ 'gt', vim.lsp.buf.type_definition, desc = 'Goto Type Definition' },
-		{
-			'<c-s>',
-			vim.lsp.buf.signature_help,
-			desc = 'Signature Help',
-			has = 'signatureHelp',
-		},
-		{ ']d', M.diagnostic_goto(true), desc = 'Next Diagnostic' },
-		{ '[d', M.diagnostic_goto(false), desc = 'Prev Diagnostic' },
-		{ ']e', M.diagnostic_goto(true, 'ERROR'), desc = 'Next Error' },
-		{ '[e', M.diagnostic_goto(false, 'ERROR'), desc = 'Prev Error' },
-		{ ']w', M.diagnostic_goto(true, 'WARN'), desc = 'Next Warning' },
-		{ '[w', M.diagnostic_goto(false, 'WARN'), desc = 'Prev Warning' },
-		{ '<leader>rn', M.rename, expr = true, desc = 'Rename', has = 'rename' },
-		{
-			'<leader>ca',
-			vim.lsp.buf.code_action,
-			desc = 'Code Action',
-			mode = { 'n', 'v' },
-			has = 'codeAction',
-		},
+    -- stylua: ignore start
+    { 'gR', vim.lsp.buf.references, desc = 'References' },
+    { '<leader>rn', vim.lsp.buf.rename, desc = 'Rename' },
+    { 'gd', vim.lsp.buf.definition, desc = 'Goto Definition' },
+    { ']d', M.diagnostic_goto(true), desc = 'Next Diagnostic' },
+    { 'gD', vim.lsp.buf.declaration, desc = 'Goto Declaration' },
+    { '[d', M.diagnostic_goto(false), desc = 'Prev Diagnostic' },
+    { 'go', vim.diagnostic.open_float, desc = 'Line Diagnostics' },
+    { ']e', M.diagnostic_goto(true, 'ERROR'), desc = 'Next Error' },
+    { '[e', M.diagnostic_goto(false, 'ERROR'), desc = 'Prev Error' },
+    { ']w', M.diagnostic_goto(true, 'WARN'), desc = 'Next Warning' },
+    { '[w', M.diagnostic_goto(false, 'WARN'), desc = 'Prev Warning' },
+    { 'gI', vim.lsp.buf.implementation, desc = 'Goto Implementation' },
+    { 'gt', vim.lsp.buf.type_definition, desc = 'Goto Type Definition' },
+    { '<c-s>', vim.lsp.buf.signature_help, desc = 'Signature Help', has = 'signatureHelp' },
+    { '<leader>ca', vim.lsp.buf.code_action, desc = 'Code Action', mode = { 'n', 'v' }, has = 'codeAction' },
 	}
-end
-
-function M.rename()
-	if pcall(require, 'inc_rename') then
-		return ':IncRename ' .. vim.fn.expand('<cword>')
-	else
-		vim.lsp.buf.rename()
-	end
 end
 
 function M.diagnostic_goto(next, severity)
