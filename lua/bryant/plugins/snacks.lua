@@ -25,6 +25,10 @@ return {
 		lazygit = { enable = true },
 		bigfile = { enabled = true },
 		quickfile = { enabled = true },
+		image = {
+			enabled = true,
+			force = true,
+		},
 		zen = {
 			enabled = true,
 			toggles = { dim = false },
