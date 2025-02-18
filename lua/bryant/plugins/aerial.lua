@@ -11,16 +11,18 @@ return {
 	},
 	opts = {
 		layout = {
-			max_width = { 40, 0.2 },
 			width = 40,
 			min_width = 20,
-			default_direction = 'prefer_left',
+			autojump = true,
+			max_width = { 40, 0.2 },
+			close_on_select = true,
+			default_direction = 'prefer_right',
 		},
 	},
 	-- stylua: ignore end
 	keys = {
 		{ ']a', '<cmd>AerialNext<CR>', desc = 'Aerial next' },
 		{ '[a', '<cmd>AerialPrev<CR>', desc = 'Aerial prev' },
-		{ '<M-a>', '<cmd>AerialToggle!<CR>', desc = 'Toggle Aerial' },
+		{ '<c-a>', '<cmd>AerialToggle<CR>', desc = 'Toggle Aerial' },
 	},
 }
