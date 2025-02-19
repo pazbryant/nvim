@@ -13,11 +13,11 @@ return {
 		layout = {
 			width = 40,
 			min_width = 20,
-			autojump = true,
 			max_width = { 40, 0.2 },
-			close_on_select = true,
 			default_direction = 'prefer_right',
 		},
+		autojump = true,
+		close_on_select = true,
 	},
 	-- stylua: ignore end
 	keys = {
