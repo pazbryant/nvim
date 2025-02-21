@@ -43,7 +43,7 @@ map('n', ']q', ':cnext<CR>', { desc = 'Next quickfix item' })
 map('n', '[q', ':cprev<CR>', { desc = 'Previous quickfix item' })
 
 -- print current path
-map('n', '<leader>cp',"<cmd>echo expand('%:p')<cr>",{ desc = "Print current path" })
+map('n', '<leader>cf',"<cmd>echo expand('%:p')<cr>",{ desc = "Print current path" })
 
 -- remove suspend keybind
 map('n', '<C-z>', '<Nop>', { desc = "Disable neovim suspend" })
