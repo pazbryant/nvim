@@ -1,6 +1,7 @@
 return {
 	'folke/flash.nvim',
 	lazy = false,
+	opts = {},
 	keys = function()
 		local flash = require('flash')
 		return {
