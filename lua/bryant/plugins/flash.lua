@@ -1,11 +1,11 @@
 return {
 	'folke/flash.nvim',
-	event = 'VeryLazy',
+	lazy = false,
 	keys = function()
 		local flash = require('flash')
 		return {
 			{
-				's',
+				'<cr>',
 				mode = { 'n', 'x', 'o' },
 				function()
 					flash.jump()
@@ -13,7 +13,7 @@ return {
 				desc = 'Flash',
 			},
 			{
-				'ga',
+				'gs',
 				mode = { 'n', 'x', 'o' },
 				function()
 					flash.treesitter()
