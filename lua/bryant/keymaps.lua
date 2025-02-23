@@ -4,7 +4,6 @@ local map = v.keymap.set
 
 -- stylua: ignore start
 -- custom keymaps
-map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
 map({ 'n', 'v', 'o' }, 'H', '^', { desc = 'Start of the line' })
 map({ 'n', 'v', 'o' }, 'L', 'g_', { desc = 'End of the line' })
 
@@ -15,7 +14,6 @@ map("x", "<leader>p", [["_dP]], { desc = "Paste without overwrite register" })
 map({"n", "v"}, "<leader>y", [["+y]],{ desc="Copy without overwrite register" })
 map("n", "<leader>Y", [["+Y]], { desc="Copy full line without overwrite register"})
 
-
 -- delete without overwrite register
 map({"n", "v"}, "<leader>d", "\"_d", { desc="Delete without overwrite register" })
 map('n', "<leader>D", "\"_dd", { desc = "Delete full line without overwrite register" })
@@ -23,7 +21,6 @@ map('n', "<leader>D", "\"_dd", { desc = "Delete full line without overwrite regi
 -- align manually
 map('v', '<', '<gv', { desc = 'Better align items' })
 map('v', '>', '>gv', { desc = 'Better align items' })
-
 
 -- custom rename
 map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -37,11 +34,6 @@ map('n', '<leader>cp',"<cmd>echo expand('%:p')<cr>",{ desc = "Print current path
 -- remove suspend keybind
 map('n', '<C-z>', '<Nop>', { desc = "Disable neovim suspend" })
 
--- toggle cmp
-map('n', '<leader>tc', '<cmd>CmpToggle<CR>', { desc = "Toggle cmp" })
-
--- toggle spell
-map('n', '<leader>ts', '<cmd>SpellToggle<CR>', { desc =  "Toggle spell" })
-
--- toggle diagnostics
-map('n','<leader>td','<cmd>DiagnosticsToggle<cr>', { desc = "Toggle diagnostics" })
+-- quickfix list
+map('n', ']q', ':cnext<CR>', { desc = 'Next quickfix item' })
+map('n', '[q', ':cprev<CR>', { desc = 'Previous quickfix item' })
