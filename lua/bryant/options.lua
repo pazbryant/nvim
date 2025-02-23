@@ -76,4 +76,4 @@ _G.bt = function()
 end
 vim.print = _G.dd
 
-vim.cmd.colorscheme('habamax')
+vim.cmd.colorscheme('default')
