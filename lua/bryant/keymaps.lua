@@ -8,12 +8,6 @@ map('n', '<C-c>', 'ciw', { desc = 'Change inner word keybind' })
 map({ 'n', 'v', 'o' }, 'H', '^', { desc = 'Start of the line' })
 map({ 'n', 'v', 'o' }, 'L', 'g_', { desc = 'End of the line' })
 
--- exit all
-map('n', '<leader>Q', '<cmd>quitall!<cr>',  { desc = 'Exit neovim and save all' })
-
--- save file
-map('n', '<c-m>', '<cmd>update<cr>', { desc = 'Exit neovim and save all' })
-
 -- paste without overwrite register
 map("x", "<leader>p", [["_dP]], { desc = "Paste without overwrite register" })
 
@@ -37,13 +31,8 @@ map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- signature help
 map({ 'i', 'n' }, '<c-s>', function() v.lsp.buf.signature_help() end, { desc = 'Toggle signature help' })
 
--- quick fix list
-map('n', '<leader>q', ':cope<CR>', { desc = 'Toggle quickfix list' })
-map('n', ']q', ':cnext<CR>', { desc = 'Next quickfix item' })
-map('n', '[q', ':cprev<CR>', { desc = 'Previous quickfix item' })
-
 -- print current path
-map('n', '<leader>cf',"<cmd>echo expand('%:p')<cr>",{ desc = "Print current path" })
+map('n', '<leader>cp',"<cmd>echo expand('%:p')<cr>",{ desc = "Print current path" })
 
 -- remove suspend keybind
 map('n', '<C-z>', '<Nop>', { desc = "Disable neovim suspend" })
