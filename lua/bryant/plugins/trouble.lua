@@ -19,7 +19,10 @@ return {
 	},
 	-- stylua: ignore start
 	keys = {
-		{ '<leader>x', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Buffer Diagnostics (Trouble)' },
-		{ '<leader>X', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Diagnostics (Trouble)' },
+    {'n', ']q', ':cnext<CR>',  desc = 'Next quickfix item' },
+    {'n', '[q', ':cprev<CR>',  desc = 'Previous quickfix item' },
+    { '<leader>q', '<cmd>Trouble quickfix<cr>', desc = 'Trouble quickfix' },
+    { '<leader>X', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Diagnostics (Trouble)' },
+    { '<leader>x', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Buffer Diagnostics (Trouble)' },
 	},
 }
