@@ -14,7 +14,7 @@ return {
 			width = 40,
 			min_width = 20,
 			max_width = { 40, 0.2 },
-			default_direction = 'prefer_right',
+			default_direction = 'prefer_left',
 		},
 		autojump = true,
 		close_on_select = true,
