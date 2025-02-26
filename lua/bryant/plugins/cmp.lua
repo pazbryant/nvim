@@ -3,16 +3,15 @@ return {
 	event = 'InsertEnter',
 	dependencies = {
 		-- Completion sources
-		'onsails/lspkind.nvim',
+		'hrsh7th/cmp-path',
+		'hrsh7th/cmp-emoji',
 		'hrsh7th/cmp-buffer',
 		'hrsh7th/cmp-nvim-lsp',
-		'hrsh7th/cmp-path',
+		'onsails/lspkind.nvim',
 		'hrsh7th/cmp-nvim-lsp-signature-help',
-		'hrsh7th/cmp-cmdline',
-		'hrsh7th/cmp-emoji',
 		-- This is important for integrating LuaSnip with nvim-cmp
-		'saadparwaiz1/cmp_luasnip',
 		'L3MON4D3/LuaSnip',
+		'saadparwaiz1/cmp_luasnip',
 	},
 	config = function()
 		local cmp = require('cmp')
@@ -75,16 +74,6 @@ return {
 				{ name = 'buffer' },
 				{ name = 'emoji' },
 			},
-		})
-
-		cmp.setup.cmdline(':', {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = cmp.config.sources({
-				{ name = 'path' },
-			}, {
-				{ name = 'cmdline' },
-			}),
-			matching = { disallow_symbol_nonprefix_matching = false },
 		})
 	end,
 }
