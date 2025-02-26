@@ -10,13 +10,6 @@ return {
 			history = true, -- keep around last snippet local to jump back
 			updateevents = 'TextChanged,TextChangedI', -- Update as you type
 			enable_autosnippets = true,
-			ext_opts = {
-				[require('luasnip.util.types').choiceNode] = {
-					active = {
-						virt_text = { { '●', 'GruvboxOrange' } },
-					},
-				},
-			},
 		})
 
 		require('luasnip.loaders.from_vscode').lazy_load({
@@ -24,7 +17,7 @@ return {
 		})
 
 		require('luasnip.loaders.from_lua').lazy_load({
-			paths = { './snippets' },
+			paths = { './snippets' }, -- load custom snippets
 		})
 
 		ls.filetype_extend('javascript', { 'javascriptreact' })
