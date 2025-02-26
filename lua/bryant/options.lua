@@ -75,5 +75,3 @@ _G.bt = function()
 	Snacks.debug.backtrace()
 end
 vim.print = _G.dd
-
-vim.cmd.colorscheme('default')
