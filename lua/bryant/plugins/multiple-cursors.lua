@@ -8,17 +8,19 @@ return {
 		local map = vim.keymap.set
 
 		-- stylua: ignore start
-		map({ 'n', 'v' }, '<c-n>', function() mc.matchAddCursor(1) end, { desc = 'Multicursor start' })
-		map('v', 'A', mc.appendVisual, { desc = 'Multicursor visual insert mode last' })
-		map('v', 'I', mc.insertVisual, { desc = 'Multicursor visual insert mode' })
-		map("v", "M", mc.matchCursors, { desc = 'Match cursors with regex' } )
-
-		map('v', 'q', function() mc.matchSkipCursor(1) end, { desc = 'Multicursor skip' })
-		map('v', 'Q', mc.deleteCursor, { desc = 'Multicursor remove cursor' })
-		map({"n", "v"}, "<c-q>", mc.toggleCursor, { desc = "Toggle cursor" })
-
-		map({ 'n', 'v' }, '<right>', mc.nextCursor, { desc = 'Multicursor next' })
-		map({ 'n', 'v' }, '<left>', mc.prevCursor, { desc = 'Multicursor previous' })
+    map({ 'n', 'x' }, '<up>', function() mc.lineAddCursor(-1) end)
+    map({ 'n', 'x' }, '<down>', function() mc.lineAddCursor(1) end)
+    map({"n", "v"}, "<c-q>", mc.toggleCursor, { desc = "Toggle cursor" })
+    map("v", "M", mc.matchCursors, { desc = 'Match cursors with regex' } )
+    map('v', 'Q', mc.deleteCursor, { desc = 'Multicursor remove cursor' })
+    map({ 'n', 'x' }, '<leader><up>', function() mc.lineSkipCursor(-1) end)
+    map({ 'n', 'x' }, '<leader><down>', function() mc.lineSkipCursor(1) end)
+    map({ 'n', 'v' }, '<right>', mc.nextCursor, { desc = 'Multicursor next' })
+    map('v', 'I', mc.insertVisual, { desc = 'Multicursor visual insert mode' })
+    map({ 'n', 'v' }, '<left>', mc.prevCursor, { desc = 'Multicursor previous' })
+    map('v', 'A', mc.appendVisual, { desc = 'Multicursor visual insert mode last' })
+    map('v', 'q', function() mc.matchSkipCursor(1) end, { desc = 'Multicursor skip' })
+    map({ 'n', 'v' }, '<c-n>', function() mc.matchAddCursor(1) end, { desc = 'Multicursor start' })
 
 		map(
 			'n',
