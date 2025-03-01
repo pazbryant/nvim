@@ -8,8 +8,6 @@ return {
 
 	{
 		'zenbones-theme/zenbones.nvim',
-		lazy = false,
-		priority = 100,
 		dependencies = 'rktjmp/lush.nvim',
 		config = function()
 			vim.cmd.colorscheme('zenbones')
