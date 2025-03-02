@@ -43,7 +43,6 @@ return {
 			map('n', '<leader>gp', gs.preview_hunk, { desc = 'Gitsigns Preview Hunk' })
 			map('n', '<leader>gb', gs.blame_line, { desc = 'Gitsigns Blame Line' })
 			map('n', '<leader>gl', gs.toggle_linehl, { desc = 'Gitsigns Toggle linehl' })
-			map('n', '<leader>gt', '<cmd> Gitsigns toggle_signs <CR>', { desc = 'Gitsigns Toggle gitsigns' })
 		end,
 	},
 }
