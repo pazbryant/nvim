@@ -75,7 +75,7 @@ return {
 	end,
   -- stylua: ignore start
   keys = {
-    { '<c-p>', function() require('fzf-lua').files() end, desc = 'FzfLua Files' },
+    { '<m-c>', function() require('fzf-lua').files() end, desc = 'FzfLua Files' },
     { '<leader>ht', function() require('fzf-lua').help_tags() end, desc = 'FzfLua Help tags' },
     { '<leader>k', function() require('fzf-lua').keymaps() end, desc = 'FzfLua show keymaps' },
     { '<c-t>', function() require('fzf-lua').live_grep_native() end, desc = 'FzfLua Live grep' },
