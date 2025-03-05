@@ -7,6 +7,14 @@ return {
 	},
 
 	{
+		'bluz71/vim-moonfly-colors',
+		name = 'moonfly',
+		config = function()
+			vim.cmd.colorscheme('moonfly')
+		end,
+	},
+
+	{
 		'zenbones-theme/zenbones.nvim',
 		dependencies = 'rktjmp/lush.nvim',
 		config = function()
@@ -29,18 +37,6 @@ return {
 			end
 
 			MyZenbonesTweaks()
-		end,
-	},
-
-	{
-		'rebelot/kanagawa.nvim',
-		config = function()
-			require('kanagawa').setup({
-				compile = true,
-				commentStyle = { italic = false },
-				keywordStyle = { italic = false },
-			})
-			vim.cmd([[colorscheme kanagawa]])
 		end,
 	},
 }
