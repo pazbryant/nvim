@@ -16,7 +16,6 @@ return {
 		animate = { enabled = false },
 		terminal = { enabled = false },
 		profiler = { enabled = false },
-		bufdelete = { enabled = false },
 		gitbrowse = { enabled = false },
 
 		scope = { enabled = true },
@@ -25,6 +24,7 @@ return {
 		lazygit = { enable = true },
 		bigfile = { enabled = true },
 		quickfile = { enabled = true },
+		bufdelete = { enabled = true },
 		image = {
 			enabled = true,
 			force = true,
@@ -78,6 +78,30 @@ return {
 				Snacks.zen()
 			end,
 			desc = 'Snacks zen',
+		},
+		{
+			'<leader>bd',
+			function()
+				Snacks.bufdelete()
+				vim.notify('Buffer has been deleted', vim.log.levels.INFO)
+			end,
+			desc = 'Snacks bufdelete',
+		},
+		{
+			'<leader>bD',
+			function()
+				Snacks.bufdelete.all()
+				vim.notify('All buffers has been deleted', vim.log.levels.INFO)
+			end,
+			desc = 'Snacks bufdelete all',
+		},
+		{
+			'<leader>bC',
+			function()
+				Snacks.bufdelete.other()
+				vim.notify('Others buffers has been deleted', vim.log.levels.INFO)
+			end,
+			desc = 'Snacks bufdelete all but current',
 		},
 	},
 }
