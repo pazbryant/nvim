@@ -2,7 +2,11 @@ return {
 	'ThePrimeagen/harpoon',
 	branch = 'harpoon2',
 	dependencies = { 'nvim-lua/plenary.nvim' },
-	config = true,
+	opts = {
+		settings = {
+			save_on_toggle = true,
+		},
+	},
 	keys = function()
 		local harpoon2 = require('harpoon')
 		local harpoon2_list = harpoon2:list()

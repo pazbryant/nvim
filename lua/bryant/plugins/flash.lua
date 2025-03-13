@@ -1,7 +1,33 @@
 return {
 	'folke/flash.nvim',
 	lazy = false,
-	opts = {},
+	opts = {
+		search = {
+			multi_window = false,
+		},
+		label = {
+			style = 'overlay', ---@type "eol" | "overlay" | "right_align" | "inline"
+		},
+		highlight = {
+			backdrop = false,
+			matches = true,
+			priority = 5000,
+			groups = {
+				match = 'FlashMatch',
+				current = 'FlashCurrent',
+				backdrop = 'FlashBackdrop',
+				label = 'FlashLabel',
+			},
+		},
+		modes = {
+			char = {
+				enabled = true,
+				autohide = true,
+				jump_labels = true,
+				highlight = { backdrop = false },
+			},
+		},
+	},
 	keys = function()
 		local flash = require('flash')
 		return {
