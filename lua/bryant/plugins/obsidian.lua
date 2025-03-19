@@ -8,6 +8,7 @@ return {
 		'ObsidianSearch',
 		'ObsidianYesterday',
 		'ObsidianQuickSwitch',
+		'ObsidianPasteImg',
 	},
 	opts = {
 		workspaces = {
@@ -44,6 +45,10 @@ return {
 				opts = { buffer = true, expr = true },
 			},
 		},
+
+		image_name_func = function()
+			return string.format('%s-', os.time())
+		end,
 
 		follow_url_func = function(url)
 			vim.ui.open(url) -- need Neovim 0.10.0+
@@ -83,5 +88,6 @@ return {
 		{ '<leader>ot', '<cmd>ObsidianToday<CR>', desc = 'Open obsidian daily today' },
 		{ '<leader>oT', '<cmd>ObsidianTemplate<CR>', desc = 'Paste obsidian template current buffer' },
 		{ '<leader>oy', '<cmd>ObsidianYesterday<CR>', desc = 'Search with obsidian' },
+		{ '<leader>op', '<cmd>ObsidianPasteImg<CR>', desc = 'Obsidian paste image from clipboard' },
 	},
 }
