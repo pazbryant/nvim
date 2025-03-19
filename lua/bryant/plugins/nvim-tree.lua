@@ -20,9 +20,9 @@ return {
 	},
 	keys = {
 		{
-			'<c-e>',
+			'<leader>e',
 			function()
-				require('nvim-tree.api').tree.toggle({ focus = false })
+				require('nvim-tree.api').tree.toggle({ focus = true })
 			end,
 			{ desc = 'NvimTree toggle' },
 		},
