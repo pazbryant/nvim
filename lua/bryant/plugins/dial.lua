@@ -19,13 +19,13 @@ return {
 	end,
 	keys = {
 		-- stylua: ignore start
-		{ '<C-a>', function() return require('dial.map').manipulate('increment', 'normal') end, desc = 'Dial Increment' },
+		{ '<C-b>', function() return require('dial.map').manipulate('increment', 'normal') end, desc = 'Dial Increment' },
 		{ '<C-x>', function() return require('dial.map').manipulate('decrement', 'normal') end, desc = 'Dial Decrement' },
-		{ 'g<C-a>', function() return require('dial.map').manipulate('increment', 'gnormal') end, desc = 'Dial GIncrement' },
+		{ 'g<C-b>', function() return require('dial.map').manipulate('increment', 'gnormal') end, desc = 'Dial GIncrement' },
 		{ 'g<C-x>', function() return require('dial.map').manipulate('decrement', 'gnormal') end, desc = 'Dial GDecrement' },
-		{ '<C-a>', function() return require('dial.map').manipulate('increment', 'visual') end, mode = 'v', desc = 'Dial Visual increment' },
+		{ '<C-b>', function() return require('dial.map').manipulate('increment', 'visual') end, mode = 'v', desc = 'Dial Visual increment' },
 		{ '<C-x>', function() return require('dial.map').manipulate('decrement', 'visual') end, mode = 'v', desc = 'Dial Visual Decrement' },
-		{ 'g<C-a>', function() return require('dial.map').manipulate('increment', 'gvisual') end, mode = 'v', desc = 'Dial Visual GIncrement' },
+		{ 'g<C-b>', function() return require('dial.map').manipulate('increment', 'gvisual') end, mode = 'v', desc = 'Dial Visual GIncrement' },
 		{ 'g<C-x>', function() return require('dial.map').manipulate('decrement', 'gvisual') end, mode = 'v', desc = 'Dial Visual GDecrement' },
 	},
 }
