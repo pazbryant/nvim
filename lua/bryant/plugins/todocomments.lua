@@ -11,6 +11,6 @@ return {
 	},
 	keys = {
 		-- stylua: ignore start
-		{ '<leader>tq', '<cmd> TodoQuickFix <CR>', desc = 'Todo comments quick fix' },
+		{ '<m-t>', '<cmd> TodoFzfLua <CR>', desc = 'Todo comments  fzf-lua' },
 	},
 }

@@ -7,6 +7,7 @@ return {
 		dim = { enabled = false },
 		git = { enabled = false },
 		util = { enabled = false },
+		image = { enabled = false },
 		rename = { enabled = false },
 		toggle = { enabled = false },
 		scroll = { enabled = false },
@@ -25,10 +26,6 @@ return {
 		bigfile = { enabled = true },
 		quickfile = { enabled = true },
 		bufdelete = { enabled = true },
-		image = {
-			enabled = true,
-			force = true,
-		},
 		zen = {
 			enabled = true,
 			toggles = { dim = false },
