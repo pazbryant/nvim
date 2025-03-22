@@ -10,6 +10,6 @@ return {
 		keymap('n', '<C-j>', ':<C-U>TmuxNavigateDown<CR>', { silent = true })
 		keymap('n', '<C-h>', ':<C-U>TmuxNavigateLeft<CR>', { silent = true })
 		keymap('n', '<C-l>', ':<C-U>TmuxNavigateRight<CR>', { silent = true })
-		keymap('n', '<C-p>', ':<C-U>TmuxNavigatePrevious<CR>', { silent = true })
+		keymap('n', '<c-\\>', ':<C-U>TmuxNavigatePrevious<CR>', { silent = true })
 	end,
 }

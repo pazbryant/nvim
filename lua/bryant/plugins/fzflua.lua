@@ -1,6 +1,5 @@
 return {
 	'ibhagwan/fzf-lua',
-	cmd = 'FzfLua',
 	opts = function()
 		local actions = require('fzf-lua').actions
 		local trouble_actions = require('trouble.sources.fzf').actions
