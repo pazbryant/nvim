@@ -53,6 +53,7 @@ return {
 					['ctrl-s'] = actions.file_split,
 					['ctrl-v'] = actions.file_vsplit,
 					['ctrl-h'] = actions.toggle_hidden,
+					['ctrl-i'] = actions.toggle_ignore,
 					['enter'] = actions.file_edit_or_qf,
 					['ctrl-q'] = trouble_actions.open_all,
 				},
