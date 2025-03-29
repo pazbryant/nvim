@@ -13,7 +13,7 @@ vim.diagnostic.config({
 	update_in_insert = false,
 	underline = true,
 	severity_sort = true,
-	virtual_text = true,
+	virtual_text = false,
 	signs = {
 		text = { ERROR = '󰅚', WARN = '󰀪', HINT = '󰌶', INFO = '󰋽' },
 	},
@@ -51,12 +51,22 @@ local function on_init(client, initialization_result)
 	end
 end
 
-local capabilities = vim.tbl_deep_extend(
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+capabilities = vim.tbl_deep_extend(
 	'force',
-	{},
-	vim.lsp.protocol.make_client_capabilities(),
-	require('cmp_nvim_lsp').default_capabilities()
+	capabilities,
+	require('blink.cmp').get_lsp_capabilities({}, false)
 )
+
+capabilities = vim.tbl_deep_extend('force', capabilities, {
+	textDocument = {
+		foldingRange = {
+			dynamicRegistration = false,
+			lineFoldingOnly = true,
+		},
+	},
+})
 
 local servers = {
 	jsonls = {

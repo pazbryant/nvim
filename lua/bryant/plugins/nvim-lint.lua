@@ -19,6 +19,7 @@ return {
 
 		local v = vim
 
+		-- this works with the newest eslint configuration, not older one
 		local eslint_d = require('lint.linters.eslint_d')
 		eslint_d.args = v.tbl_extend('force', {
 			'--config',
