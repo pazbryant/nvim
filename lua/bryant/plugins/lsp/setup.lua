@@ -56,7 +56,11 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend(
 	'force',
 	capabilities,
-	require('blink.cmp').get_lsp_capabilities({}, false)
+	require('blink.cmp').get_lsp_capabilities({
+		textDocument = {
+			completion = { completionItem = { snippetSupport = false } },
+		},
+	}, false)
 )
 
 capabilities = vim.tbl_deep_extend('force', capabilities, {
