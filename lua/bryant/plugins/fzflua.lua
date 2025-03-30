@@ -77,7 +77,7 @@ return {
     { '<m-c>', function() require('fzf-lua').buffers() end, desc = 'FzfLua buffers' },
     { '<leader>ht', function() require('fzf-lua').help_tags() end, desc = 'FzfLua Help tags' },
     { '<leader>k', function() require('fzf-lua').keymaps() end, desc = 'FzfLua show keymaps' },
-    { '<c-t>', function() require('fzf-lua').live_grep_native() end, desc = 'FzfLua Live grep' },
+    { '<c-y>', function() require('fzf-lua').live_grep_native() end, desc = 'FzfLua Live grep' },
     { 'z=', function() require('fzf-lua').spell_suggest() end, desc = 'FzfLua spell suggestions' },
     { '<leader>th', function() require('fzf-lua').colorschemes() end, desc = 'FzfLua Switch colorschemes' },
     { '<leader>ds', function() require('fzf-lua').lsp_document_symbols() end, desc = 'FzfLua document symbols' },
