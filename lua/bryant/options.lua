@@ -65,7 +65,7 @@ if v.g.neovide then
 	v.g.neovide_cursor_vfx_mode = 'railgun'
 end
 
--- snacks options
+-- snacks aliases
 _G.dd = function(...)
 	Snacks.debug.inspect(...)
 end
