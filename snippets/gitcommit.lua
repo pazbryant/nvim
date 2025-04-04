@@ -98,4 +98,8 @@ return {
 	s('apps', {
 		t('chore(apss): update default package list: ' .. currDate),
 	}),
+
+	s('nvim', {
+		t('chore(nvim): update neovim submodule: ' .. currDate),
+	}),
 }
