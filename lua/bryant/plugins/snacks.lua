@@ -16,6 +16,7 @@ return {
 		scratch = { enabled = false },
 		animate = { enabled = false },
 		profiler = { enabled = false },
+		terminal = { enabled = false },
 		gitbrowse = { enabled = false },
 
 		scope = { enabled = true },
@@ -23,7 +24,6 @@ return {
 		indent = { enabled = true },
 		lazygit = { enable = true },
 		bigfile = { enabled = true },
-		terminal = { enabled = true },
 		quickfile = { enabled = true },
 		bufdelete = { enabled = true },
 		zen = {
@@ -99,14 +99,6 @@ return {
 				vim.notify('Others buffers has been deleted', vim.log.levels.INFO)
 			end,
 			desc = 'Snacks bufdelete all but current',
-		},
-		{
-			'<c-t>',
-			function()
-				Snacks.terminal.toggle()
-			end,
-			mode = { 'x', 'v', 'n', 't' },
-			desc = 'Toggle terminal',
 		},
 	},
 }
