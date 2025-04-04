@@ -3,6 +3,7 @@ return {
 	event = 'InsertEnter',
 	version = '1.*',
 	dependencies = {
+		'saghen/blink.compat',
 		'rafamadriz/friendly-snippets',
 		{
 			'L3MON4D3/LuaSnip',
@@ -37,12 +38,33 @@ return {
 			},
 		},
 		sources = {
-			default = { 'lazydev', 'snippets', 'lsp', 'path', 'buffer' },
+			default = {
+				'lazydev',
+				'snippets',
+				'lsp',
+				'path',
+				'buffer',
+				'obsidian',
+				'obsidian_new',
+				'obsidian_tags',
+			},
 			providers = {
 				lazydev = {
 					name = 'LazyDev',
 					module = 'lazydev.integrations.blink',
 					score_offset = 100,
+				},
+				obsidian = {
+					name = 'obsidian',
+					module = 'blink.compat.source',
+				},
+				obsidian_new = {
+					name = 'obsidian_new',
+					module = 'blink.compat.source',
+				},
+				obsidian_tags = {
+					name = 'obsidian_tags',
+					module = 'blink.compat.source',
 				},
 			},
 			transform_items = function(_, items)
