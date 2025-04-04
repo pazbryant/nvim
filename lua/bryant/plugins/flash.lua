@@ -32,7 +32,7 @@ return {
 		local flash = require('flash')
 		return {
 			{
-				'<cr>',
+				'<c-z>',
 				mode = { 'n', 'x', 'o' },
 				function()
 					flash.jump()
