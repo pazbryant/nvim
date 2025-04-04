@@ -21,7 +21,7 @@ return {
 				path = '~/Documents/github/youtube',
 			},
 		},
-		completion = { nvim_cmp = true, min_chars = 2 },
+		completion = { nvim_cmp = false, min_chars = 2 },
 		disable_frontmatter = true,
 		ui = { enable = false },
 		templates = {
