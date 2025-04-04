@@ -100,6 +100,6 @@ return {
 	}),
 
 	s('nvim', {
-		t('chore(nvim): update neovim submodule: ' .. currDate),
+		t('chore(nvim): update neovim sub module: ' .. currDate),
 	}),
 }
