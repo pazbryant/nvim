@@ -35,6 +35,16 @@ map('n', '<leader>cp',"<cmd>echo expand('%:p')<cr>",{ desc = "Print current path
 map('n', '<C-z>', '<Nop>', { desc = "Disable neovim suspend" })
 
 -- quickfix list
+map('n', '<leader>q', function()
+  for _, win in ipairs(vim.fn.getwininfo()) do
+    if win.quickfix == 1 then
+      vim.cmd('cclose')
+      return
+    end
+  end
+  vim.cmd('copen')
+end, { desc = 'Toggle Quickfix List' })
+
 map('n', ']q', ':cnext<CR>', { desc = 'Next quickfix item' })
 map('n', '[q', ':cprev<CR>', { desc = 'Previous quickfix item' })
 
