@@ -2,7 +2,6 @@ return {
 	'ibhagwan/fzf-lua',
 	opts = function()
 		local actions = require('fzf-lua').actions
-		local trouble_actions = require('trouble.sources.fzf').actions
 		local file_ignore_patterns = {
 			'tags',
 			'*.pyc',
@@ -55,7 +54,7 @@ return {
 					['ctrl-h'] = actions.toggle_hidden,
 					['ctrl-i'] = actions.toggle_ignore,
 					['enter'] = actions.file_edit_or_qf,
-					['ctrl-q'] = trouble_actions.open_all,
+					['ctrl-q'] = actions.file_sel_to_qf,
 				},
 			},
 			files = {
