@@ -9,7 +9,6 @@ function M.get_keymaps()
     { ']d', M.diagnostic_goto(true), desc = 'Next Diagnostic' },
     { 'gD', vim.lsp.buf.declaration, desc = 'Goto Declaration' },
     { '[d', M.diagnostic_goto(false), desc = 'Prev Diagnostic' },
-    { 'go', vim.diagnostic.open_float, desc = 'Line Diagnostics' },
     { ']e', M.diagnostic_goto(true, 'ERROR'), desc = 'Next Error' },
     { '[e', M.diagnostic_goto(false, 'ERROR'), desc = 'Prev Error' },
     { ']w', M.diagnostic_goto(true, 'WARN'), desc = 'Next Warning' },
