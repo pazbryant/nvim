@@ -31,7 +31,7 @@ return {
 	},
 	keys = {
 		{
-			'<c-b>',
+			'<c-f>',
 			function()
 				require('conform').format({ lsp_format = 'fallback' })
 				vim.notify('code formated', vim.log.levels.INFO)
