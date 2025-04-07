@@ -45,8 +45,10 @@ map('n', '<leader>q', function()
   vim.cmd('copen')
 end, { desc = 'Toggle Quickfix List' })
 
-map('n', ']q', ':cnext<CR>', { desc = 'Next quickfix item' })
-map('n', '[q', ':cprev<CR>', { desc = 'Previous quickfix item' })
+map('n', ']q', '<cmd>cnext<CR>', { desc = 'Next quickfix item' })
+map('n', '[q', '<cmd>cprev<CR>', { desc = 'Previous quickfix item' })
 
--- custom tmux script
-map("n", "<C-f>", "<cmd>silent !tmux neww /home/bryant/bin/tmux/tmux-new-session<CR>", { desc = "Custom tmux script" })
+map('n','<c-b>', function ()
+  vim.cmd[[update]]
+  vim.notify("Buffer has been saved", vim.log.levels.INFO)
+end,{ desc = "Save buffer" })
