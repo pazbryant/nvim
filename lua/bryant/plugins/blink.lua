@@ -54,6 +54,9 @@ return {
 					module = 'lazydev.integrations.blink',
 					score_offset = 100,
 				},
+				snippets = {
+					score_offset = 10,
+				},
 				obsidian = {
 					name = 'obsidian',
 					module = 'blink.compat.source',
