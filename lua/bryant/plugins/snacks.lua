@@ -17,6 +17,7 @@ return {
 		animate = { enabled = false },
 		profiler = { enabled = false },
 		terminal = { enabled = false },
+		dashboard = { enabled = false },
 		gitbrowse = { enabled = false },
 
 		scope = { enabled = true },
@@ -25,7 +26,6 @@ return {
 		indent = { enabled = true },
 		bigfile = { enabled = true },
 		quickfile = { enabled = true },
-		dashboard = { enabled = true },
 		bufdelete = { enabled = true },
 		zen = {
 			enabled = true,
