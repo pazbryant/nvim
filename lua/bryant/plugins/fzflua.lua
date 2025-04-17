@@ -57,6 +57,18 @@ return {
 					['ctrl-q'] = { fn = actions.file_sel_to_qf, prefix = 'select-all' },
 				},
 			},
+			previewers = {
+				builtin = {
+					extensions = {
+						['png'] = { 'chafa', '{file}' },
+						['jpg'] = { 'chafa', '{file}' },
+						['jpeg'] = { 'chafa', '{file}' },
+						['gif'] = { 'chafa', '{file}' },
+						['webp'] = { 'chafa', '{file}' },
+						['svg'] = { 'chafa', '{file}' },
+					},
+				},
+			},
 			files = {
 				fd_opts = '--color=never --type f' .. fd_exclude_args,
 			},
