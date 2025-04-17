@@ -20,11 +20,12 @@ return {
 		gitbrowse = { enabled = false },
 
 		scope = { enabled = true },
-		debug = { enabled = true },
-		indent = { enabled = true },
 		lazygit = { enable = true },
+		debugq = { enabled = true },
+		indent = { enabled = true },
 		bigfile = { enabled = true },
 		quickfile = { enabled = true },
+		dashboard = { enabled = true },
 		bufdelete = { enabled = true },
 		zen = {
 			enabled = true,
