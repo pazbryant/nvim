@@ -10,7 +10,7 @@ return {
 		-- stylua: ignore start
     map({ 'n', 'x' }, '<up>', function() mc.lineAddCursor(-1) end)
     map({ 'n', 'x' }, '<down>', function() mc.lineAddCursor(1) end)
-    map({"n", "v"}, "<c-q>", mc.toggleCursor, { desc = "Toggle cursor" })
+    map({"n", "v"}, "<leader>q", mc.toggleCursor, { desc = "Toggle cursor" })
     map("v", "M", mc.matchCursors, { desc = 'Match cursors with regex' } )
     map('v', 'Q', mc.deleteCursor, { desc = 'Multicursor remove cursor' })
     map({ 'n', 'x' }, '<leader><up>', function() mc.lineSkipCursor(-1) end)
