@@ -47,8 +47,3 @@ end, { desc = 'Toggle Quickfix List' })
 
 map('n', ']q', '<cmd>cnext<CR>', { desc = 'Next quickfix item' })
 map('n', '[q', '<cmd>cprev<CR>', { desc = 'Previous quickfix item' })
-
-map('n','<c-b>', function ()
-  vim.cmd[[update]]
-  vim.notify("Buffer has been saved", vim.log.levels.INFO)
-end,{ desc = "Save buffer" })
