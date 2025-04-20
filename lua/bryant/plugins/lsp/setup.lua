@@ -4,10 +4,8 @@ if not mason_lspconfig or not lspconfig then
 	return
 end
 
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-	vim.lsp.diagnostic.on_publish_diagnostics,
-	{ underline = true, update_in_insert = false }
-)
+vim.lsp.handlers['textDocument/publishDiagnostics'] =
+	vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {})
 
 vim.diagnostic.config({
 	update_in_insert = false,
@@ -42,13 +40,8 @@ vim.lsp.handlers['textDocument/signatureHelp'] =
 
 local function on_attach(client, bufnr)
 	require('bryant.plugins.lsp.attach').on_attach(client, bufnr)
-end
-
-local function on_init(client, initialization_result)
-	if client.server_capabilities then
-		client.server_capabilities.documentFormattingProvider = false
-		client.server_capabilities.semanticTokensProvider = false -- turn off semantic tokens
-	end
+	client.server_capabilities.documentFormattingProvider = false
+	client.server_capabilities.documentRangeFormattingProvider = false
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -69,6 +62,8 @@ capabilities = vim.tbl_deep_extend('force', capabilities, {
 			dynamicRegistration = false,
 			lineFoldingOnly = true,
 		},
+		formatting = false,
+		rangeFormatting = false,
 	},
 })
 
@@ -91,11 +86,7 @@ local servers = {
 		settings = {
 			yaml = {
 				schemaStore = {
-					-- You must disable built-in schemaStore support if you want to use
-					-- this plugin and its advanced options like `ignore`.
 					enable = false,
-					-- Avoid TypeError: Cannot read properties of undefined (reading 'length')
-					url = '',
 				},
 				schemas = require('schemastore').json.schemas({
 					ignore = {
@@ -146,9 +137,8 @@ local servers = {
 	},
 }
 
-local setup = {}
-
 local ignored_servers = { 'ts_ls' }
+
 mason_lspconfig.setup_handlers({
 	function(server)
 		local server_opts = vim.tbl_deep_extend('force', {
@@ -160,17 +150,7 @@ mason_lspconfig.setup_handlers({
 		end
 
 		server_opts.on_attach = on_attach
-		server_opts.on_init = on_init
 
-		if setup[server] then
-			if setup[server](server, server_opts) then
-				return
-			end
-		elseif setup['*'] then
-			if setup['*'](server, server_opts) then
-				return
-			end
-		end
 		require('lspconfig')[server].setup(server_opts)
 	end,
 })
