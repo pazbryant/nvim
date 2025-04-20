@@ -55,7 +55,8 @@ return {
 					score_offset = 100,
 				},
 				snippets = {
-					score_offset = 10,
+					score_offset = 100,
+					min_keyword_length = 2,
 				},
 				obsidian = {
 					name = 'obsidian',
