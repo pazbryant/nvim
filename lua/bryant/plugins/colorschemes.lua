@@ -12,6 +12,7 @@ return {
 		config = function()
 			require('kanagawa').setup({
 				compile = true,
+				theme = 'dragon',
 				commentStyle = { italic = false },
 				keywordStyle = { italic = false },
 				statementStyle = { bold = true },
