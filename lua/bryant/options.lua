@@ -13,7 +13,7 @@ g.loaded_netrwPlugin = 1
 
 opt.showmode = true
 opt.showtabline = 0
-opt.guicursor = ""
+opt.guicursor = ''
 
 opt.swapfile = false
 opt.undofile = true
@@ -74,5 +74,3 @@ _G.bt = function()
 	Snacks.debug.backtrace()
 end
 vim.print = _G.dd
-
-vim.cmd.colorscheme('habamax')
