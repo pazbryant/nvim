@@ -6,9 +6,17 @@ return {
 		end,
 	},
 	{
-		'EdenEast/nightfox.nvim',
+		'rebelot/kanagawa.nvim',
+		lazy = false,
+		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme('nightfox')
+			require('kanagawa').setup({
+				compile = true,
+				commentStyle = { italic = false },
+				keywordStyle = { italic = false },
+				statementStyle = { bold = true },
+			})
+			vim.cmd.colorscheme('kanagawa-dragon')
 		end,
 	},
 }
