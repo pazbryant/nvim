@@ -12,12 +12,12 @@ return {
 		config = function()
 			require('kanagawa').setup({
 				compile = true,
-				theme = 'dragon',
+				theme = 'wave',
 				commentStyle = { italic = false },
 				keywordStyle = { italic = false },
 				statementStyle = { bold = true },
 			})
-			vim.cmd.colorscheme('kanagawa-dragon')
+			vim.cmd.colorscheme('kanagawa')
 		end,
 	},
 }
