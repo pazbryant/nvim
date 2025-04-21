@@ -40,8 +40,6 @@ vim.lsp.handlers['textDocument/signatureHelp'] =
 
 local function on_attach(client, bufnr)
 	require('bryant.plugins.lsp.attach').on_attach(client, bufnr)
-	client.server_capabilities.documentFormattingProvider = false
-	client.server_capabilities.documentRangeFormattingProvider = false
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -58,12 +56,9 @@ capabilities = vim.tbl_deep_extend(
 
 capabilities = vim.tbl_deep_extend('force', capabilities, {
 	textDocument = {
-		foldingRange = {
-			dynamicRegistration = false,
-			lineFoldingOnly = true,
-		},
-		formatting = false,
-		rangeFormatting = false,
+		semanticTokens = { dynamicRegistration = false },
+		formatting = { dynamicRegistration = false },
+		rangeFormatting = { dynamicRegistration = false },
 	},
 })
 
