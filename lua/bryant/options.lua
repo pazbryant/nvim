@@ -61,7 +61,7 @@ opt.shortmess:append('sI')
 
 -- neovide
 if v.g.neovide then
-	v.o.guifont = 'Maple Mono NF:h9.5:w1.2:#h-none'
+	v.o.guifont = 'Maple Mono:h9.5:w1.2:#h-none'
 	v.g.neovide_refresh_rate = 60
 	v.g.neovide_cursor_vfx_mode = 'railgun'
 end
