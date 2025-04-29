@@ -1,5 +1,5 @@
 return {
-	'epwalsh/obsidian.nvim',
+	'obsidian-nvim/obsidian.nvim',
 	version = '*',
 	ft = 'markdown',
 	cmd = {
@@ -21,7 +21,9 @@ return {
 				path = '~/Documents/github/youtube',
 			},
 		},
-		completion = { nvim_cmp = false, min_chars = 2 },
+		completion = {
+			blink = true,
+		},
 		disable_frontmatter = true,
 		ui = { enable = false },
 		templates = {
@@ -37,6 +39,12 @@ return {
 					return require('obsidian').util.gf_passthrough()
 				end,
 				opts = { noremap = false, expr = true, buffer = true },
+			},
+			['<leader>ch'] = {
+				action = function()
+					return require('obsidian').util.toggle_checkbox()
+				end,
+				opts = { buffer = true },
 			},
 			['<cr>'] = {
 				action = function()
