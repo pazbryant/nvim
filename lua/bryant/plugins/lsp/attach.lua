@@ -3,8 +3,8 @@ local M = {}
 function M.get_keymaps()
 	return {
     -- stylua: ignore start
-    { 'gR', vim.lsp.buf.references, desc = 'References' },
-    { '<leader>rn', vim.lsp.buf.rename, desc = 'Rename' },
+    { 'grr', vim.lsp.buf.references, desc = 'References' },
+    { 'grn', vim.lsp.buf.rename, desc = 'Rename' },
     { 'gd', vim.lsp.buf.definition, desc = 'Goto Definition' },
     { ']d', M.diagnostic_goto(true), desc = 'Next Diagnostic' },
     { 'gD', vim.lsp.buf.declaration, desc = 'Goto Declaration' },
@@ -13,10 +13,10 @@ function M.get_keymaps()
     { '[e', M.diagnostic_goto(false, 'ERROR'), desc = 'Prev Error' },
     { ']w', M.diagnostic_goto(true, 'WARN'), desc = 'Next Warning' },
     { '[w', M.diagnostic_goto(false, 'WARN'), desc = 'Prev Warning' },
-    { 'gI', vim.lsp.buf.implementation, desc = 'Goto Implementation' },
+    { 'gri', vim.lsp.buf.implementation, desc = 'Goto Implementation' },
     { 'gt', vim.lsp.buf.type_definition, desc = 'Goto Type Definition' },
     { 'K', function() vim.lsp.buf.hover({ border = 'single' }) end, desc = 'LSP Hover', has = 'hover' },
-    { '<leader>ca', vim.lsp.buf.code_action, desc = 'Code Action', mode = { 'n', 'v' }, has = 'codeAction' },
+    { 'gra', vim.lsp.buf.code_action, desc = 'Code Action', mode = { 'n', 'v' }, has = 'codeAction' },
     { '<c-s>', function() vim.lsp.buf.signature_help({ border = 'single' }) end, desc = 'Signature Help', has = 'signatureHelp' },
 	}
 end
