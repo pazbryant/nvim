@@ -21,8 +21,6 @@ return {
 	},
 	-- stylua: ignore end
 	keys = {
-		{ ']a', '<cmd>AerialNext<CR>', desc = 'Aerial next' },
-		{ '[a', '<cmd>AerialPrev<CR>', desc = 'Aerial prev' },
 		{ '<m-a>', '<cmd>AerialToggle<CR>', desc = 'Toggle Aerial' },
 	},
 }
