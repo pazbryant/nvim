@@ -25,7 +25,7 @@ return {
 		},
 	},
 	opts = {
-		cmdline = { enabled = false },
+		cmdline = { enabled = true },
 		completion = {
 			documentation = { auto_show = false },
 			menu = {
