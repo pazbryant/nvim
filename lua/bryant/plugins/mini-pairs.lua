@@ -1,6 +1,6 @@
 return {
 	'echasnovski/mini.pairs',
-	enabled = true,
+	enabled = false,
 	event = 'InsertEnter',
 	version = '*',
 	config = function()
