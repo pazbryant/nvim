@@ -83,7 +83,7 @@ return {
 				Snacks.bufdelete()
 				vim.notify('Buffer has been deleted', vim.log.levels.INFO)
 			end,
-			desc = 'Snacks bufdelete',
+			desc = 'Snacks remove buffer',
 		},
 		{
 			'<leader>bD',
@@ -91,13 +91,13 @@ return {
 				Snacks.bufdelete.all()
 				vim.notify('All buffers has been deleted', vim.log.levels.INFO)
 			end,
-			desc = 'Snacks bufdelete all',
+			desc = 'Snacks remove all buffers',
 		},
 		{
 			'<leader>bC',
 			function()
 				Snacks.bufdelete.other()
-				vim.notify('Others buffers has been deleted', vim.log.levels.INFO)
+				vim.notify('Snacks remove all buffers but current', vim.log.levels.INFO)
 			end,
 			desc = 'Snacks bufdelete all but current',
 		},
