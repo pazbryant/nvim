@@ -15,16 +15,24 @@ function M.get_keymaps()
     { '[w', M.diagnostic_goto(false, 'WARN'), desc = 'Prev Warning' },
     { 'gI', vim.lsp.buf.implementation, desc = 'Goto Implementation' },
     { 'gt', vim.lsp.buf.type_definition, desc = 'Goto Type Definition' },
-    { '<c-s>', vim.lsp.buf.signature_help, desc = 'Signature Help', has = 'signatureHelp' },
+    { 'K', function() vim.lsp.buf.hover({ border = 'single' }) end, desc = 'LSP Hover', has = 'hover' },
     { '<leader>ca', vim.lsp.buf.code_action, desc = 'Code Action', mode = { 'n', 'v' }, has = 'codeAction' },
+    { '<c-s>', function() vim.lsp.buf.signature_help({ border = 'single' }) end, desc = 'Signature Help', has = 'signatureHelp' },
 	}
 end
 
 function M.diagnostic_goto(next, severity)
-	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
 	severity = severity and vim.diagnostic.severity[severity] or nil
+
+	local opts = { float = true, severity = severity }
+	if next then
+		opts.count = 1
+	else
+		opts.count = -1
+	end
+
 	return function()
-		go({ severity = severity })
+		vim.diagnostic.jump(opts)
 	end
 end
 
