@@ -44,6 +44,3 @@ map('n', '<C-q>', function()
   end
   vim.cmd('copen')
 end, { desc = 'Toggle Quickfix List' })
-
-map('n', ']q', '<cmd>cnext<CR>', { desc = 'Next quickfix item' })
-map('n', '[q', '<cmd>cprev<CR>', { desc = 'Previous quickfix item' })
