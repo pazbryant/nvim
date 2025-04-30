@@ -18,6 +18,7 @@ return {
 				'bash',
 				'markdown',
 				'markdown_inline',
+				'sql',
 			},
 			auto_install = true,
 			incremental_selection = {
