@@ -21,9 +21,9 @@ return {
 		dashboard = { enabled = false },
 		gitbrowse = { enabled = false },
 
+		debug = { enabled = true },
 		scope = { enabled = true },
 		lazygit = { enable = true },
-		debugq = { enabled = true },
 		bigfile = { enabled = true },
 		quickfile = { enabled = true },
 		bufdelete = { enabled = true },
