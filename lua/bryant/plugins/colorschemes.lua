@@ -1,23 +1,24 @@
 return {
 	{
-		lazy = false,
-		priority = 1000,
 		'Mofiqul/vscode.nvim',
 		config = function()
 			vim.cmd.colorscheme('vscode')
 		end,
 	},
 	{
-		'rebelot/kanagawa.nvim',
+		'bluz71/vim-moonfly-colors',
+		name = 'moonfly',
 		config = function()
-			require('kanagawa').setup({
-				compile = true,
-				theme = 'wave',
-				commentStyle = { italic = false },
-				keywordStyle = { italic = false },
-				statementStyle = { bold = true },
-			})
-			vim.cmd.colorscheme('kanagawa')
+			vim.cmd.colorscheme('moonfly')
+		end,
+	},
+	{
+		'zenbones-theme/zenbones.nvim',
+		lazy = false,
+		priority = 1000,
+		dependencies = 'rktjmp/lush.nvim',
+		config = function()
+			vim.cmd.colorscheme('zenbones')
 		end,
 	},
 }
