@@ -147,27 +147,6 @@ autocmd('FileType', {
 	end,
 })
 
-autocmd('FileType', {
-	group = bryant_group,
-	desc = 'Disable ufo in certain file types',
-	pattern = {
-		'dapui_watches',
-		'dap-repl',
-		'dapui_console',
-		'dapui_stacks',
-		'dapui_breakpoints',
-		'dapui_scopes',
-		'lazy',
-	},
-	callback = function()
-		local status = pcall(module, 'ufo')
-		if status then
-			require('ufo').detach()
-			vim.opt_local.foldenable = false
-		end
-	end,
-})
-
 autocmd('BufHidden', {
 	group = bryant_group,
 	desc = 'Remove unamed buffers',
