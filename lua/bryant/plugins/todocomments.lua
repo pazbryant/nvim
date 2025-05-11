@@ -11,6 +11,6 @@ return {
 	},
 	keys = {
 		-- stylua: ignore start
-		{ '<m-t>', '<cmd> TodoFzfLua <CR>', desc = 'Todo comments  fzf-lua' },
+		{ '<m-t>', '<cmd> TodoFzfLua <CR>', desc = 'Todo Comments FZF-LUA' },
 	},
 }
