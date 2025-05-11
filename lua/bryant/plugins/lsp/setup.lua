@@ -1,19 +1,20 @@
 vim.diagnostic.config({
-	update_in_insert = false,
 	underline = true,
 	severity_sort = true,
 	virtual_text = false,
 	virtual_lines = false,
-	signs = {
-		text = { ERROR = '󰅚', WARN = '󰀪', HINT = '󰌶', INFO = '󰋽' },
-	},
+	update_in_insert = false,
+	dynamicRegistration = true,
 	float = {
+		source = true,
+		max_width = 100,
 		focusable = true,
 		style = 'minimal',
 		border = 'single',
-		source = true,
-		max_width = 100,
 		header = { ' Diagnostics', 'Bold' },
+		signs = {
+			text = { ERROR = 'E', WARN = 'W', HINT = 'H', INFO = '?' },
+		},
 		prefix = function(ctx)
 			local severity = vim.diagnostic.severity[ctx.severity]
 			return '  ', 'Diagnostic' .. severity
@@ -24,7 +25,15 @@ vim.diagnostic.config({
 vim.lsp.config('*', {
 	capabilities = {
 		textDocument = {
-			semanticTokens = nil,
+			semanticTokens = {
+				dynamicRegistration = false,
+				overlappingTokenSupport = false,
+				multilineTokenSupport = false,
+				augmentsSyntaxTokens = false,
+			},
+			completion = {
+				dynamicRegistration = true,
+			},
 		},
 	},
 })
