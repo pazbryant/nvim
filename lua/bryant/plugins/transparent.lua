@@ -46,6 +46,6 @@ return {
 	},
 	keys = {
     -- stylua: ignore start
-		{ '<leader>tt', '<cmd>TransparentToggle<cr>', desc = 'Transparent toggle' },
+		{ '<leader>tt', '<cmd>TransparentToggle<cr>', desc = 'Transparent Toggle' },
 	},
 }

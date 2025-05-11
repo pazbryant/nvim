@@ -3,14 +3,14 @@ return {
 	version = '*',
 	keys = {
 		-- Here's a different mapping to avoid conflict with flash.nvim
-		{ 'sa', desc = 'Mini.surround Add surrounding', mode = { 'n', 'v' } },
-		{ 'sd', desc = 'Mini.surround Delete surrounding' },
-		{ 'sf', desc = 'Mini.surround Find surrounding' },
-		{ 'sF', desc = 'Mini.surround Find surrounding backward' },
-		{ 'sh', desc = 'Mini.surround Hwghlwght surrounding' },
-		{ 'sr', desc = 'Mwnw.surround Replace surrounding' },
-		{ 'sn', desc = 'Mini.surround Update n_lines' },
-		{ 'S', desc = 'Mini.surround Surround full line' },
+		{ 'sa', desc = 'Mini.surround Add Surrounding', mode = { 'n', 'v' } },
+		{ 'sd', desc = 'Mini.surround Delete Surrounding' },
+		{ 'sf', desc = 'Mini.surround Find Surrounding' },
+		{ 'sF', desc = 'Mini.surround Find Surrounding backward' },
+		{ 'sh', desc = 'Mini.surround Highlight Surrounding' },
+		{ 'sr', desc = 'Mwnw.surround Replace Surrounding' },
+		{ 'sn', desc = 'Mini.surround Update N Lines' },
+		{ 'S', desc = 'Mini.surround Surround Full Line' },
 	},
 	config = function()
 		require('mini.surround').setup({
@@ -39,6 +39,6 @@ return {
 			silent = false,
 		})
 		-- stylua: ignore start
-		vim.keymap.set('n', 'S', 'sa_', { desc="Surronud full line", remap = true })
+		vim.keymap.set('n', 'S', 'sa_', { desc="Surround Full Line", remap = true })
 	end,
 }
