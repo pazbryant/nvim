@@ -13,7 +13,7 @@ return {
 	{ 'Bilal2453/luvit-meta', lazy = true },
 
 	{
-		'williamboman/mason-lspconfig.nvim',
+		'mason-org/mason-lspconfig.nvim',
 		opts = {
 			ensure_installed = {
 				'html',
@@ -29,6 +29,9 @@ return {
 				'marksman',
 				'dockerls',
 				'emmet_language_server',
+			},
+			automatic_enable = {
+				exclude = { 'ts_ls' },
 			},
 		},
 		config = function(_, opts)
@@ -60,7 +63,7 @@ return {
 	},
 
 	{
-		'williamboman/mason.nvim',
+		'mason-org/mason.nvim',
 		dependencies = 'WhoIsSethDaniel/mason-tool-installer.nvim',
 		branch = 'main',
 		cmd = 'Mason',
