@@ -5,6 +5,7 @@ function M.get_keymaps()
     -- stylua: ignore start
     { 'grr', vim.lsp.buf.references, desc = 'References' },
     { 'grn', vim.lsp.buf.rename, desc = 'Rename' },
+    { 'gO', vim.lsp.buf.document_symbol, desc = 'Open document symbol' },
     { 'gd', vim.lsp.buf.definition, desc = 'Goto Definition' },
     { ']d', M.diagnostic_goto(true), desc = 'Next Diagnostic' },
     { 'gD', vim.lsp.buf.declaration, desc = 'Goto Declaration' },
@@ -15,9 +16,9 @@ function M.get_keymaps()
     { '[w', M.diagnostic_goto(false, 'WARN'), desc = 'Prev Warning' },
     { 'gri', vim.lsp.buf.implementation, desc = 'Goto Implementation' },
     { 'gt', vim.lsp.buf.type_definition, desc = 'Goto Type Definition' },
-    { 'K', function() vim.lsp.buf.hover({ border = 'single' }) end, desc = 'LSP Hover', has = 'hover' },
-    { 'gra', vim.lsp.buf.code_action, desc = 'Code Action', mode = { 'n', 'v' }, has = 'codeAction' },
-    { '<c-s>', function() vim.lsp.buf.signature_help({ border = 'single' }) end, desc = 'Signature Help', has = 'signatureHelp' },
+    { 'K', function() vim.lsp.buf.hover({ border = 'single' }) end, desc = 'LSP Hover' },
+    { 'gra', vim.lsp.buf.code_action, desc = 'Code Action', mode = { 'n', 'v' } },
+    { '<c-s>', function() vim.lsp.buf.signature_help({ border = 'single' }) end, desc = 'Signature Help' },
 	}
 end
 
@@ -50,13 +51,11 @@ function M.on_attach(client, buffer)
 	end
 
 	for _, keys in pairs(keymaps) do
-		if not keys.has or client.server_capabilities[keys.has .. 'Provider'] then
-			local opts = Keys.opts(keys)
-			opts.has = nil
-			opts.silent = true
-			opts.buffer = buffer
-			vim.keymap.set(keys.mode or 'n', keys.lhs, keys.rhs, opts)
-		end
+		local opts = Keys.opts(keys)
+		opts.has = nil
+		opts.silent = true
+		opts.buffer = buffer
+		vim.keymap.set(keys.mode or 'n', keys.lhs, keys.rhs, opts)
 	end
 end
 
