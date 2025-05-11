@@ -1,4 +1,5 @@
 return {
+	-- autor recomended not lazy load
 	'windwp/nvim-ts-autotag',
 	event = 'BufReadPre',
 	config = function()
