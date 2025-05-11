@@ -86,11 +86,11 @@ return {
 	keys = {
     { '<leader>fz', "<cmd> FzfLua <CR>" , desc = 'FzfLua' },
     { '<c-p>', function() require('fzf-lua').files() end, desc = 'FzfLua Files' },
-    { '<m-c>', function() require('fzf-lua').buffers() end, desc = 'FzfLua buffers' },
-    { '<leader>k', function() require('fzf-lua').keymaps() end, desc = 'FzfLua show keymaps' },
-    { '<leader>ht', function() require('fzf-lua').help_tags() end, desc = 'FzfLua Help tags' },
-    { '<c-t>', function() require('fzf-lua').live_grep_native() end, desc = 'FzfLua Live grep' },
-    { 'z=', function() require('fzf-lua').spell_suggest() end, desc = 'FzfLua spell suggestions' },
-    { '<leader>th', function() require('fzf-lua').colorschemes() end, desc = 'FzfLua Switch colorschemes' },
+    { '<m-c>', function() require('fzf-lua').buffers() end, desc = 'FzfLua Buffers' },
+    { '<leader>k', function() require('fzf-lua').keymaps() end, desc = 'FzfLua Show Key Maps' },
+    { '<leader>ht', function() require('fzf-lua').help_tags() end, desc = 'FzfLua Help Tags' },
+    { '<c-t>', function() require('fzf-lua').live_grep_native() end, desc = 'FzfLua Live Grep' },
+    { 'z=', function() require('fzf-lua').spell_suggest() end, desc = 'FzfLua Spell Suggestions' },
+    { '<leader>th', function() require('fzf-lua').colorschemes() end, desc = 'FzfLua Switch Colorschemes' },
 	},
 }

@@ -2,7 +2,7 @@ return {
 	'stevearc/oil.nvim',
 	lazy = false,
 	keys = {
-		{ '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' } },
+		{ '-', '<CMD>Oil<CR>', { desc = 'Oil Open Parent Directory' } },
 	},
 	opts = {
 		default_file_explorer = true,

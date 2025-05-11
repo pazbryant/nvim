@@ -3,22 +3,22 @@ local M = {}
 function M.get_keymaps()
 	return {
     -- stylua: ignore start
-    { 'grr', vim.lsp.buf.references, desc = 'References' },
-    { 'grn', vim.lsp.buf.rename, desc = 'Rename' },
-    { 'gO', vim.lsp.buf.document_symbol, desc = 'Open document symbol' },
-    { 'gd', vim.lsp.buf.definition, desc = 'Goto Definition' },
-    { ']d', M.diagnostic_goto(true), desc = 'Next Diagnostic' },
-    { 'gD', vim.lsp.buf.declaration, desc = 'Goto Declaration' },
-    { '[d', M.diagnostic_goto(false), desc = 'Prev Diagnostic' },
-    { ']e', M.diagnostic_goto(true, 'ERROR'), desc = 'Next Error' },
-    { '[e', M.diagnostic_goto(false, 'ERROR'), desc = 'Prev Error' },
-    { ']w', M.diagnostic_goto(true, 'WARN'), desc = 'Next Warning' },
-    { '[w', M.diagnostic_goto(false, 'WARN'), desc = 'Prev Warning' },
-    { 'gri', vim.lsp.buf.implementation, desc = 'Goto Implementation' },
-    { 'gt', vim.lsp.buf.type_definition, desc = 'Goto Type Definition' },
+    { 'grr', vim.lsp.buf.references, desc = 'LSP References' },
+    { 'grn', vim.lsp.buf.rename, desc = 'LSP Rename' },
+    { 'gO', vim.lsp.buf.document_symbol, desc = 'LSP Open Document Symbol' },
+    { 'gd', vim.lsp.buf.definition, desc = 'LSP Goto Definition' },
+    { ']d', M.diagnostic_goto(true), desc = 'LSP Next Diagnostic' },
+    { 'gD', vim.lsp.buf.declaration, desc = 'LSP Goto Declaration' },
+    { '[d', M.diagnostic_goto(false), desc = 'LSP Prev Diagnostic' },
+    { ']e', M.diagnostic_goto(true, 'ERROR'), desc = 'LSP Next Error' },
+    { '[e', M.diagnostic_goto(false, 'ERROR'), desc = 'LSP Prev Error' },
+    { ']w', M.diagnostic_goto(true, 'WARN'), desc = 'LSP Next Warning' },
+    { '[w', M.diagnostic_goto(false, 'WARN'), desc = 'LSP Prev Warning' },
+    { 'gri', vim.lsp.buf.implementation, desc = 'LSP Goto Implementation' },
+    { 'gt', vim.lsp.buf.type_definition, desc = 'LSP Goto Type Definition' },
     { 'K', function() vim.lsp.buf.hover({ border = 'single' }) end, desc = 'LSP Hover' },
-    { 'gra', vim.lsp.buf.code_action, desc = 'Code Action', mode = { 'n', 'v' } },
-    { '<c-s>', function() vim.lsp.buf.signature_help({ border = 'single' }) end, desc = 'Signature Help' },
+    { 'gra', vim.lsp.buf.code_action, desc = 'LSP Code Action', mode = { 'n', 'v' } },
+    { '<c-s>', function() vim.lsp.buf.signature_help({ border = 'single' }) end, desc = 'LSP Signature Help' },
 	}
 end
 
