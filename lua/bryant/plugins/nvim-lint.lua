@@ -38,7 +38,7 @@ return {
 		{
 			'<leader>l',
 			'<cmd>Lint<CR>',
-			desc = 'Nvim-lint lint',
+			desc = 'Nvim-lint Lint',
 		},
 	},
 }
