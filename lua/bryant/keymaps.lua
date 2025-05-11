@@ -4,35 +4,32 @@ local map = v.keymap.set
 
 -- stylua: ignore start
 -- custom keymaps
-map({ 'n', 'v', 'o' }, 'H', '^', { desc = 'Start of the line' })
-map({ 'n', 'v', 'o' }, 'L', 'g_', { desc = 'End of the line' })
+map({ 'n', 'v', 'o' }, 'H', '^', { desc = 'Go To The Start Of The Line' })
+map({ 'n', 'v', 'o' }, 'L', 'g_', { desc = 'Go To The End Of The Line' })
 
 -- paste without overwrite register
-map("x", "<leader>p", [["_dP]], { desc = "Paste without overwrite register" })
+map("x", "<leader>p", [["_dP]], { desc = "Paste Without Overwrite Register " })
 
 -- copy without overwrite register
-map({"n", "v"}, "<leader>y", [["+y]],{ desc="Copy without overwrite register" })
-map("n", "<leader>Y", [["+Y]], { desc="Copy full line without overwrite register"})
+map({"n", "v"}, "<leader>y", [["+y]],{ desc="Copy Without Overwrite Register" })
+map("n", "<leader>Y", [["+Y]], { desc="Copy Full Line Without Overwrite Register"})
 
 -- delete without overwrite register
-map({"n", "v"}, "<leader>d", "\"_d", { desc="Delete without overwrite register" })
-map('n', "<leader>D", "\"_dd", { desc = "Delete full line without overwrite register" })
+map({"n", "v"}, "<leader>d", "\"_d", { desc="Delete Without Overwrite Register" })
+map('n', "<leader>D", "\"_dd", { desc = "Delete Full Line Without Overwrite Register" })
 
 -- align manually
-map('v', '<', '<gv', { desc = 'Better align items' })
-map('v', '>', '>gv', { desc = 'Better align items' })
+map('v', '<', '<gv', { desc = 'Align Items To The Left' })
+map('v', '>', '>gv', { desc = 'Align Items To The Right' })
 
 -- custom rename
-map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Custom Rename"})
 
 -- signature help
-map({ 'i', 'n' }, '<c-s>', function() v.lsp.buf.signature_help() end, { desc = 'Toggle signature help' })
+map({ 'i', 'n' }, '<c-s>', function() v.lsp.buf.signature_help() end, { desc = 'Toggle Signature Help' })
 
 -- print current path
-map('n', '<leader>cp',"<cmd>echo expand('%:p')<cr>",{ desc = "Print current path" })
-
--- remove suspend keybind
-map('n', '<C-z>', '<Nop>', { desc = "Disable neovim suspend" })
+map('n', '<leader>cp',"<cmd>echo expand('%:p')<cr>",{ desc = "Print Current Path" })
 
 -- quickfix list
 map('n', '<C-q>', function()

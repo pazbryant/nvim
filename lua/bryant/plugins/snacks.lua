@@ -53,28 +53,28 @@ return {
 			function()
 				Snacks.notifier.show_history()
 			end,
-			desc = 'Snacks notifier',
+			desc = 'Snacks Notifier',
 		},
 		{
 			'<leader>gg',
 			function()
 				Snacks.lazygit()
 			end,
-			desc = 'Snacks lazygit',
+			desc = 'Snacks LazyGit',
 		},
 		{
 			'<leader>G',
 			function()
 				Snacks.lazygit.log()
 			end,
-			desc = 'Snacks lazygit log',
+			desc = 'Snacks LazyGit Log',
 		},
 		{
 			'zm',
 			function()
 				Snacks.zen()
 			end,
-			desc = 'Snacks zen',
+			desc = 'Snacks ZEN',
 		},
 	},
 }
