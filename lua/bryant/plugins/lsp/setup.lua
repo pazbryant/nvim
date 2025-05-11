@@ -32,7 +32,13 @@ vim.lsp.config('*', {
 				augmentsSyntaxTokens = false,
 			},
 			completion = {
-				dynamicRegistration = true,
+				dynamicRegistration = false,
+			},
+			formatting = {
+				dynamicRegistration = false,
+			},
+			rangeFormatting = {
+				dynamicRegistration = false,
 			},
 		},
 	},
