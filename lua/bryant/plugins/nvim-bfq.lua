@@ -1,6 +1,6 @@
 return {
 	'kevinhwang91/nvim-bqf',
-	ft = 'qf',
+	lazy = false,
 	opts = {
 		preview = {
 			auto_preview = true,
