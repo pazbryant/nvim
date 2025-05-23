@@ -12,6 +12,8 @@ return {
 
 	{ 'Bilal2453/luvit-meta', lazy = true },
 
+	{ 'j-hui/fidget.nvim', dependencies = 'neovim/nvim-lspconfig', opts = {} },
+
 	{
 		'mason-org/mason-lspconfig.nvim',
 		opts = {
