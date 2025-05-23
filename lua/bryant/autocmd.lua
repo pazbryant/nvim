@@ -208,20 +208,3 @@ autocmd({ 'FileType' }, {
 		vim.opt_local.syntax = 'editorconfig'
 	end,
 })
-
-autocmd('LspProgress', {
-	desc = 'Lsp progress bar using snacks notify',
-	group = bryant_group,
-	callback = function(ev)
-		local spinner =
-			{ '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' }
-		vim.notify(vim.lsp.status(), vim.log.levels.INFO, {
-			id = 'lsp_progress',
-			title = 'LSP Progress',
-			opts = function(notif)
-				notif.icon = ev.data.params.value.kind == 'end' and ' '
-					or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
-			end,
-		})
-	end,
-})
