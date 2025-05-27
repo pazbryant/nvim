@@ -13,13 +13,13 @@ return {
 
     -- stylua: ignore start
 		return {
-      { "<c-l>", function() harpoon2_list:next() end, desc = 'Harpoon next' },
-      { "<c-h>", function() harpoon2_list:prev() end, desc = 'Harpoon previous' },
+      { "<leader>hn", function() harpoon2_list:next() end, desc = 'Harpoon next' },
+      { "<leader>hp", function() harpoon2_list:prev() end, desc = 'Harpoon previous' },
       { '<leader>[', function() harpoon2_list:select(1) end, desc = 'Harpoon to file 1' },
       { '<leader>{', function() harpoon2_list:select(2) end, desc = 'Harpoon to file 2' },
       { '<leader>(', function() harpoon2_list:select(3) end, desc = 'Harpoon to file 3' },
       { '<leader>%', function() harpoon2_list:select(4) end, desc = 'Harpoon to file 4' },
-      { '<c-e>', function() harpoon2.ui:toggle_quick_menu(harpoon2:list()) end, desc = 'Harpoon quick menu' },
+      { '<leader>e', function() harpoon2.ui:toggle_quick_menu(harpoon2:list()) end, desc = 'Harpoon quick menu' },
       { '<leader>a', function() harpoon2_list:add() vim.notify('harpoon file added', vim.log.levels.INFO) end, desc = 'Harpoon add file' },
 		}
 	end,
