@@ -31,8 +31,8 @@ opt.numberwidth = 1
 
 opt.hlsearch = true
 opt.incsearch = true
-opt.smartcase = true
-opt.ignorecase = true
+opt.smartcase = false
+opt.ignorecase = false
 
 opt.scrolloff = 5
 opt.signcolumn = 'yes:1'
@@ -62,10 +62,6 @@ opt.spelllang = { 'en_us', 'es_mx' }
 -- set spell file
 opt.spellfile = '/home/bryant/.config/spell/en.utf-8.add'
 
--- update statusline
-opt.laststatus = 0
--- opt.statusline = ' %f%m%r%h%w'
-
 -- disable nvim startup screen
 opt.shortmess:append('sI')
 
@@ -75,5 +71,3 @@ if v.g.neovide then
 	v.g.neovide_refresh_rate = 60
 	v.g.neovide_cursor_vfx_mode = 'railgun'
 end
-
-vim.cmd.colorscheme('habamax')
