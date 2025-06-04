@@ -37,7 +37,7 @@ map('n', '<leader>cr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
 map({ 'i', 'n' }, '<c-s>', function() v.lsp.buf.signature_help() end, { desc = 'Toggle Signature Help' })
 
 -- print current path
-map('n', '<leader>cp',"<cmd>echo expand('%:p')<cr>",{ desc = "Print Current Path" })
+map('n', '<leader>cp', "<cmd>lua vim.notify(vim.fn.expand('%:p'))<cr>", { desc = "Print Current Path" })
 
 -- quickfix list
 map('n', '<C-q>', function()
