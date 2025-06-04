@@ -1,10 +1,9 @@
 return {
 	'folke/trouble.nvim',
 	cmd = 'Trouble',
-	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	opts = {
 		auto_close = true,
-		focus = true,
+		focus = false,
 		---@type trouble.Window.opts
 		win = {
 			size = {
@@ -16,10 +15,12 @@ return {
 		keys = {
 			['g?'] = 'help',
 		},
+
+		icons = nil,
 	},
 	-- stylua: ignore start
 	keys = {
-    { '<leader>X', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Trouble All Diagnostics' },
-    { '<leader>x', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Trouble Buffer Diagnostics' },
+    { '<leader>x', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Trouble All Diagnostics' },
+    { '<c-x>', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Trouble Buffer Diagnostics' },
 	},
 }
