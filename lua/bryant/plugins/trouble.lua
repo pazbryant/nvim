@@ -3,7 +3,7 @@ return {
 	cmd = 'Trouble',
 	opts = {
 		auto_close = true,
-		focus = false,
+		focus = true,
 		---@type trouble.Window.opts
 		win = {
 			size = {
