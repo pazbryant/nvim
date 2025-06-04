@@ -39,6 +39,10 @@ opt.signcolumn = 'yes:1'
 opt.colorcolumn = '80'
 opt.isfname:append('@-@')
 
+-- update statusline
+opt.laststatus = 0
+-- opt.statusline = ' %f%m%r%h%w'
+
 opt.updatetime = 50
 
 opt.termguicolors = true
