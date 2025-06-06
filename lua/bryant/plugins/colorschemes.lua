@@ -1,7 +1,5 @@
 return {
 	{
-		lazy = false,
-		priority = 1000,
 		'Mofiqul/vscode.nvim',
 		config = function()
 			require('vscode').setup({
