@@ -37,9 +37,9 @@ return {
 				'bashls',
 				'lua_ls',
 				'yamlls',
-				'pyright',
 				'marksman',
 				'dockerls',
+				'basedpyright',
 				'emmet_language_server',
 			},
 			automatic_enable = {
@@ -103,9 +103,7 @@ return {
 				'golangci-lint',
 
 				-- python
-				'black',
 				'ruff',
-				'isort',
 
 				-- markdown
 				'alex',

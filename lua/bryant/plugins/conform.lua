@@ -24,7 +24,7 @@ return {
 			bash = { 'shfmt' },
 			zsh = { 'shfmt' },
 			go = { 'gofumpt', 'goimports' },
-			python = { 'black', 'isort' },
+			python = { 'ruff_organize_imports', 'ruff_fix', 'ruff_format' },
 			toml = { 'taplo' },
 			['markdown.mdx'] = { 'markdownlint', 'prettier' },
 		},
