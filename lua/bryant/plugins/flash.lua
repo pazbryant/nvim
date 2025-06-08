@@ -9,7 +9,7 @@ return {
 			style = 'overlay', ---@type "eol" | "overlay" | "right_align" | "inline"
 		},
 		highlight = {
-			backdrop = false,
+			backdrop = true,
 			matches = true,
 			priority = 5000,
 			groups = {
@@ -24,7 +24,7 @@ return {
 				enabled = true,
 				autohide = true,
 				jump_labels = true,
-				highlight = { backdrop = false },
+				highlight = { backdrop = true },
 			},
 		},
 	},
@@ -32,7 +32,7 @@ return {
 		local flash = require('flash')
 		return {
 			{
-				'<c-z>',
+				'<cr>',
 				mode = { 'n', 'x', 'o' },
 				function()
 					flash.jump()
