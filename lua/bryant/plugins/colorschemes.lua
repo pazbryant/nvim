@@ -16,7 +16,13 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme('zenbones')
+			local lush = require('lush')
+			local specs = lush.parse(function()
+				return {
+					Constant({ base.Constant, gui = '' }),
+				}
+			end)
+			lush.apply(lush.compile(specs))
 		end,
 	},
 
