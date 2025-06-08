@@ -11,30 +11,12 @@ return {
 	},
 
 	{
-		'rose-pine/neovim',
+		'zenbones-theme/zenbones.nvim',
+		dependencies = 'rktjmp/lush.nvim',
+		lazy = false,
+		priority = 1000,
 		config = function()
-			require('rose-pine').setup({
-				styles = {
-					bold = true,
-					italic = false,
-					transparency = false,
-				},
-			})
-			vim.cmd.colorscheme('rose-pine')
-		end,
-	},
-
-	{
-		'craftzdog/solarized-osaka.nvim',
-		config = function()
-			require('solarized-osaka').setup({
-				transparent = false,
-				styles = {
-					comments = { italic = false },
-					keywords = { italic = false },
-				},
-			})
-			vim.cmd.colorscheme('solarized-osaka')
+			vim.cmd.colorscheme('zenbones')
 		end,
 	},
 

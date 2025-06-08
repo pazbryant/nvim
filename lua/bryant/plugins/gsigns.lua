@@ -3,6 +3,7 @@ return {
 	event = 'VeryLazy',
 	cmd = 'Gitsigns',
 	opts = {
+		signcolumn = false,
 		signs = {
 			add = { text = '┃' },
 			change = { text = '┃' },
@@ -11,7 +12,6 @@ return {
 			changedelete = { text = '~' },
 			untracked = { text = '┆' },
 		},
-		signcolumn = true,
 		on_attach = function(bufnr)
 			local gs = require('gitsigns')
 			local v = vim
@@ -39,10 +39,11 @@ return {
 			end)
 
 			-- stylua: ignore start
-			map('n', '<leader>gr', gs.reset_hunk, { desc = 'Gitsigns Reset Hunk' })
-			map('n', '<leader>gp', gs.preview_hunk, { desc = 'Gitsigns Preview Hunk' })
-			map('n', '<leader>gb', gs.blame_line, { desc = 'Gitsigns Blame Line' })
-			map('n', '<leader>gl', gs.toggle_linehl, { desc = 'Gitsigns Toggle linehl' })
+      map('n', '<leader>gr', gs.reset_hunk, { desc = 'Gitsigns Reset Hunk' })
+      map('n', '<leader>gb', gs.blame_line, { desc = 'Gitsigns Blame Line' })
+      map('n', '<leader>gs', gs.toggle_signs, { desc = 'Gitsigns Toggle Signs' })
+      map('n', '<leader>gp', gs.preview_hunk, { desc = 'Gitsigns Preview Hunk' })
+      map('n', '<leader>gl', gs.toggle_linehl, { desc = 'Gitsigns Toggle linehl' })
 		end,
 	},
 }
