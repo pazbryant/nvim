@@ -13,8 +13,6 @@ return {
 	{
 		'zenbones-theme/zenbones.nvim',
 		dependencies = 'rktjmp/lush.nvim',
-		lazy = false,
-		priority = 1000,
 		config = function()
 			local lush = require('lush')
 			local specs = lush.parse(function()
@@ -27,6 +25,8 @@ return {
 	},
 
 	{
+		lazy = false,
+		priority = 1000,
 		'rebelot/kanagawa.nvim',
 		config = function()
 			require('kanagawa').setup({
