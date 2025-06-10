@@ -32,7 +32,7 @@ return {
 		local flash = require('flash')
 		return {
 			{
-				'<cr>',
+				's',
 				mode = { 'n', 'x', 'o' },
 				function()
 					flash.jump()
@@ -40,7 +40,7 @@ return {
 				desc = 'Flash',
 			},
 			{
-				'gs',
+				'S',
 				mode = { 'n', 'x', 'o' },
 				function()
 					flash.treesitter()
@@ -53,7 +53,7 @@ return {
 				function()
 					flash.remote()
 				end,
-				desc = 'Flash Remote',
+				desc = 'Remote Flash',
 			},
 		}
 	end,
