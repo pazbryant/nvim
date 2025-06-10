@@ -11,6 +11,12 @@ map('n', '<C-c>', 'ciw', { desc = 'Better Change Inner Word' })
 --  No highlights
 map('n', '<Escape>', '<cmd>noh<CR>', { desc = 'No search highlights' })
 
+-- better quit
+map('n', '<leader>q', '<cmd>quit!<cr>', { desc = 'Better quit' })
+
+-- better quit all
+map('n', '<leader><leader>', '<cmd>quitall!<cr>', { desc = 'Better quit all' })
+
 -- movement left and right
 map({ 'n', 'v', 'o' }, 'H', '^', { desc = 'Go To The Start Of The Line' })
 map({ 'n', 'v', 'o' }, 'L', 'g_', { desc = 'Go To The End Of The Line' })
