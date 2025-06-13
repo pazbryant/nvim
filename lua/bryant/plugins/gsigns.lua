@@ -28,7 +28,7 @@ return {
 				else
 					gs.nav_hunk('next')
 				end
-			end)
+			end, { desc = 'Go to the next hunk' })
 
 			map('n', '[g', function()
 				if v.wo.diff then
@@ -36,7 +36,7 @@ return {
 				else
 					gs.nav_hunk('prev')
 				end
-			end)
+			end, { desc = 'Go to the previous hunk' })
 
 			-- stylua: ignore start
       map('n', '<leader>gr', gs.reset_hunk, { desc = 'Gitsigns Reset Hunk' })
