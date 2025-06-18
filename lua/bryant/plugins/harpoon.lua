@@ -13,8 +13,8 @@ return {
 
     -- stylua: ignore start
 		return {
-      { "<c-l>", function() harpoon2_list:next() end, desc = 'Harpoon next' },
-      { "<c-h>", function() harpoon2_list:prev() end, desc = 'Harpoon previous' },
+      { "<c-k>", function() harpoon2_list:next() end, desc = 'Harpoon next' },
+      { "<c-j>", function() harpoon2_list:prev() end, desc = 'Harpoon previous' },
       { '<leader>[', function() harpoon2_list:select(1) end, desc = 'Harpoon to file 1' },
       { '<leader>{', function() harpoon2_list:select(2) end, desc = 'Harpoon to file 2' },
       { '<leader>(', function() harpoon2_list:select(3) end, desc = 'Harpoon to file 3' },
