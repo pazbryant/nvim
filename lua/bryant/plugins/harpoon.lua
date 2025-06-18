@@ -20,7 +20,7 @@ return {
       { '<leader>(', function() harpoon2_list:select(3) end, desc = 'Harpoon to file 3' },
       { '<leader>%', function() harpoon2_list:select(4) end, desc = 'Harpoon to file 4' },
       { '<c-e>', function() harpoon2.ui:toggle_quick_menu(harpoon2:list()) end, desc = 'Harpoon quick menu' },
-      { '<c-n>', function() harpoon2_list:add() vim.notify('harpoon file added', vim.log.levels.INFO) end, desc = 'Harpoon add file' },
+      { '<cr>', function() harpoon2_list:add() vim.notify('harpoon file added', vim.log.levels.INFO) end, desc = 'Harpoon add file' },
 		}
 	end,
 }
