@@ -7,36 +7,55 @@ return {
 		mc.setup()
 		local map = vim.keymap.set
 
-		-- stylua: ignore start
-    map({ 'n', 'x' }, '<up>', function() mc.lineAddCursor(-1) end)
-    map({ 'n', 'x' }, '<down>', function() mc.lineAddCursor(1) end)
-    map({"n", "v"}, "<leader>q", mc.toggleCursor, { desc = "Toggle Cursor" })
-    map("v", "M", mc.matchCursors, { desc = 'Match Cursors With Regex' } )
-    map('v', 'Q', mc.deleteCursor, { desc = 'Multicursor Remove Cursor' })
-    map({ 'n', 'x' }, '<leader><up>', function() mc.lineSkipCursor(-1) end)
-    map({ 'n', 'x' }, '<leader><down>', function() mc.lineSkipCursor(1) end)
-    map({ 'n', 'v' }, '<right>', mc.nextCursor, { desc = 'Multicursor Next' })
-    map('v', 'I', mc.insertVisual, { desc = 'Multicursor Visual Insert Mode' })
-    map({ 'n', 'v' }, '<left>', mc.prevCursor, { desc = 'Multicursor Previous' })
-    map('v', 'A', mc.appendVisual, { desc = 'Multicursor Visual Insert Mode Last' })
-    map('v', 'q', function() mc.matchSkipCursor(1) end, { desc = 'Multicursor Skip' })
-    map({ 'n', 'v' }, '<c-n>', function() mc.matchAddCursor(1) end, { desc = 'Multicursor Start' })
+		map({ 'n', 'v' }, '<c-n>', function()
+			mc.matchAddCursor(1)
+		end, { desc = 'Multicursor Start' })
+
+		map({ 'n', 'x' }, '<up>', function()
+			mc.lineAddCursor(-1)
+		end)
+		map({ 'n', 'x' }, '<down>', function()
+			mc.lineAddCursor(1)
+		end)
+		map({ 'n', 'x' }, '<leader><up>', function()
+			mc.lineSkipCursor(-1)
+		end)
+		map({ 'n', 'x' }, '<leader><down>', function()
+			mc.lineSkipCursor(1)
+		end)
+
+		map({ 'n', 'v' }, '<right>', mc.nextCursor, { desc = 'Multicursor Next' })
 
 		map(
-			'n',
-			'<esc>',
-			function()
-				if not mc.cursorsEnabled() then
-					mc.enableCursors()
-				elseif mc.hasCursors() then
-					mc.clearCursors()
-				else vim.cmd('noh') end
-			end,
-			{ desc = 'Multicursor Clear Cursors' }
+			{ 'n', 'v' },
+			'<left>',
+			mc.prevCursor,
+			{ desc = 'Multicursor Previous' }
 		)
 
-		map({"v", "n"}, "<c-i>", mc.jumpForward, { desc = "Jump List Multicursors" } )
-		map({"v", "n"}, "<c-o>", mc.jumpBackward, { desc = "Jump List Multicursors" } )
+		map('v', 'Q', mc.deleteCursor, { desc = 'Multicursor Remove Cursor' })
+
+		map('v', 'q', function()
+			mc.matchSkipCursor(1)
+		end, { desc = 'Multicursor Skip' })
+
+		map(
+			'v',
+			'A',
+			mc.appendVisual,
+			{ desc = 'Multicursor Visual Insert Mode Last' }
+		)
+		map('v', 'I', mc.insertVisual, { desc = 'Multicursor Visual Insert Mode' })
+
+		map('n', '<esc>', function()
+			if not mc.cursorsEnabled() then
+				mc.enableCursors()
+			elseif mc.hasCursors() then
+				mc.clearCursors()
+			else
+				vim.cmd('noh')
+			end
+		end, { desc = 'Multicursor Clear Cursors' })
 
 		local hl = vim.api.nvim_set_hl
 		hl(0, 'MultiCursorCursor', { link = 'Cursor' })
