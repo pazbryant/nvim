@@ -40,7 +40,7 @@ return {
 				desc = 'Flash',
 			},
 			{
-				'S',
+				'gs', -- ; and , increase and decrease
 				mode = { 'n', 'x', 'o' },
 				function()
 					flash.treesitter()
