@@ -11,29 +11,21 @@ return {
 	},
 
 	{
-		'zenbones-theme/zenbones.nvim',
-		dependencies = 'rktjmp/lush.nvim',
-		config = function()
-			local lush = require('lush')
-			local specs = lush.parse(function()
-				return {
-					Constant({ base.Constant, gui = '' }),
-				}
-			end)
-			lush.apply(lush.compile(specs))
-		end,
-	},
-
-	{
+		'RRethy/base16-nvim',
 		lazy = false,
 		priority = 1000,
-		'rebelot/kanagawa.nvim',
 		config = function()
-			require('kanagawa').setup({
-				commentStyle = { italic = false },
-				keywordStyle = { italic = false },
+			require('base16-colorscheme').with_config({
+				telescope = true,
+				indentblankline = true,
+				notify = true,
+				ts_rainbow = true,
+				cmp = true,
+				illuminate = true,
+				dapui = true,
 			})
-			vim.cmd.colorscheme('kanagawa')
+
+			vim.cmd('colorscheme base16-default-dark')
 		end,
 	},
 }
